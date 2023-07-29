@@ -23,7 +23,8 @@ public abstract class MixinPhantomTargeting
               remap = ReDev.REMAP_MIXINS)
     public boolean canAttack(Phantom phantom, LivingEntity target, TargetingConditions conditions)
     {   return target instanceof ServerPlayer player
-        && (player.getStats().getValue(Stats.CUSTOM.get(Stats.TIME_SINCE_REST)) >= 72000 || ((SpecialPhantom) phantom).getPhantomType() == PhantomType.RED)
+        && (player.getStats().getValue(Stats.CUSTOM.get(Stats.TIME_SINCE_REST)) >= 72000
+            || ((SpecialPhantom) phantom).getPhantomType() == PhantomType.RED)
         && phantom.canAttack(target, conditions);
     }
 }

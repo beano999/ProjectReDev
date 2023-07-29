@@ -3,12 +3,13 @@ package net.momostudios.redev.common.event;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.*;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.entity.projectile.Snowball;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
@@ -40,11 +41,34 @@ public class PhantomEvents
     }
 
     @SubscribeEvent
-    public static void onPhantomBurn(LivingAttackEvent event)
+    public static void beforePhantomHurt(LivingAttackEvent event)
     {
-        if (event.getEntity() instanceof Phantom phantom && ((SpecialPhantom) phantom).getPhantomType() == PhantomType.RED
-        && event.getSource().type().effects() == DamageEffects.BURNING)
-        {   event.setCanceled(true);
+        if (event.getEntity() instanceof Phantom phantom && phantom instanceof SpecialPhantom special)
+        {
+            if (special.getPhantomType() == PhantomType.RED && event.getSource().type().effects() == DamageEffects.BURNING)
+            {   event.setCanceled(true);
+            }
+            else if (special.getPhantomType() == PhantomType.HOLLOW)
+            {   event.setCanceled(true);
+                despawnHollowPhantom(phantom);
+            }
+        }
+        if (event.getSource().getEntity() instanceof Phantom phantom && phantom instanceof SpecialPhantom special)
+        {
+            if (special.getPhantomType() == PhantomType.HOLLOW)
+            {   event.setCanceled(true);
+                despawnHollowPhantom(phantom);
+            }
+        }
+    }
+
+    static void despawnHollowPhantom(Phantom phantom)
+    {
+        Vec3 pos = phantom.position();
+        if (phantom.level instanceof ServerLevel serverLevel)
+        {   serverLevel.sendParticles(ParticleTypes.SMOKE, pos.x, pos.y, pos.z, 50,
+                                      0.35, 0.35, 0.35, 0.05);
+            phantom.remove(Entity.RemovalReason.KILLED);
         }
     }
 
@@ -86,16 +110,16 @@ public class PhantomEvents
         if (event.getEntity() instanceof Phantom phantom)
         {
             // Spawn ender particles
-            if (phantom.level.isClientSide)
+            if (phantom.level.isClientSide && ((SpecialPhantom) phantom).getPhantomType() != PhantomType.HOLLOW)
             {
                 RandomSource random = phantom.getRandom();
                 Vec3 speed = phantom.getDeltaMovement();
                 if (phantom.tickCount % 3 == 0 || random.nextDouble() < (Math.abs(speed.x) * Math.abs(speed.z) + Math.abs(speed.y)) * 10)
                 {
-                    phantom.level.addParticle(ParticleTypes.REVERSE_PORTAL, true,
-                                              event.getEntity().getX() + random.nextDouble() - 0.5,
-                                              event.getEntity().getY() + random.nextDouble() - 0.5,
-                                              event.getEntity().getZ() + random.nextDouble() - 0.5,
+                    Vec3 pos = phantom.position().add(random.nextDouble() - 0.5,
+                                                      random.nextDouble() - 0.5,
+                                                      random.nextDouble() - 0.5);
+                    phantom.level.addParticle(ParticleTypes.REVERSE_PORTAL, true, pos.x, pos.y, pos.z,
                                               random.nextDouble() * 0.04 - 0.02, 0.06, random.nextDouble() * 0.04 - 0.02);
                 }
             }
