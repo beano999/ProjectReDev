@@ -1,11 +1,13 @@
 package net.momostudios.redev.mixin;
 
 
+import net.minecraft.nbt.StringTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.monster.Phantom;
+import net.minecraft.world.entity.player.Player;
 import net.momostudios.redev.ReDev;
 import net.momostudios.redev.core.entity.PhantomType;
 import net.momostudios.redev.core.entity.SpecialPhantom;
@@ -22,9 +24,11 @@ public abstract class MixinPhantomTargeting
               at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/monster/Phantom;canAttack(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/ai/targeting/TargetingConditions;)Z"),
               remap = ReDev.REMAP_MIXINS)
     public boolean canAttack(Phantom phantom, LivingEntity target, TargetingConditions conditions)
-    {   return target instanceof ServerPlayer player
-        && (player.getStats().getValue(Stats.CUSTOM.get(Stats.TIME_SINCE_REST)) >= 72000
-            || ((SpecialPhantom) phantom).getPhantomType() == PhantomType.RED)
+    {   SpecialPhantom special = ((SpecialPhantom) phantom);
+        PhantomType type = special.getPhantomType();
+        return target instanceof ServerPlayer player
+        && (type == PhantomType.GREEN ? (phantom.getPersistentData().getList("Attackers", 8).contains(StringTag.valueOf(player.getUUID().toString())))
+                                      : (player.getStats().getValue(Stats.CUSTOM.get(Stats.TIME_SINCE_REST)) >= 72000 || type == PhantomType.RED))
         && phantom.canAttack(target, conditions);
     }
 }

@@ -3,12 +3,15 @@ package net.momostudios.redev.common.event;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.*;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.monster.Phantom;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
@@ -45,12 +48,22 @@ public class PhantomEvents
     {
         if (event.getEntity() instanceof Phantom phantom && phantom instanceof SpecialPhantom special)
         {
-            if (special.getPhantomType() == PhantomType.RED && event.getSource().type().effects() == DamageEffects.BURNING)
+            PhantomType type = special.getPhantomType();
+            if (type == PhantomType.RED && event.getSource().type().effects() == DamageEffects.BURNING)
             {   event.setCanceled(true);
             }
-            else if (special.getPhantomType() == PhantomType.HOLLOW)
+            else if (type == PhantomType.HOLLOW)
             {   event.setCanceled(true);
                 despawnHollowPhantom(phantom);
+            }
+            else if (type == PhantomType.GREEN && event.getSource().getEntity() instanceof Player player)
+            {
+                ListTag attackers = phantom.getPersistentData().getList("Attackers", 8);
+                StringTag playerID = StringTag.valueOf(player.getUUID().toString());
+                if (!attackers.contains(playerID))
+                {   attackers.add(playerID);
+                }
+                phantom.getPersistentData().put("Attackers", attackers);
             }
         }
         if (event.getSource().getEntity() instanceof Phantom phantom && phantom instanceof SpecialPhantom special)
