@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "redev:block/oak_hedge"
+  },
+  "render_type": "transparent"
+}

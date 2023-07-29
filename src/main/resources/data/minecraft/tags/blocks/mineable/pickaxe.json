@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values":
+  [
+    "redev:acacia_rail",
+    "redev:birch_rail",
+    "redev:crimson_rail",
+    "redev:dark_oak_rail",
+    "redev:jungle_rail",
+    "redev:spruce_rail",
+    "redev:warped_rail"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "LWL",
+    "LLL",
+    "LWL"
+  ],
+  "key":
+  {
+    "L":
+    {
+      "tag": "redev:ladders"
+    },
+    "W":
+    {
+      "item": "minecraft:spruce_planks"
+    }
+  },
+  "result":
+  {
+    "item": "redev:spruce_ladder",
+    "count": 7
+  }
+}

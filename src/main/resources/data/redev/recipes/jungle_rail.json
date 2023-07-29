@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "I I",
+    "IPI",
+    "I I"
+  ],
+  "key":
+  {
+    "I":
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    "P":
+    {
+      "item": "minecraft:jungle_slab"
+    }
+  },
+  "result":
+  {
+    "item": "redev:jungle_rail",
+    "count": 16
+  }
+}

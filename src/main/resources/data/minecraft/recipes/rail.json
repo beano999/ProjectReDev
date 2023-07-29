@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "I I",
+    "IPI",
+    "I I"
+  ],
+  "key":
+  {
+    "I":
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    "P":
+    {
+      "item": "minecraft:oak_slab"
+    }
+  },
+  "result":
+  {
+    "item": "minecraft:rail",
+    "count": 16
+  }
+}

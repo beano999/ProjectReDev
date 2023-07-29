@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/rail_curved",
+  "textures": {
+    "rail": "redev:block/rail/crimson_rail_corner"
+  },
+  "render_type": "cutout"
+}

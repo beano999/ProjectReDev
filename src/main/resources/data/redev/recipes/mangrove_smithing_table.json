@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern":
+  [
+    "II",
+    "PP",
+    "PP"
+  ],
+  "key":
+  {
+    "P":
+    {
+      "item": "minecraft:mangrove_planks"
+    },
+    "I":
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "redev:mangrove_smithing_table"
+  },
+  "show_notification": true
+}

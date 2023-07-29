@@ -1,0 +1,74 @@
+{
+  "item_group.redev.wooden_items": "Wooden Items",
+
+
+  "item.minecraft.splash_potion.effect.sight": "Splash Potion of Sight",
+  "item.minecraft.potion.effect.sight": "Potion of Sight",
+  "item.minecraft.lingering_potion.effect.sight": "Lingering Potion of Sight",
+
+
+  "effect.redev.sight": "Sight",
+
+
+  "block.redev.acacia_bookshelf":    "Acacia Bookshelf",
+  "block.redev.birch_bookshelf":     "Birch Bookshelf",
+  "block.redev.crimson_bookshelf":   "Crimson Bookshelf",
+  "block.redev.dark_oak_bookshelf":  "Dark Oak Bookshelf",
+  "block.redev.jungle_bookshelf":    "Jungle Bookshelf",
+  "block.redev.mangrove_bookshelf":  "Mangrove Bookshelf",
+  "block.redev.spruce_bookshelf":    "Spruce Bookshelf",
+  "block.redev.warped_bookshelf":    "Warped Bookshelf",
+
+  "block.redev.acacia_campfire":     "Acacia Campfire",
+  "block.redev.birch_campfire":      "Birch Campfire",
+  "block.redev.crimson_campfire":    "Crimson Campfire",
+  "block.redev.dark_oak_campfire":   "Dark Oak Campfire",
+  "block.redev.jungle_campfire":     "Jungle Campfire",
+  "block.redev.mangrove_campfire":   "Mangrove Campfire",
+  "block.redev.spruce_campfire":     "Spruce Campfire",
+  "block.redev.warped_campfire":     "Warped Campfire",
+
+  "block.redev.acacia_soul_campfire":    "Acacia Soul Campfire",
+  "block.redev.birch_soul_campfire":     "Birch Soul Campfire",
+  "block.redev.crimson_soul_campfire":   "Crimson Soul Campfire",
+  "block.redev.dark_oak_soul_campfire":  "Dark Oak Soul Campfire",
+  "block.redev.jungle_soul_campfire":    "Jungle Soul Campfire",
+  "block.redev.mangrove_soul_campfire":  "Mangrove Soul Campfire",
+  "block.redev.spruce_soul_campfire":    "Spruce Soul Campfire",
+  "block.redev.warped_soul_campfire":    "Warped Soul Campfire",
+
+  "block.redev.acacia_ladder":       "Acacia Ladder",
+  "block.redev.birch_ladder":        "Birch Ladder",
+  "block.redev.crimson_ladder":      "Crimson Ladder",
+  "block.redev.dark_oak_ladder":     "Dark Oak Ladder",
+  "block.redev.jungle_ladder":       "Jungle Ladder",
+  "block.redev.mangrove_ladder":     "Mangrove Ladder",
+  "block.redev.spruce_ladder":       "Spruce Ladder",
+  "block.redev.warped_ladder":       "Warped Ladder",
+
+  "block.redev.acacia_smithing_table":    "Acacia Smithing Table",
+  "block.redev.birch_smithing_table":     "Birch Smithing Table",
+  "block.redev.crimson_smithing_table":   "Crimson Smithing Table",
+  "block.redev.dark_oak_smithing_table":  "Dark Oak Smithing Table",
+  "block.redev.jungle_smithing_table":    "Jungle Smithing Table",
+  "block.redev.mangrove_smithing_table":  "Mangrove Smithing Table",
+  "block.redev.spruce_smithing_table":    "Spruce Smithing Table",
+  "block.redev.warped_smithing_table":    "Warped Smithing Table",
+
+  "block.redev.acacia_rail":       "Acacia Rail",
+  "block.redev.birch_rail":        "Birch Rail",
+  "block.redev.crimson_rail":      "Crimson Rail",
+  "block.redev.dark_oak_rail":     "Dark Oak Rail",
+  "block.redev.jungle_rail":       "Jungle Rail",
+  "block.redev.mangrove_rail":     "Mangrove Rail",
+  "block.redev.spruce_rail":       "Spruce Rail",
+  "block.redev.warped_rail":       "Warped Rail",
+
+  "block.redev.acacia_hedge":       "Acacia Hedge",
+  "block.redev.birch_hedge":        "Birch Hedge",
+  "block.redev.dark_oak_hedge":     "Dark Oak Hedge",
+  "block.redev.jungle_hedge":       "Jungle Hedge",
+  "block.redev.mangrove_hedge":     "Mangrove Hedge",
+  "block.redev.oak_hedge":          "Oak Hedge",
+  "block.redev.spruce_hedge":       "Spruce Hedge"
+}

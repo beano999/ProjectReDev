@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "redev:acacia_bookshelf",
+    "redev:birch_bookshelf",
+    "redev:crimson_bookshelf",
+    "redev:dark_oak_bookshelf",
+    "redev:jungle_bookshelf",
+    "redev:mangrove_bookshelf",
+    "redev:spruce_bookshelf",
+    "redev:warped_bookshelf"
+  ]
+}

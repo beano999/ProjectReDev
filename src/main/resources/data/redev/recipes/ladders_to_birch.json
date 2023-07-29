@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "LWL",
+    "LLL",
+    "LWL"
+  ],
+  "key":
+  {
+    "L":
+    {
+      "tag": "redev:ladders"
+    },
+    "W":
+    {
+      "item": "minecraft:birch_planks"
+    }
+  },
+  "result":
+  {
+    "item": "redev:birch_ladder",
+    "count": 7
+  }
+}

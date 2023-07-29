@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/rail_flat",
+  "textures": {
+    "rail": "redev:block/rail/crimson_rail"
+  },
+  "render_type": "cutout"
+}

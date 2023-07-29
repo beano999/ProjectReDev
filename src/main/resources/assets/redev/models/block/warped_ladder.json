@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/ladder",
+  "textures":
+  {
+    "texture": "redev:block/ladder/warped_ladder",
+    "particle": "redev:block/ladder/warped_ladder"
+  },
+  "render_type": "cutout"
+}

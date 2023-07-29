@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "S S",
+    "SBS",
+    "S S"
+  ],
+  "key":
+  {
+    "S":
+    {
+      "item": "minecraft:stick"
+    },
+    "B":
+    {
+      "item": "minecraft:birch_slab"
+    }
+  },
+  "result":
+  {
+    "item": "redev:birch_ladder",
+    "count": 3
+  }
+}

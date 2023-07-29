@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern":
+  [
+    "II",
+    "PP",
+    "PP"
+  ],
+  "key":
+  {
+    "P":
+    {
+      "item": "minecraft:oak_planks"
+    },
+    "I":
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "redev:birch_smithing_table"
+  },
+  "show_notification": true
+}

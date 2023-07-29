@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values":
+  [
+    "redev:acacia_soul_campfire",
+    "redev:birch_soul_campfire",
+    "redev:crimson_soul_campfire",
+    "redev:dark_oak_soul_campfire",
+    "redev:jungle_soul_campfire",
+    "redev:mangrove_soul_campfire",
+    "redev:spruce_soul_campfire",
+    "redev:warped_soul_campfire"
+  ]
+}

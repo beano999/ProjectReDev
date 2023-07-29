@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values":
+  [
+    "redev:acacia_ladder",
+    "redev:birch_ladder",
+    "redev:crimson_ladder",
+    "redev:dark_oak_ladder",
+    "redev:jungle_ladder",
+    "redev:mangrove_ladder",
+    "redev:spruce_ladder",
+    "redev:warped_ladder"
+  ]
+}
