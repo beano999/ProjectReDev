@@ -66,4 +66,12 @@ public class ModBlocks
     public static final Block MANGROVE_HEDGE = BlockInit.MANGROVE_HEDGE.get();
     public static final Block OAK_HEDGE = BlockInit.OAK_HEDGE.get();
     public static final Block SPRUCE_HEDGE = BlockInit.SPRUCE_HEDGE.get();
+
+    public static final Block ACACIA_HEDGE_WALL = BlockInit.ACACIA_HEDGE_WALL.get();
+    public static final Block BIRCH_HEDGE_WALL = BlockInit.BIRCH_HEDGE_WALL.get();
+    public static final Block DARK_OAK_HEDGE_WALL = BlockInit.DARK_OAK_HEDGE_WALL.get();
+    public static final Block JUNGLE_HEDGE_WALL = BlockInit.JUNGLE_HEDGE_WALL.get();
+    public static final Block MANGROVE_HEDGE_WALL = BlockInit.MANGROVE_HEDGE_WALL.get();
+    public static final Block OAK_HEDGE_WALL = BlockInit.OAK_HEDGE_WALL.get();
+    public static final Block SPRUCE_HEDGE_WALL = BlockInit.SPRUCE_HEDGE_WALL.get();
 }

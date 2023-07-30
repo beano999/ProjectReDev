@@ -1,0 +1,6 @@
+{
+  "parent": "redev:block/template_wall_side",
+  "textures": {
+    "wall": "redev:block/jungle_hedge"
+  }
+}

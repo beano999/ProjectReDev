@@ -72,4 +72,12 @@ public class ItemInit
     public static final RegistryObject<Item> MANGROVE_HEDGE = ITEMS.register("mangrove_hedge", () -> new BlockItem(BlockInit.MANGROVE_HEDGE.get(), new Item.Properties()));
     public static final RegistryObject<Item> OAK_HEDGE = ITEMS.register("oak_hedge", () -> new BlockItem(BlockInit.OAK_HEDGE.get(), new Item.Properties()));
     public static final RegistryObject<Item> SPRUCE_HEDGE = ITEMS.register("spruce_hedge", () -> new BlockItem(BlockInit.SPRUCE_HEDGE.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> ACACIA_HEDGE_WALL = ITEMS.register("acacia_hedge_wall", () -> new BlockItem(BlockInit.ACACIA_HEDGE_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> BIRCH_HEDGE_WALL = ITEMS.register("birch_hedge_wall", () -> new BlockItem(BlockInit.BIRCH_HEDGE_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DARK_OAK_HEDGE_WALL = ITEMS.register("dark_oak_hedge_wall", () -> new BlockItem(BlockInit.DARK_OAK_HEDGE_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> JUNGLE_HEDGE_WALL = ITEMS.register("jungle_hedge_wall", () -> new BlockItem(BlockInit.JUNGLE_HEDGE_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> MANGROVE_HEDGE_WALL = ITEMS.register("mangrove_hedge_wall", () -> new BlockItem(BlockInit.MANGROVE_HEDGE_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> OAK_HEDGE_WALL = ITEMS.register("oak_hedge_wall", () -> new BlockItem(BlockInit.OAK_HEDGE_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SPRUCE_HEDGE_WALL = ITEMS.register("spruce_hedge_wall", () -> new BlockItem(BlockInit.SPRUCE_HEDGE_WALL.get(), new Item.Properties()));
 }

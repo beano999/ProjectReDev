@@ -67,4 +67,11 @@ public class ModItems
     public static final Item OAK_HEDGE = ItemInit.OAK_HEDGE.get();
     public static final Item SPRUCE_HEDGE = ItemInit.SPRUCE_HEDGE.get();
 
+    public static final Item ACACIA_HEDGE_WALL = ItemInit.ACACIA_HEDGE_WALL.get();
+    public static final Item BIRCH_HEDGE_WALL = ItemInit.BIRCH_HEDGE_WALL.get();
+    public static final Item DARK_OAK_HEDGE_WALL = ItemInit.DARK_OAK_HEDGE_WALL.get();
+    public static final Item JUNGLE_HEDGE_WALL = ItemInit.JUNGLE_HEDGE_WALL.get();
+    public static final Item MANGROVE_HEDGE_WALL = ItemInit.MANGROVE_HEDGE_WALL.get();
+    public static final Item OAK_HEDGE_WALL = ItemInit.OAK_HEDGE_WALL.get();
+    public static final Item SPRUCE_HEDGE_WALL = ItemInit.SPRUCE_HEDGE_WALL.get();
 }

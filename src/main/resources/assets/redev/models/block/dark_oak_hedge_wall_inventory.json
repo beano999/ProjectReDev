@@ -1,0 +1,6 @@
+{
+  "parent": "redev:block/wall_inventory",
+  "textures": {
+    "wall": "redev:block/dark_oak_hedge"
+  }
+}

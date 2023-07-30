@@ -6,6 +6,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.momostudios.redev.ReDev;
 import net.momostudios.redev.common.block.HedgeBlock;
+import net.momostudios.redev.common.block.LeafyWallBlock;
 import net.momostudios.redev.common.block.ModCampfireBlock;
 
 public class BlockInit
@@ -72,4 +73,12 @@ public class BlockInit
     public static final RegistryObject<Block> MANGROVE_HEDGE = BLOCKS.register("mangrove_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.MANGROVE_LEAVES)));
     public static final RegistryObject<Block> OAK_HEDGE = BLOCKS.register("oak_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> SPRUCE_HEDGE = BLOCKS.register("spruce_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.SPRUCE_LEAVES)));
+
+    public static final RegistryObject<Block> ACACIA_HEDGE_WALL = BLOCKS.register("acacia_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.ACACIA_LEAVES)));
+    public static final RegistryObject<Block> BIRCH_HEDGE_WALL = BLOCKS.register("birch_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.BIRCH_LEAVES)));
+    public static final RegistryObject<Block> DARK_OAK_HEDGE_WALL = BLOCKS.register("dark_oak_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.DARK_OAK_LEAVES)));
+    public static final RegistryObject<Block> JUNGLE_HEDGE_WALL = BLOCKS.register("jungle_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.JUNGLE_LEAVES)));
+    public static final RegistryObject<Block> MANGROVE_HEDGE_WALL = BLOCKS.register("mangrove_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.MANGROVE_LEAVES)));
+    public static final RegistryObject<Block> OAK_HEDGE_WALL = BLOCKS.register("oak_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<Block> SPRUCE_HEDGE_WALL = BLOCKS.register("spruce_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.SPRUCE_LEAVES)));
 }

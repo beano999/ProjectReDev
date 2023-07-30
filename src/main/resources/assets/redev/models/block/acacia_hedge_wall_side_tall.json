@@ -1,0 +1,6 @@
+{
+  "parent": "redev:block/template_wall_side_tall",
+  "textures": {
+    "wall": "redev:block/acacia_hedge"
+  }
+}

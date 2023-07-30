@@ -1,0 +1,6 @@
+{
+  "parent": "redev:block/template_wall_post",
+  "textures": {
+    "wall": "redev:block/birch_hedge"
+  }
+}
