@@ -23,6 +23,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.momostudios.redev.common.block.HedgeBlock;
+import net.momostudios.redev.common.block.LeafyWallBlock;
 import net.momostudios.redev.util.registries.ModBlocks;
 
 @Mod.EventBusSubscriber
@@ -101,7 +102,8 @@ public class LeavesShear
     @SubscribeEvent
     public static void breakHedgeShears(PlayerEvent.BreakSpeed event)
     {
-        if (event.getState().getBlock() instanceof HedgeBlock && event.getEntity().getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof ShearsItem)
+        if ((event.getState().getBlock() instanceof HedgeBlock || event.getState().getBlock() instanceof LeafyWallBlock)
+        && event.getEntity().getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof ShearsItem)
         {   event.setNewSpeed(event.getOriginalSpeed() * 6f);
         }
     }
