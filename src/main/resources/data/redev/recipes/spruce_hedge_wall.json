@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "   ",
+    "HHH",
+    "HHH"
+  ],
+  "key":
+  {
+    "H":
+    {
+      "item": "redev:spruce_hedge"
+    }
+  },
+  "result":
+  {
+    "item": "redev:spruce_hedge_wall",
+    "count": 12
+  }
+}

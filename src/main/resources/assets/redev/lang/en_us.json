@@ -1,5 +1,6 @@
 {
   "item_group.redev.wooden_items": "Wooden Items",
+  "item_group.redev.decoration":   "Decoration",
 
 
   "item.minecraft.splash_potion.effect.sight": "Splash Potion of Sight",
@@ -70,5 +71,13 @@
   "block.redev.jungle_hedge":       "Jungle Hedge",
   "block.redev.mangrove_hedge":     "Mangrove Hedge",
   "block.redev.oak_hedge":          "Oak Hedge",
-  "block.redev.spruce_hedge":       "Spruce Hedge"
+  "block.redev.spruce_hedge":       "Spruce Hedge",
+
+  "block.redev.acacia_hedge_wall":    "Acacia Hedge Wall",
+  "block.redev.birch_hedge_wall":     "Birch Hedge Wall",
+  "block.redev.dark_oak_hedge_wall":  "Dark Oak Hedge Wall",
+  "block.redev.jungle_hedge_wall":    "Jungle Hedge Wall",
+  "block.redev.mangrove_hedge_wall":  "Mangrove Hedge Wall",
+  "block.redev.oak_hedge_wall":       "Oak Hedge Wall",
+  "block.redev.spruce_hedge_wall":    "Spruce Hedge Wall"
 }
