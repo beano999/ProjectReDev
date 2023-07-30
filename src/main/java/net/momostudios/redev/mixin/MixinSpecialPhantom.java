@@ -33,7 +33,7 @@ public abstract class MixinSpecialPhantom implements SpecialPhantom
     public void onInit(EntityType<Phantom> entityType, Level level, CallbackInfo ci)
     {
         if (!level.isClientSide)
-        {   int rand = level.random.nextInt(10);
+        {   int rand = level.random.nextInt(25);
             PhantomType type = switch (rand)
             {   case 0  -> PhantomType.RED;
                 case 1  -> PhantomType.BLUE;
