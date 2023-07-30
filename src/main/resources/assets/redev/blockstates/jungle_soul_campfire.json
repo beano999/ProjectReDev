@@ -27,7 +27,7 @@
       "y": 90
     },
     "facing=west,lit=true": {
-      "model": "redev:block/jungle_campfire_off",
+      "model": "redev:block/jungle_soul_campfire",
       "y": 90
     }
   }
