@@ -60,6 +60,8 @@ public class ModItems
     public static final Item WARPED_RAIL = ItemInit.WARPED_RAIL.get();
 
     public static final Item ACACIA_HEDGE = ItemInit.ACACIA_HEDGE.get();
+    public static final Item AZALEA_HEDGE = ItemInit.AZALEA_HEDGE.get();
+    public static final Item FLOWERING_AZALEA_HEDGE = ItemInit.FLOWERING_AZALEA_HEDGE.get();
     public static final Item BIRCH_HEDGE = ItemInit.BIRCH_HEDGE.get();
     public static final Item DARK_OAK_HEDGE = ItemInit.DARK_OAK_HEDGE.get();
     public static final Item JUNGLE_HEDGE = ItemInit.JUNGLE_HEDGE.get();
@@ -68,6 +70,8 @@ public class ModItems
     public static final Item SPRUCE_HEDGE = ItemInit.SPRUCE_HEDGE.get();
 
     public static final Item ACACIA_HEDGE_WALL = ItemInit.ACACIA_HEDGE_WALL.get();
+    public static final Item AZALEA_HEDGE_WALL = ItemInit.AZALEA_HEDGE_WALL.get();
+    public static final Item FLOWERING_AZALEA_HEDGE_WALL = ItemInit.FLOWERING_AZALEA_HEDGE_WALL.get();
     public static final Item BIRCH_HEDGE_WALL = ItemInit.BIRCH_HEDGE_WALL.get();
     public static final Item DARK_OAK_HEDGE_WALL = ItemInit.DARK_OAK_HEDGE_WALL.get();
     public static final Item JUNGLE_HEDGE_WALL = ItemInit.JUNGLE_HEDGE_WALL.get();

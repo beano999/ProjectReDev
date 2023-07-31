@@ -1,0 +1,6 @@
+{
+  "parent": "redev:block/template_cutout_wall_side_tall",
+  "textures": {
+    "wall": "redev:block/azalea_hedge"
+  }
+}

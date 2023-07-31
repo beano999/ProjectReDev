@@ -67,6 +67,8 @@ public class BlockInit
     public static final RegistryObject<Block> WARPED_RAIL = BLOCKS.register("warped_rail", () -> new RailBlock(Block.Properties.copy(Blocks.RAIL)));
 
     public static final RegistryObject<Block> ACACIA_HEDGE = BLOCKS.register("acacia_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.ACACIA_LEAVES)));
+    public static final RegistryObject<Block> AZALEA_HEDGE = BLOCKS.register("azalea_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.AZALEA_LEAVES)));
+    public static final RegistryObject<Block> FLOWERING_AZALEA_HEDGE = BLOCKS.register("flowering_azalea_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.FLOWERING_AZALEA_LEAVES)));
     public static final RegistryObject<Block> BIRCH_HEDGE = BLOCKS.register("birch_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.BIRCH_LEAVES)));
     public static final RegistryObject<Block> DARK_OAK_HEDGE = BLOCKS.register("dark_oak_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.DARK_OAK_LEAVES)));
     public static final RegistryObject<Block> JUNGLE_HEDGE = BLOCKS.register("jungle_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.JUNGLE_LEAVES)));
@@ -75,6 +77,8 @@ public class BlockInit
     public static final RegistryObject<Block> SPRUCE_HEDGE = BLOCKS.register("spruce_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.SPRUCE_LEAVES)));
 
     public static final RegistryObject<Block> ACACIA_HEDGE_WALL = BLOCKS.register("acacia_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.ACACIA_LEAVES)));
+    public static final RegistryObject<Block> AZALEA_HEDGE_WALL = BLOCKS.register("azalea_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.AZALEA_LEAVES)));
+    public static final RegistryObject<Block> FLOWERING_AZALEA_HEDGE_WALL = BLOCKS.register("flowering_azalea_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.FLOWERING_AZALEA_LEAVES)));
     public static final RegistryObject<Block> BIRCH_HEDGE_WALL = BLOCKS.register("birch_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.BIRCH_LEAVES)));
     public static final RegistryObject<Block> DARK_OAK_HEDGE_WALL = BLOCKS.register("dark_oak_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.DARK_OAK_LEAVES)));
     public static final RegistryObject<Block> JUNGLE_HEDGE_WALL = BLOCKS.register("jungle_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.JUNGLE_LEAVES)));

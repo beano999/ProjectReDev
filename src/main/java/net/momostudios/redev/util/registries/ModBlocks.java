@@ -60,6 +60,8 @@ public class ModBlocks
     public static final Block WARPED_RAIL = BlockInit.WARPED_RAIL.get();
 
     public static final Block ACACIA_HEDGE = BlockInit.ACACIA_HEDGE.get();
+    public static final Block AZALEA_HEDGE = BlockInit.AZALEA_HEDGE.get();
+    public static final Block FLOWERING_AZALEA_HEDGE = BlockInit.FLOWERING_AZALEA_HEDGE.get();
     public static final Block BIRCH_HEDGE = BlockInit.BIRCH_HEDGE.get();
     public static final Block DARK_OAK_HEDGE = BlockInit.DARK_OAK_HEDGE.get();
     public static final Block JUNGLE_HEDGE = BlockInit.JUNGLE_HEDGE.get();
@@ -68,6 +70,8 @@ public class ModBlocks
     public static final Block SPRUCE_HEDGE = BlockInit.SPRUCE_HEDGE.get();
 
     public static final Block ACACIA_HEDGE_WALL = BlockInit.ACACIA_HEDGE_WALL.get();
+    public static final Block AZALEA_HEDGE_WALL = BlockInit.AZALEA_HEDGE_WALL.get();
+    public static final Block FLOWERING_AZALEA_HEDGE_WALL = BlockInit.FLOWERING_AZALEA_HEDGE_WALL.get();
     public static final Block BIRCH_HEDGE_WALL = BlockInit.BIRCH_HEDGE_WALL.get();
     public static final Block DARK_OAK_HEDGE_WALL = BlockInit.DARK_OAK_HEDGE_WALL.get();
     public static final Block JUNGLE_HEDGE_WALL = BlockInit.JUNGLE_HEDGE_WALL.get();

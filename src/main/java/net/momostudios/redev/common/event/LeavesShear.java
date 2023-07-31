@@ -70,6 +70,14 @@ public class LeavesShear
             {   shouldShear = true;
                 hedgeState = ModBlocks.MANGROVE_HEDGE.defaultBlockState();
             }
+            else if (state.is(Blocks.AZALEA_LEAVES))
+            {   shouldShear = true;
+                hedgeState = ModBlocks.AZALEA_HEDGE.defaultBlockState();
+            }
+            else if (state.is(Blocks.FLOWERING_AZALEA_LEAVES))
+            {   shouldShear = true;
+                hedgeState = ModBlocks.FLOWERING_AZALEA_HEDGE.defaultBlockState();
+            }
             if (shouldShear)
             {
                 if (!player.isCreative())

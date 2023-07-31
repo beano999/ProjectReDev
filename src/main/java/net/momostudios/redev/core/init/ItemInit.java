@@ -66,6 +66,8 @@ public class ItemInit
     public static final RegistryObject<Item> WARPED_RAIL = ITEMS.register("warped_rail", () -> new BlockItem(BlockInit.WARPED_RAIL.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> ACACIA_HEDGE = ITEMS.register("acacia_hedge", () -> new BlockItem(BlockInit.ACACIA_HEDGE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> AZALEA_HEDGE = ITEMS.register("azalea_hedge", () -> new BlockItem(BlockInit.AZALEA_HEDGE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FLOWERING_AZALEA_HEDGE = ITEMS.register("flowering_azalea_hedge", () -> new BlockItem(BlockInit.FLOWERING_AZALEA_HEDGE.get(), new Item.Properties()));
     public static final RegistryObject<Item> BIRCH_HEDGE = ITEMS.register("birch_hedge", () -> new BlockItem(BlockInit.BIRCH_HEDGE.get(), new Item.Properties()));
     public static final RegistryObject<Item> DARK_OAK_HEDGE = ITEMS.register("dark_oak_hedge", () -> new BlockItem(BlockInit.DARK_OAK_HEDGE.get(), new Item.Properties()));
     public static final RegistryObject<Item> JUNGLE_HEDGE = ITEMS.register("jungle_hedge", () -> new BlockItem(BlockInit.JUNGLE_HEDGE.get(), new Item.Properties()));
@@ -74,6 +76,8 @@ public class ItemInit
     public static final RegistryObject<Item> SPRUCE_HEDGE = ITEMS.register("spruce_hedge", () -> new BlockItem(BlockInit.SPRUCE_HEDGE.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> ACACIA_HEDGE_WALL = ITEMS.register("acacia_hedge_wall", () -> new BlockItem(BlockInit.ACACIA_HEDGE_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> AZALEA_HEDGE_WALL = ITEMS.register("azalea_hedge_wall", () -> new BlockItem(BlockInit.AZALEA_HEDGE_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FLOWERING_AZALEA_HEDGE_WALL = ITEMS.register("flowering_azalea_hedge_wall", () -> new BlockItem(BlockInit.FLOWERING_AZALEA_HEDGE_WALL.get(), new Item.Properties()));
     public static final RegistryObject<Item> BIRCH_HEDGE_WALL = ITEMS.register("birch_hedge_wall", () -> new BlockItem(BlockInit.BIRCH_HEDGE_WALL.get(), new Item.Properties()));
     public static final RegistryObject<Item> DARK_OAK_HEDGE_WALL = ITEMS.register("dark_oak_hedge_wall", () -> new BlockItem(BlockInit.DARK_OAK_HEDGE_WALL.get(), new Item.Properties()));
     public static final RegistryObject<Item> JUNGLE_HEDGE_WALL = ITEMS.register("jungle_hedge_wall", () -> new BlockItem(BlockInit.JUNGLE_HEDGE_WALL.get(), new Item.Properties()));
