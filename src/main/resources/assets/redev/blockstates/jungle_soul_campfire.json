@@ -17,7 +17,7 @@
       "y": 180
     },
     "facing=south,lit=false": {
-      "model": "redev:block/jungle_soul_campfire_off"
+      "model": "redev:block/jungle_campfire_off"
     },
     "facing=south,lit=true": {
       "model": "redev:block/jungle_soul_campfire"
