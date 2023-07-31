@@ -8,6 +8,7 @@ import net.momostudios.redev.ReDev;
 import net.momostudios.redev.common.block.HedgeBlock;
 import net.momostudios.redev.common.block.LeafyWallBlock;
 import net.momostudios.redev.common.block.ModCampfireBlock;
+import net.momostudios.redev.common.block.ModFurnaceBlock;
 
 public class BlockInit
 {
@@ -85,4 +86,7 @@ public class BlockInit
     public static final RegistryObject<Block> MANGROVE_HEDGE_WALL = BLOCKS.register("mangrove_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.MANGROVE_LEAVES)));
     public static final RegistryObject<Block> OAK_HEDGE_WALL = BLOCKS.register("oak_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> SPRUCE_HEDGE_WALL = BLOCKS.register("spruce_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.SPRUCE_LEAVES)));
+
+    public static final RegistryObject<Block> BLACKSTONE_FURNACE = BLOCKS.register("blackstone_furnace", () -> new ModFurnaceBlock(Block.Properties.copy(Blocks.FURNACE)));
+    public static final RegistryObject<Block> DEEPSLATE_FURNACE = BLOCKS.register("deepslate_furnace", () -> new ModFurnaceBlock(Block.Properties.copy(Blocks.FURNACE)));
 }

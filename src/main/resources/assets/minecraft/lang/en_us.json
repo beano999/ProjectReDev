@@ -4,5 +4,6 @@
   "block.minecraft.soul_campfire":  "Oak Soul Campfire",
   "block.minecraft.ladder":         "Oak Ladder",
   "block.minecraft.rail":           "Oak Rail",
-  "block.minecraft.smithing_table": "Oak Smithing Table"
+  "block.minecraft.smithing_table": "Oak Smithing Table",
+  "block.minecraft.furnace":        "Stone Furnace"
 }

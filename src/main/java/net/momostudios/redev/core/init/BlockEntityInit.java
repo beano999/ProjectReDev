@@ -6,6 +6,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.momostudios.redev.ReDev;
 import net.momostudios.redev.common.block_entity.ModCampfireBlockEntity;
+import net.momostudios.redev.common.block_entity.ModFurnaceBlockEntity;
 import net.momostudios.redev.util.registries.ModBlocks;
 
 public class BlockEntityInit
@@ -22,4 +23,8 @@ public class BlockEntityInit
                                         ModBlocks.CRIMSON_SOUL_CAMPFIRE, ModBlocks.DARK_OAK_SOUL_CAMPFIRE,
                                         ModBlocks.JUNGLE_SOUL_CAMPFIRE,  ModBlocks.MANGROVE_SOUL_CAMPFIRE,
                                         ModBlocks.SPRUCE_SOUL_CAMPFIRE,  ModBlocks.WARPED_SOUL_CAMPFIRE).build(null));
+
+    public static final RegistryObject<BlockEntityType<ModFurnaceBlockEntity>> FURNACE_BLOCK_ENTITY_TYPE =
+            BLOCK_ENTITY_TYPES.register("furnace", () -> BlockEntityType.Builder.of(ModFurnaceBlockEntity::new,
+                                        ModBlocks.BLACKSTONE_FURNACE, ModBlocks.DEEPSLATE_FURNACE).build(null));
 }

@@ -84,4 +84,7 @@ public class ItemInit
     public static final RegistryObject<Item> MANGROVE_HEDGE_WALL = ITEMS.register("mangrove_hedge_wall", () -> new BlockItem(BlockInit.MANGROVE_HEDGE_WALL.get(), new Item.Properties()));
     public static final RegistryObject<Item> OAK_HEDGE_WALL = ITEMS.register("oak_hedge_wall", () -> new BlockItem(BlockInit.OAK_HEDGE_WALL.get(), new Item.Properties()));
     public static final RegistryObject<Item> SPRUCE_HEDGE_WALL = ITEMS.register("spruce_hedge_wall", () -> new BlockItem(BlockInit.SPRUCE_HEDGE_WALL.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> BLACKSTONE_FURNACE = ITEMS.register("blackstone_furnace", () -> new BlockItem(BlockInit.BLACKSTONE_FURNACE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DEEPSLATE_FURNACE = ITEMS.register("deepslate_furnace", () -> new BlockItem(BlockInit.DEEPSLATE_FURNACE.get(), new Item.Properties()));
 }

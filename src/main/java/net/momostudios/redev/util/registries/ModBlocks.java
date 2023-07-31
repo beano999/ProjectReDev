@@ -78,4 +78,7 @@ public class ModBlocks
     public static final Block MANGROVE_HEDGE_WALL = BlockInit.MANGROVE_HEDGE_WALL.get();
     public static final Block OAK_HEDGE_WALL = BlockInit.OAK_HEDGE_WALL.get();
     public static final Block SPRUCE_HEDGE_WALL = BlockInit.SPRUCE_HEDGE_WALL.get();
+
+    public static final Block BLACKSTONE_FURNACE = BlockInit.BLACKSTONE_FURNACE.get();
+    public static final Block DEEPSLATE_FURNACE = BlockInit.DEEPSLATE_FURNACE.get();
 }

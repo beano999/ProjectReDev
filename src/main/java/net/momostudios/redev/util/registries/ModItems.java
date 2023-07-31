@@ -78,4 +78,7 @@ public class ModItems
     public static final Item MANGROVE_HEDGE_WALL = ItemInit.MANGROVE_HEDGE_WALL.get();
     public static final Item OAK_HEDGE_WALL = ItemInit.OAK_HEDGE_WALL.get();
     public static final Item SPRUCE_HEDGE_WALL = ItemInit.SPRUCE_HEDGE_WALL.get();
+
+    public static final Item BLACKSTONE_FURNACE = ItemInit.BLACKSTONE_FURNACE.get();
+    public static final Item DEEPSLATE_FURNACE = ItemInit.DEEPSLATE_FURNACE.get();
 }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "BBB",
+    "B B",
+    "BBB"
+  ],
+  "key":
+  {
+    "B":
+    {
+      "item": "minecraft:blackstone"
+    }
+  },
+  "result":
+  {
+    "item": "redev:blackstone_furnace",
+    "count": 1
+  }
+}
