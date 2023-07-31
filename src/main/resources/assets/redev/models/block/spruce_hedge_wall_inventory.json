@@ -1,5 +1,5 @@
 {
-  "parent": "redev:block/wall_inventory",
+  "parent": "redev:block/template_leafy_wall_inventory",
   "textures": {
     "wall": "redev:block/spruce_hedge"
   }
