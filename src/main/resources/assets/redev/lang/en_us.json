@@ -3,9 +3,15 @@
   "item_group.redev.main":         "ReDev",
 
 
-  "item.minecraft.splash_potion.effect.sight": "Splash Potion of Sight",
-  "item.minecraft.potion.effect.sight": "Potion of Sight",
+  "item.minecraft.splash_potion.effect.sight":    "Splash Potion of Sight",
+  "item.minecraft.potion.effect.sight":           "Potion of Sight",
   "item.minecraft.lingering_potion.effect.sight": "Lingering Potion of Sight",
+
+  "item.redev.hoglin_hide":            "Hoglin Hide",
+  "item.redev.hoglin_hide_helmet":     "Hoglin Hide Helmet",
+  "item.redev.hoglin_hide_chestplate": "Hoglin Hide Chestplate",
+  "item.redev.hoglin_hide_leggings":   "Hoglin Hide Leggings",
+  "item.redev.hoglin_hide_boots":      "Hoglin Hide Boots",
 
 
   "effect.redev.sight": "Sight",

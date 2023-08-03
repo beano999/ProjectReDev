@@ -1,0 +1,15 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/hoglin"
+    }
+  ],
+  "addition": "redev:hoglin_hide",
+  "count":
+  {
+    "min": 1,
+    "max": 4
+  },
+  "type": "redev:add_drops"
+}

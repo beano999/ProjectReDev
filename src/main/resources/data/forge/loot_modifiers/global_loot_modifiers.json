@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "entries": [
+    "redev:hide_from_hoglin",
+    "redev:leather_from_hoglin"
+  ]
+}

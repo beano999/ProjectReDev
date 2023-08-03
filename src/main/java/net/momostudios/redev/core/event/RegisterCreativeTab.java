@@ -138,6 +138,10 @@ public class RegisterCreativeTab
                     ModItems.DIORITE_FURNACE.getDefaultInstance(),
                     ModItems.GRANITE_FURNACE.getDefaultInstance()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
+        else if (event.getTab() == CreativeModeTabs.INGREDIENTS)
+        {
+            event.getEntries().putAfter(Items.RABBIT_HIDE.getDefaultInstance(), ModItems.HOGLIN_HIDE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
     }
 
     static void injectItemsAfter(ItemStack injectPoint, MutableHashedLinkedMap<ItemStack, CreativeModeTab.TabVisibility> entries, Collection<ItemStack> list, CreativeModeTab.TabVisibility visibility)

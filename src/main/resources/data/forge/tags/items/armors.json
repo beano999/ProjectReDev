@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values":
+  [
+    "redev:hoglin_hide_helmet",
+    "redev:hoglin_hide_chestplate",
+    "redev:hoglin_hide_leggings",
+    "redev:hoglin_hide_boots"
+  ]
+}

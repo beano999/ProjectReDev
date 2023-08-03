@@ -5,6 +5,11 @@ import net.momostudios.redev.core.init.ItemInit;
 
 public class ModItems
 {
+    public static final Item HOGLIN_HIDE = ItemInit.HOGLIN_HIDE.get();
+
+    /*
+     Block Items
+     */
     public static final Item ACACIA_BOOKSHELF = ItemInit.ACACIA_BOOKSHELF.get();
     public static final Item BIRCH_BOOKSHELF = ItemInit.BIRCH_BOOKSHELF.get();
     public static final Item CRIMSON_BOOKSHELF = ItemInit.CRIMSON_BOOKSHELF.get();

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "HHH",
+    "H H"
+  ],
+  "key":
+  {
+    "H":
+    {
+      "item": "redev:hoglin_hide"
+    }
+  },
+  "result":
+  {
+    "item": "redev:hoglin_hide_helmet",
+    "count": 1
+  }
+}
