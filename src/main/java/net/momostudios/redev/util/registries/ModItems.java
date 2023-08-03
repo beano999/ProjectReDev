@@ -6,6 +6,10 @@ import net.momostudios.redev.core.init.ItemInit;
 public class ModItems
 {
     public static final Item HOGLIN_HIDE = ItemInit.HOGLIN_HIDE.get();
+    public static final Item HOGLIN_HIDE_CAP = ItemInit.HOGLIN_HIDE_CAP.get();
+    public static final Item HOGLIN_HIDE_TUNIC = ItemInit.HOGLIN_HIDE_TUNIC.get();
+    public static final Item HOGLIN_HIDE_PANTS = ItemInit.HOGLIN_HIDE_PANTS.get();
+    public static final Item HOGLIN_HIDE_BOOTS = ItemInit.HOGLIN_HIDE_BOOTS.get();
 
     /*
      Block Items
@@ -63,6 +67,15 @@ public class ModItems
     public static final Item MANGROVE_RAIL = ItemInit.MANGROVE_RAIL.get();
     public static final Item SPRUCE_RAIL = ItemInit.SPRUCE_RAIL.get();
     public static final Item WARPED_RAIL = ItemInit.WARPED_RAIL.get();
+
+    public static final Item ACACIA_DETECTOR_RAIL = ItemInit.ACACIA_DETECTOR_RAIL.get();
+    public static final Item BIRCH_DETECTOR_RAIL = ItemInit.BIRCH_DETECTOR_RAIL.get();
+    public static final Item CRIMSON_DETECTOR_RAIL = ItemInit.CRIMSON_DETECTOR_RAIL.get();
+    public static final Item DARK_OAK_DETECTOR_RAIL = ItemInit.DARK_OAK_DETECTOR_RAIL.get();
+    public static final Item JUNGLE_DETECTOR_RAIL = ItemInit.JUNGLE_DETECTOR_RAIL.get();
+    public static final Item MANGROVE_DETECTOR_RAIL = ItemInit.MANGROVE_DETECTOR_RAIL.get();
+    public static final Item SPRUCE_DETECTOR_RAIL = ItemInit.SPRUCE_DETECTOR_RAIL.get();
+    public static final Item WARPED_DETECTOR_RAIL = ItemInit.WARPED_DETECTOR_RAIL.get();
 
     public static final Item ACACIA_HEDGE = ItemInit.ACACIA_HEDGE.get();
     public static final Item AZALEA_HEDGE = ItemInit.AZALEA_HEDGE.get();

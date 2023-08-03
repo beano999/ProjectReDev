@@ -8,9 +8,9 @@
   "item.minecraft.lingering_potion.effect.sight": "Lingering Potion of Sight",
 
   "item.redev.hoglin_hide":            "Hoglin Hide",
-  "item.redev.hoglin_hide_helmet":     "Hoglin Hide Helmet",
-  "item.redev.hoglin_hide_chestplate": "Hoglin Hide Chestplate",
-  "item.redev.hoglin_hide_leggings":   "Hoglin Hide Leggings",
+  "item.redev.hoglin_hide_helmet":     "Hoglin Hide Cap",
+  "item.redev.hoglin_hide_chestplate": "Hoglin Hide Tunic",
+  "item.redev.hoglin_hide_leggings":   "Hoglin Hide Pants",
   "item.redev.hoglin_hide_boots":      "Hoglin Hide Boots",
 
 

@@ -18,7 +18,7 @@ public class ItemInit
     public static final RegistryObject<Item> HOGLIN_HIDE = ITEMS.register("hoglin_hide", () -> new Item(new Item.Properties()));
     public static final RegistryObject<ArmorItem> HOGLIN_HIDE_CAP = ITEMS.register("hoglin_hide_helmet", () -> new ArmorItem(ArmorMaterials.HOGLIN_HIDE, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<ArmorItem> HOGLIN_HIDE_TUNIC = ITEMS.register("hoglin_hide_chestplate", () -> new ArmorItem(ArmorMaterials.HOGLIN_HIDE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
-    public static final RegistryObject<ArmorItem> HOGLIN_HIDE_LEGGINGS = ITEMS.register("hoglin_hide_leggings", () -> new ArmorItem(ArmorMaterials.HOGLIN_HIDE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<ArmorItem> HOGLIN_HIDE_PANTS = ITEMS.register("hoglin_hide_leggings", () -> new ArmorItem(ArmorMaterials.HOGLIN_HIDE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<ArmorItem> HOGLIN_HIDE_BOOTS = ITEMS.register("hoglin_hide_boots", () -> new ArmorItem(ArmorMaterials.HOGLIN_HIDE, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     /*

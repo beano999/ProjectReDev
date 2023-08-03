@@ -142,6 +142,14 @@ public class RegisterCreativeTab
         {
             event.getEntries().putAfter(Items.RABBIT_HIDE.getDefaultInstance(), ModItems.HOGLIN_HIDE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
+        else if (event.getTab() == CreativeModeTabs.COMBAT)
+        {
+            injectItemsAfter(Items.LEATHER_BOOTS.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.HOGLIN_HIDE_CAP.getDefaultInstance(),
+                    ModItems.HOGLIN_HIDE_TUNIC.getDefaultInstance(),
+                    ModItems.HOGLIN_HIDE_PANTS.getDefaultInstance(),
+                    ModItems.HOGLIN_HIDE_BOOTS.getDefaultInstance()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
     }
 
     static void injectItemsAfter(ItemStack injectPoint, MutableHashedLinkedMap<ItemStack, CreativeModeTab.TabVisibility> entries, Collection<ItemStack> list, CreativeModeTab.TabVisibility visibility)
