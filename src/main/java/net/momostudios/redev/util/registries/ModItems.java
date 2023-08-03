@@ -81,4 +81,7 @@ public class ModItems
 
     public static final Item BLACKSTONE_FURNACE = ItemInit.BLACKSTONE_FURNACE.get();
     public static final Item DEEPSLATE_FURNACE = ItemInit.DEEPSLATE_FURNACE.get();
+    public static final Item ANDESITE_FURNACE = ItemInit.ANDESITE_FURNACE.get();
+    public static final Item DIORITE_FURNACE = ItemInit.DIORITE_FURNACE.get();
+    public static final Item GRANITE_FURNACE = ItemInit.GRANITE_FURNACE.get();
 }

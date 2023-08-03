@@ -15,22 +15,23 @@ import javax.annotation.Nullable;
 
 public class ModCampfireBlock extends CampfireBlock
 {
-    public ModCampfireBlock(boolean p_51236_, int p_51237_, Properties p_51238_)
-    {   super(p_51236_, p_51237_, p_51238_);
+    public ModCampfireBlock(boolean p_51236_, int damage, Properties properties)
+    {   super(p_51236_, damage, properties);
     }
 
-    public BlockEntity newBlockEntity(BlockPos p_152759_, BlockState p_152760_) {
-        return new ModCampfireBlockEntity(p_152759_, p_152760_);
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state)
+    {   return new ModCampfireBlockEntity(pos, state);
     }
 
     @Nullable
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level p_152755_, BlockState p_152756_, BlockEntityType<T> p_152757_) {
-        if (p_152755_.isClientSide)
-        {   return p_152756_.getValue(LIT) ? createTickerHelper(p_152757_, BlockEntityInit.CAMPFIRE_BLOCK_ENTITY_TYPE.get(), ModCampfireBlockEntity::particleTick) : null;
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType)
+    {
+        if (level.isClientSide)
+        {   return state.getValue(LIT) ? createTickerHelper(blockEntityType, BlockEntityInit.CAMPFIRE_BLOCK_ENTITY_TYPE.get(), ModCampfireBlockEntity::particleTick) : null;
         }
         else
-        {   return p_152756_.getValue(LIT) ? createTickerHelper(p_152757_, BlockEntityInit.CAMPFIRE_BLOCK_ENTITY_TYPE.get(), ModCampfireBlockEntity::cookTick)
-                                           : createTickerHelper(p_152757_, BlockEntityInit.CAMPFIRE_BLOCK_ENTITY_TYPE.get(), ModCampfireBlockEntity::cooldownTick);
+        {   return state.getValue(LIT) ? createTickerHelper(blockEntityType, BlockEntityInit.CAMPFIRE_BLOCK_ENTITY_TYPE.get(), ModCampfireBlockEntity::cookTick)
+                                       : createTickerHelper(blockEntityType, BlockEntityInit.CAMPFIRE_BLOCK_ENTITY_TYPE.get(), ModCampfireBlockEntity::cooldownTick);
         }
     }
 }

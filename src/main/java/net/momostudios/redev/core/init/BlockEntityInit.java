@@ -26,5 +26,6 @@ public class BlockEntityInit
 
     public static final RegistryObject<BlockEntityType<ModFurnaceBlockEntity>> FURNACE_BLOCK_ENTITY_TYPE =
             BLOCK_ENTITY_TYPES.register("furnace", () -> BlockEntityType.Builder.of(ModFurnaceBlockEntity::new,
-                                        ModBlocks.BLACKSTONE_FURNACE, ModBlocks.DEEPSLATE_FURNACE).build(null));
+                                        ModBlocks.BLACKSTONE_FURNACE, ModBlocks.DEEPSLATE_FURNACE, ModBlocks.ANDESITE_FURNACE,
+                                        ModBlocks.DIORITE_FURNACE, ModBlocks.GRANITE_FURNACE).build(null));
 }

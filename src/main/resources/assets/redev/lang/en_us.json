@@ -1,6 +1,6 @@
 {
   "item_group.redev.wooden_items": "Wooden Items",
-  "item_group.redev.decoration":   "Decoration",
+  "item_group.redev.main":         "ReDev",
 
 
   "item.minecraft.splash_potion.effect.sight": "Splash Potion of Sight",
@@ -86,5 +86,8 @@
   "block.redev.spruce_hedge_wall":           "Spruce Hedge Wall",
 
   "block.redev.blackstone_furnace":   "Blackstone Furnace",
-  "block.redev.deepslate_furnace":    "Deepslate Furnace"
+  "block.redev.deepslate_furnace":    "Deepslate Furnace",
+  "block.redev.andesite_furnace":     "Andesite Furnace",
+  "block.redev.diorite_furnace":      "Diorite Furnace",
+  "block.redev.granite_furnace":      "Granite Furnace"
 }

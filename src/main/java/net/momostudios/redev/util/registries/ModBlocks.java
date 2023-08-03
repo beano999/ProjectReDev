@@ -81,4 +81,7 @@ public class ModBlocks
 
     public static final Block BLACKSTONE_FURNACE = BlockInit.BLACKSTONE_FURNACE.get();
     public static final Block DEEPSLATE_FURNACE = BlockInit.DEEPSLATE_FURNACE.get();
+    public static final Block ANDESITE_FURNACE = BlockInit.ANDESITE_FURNACE.get();
+    public static final Block DIORITE_FURNACE = BlockInit.DIORITE_FURNACE.get();
+    public static final Block GRANITE_FURNACE = BlockInit.GRANITE_FURNACE.get();
 }

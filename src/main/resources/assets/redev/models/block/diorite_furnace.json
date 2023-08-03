@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "redev:block/furnace/diorite_furnace_front",
+    "side": "redev:block/furnace/diorite_furnace_side",
+    "top": "redev:block/furnace/diorite_furnace_top"
+  }
+}

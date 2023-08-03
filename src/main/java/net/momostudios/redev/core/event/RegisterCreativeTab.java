@@ -133,7 +133,10 @@ public class RegisterCreativeTab
         {
             injectItemsAfter(Items.FURNACE.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.BLACKSTONE_FURNACE.getDefaultInstance(),
-                    ModItems.DEEPSLATE_FURNACE.getDefaultInstance()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                    ModItems.DEEPSLATE_FURNACE.getDefaultInstance(),
+                    ModItems.ANDESITE_FURNACE.getDefaultInstance(),
+                    ModItems.DIORITE_FURNACE.getDefaultInstance(),
+                    ModItems.GRANITE_FURNACE.getDefaultInstance()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }
 

@@ -89,4 +89,7 @@ public class BlockInit
 
     public static final RegistryObject<Block> BLACKSTONE_FURNACE = BLOCKS.register("blackstone_furnace", () -> new ModFurnaceBlock(Block.Properties.copy(Blocks.FURNACE)));
     public static final RegistryObject<Block> DEEPSLATE_FURNACE = BLOCKS.register("deepslate_furnace", () -> new ModFurnaceBlock(Block.Properties.copy(Blocks.FURNACE)));
+    public static final RegistryObject<Block> ANDESITE_FURNACE = BLOCKS.register("andesite_furnace", () -> new ModFurnaceBlock(Block.Properties.copy(Blocks.FURNACE)));
+    public static final RegistryObject<Block> DIORITE_FURNACE = BLOCKS.register("diorite_furnace", () -> new ModFurnaceBlock(Block.Properties.copy(Blocks.FURNACE)));
+    public static final RegistryObject<Block> GRANITE_FURNACE = BLOCKS.register("granite_furnace", () -> new ModFurnaceBlock(Block.Properties.copy(Blocks.FURNACE)));
 }

@@ -87,4 +87,7 @@ public class ItemInit
 
     public static final RegistryObject<Item> BLACKSTONE_FURNACE = ITEMS.register("blackstone_furnace", () -> new BlockItem(BlockInit.BLACKSTONE_FURNACE.get(), new Item.Properties()));
     public static final RegistryObject<Item> DEEPSLATE_FURNACE = ITEMS.register("deepslate_furnace", () -> new BlockItem(BlockInit.DEEPSLATE_FURNACE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> ANDESITE_FURNACE = ITEMS.register("andesite_furnace", () -> new BlockItem(BlockInit.ANDESITE_FURNACE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DIORITE_FURNACE = ITEMS.register("diorite_furnace", () -> new BlockItem(BlockInit.DIORITE_FURNACE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> GRANITE_FURNACE = ITEMS.register("granite_furnace", () -> new BlockItem(BlockInit.GRANITE_FURNACE.get(), new Item.Properties()));
 }
