@@ -89,7 +89,17 @@ public class RegisterCreativeTab
                          ModItems.MANGROVE_RAIL.getDefaultInstance(),
                          Items.RAIL.getDefaultInstance(),
                          ModItems.SPRUCE_RAIL.getDefaultInstance(),
-                         ModItems.WARPED_RAIL.getDefaultInstance()));
+                         ModItems.WARPED_RAIL.getDefaultInstance(),
+
+                         ModItems.ACACIA_DETECTOR_RAIL.getDefaultInstance(),
+                         ModItems.BIRCH_DETECTOR_RAIL.getDefaultInstance(),
+                         ModItems.CRIMSON_DETECTOR_RAIL.getDefaultInstance(),
+                         ModItems.DARK_OAK_DETECTOR_RAIL.getDefaultInstance(),
+                         ModItems.JUNGLE_DETECTOR_RAIL.getDefaultInstance(),
+                         ModItems.MANGROVE_DETECTOR_RAIL.getDefaultInstance(),
+                         Items.DETECTOR_RAIL.getDefaultInstance(),
+                         ModItems.SPRUCE_DETECTOR_RAIL.getDefaultInstance(),
+                         ModItems.WARPED_DETECTOR_RAIL.getDefaultInstance()));
                     }).build();
         });
 

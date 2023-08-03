@@ -1,10 +1,8 @@
 package net.momostudios.redev.core.init;
 
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -76,6 +74,15 @@ public class ItemInit
     public static final RegistryObject<Item> MANGROVE_RAIL = ITEMS.register("mangrove_rail", () -> new BlockItem(BlockInit.MANGROVE_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> SPRUCE_RAIL = ITEMS.register("spruce_rail", () -> new BlockItem(BlockInit.SPRUCE_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> WARPED_RAIL = ITEMS.register("warped_rail", () -> new BlockItem(BlockInit.WARPED_RAIL.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> ACACIA_DETECTOR_RAIL = ITEMS.register("acacia_detector_rail", () -> new BlockItem(BlockInit.ACACIA_DETECTOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> BIRCH_DETECTOR_RAIL = ITEMS.register("birch_detector_rail", () -> new BlockItem(BlockInit.BIRCH_DETECTOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CRIMSON_DETECTOR_RAIL = ITEMS.register("crimson_detector_rail", () -> new BlockItem(BlockInit.CRIMSON_DETECTOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DARK_OAK_DETECTOR_RAIL = ITEMS.register("dark_oak_detector_rail", () -> new BlockItem(BlockInit.DARK_OAK_DETECTOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> JUNGLE_DETECTOR_RAIL = ITEMS.register("jungle_detector_rail", () -> new BlockItem(BlockInit.JUNGLE_DETECTOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> MANGROVE_DETECTOR_RAIL = ITEMS.register("mangrove_detector_rail", () -> new BlockItem(BlockInit.MANGROVE_DETECTOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SPRUCE_DETECTOR_RAIL = ITEMS.register("spruce_detector_rail", () -> new BlockItem(BlockInit.SPRUCE_DETECTOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WARPED_DETECTOR_RAIL = ITEMS.register("warped_detector_rail", () -> new BlockItem(BlockInit.WARPED_DETECTOR_RAIL.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> ACACIA_HEDGE = ITEMS.register("acacia_hedge", () -> new BlockItem(BlockInit.ACACIA_HEDGE.get(), new Item.Properties()));
     public static final RegistryObject<Item> AZALEA_HEDGE = ITEMS.register("azalea_hedge", () -> new BlockItem(BlockInit.AZALEA_HEDGE.get(), new Item.Properties()));

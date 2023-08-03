@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "IWI",
+    "IPI",
+    "IRI"
+  ],
+  "key":
+  {
+    "I":
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    "P":
+    {
+      "item": "minecraft:stone_pressure_plate"
+    },
+    "R":
+    {
+      "item": "minecraft:redstone"
+    },
+    "W":
+    {
+      "item": "minecraft:mangrove_slab"
+    }
+  },
+  "result":
+  {
+    "item": "redev:mangrove_detector_rail",
+    "count":  6
+  }
+}

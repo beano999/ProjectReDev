@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "redev:block/rail/mangrove_detector_rail"
+  }
+}

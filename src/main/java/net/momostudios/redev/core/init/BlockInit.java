@@ -67,6 +67,15 @@ public class BlockInit
     public static final RegistryObject<Block> SPRUCE_RAIL = BLOCKS.register("spruce_rail", () -> new RailBlock(Block.Properties.copy(Blocks.RAIL)));
     public static final RegistryObject<Block> WARPED_RAIL = BLOCKS.register("warped_rail", () -> new RailBlock(Block.Properties.copy(Blocks.RAIL)));
 
+    public static final RegistryObject<Block> ACACIA_DETECTOR_RAIL = BLOCKS.register("acacia_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
+    public static final RegistryObject<Block> BIRCH_DETECTOR_RAIL = BLOCKS.register("birch_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
+    public static final RegistryObject<Block> CRIMSON_DETECTOR_RAIL = BLOCKS.register("crimson_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
+    public static final RegistryObject<Block> DARK_OAK_DETECTOR_RAIL = BLOCKS.register("dark_oak_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
+    public static final RegistryObject<Block> JUNGLE_DETECTOR_RAIL = BLOCKS.register("jungle_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
+    public static final RegistryObject<Block> MANGROVE_DETECTOR_RAIL = BLOCKS.register("mangrove_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
+    public static final RegistryObject<Block> SPRUCE_DETECTOR_RAIL = BLOCKS.register("spruce_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
+    public static final RegistryObject<Block> WARPED_DETECTOR_RAIL = BLOCKS.register("warped_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
+
     public static final RegistryObject<Block> ACACIA_HEDGE = BLOCKS.register("acacia_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.ACACIA_LEAVES)));
     public static final RegistryObject<Block> AZALEA_HEDGE = BLOCKS.register("azalea_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.AZALEA_LEAVES)));
     public static final RegistryObject<Block> FLOWERING_AZALEA_HEDGE = BLOCKS.register("flowering_azalea_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.FLOWERING_AZALEA_LEAVES)));

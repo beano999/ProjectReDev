@@ -59,6 +59,15 @@ public class ModBlocks
     public static final Block SPRUCE_RAIL = BlockInit.SPRUCE_RAIL.get();
     public static final Block WARPED_RAIL = BlockInit.WARPED_RAIL.get();
 
+    public static final Block ACACIA_DETECTOR_RAIL = BlockInit.ACACIA_DETECTOR_RAIL.get();
+    public static final Block BIRCH_DETECTOR_RAIL = BlockInit.BIRCH_DETECTOR_RAIL.get();
+    public static final Block CRIMSON_DETECTOR_RAIL = BlockInit.CRIMSON_DETECTOR_RAIL.get();
+    public static final Block DARK_OAK_DETECTOR_RAIL = BlockInit.DARK_OAK_DETECTOR_RAIL.get();
+    public static final Block JUNGLE_DETECTOR_RAIL = BlockInit.JUNGLE_DETECTOR_RAIL.get();
+    public static final Block MANGROVE_DETECTOR_RAIL = BlockInit.MANGROVE_DETECTOR_RAIL.get();
+    public static final Block SPRUCE_DETECTOR_RAIL = BlockInit.SPRUCE_DETECTOR_RAIL.get();
+    public static final Block WARPED_DETECTOR_RAIL = BlockInit.WARPED_DETECTOR_RAIL.get();
+
     public static final Block ACACIA_HEDGE = BlockInit.ACACIA_HEDGE.get();
     public static final Block AZALEA_HEDGE = BlockInit.AZALEA_HEDGE.get();
     public static final Block FLOWERING_AZALEA_HEDGE = BlockInit.FLOWERING_AZALEA_HEDGE.get();
