@@ -102,4 +102,16 @@ public class ModItems
     public static final Item ANDESITE_FURNACE = ItemInit.ANDESITE_FURNACE.get();
     public static final Item DIORITE_FURNACE = ItemInit.DIORITE_FURNACE.get();
     public static final Item GRANITE_FURNACE = ItemInit.GRANITE_FURNACE.get();
+
+    public static final Item BLACKSTONE_DISPENSER = ItemInit.BLACKSTONE_DISPENSER.get();
+    public static final Item DEEPSLATE_DISPENSER = ItemInit.DEEPSLATE_DISPENSER.get();
+    public static final Item ANDESITE_DISPENSER = ItemInit.ANDESITE_DISPENSER.get();
+    public static final Item DIORITE_DISPENSER = ItemInit.DIORITE_DISPENSER.get();
+    public static final Item GRANITE_DISPENSER = ItemInit.GRANITE_DISPENSER.get();
+
+    public static final Item BLACKSTONE_DROPPER = ItemInit.BLACKSTONE_DROPPER.get();
+    public static final Item DEEPSLATE_DROPPER = ItemInit.DEEPSLATE_DROPPER.get();
+    public static final Item ANDESITE_DROPPER = ItemInit.ANDESITE_DROPPER.get();
+    public static final Item DIORITE_DROPPER = ItemInit.DIORITE_DROPPER.get();
+    public static final Item GRANITE_DROPPER = ItemInit.GRANITE_DROPPER.get();
 }

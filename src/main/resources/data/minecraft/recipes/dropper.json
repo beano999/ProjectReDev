@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "CCC",
+    "C C",
+    "CRC"
+  ],
+  "key":
+  {
+    "C":
+    {
+      "item": "minecraft:cobblestone"
+    },
+    "R":
+    {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result":
+  {
+    "item": "minecraft:dropper",
+    "count": 1
+  }
+}

@@ -5,10 +5,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.momostudios.redev.ReDev;
-import net.momostudios.redev.common.block.HedgeBlock;
-import net.momostudios.redev.common.block.LeafyWallBlock;
-import net.momostudios.redev.common.block.ModCampfireBlock;
-import net.momostudios.redev.common.block.ModFurnaceBlock;
+import net.momostudios.redev.common.block.*;
 
 public class BlockInit
 {
@@ -101,4 +98,16 @@ public class BlockInit
     public static final RegistryObject<Block> ANDESITE_FURNACE = BLOCKS.register("andesite_furnace", () -> new ModFurnaceBlock(Block.Properties.copy(Blocks.FURNACE)));
     public static final RegistryObject<Block> DIORITE_FURNACE = BLOCKS.register("diorite_furnace", () -> new ModFurnaceBlock(Block.Properties.copy(Blocks.FURNACE)));
     public static final RegistryObject<Block> GRANITE_FURNACE = BLOCKS.register("granite_furnace", () -> new ModFurnaceBlock(Block.Properties.copy(Blocks.FURNACE)));
+
+    public static final RegistryObject<Block> BLACKSTONE_DISPENSER = BLOCKS.register("blackstone_dispenser", () -> new ModDispenserBlock(Block.Properties.copy(Blocks.DISPENSER)));
+    public static final RegistryObject<Block> DEEPSLATE_DISPENSER = BLOCKS.register("deepslate_dispenser", () -> new ModDispenserBlock(Block.Properties.copy(Blocks.DISPENSER)));
+    public static final RegistryObject<Block> ANDESITE_DISPENSER = BLOCKS.register("andesite_dispenser", () -> new ModDispenserBlock(Block.Properties.copy(Blocks.DISPENSER)));
+    public static final RegistryObject<Block> DIORITE_DISPENSER = BLOCKS.register("diorite_dispenser", () -> new ModDispenserBlock(Block.Properties.copy(Blocks.DISPENSER)));
+    public static final RegistryObject<Block> GRANITE_DISPENSER = BLOCKS.register("granite_dispenser", () -> new ModDispenserBlock(Block.Properties.copy(Blocks.DISPENSER)));
+
+    public static final RegistryObject<Block> BLACKSTONE_DROPPER = BLOCKS.register("blackstone_dropper", () -> new ModDropperBlock(Block.Properties.copy(Blocks.DROPPER)));
+    public static final RegistryObject<Block> DEEPSLATE_DROPPER = BLOCKS.register("deepslate_dropper", () -> new ModDropperBlock(Block.Properties.copy(Blocks.DROPPER)));
+    public static final RegistryObject<Block> ANDESITE_DROPPER = BLOCKS.register("andesite_dropper", () -> new ModDropperBlock(Block.Properties.copy(Blocks.DROPPER)));
+    public static final RegistryObject<Block> DIORITE_DROPPER = BLOCKS.register("diorite_dropper", () -> new ModDropperBlock(Block.Properties.copy(Blocks.DROPPER)));
+    public static final RegistryObject<Block> GRANITE_DROPPER = BLOCKS.register("granite_dropper", () -> new ModDropperBlock(Block.Properties.copy(Blocks.DROPPER)));
 }

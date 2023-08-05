@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "DDD",
+    "D D",
+    "DRD"
+  ],
+  "key":
+  {
+    "D":
+    {
+      "item": "minecraft:deepslate"
+    },
+    "R":
+    {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result":
+  {
+    "item": "redev:deepslate_dropper",
+    "count": 1
+  }
+}

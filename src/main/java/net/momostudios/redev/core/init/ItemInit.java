@@ -109,4 +109,16 @@ public class ItemInit
     public static final RegistryObject<Item> ANDESITE_FURNACE = ITEMS.register("andesite_furnace", () -> new BlockItem(BlockInit.ANDESITE_FURNACE.get(), new Item.Properties()));
     public static final RegistryObject<Item> DIORITE_FURNACE = ITEMS.register("diorite_furnace", () -> new BlockItem(BlockInit.DIORITE_FURNACE.get(), new Item.Properties()));
     public static final RegistryObject<Item> GRANITE_FURNACE = ITEMS.register("granite_furnace", () -> new BlockItem(BlockInit.GRANITE_FURNACE.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> BLACKSTONE_DISPENSER = ITEMS.register("blackstone_dispenser", () -> new BlockItem(BlockInit.BLACKSTONE_DISPENSER.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DEEPSLATE_DISPENSER = ITEMS.register("deepslate_dispenser", () -> new BlockItem(BlockInit.DEEPSLATE_DISPENSER.get(), new Item.Properties()));
+    public static final RegistryObject<Item> ANDESITE_DISPENSER = ITEMS.register("andesite_dispenser", () -> new BlockItem(BlockInit.ANDESITE_DISPENSER.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DIORITE_DISPENSER = ITEMS.register("diorite_dispenser", () -> new BlockItem(BlockInit.DIORITE_DISPENSER.get(), new Item.Properties()));
+    public static final RegistryObject<Item> GRANITE_DISPENSER = ITEMS.register("granite_dispenser", () -> new BlockItem(BlockInit.GRANITE_DISPENSER.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> BLACKSTONE_DROPPER = ITEMS.register("blackstone_dropper", () -> new BlockItem(BlockInit.BLACKSTONE_DROPPER.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DEEPSLATE_DROPPER = ITEMS.register("deepslate_dropper", () -> new BlockItem(BlockInit.DEEPSLATE_DROPPER.get(), new Item.Properties()));
+    public static final RegistryObject<Item> ANDESITE_DROPPER = ITEMS.register("andesite_dropper", () -> new BlockItem(BlockInit.ANDESITE_DROPPER.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DIORITE_DROPPER = ITEMS.register("diorite_dropper", () -> new BlockItem(BlockInit.DIORITE_DROPPER.get(), new Item.Properties()));
+    public static final RegistryObject<Item> GRANITE_DROPPER = ITEMS.register("granite_dropper", () -> new BlockItem(BlockInit.GRANITE_DROPPER.get(), new Item.Properties()));
 }

@@ -104,5 +104,17 @@
   "block.redev.deepslate_furnace":    "Deepslate Furnace",
   "block.redev.andesite_furnace":     "Andesite Furnace",
   "block.redev.diorite_furnace":      "Diorite Furnace",
-  "block.redev.granite_furnace":      "Granite Furnace"
+  "block.redev.granite_furnace":      "Granite Furnace",
+
+  "block.redev.blackstone_dispenser":   "Blackstone Dispenser",
+  "block.redev.deepslate_dispenser":    "Deepslate Dispenser",
+  "block.redev.andesite_dispenser":     "Andesite Dispenser",
+  "block.redev.diorite_dispenser":      "Diorite Dispenser",
+  "block.redev.granite_dispenser":      "Granite Dispenser",
+
+  "block.redev.blackstone_dropper":   "Blackstone Dropper",
+  "block.redev.deepslate_dropper":    "Deepslate Dropper",
+  "block.redev.andesite_dropper":     "Andesite Dropper",
+  "block.redev.diorite_dropper":      "Diorite Dropper",
+  "block.redev.granite_dropper":      "Granite Dropper"
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "redev:block/dispenser/andesite_dispenser_front_vertical",
+    "side": "redev:block/furnace/andesite_furnace_top"
+  }
+}

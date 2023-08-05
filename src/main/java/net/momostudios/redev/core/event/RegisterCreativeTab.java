@@ -148,6 +148,27 @@ public class RegisterCreativeTab
                     ModItems.DIORITE_FURNACE.getDefaultInstance(),
                     ModItems.GRANITE_FURNACE.getDefaultInstance()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
+        else if (event.getTab() == CreativeModeTabs.REDSTONE_BLOCKS)
+        {
+            injectItemsAfter(Items.DISPENSER.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.BLACKSTONE_DISPENSER.getDefaultInstance(),
+                    ModItems.DEEPSLATE_DISPENSER.getDefaultInstance(),
+                    ModItems.ANDESITE_DISPENSER.getDefaultInstance(),
+                    ModItems.DIORITE_DISPENSER.getDefaultInstance(),
+                    ModItems.GRANITE_DISPENSER.getDefaultInstance()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            injectItemsAfter(Items.DROPPER.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.BLACKSTONE_DROPPER.getDefaultInstance(),
+                    ModItems.DEEPSLATE_DROPPER.getDefaultInstance(),
+                    ModItems.ANDESITE_DROPPER.getDefaultInstance(),
+                    ModItems.DIORITE_DROPPER.getDefaultInstance(),
+                    ModItems.GRANITE_DROPPER.getDefaultInstance()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            injectItemsAfter(Items.FURNACE.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.BLACKSTONE_FURNACE.getDefaultInstance(),
+                    ModItems.DEEPSLATE_FURNACE.getDefaultInstance(),
+                    ModItems.ANDESITE_FURNACE.getDefaultInstance(),
+                    ModItems.DIORITE_FURNACE.getDefaultInstance(),
+                    ModItems.GRANITE_FURNACE.getDefaultInstance()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
         else if (event.getTab() == CreativeModeTabs.INGREDIENTS)
         {
             event.getEntries().putAfter(Items.RABBIT_HIDE.getDefaultInstance(), ModItems.HOGLIN_HIDE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);

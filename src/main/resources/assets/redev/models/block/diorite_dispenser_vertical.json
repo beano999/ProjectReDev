@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "redev:block/dispenser/diorite_dispenser_front_vertical",
+    "side": "redev:block/furnace/diorite_furnace_top"
+  }
+}

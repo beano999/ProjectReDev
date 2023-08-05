@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "AAA",
+    "AbA",
+    "ARA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "minecraft:andesite"
+    },
+    "b":
+    {
+      "item": "minecraft:bow"
+    },
+    "R":
+    {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result":
+  {
+    "item": "redev:andesite_dispenser",
+    "count": 1
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "redev:block/deepslate_dropper_vertical",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "redev:block/deepslate_dropper",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "redev:block/deepslate_dropper"
+    },
+    "facing=south": {
+      "model": "redev:block/deepslate_dropper",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "redev:block/deepslate_dropper_vertical"
+    },
+    "facing=west": {
+      "model": "redev:block/deepslate_dropper",
+      "y": 270
+    }
+  }
+}

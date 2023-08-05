@@ -6,5 +6,7 @@
   "block.minecraft.rail":           "Oak Rail",
   "block.minecraft.detector_rail":  "Oak Detector Rail",
   "block.minecraft.smithing_table": "Oak Smithing Table",
-  "block.minecraft.furnace":        "Stone Furnace"
+  "block.minecraft.furnace":        "Stone Furnace",
+  "block.minecraft.dispenser":      "Stone Dispenser",
+  "block.minecraft.dropper":        "Stone Dropper"
 }

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "BBB",
+    "BbB",
+    "BRB"
+  ],
+  "key":
+  {
+    "B":
+    {
+      "item": "minecraft:blackstone"
+    },
+    "b":
+    {
+      "item": "minecraft:bow"
+    },
+    "R":
+    {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result":
+  {
+    "item": "redev:blackstone_dispenser",
+    "count": 1
+  }
+}

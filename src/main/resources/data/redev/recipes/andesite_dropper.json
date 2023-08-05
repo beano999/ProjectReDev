@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "AAA",
+    "A A",
+    "ARA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "minecraft:andesite"
+    },
+    "R":
+    {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result":
+  {
+    "item": "redev:andesite_dropper",
+    "count": 1
+  }
+}

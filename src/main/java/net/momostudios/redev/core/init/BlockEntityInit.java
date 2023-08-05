@@ -6,6 +6,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.momostudios.redev.ReDev;
 import net.momostudios.redev.common.block_entity.ModCampfireBlockEntity;
+import net.momostudios.redev.common.block_entity.ModDispenserBlockEntity;
+import net.momostudios.redev.common.block_entity.ModDropperBlockEntity;
 import net.momostudios.redev.common.block_entity.ModFurnaceBlockEntity;
 import net.momostudios.redev.util.registries.ModBlocks;
 
@@ -28,4 +30,14 @@ public class BlockEntityInit
             BLOCK_ENTITY_TYPES.register("furnace", () -> BlockEntityType.Builder.of(ModFurnaceBlockEntity::new,
                                         ModBlocks.BLACKSTONE_FURNACE, ModBlocks.DEEPSLATE_FURNACE, ModBlocks.ANDESITE_FURNACE,
                                         ModBlocks.DIORITE_FURNACE, ModBlocks.GRANITE_FURNACE).build(null));
+
+    public static final RegistryObject<BlockEntityType<ModDispenserBlockEntity>> DISPENSER_BLOCK_ENTITY_TYPE =
+            BLOCK_ENTITY_TYPES.register("dispenser", () -> BlockEntityType.Builder.of(ModDispenserBlockEntity::new,
+                                        ModBlocks.BLACKSTONE_DISPENSER, ModBlocks.DEEPSLATE_DISPENSER, ModBlocks.ANDESITE_DISPENSER,
+                                        ModBlocks.DIORITE_DISPENSER, ModBlocks.GRANITE_DISPENSER).build(null));
+
+    public static final RegistryObject<BlockEntityType<ModDropperBlockEntity>> DROPPER_BLOCK_ENTITY_TYPE =
+            BLOCK_ENTITY_TYPES.register("dropper", () -> BlockEntityType.Builder.of(ModDropperBlockEntity::new,
+                                        ModBlocks.BLACKSTONE_DROPPER, ModBlocks.DEEPSLATE_DROPPER, ModBlocks.ANDESITE_DROPPER,
+                                        ModBlocks.DIORITE_DROPPER, ModBlocks.GRANITE_DROPPER).build(null));
 }

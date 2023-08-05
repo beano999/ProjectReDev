@@ -93,4 +93,16 @@ public class ModBlocks
     public static final Block ANDESITE_FURNACE = BlockInit.ANDESITE_FURNACE.get();
     public static final Block DIORITE_FURNACE = BlockInit.DIORITE_FURNACE.get();
     public static final Block GRANITE_FURNACE = BlockInit.GRANITE_FURNACE.get();
+
+    public static final Block BLACKSTONE_DISPENSER = BlockInit.BLACKSTONE_DISPENSER.get();
+    public static final Block DEEPSLATE_DISPENSER = BlockInit.DEEPSLATE_DISPENSER.get();
+    public static final Block ANDESITE_DISPENSER = BlockInit.ANDESITE_DISPENSER.get();
+    public static final Block DIORITE_DISPENSER = BlockInit.DIORITE_DISPENSER.get();
+    public static final Block GRANITE_DISPENSER = BlockInit.GRANITE_DISPENSER.get();
+
+    public static final Block BLACKSTONE_DROPPER = BlockInit.BLACKSTONE_DROPPER.get();
+    public static final Block DEEPSLATE_DROPPER = BlockInit.DEEPSLATE_DROPPER.get();
+    public static final Block ANDESITE_DROPPER = BlockInit.ANDESITE_DROPPER.get();
+    public static final Block DIORITE_DROPPER = BlockInit.DIORITE_DROPPER.get();
+    public static final Block GRANITE_DROPPER = BlockInit.GRANITE_DROPPER.get();
 }
