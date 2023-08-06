@@ -7,13 +7,15 @@
   "mixins": [
     "MixinBookshelf",
     "MixinCampfireInit",
+    "MixinCreativeTabIcons",
+    "MixinCreativeTabIcons$ColorTabReset",
     "MixinFurnaceInit",
     "MixinPhantomMovement",
     "MixinPhantomTargeting",
     "MixinSmithingMenu",
+    "MixinSpecialPhantom",
     "MixinSplashPotion",
-    "MixinWalkSnow",
-    "MixinSpecialPhantom"
+    "MixinWalkSnow"
   ],
   "client": [
     "MixinEntityInvisible",
