@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "GSG",
+    "GRG",
+    "GSG"
+  ],
+  "key":
+  {
+    "G":
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    "R":
+    {
+      "item": "minecraft:redstone"
+    },
+    "S":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "minecraft:activator_rail",
+    "count":  6
+  }
+}

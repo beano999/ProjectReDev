@@ -73,6 +73,24 @@ public class BlockInit
     public static final RegistryObject<Block> SPRUCE_DETECTOR_RAIL = BLOCKS.register("spruce_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
     public static final RegistryObject<Block> WARPED_DETECTOR_RAIL = BLOCKS.register("warped_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
 
+    public static final RegistryObject<Block> ACACIA_POWERED_RAIL = BLOCKS.register("acacia_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
+    public static final RegistryObject<Block> BIRCH_POWERED_RAIL = BLOCKS.register("birch_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
+    public static final RegistryObject<Block> CRIMSON_POWERED_RAIL = BLOCKS.register("crimson_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
+    public static final RegistryObject<Block> DARK_OAK_POWERED_RAIL = BLOCKS.register("dark_oak_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
+    public static final RegistryObject<Block> JUNGLE_POWERED_RAIL = BLOCKS.register("jungle_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
+    public static final RegistryObject<Block> MANGROVE_POWERED_RAIL = BLOCKS.register("mangrove_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
+    public static final RegistryObject<Block> SPRUCE_POWERED_RAIL = BLOCKS.register("spruce_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
+    public static final RegistryObject<Block> WARPED_POWERED_RAIL = BLOCKS.register("warped_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
+
+    public static final RegistryObject<Block> ACACIA_ACTIVATOR_RAIL = BLOCKS.register("acacia_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
+    public static final RegistryObject<Block> BIRCH_ACTIVATOR_RAIL = BLOCKS.register("birch_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
+    public static final RegistryObject<Block> CRIMSON_ACTIVATOR_RAIL = BLOCKS.register("crimson_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
+    public static final RegistryObject<Block> DARK_OAK_ACTIVATOR_RAIL = BLOCKS.register("dark_oak_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
+    public static final RegistryObject<Block> JUNGLE_ACTIVATOR_RAIL = BLOCKS.register("jungle_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
+    public static final RegistryObject<Block> MANGROVE_ACTIVATOR_RAIL = BLOCKS.register("mangrove_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
+    public static final RegistryObject<Block> SPRUCE_ACTIVATOR_RAIL = BLOCKS.register("spruce_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
+    public static final RegistryObject<Block> WARPED_ACTIVATOR_RAIL = BLOCKS.register("warped_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
+
     public static final RegistryObject<Block> ACACIA_HEDGE = BLOCKS.register("acacia_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.ACACIA_LEAVES)));
     public static final RegistryObject<Block> AZALEA_HEDGE = BLOCKS.register("azalea_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.AZALEA_LEAVES)));
     public static final RegistryObject<Block> FLOWERING_AZALEA_HEDGE = BLOCKS.register("flowering_azalea_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.FLOWERING_AZALEA_LEAVES)));

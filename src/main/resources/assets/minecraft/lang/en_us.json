@@ -5,6 +5,8 @@
   "block.minecraft.ladder":         "Oak Ladder",
   "block.minecraft.rail":           "Oak Rail",
   "block.minecraft.detector_rail":  "Oak Detector Rail",
+  "block.minecraft.powered_rail":   "Oak Powered Rail",
+  "block.minecraft.activator_rail": "Oak Activator Rail",
   "block.minecraft.smithing_table": "Oak Smithing Table",
   "block.minecraft.furnace":        "Stone Furnace",
   "block.minecraft.dispenser":      "Stone Dispenser",

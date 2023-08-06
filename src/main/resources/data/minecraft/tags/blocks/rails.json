@@ -17,6 +17,22 @@
     "redev:jungle_detector_rail",
     "redev:mangrove_detector_rail",
     "redev:spruce_detector_rail",
-    "redev:warped_detector_rail"
+    "redev:warped_detector_rail",
+    "redev:acacia_powered_rail",
+    "redev:birch_powered_rail",
+    "redev:crimson_powered_rail",
+    "redev:dark_oak_powered_rail",
+    "redev:jungle_powered_rail",
+    "redev:mangrove_powered_rail",
+    "redev:spruce_powered_rail",
+    "redev:warped_powered_rail",
+    "redev:acacia_activator_rail",
+    "redev:birch_activator_rail",
+    "redev:crimson_activator_rail",
+    "redev:dark_oak_activator_rail",
+    "redev:jungle_activator_rail",
+    "redev:mangrove_activator_rail",
+    "redev:spruce_activator_rail",
+    "redev:warped_activator_rail"
   ]
 }

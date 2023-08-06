@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "G G",
+    "GWG",
+    "GRG"
+  ],
+  "key":
+  {
+    "G":
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    "S":
+    {
+      "item": "minecraft:stick"
+    },
+    "R":
+    {
+      "item": "minecraft:redstone"
+    },
+    "W":
+    {
+      "item": "minecraft:acacia_slab"
+    }
+  },
+  "result":
+  {
+    "item": "redev:acacia_powered_rail",
+    "count":  6
+  }
+}

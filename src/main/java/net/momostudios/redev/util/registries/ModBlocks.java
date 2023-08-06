@@ -1,6 +1,7 @@
 package net.momostudios.redev.util.registries;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.momostudios.redev.core.init.BlockInit;
 
 public class ModBlocks
@@ -67,6 +68,24 @@ public class ModBlocks
     public static final Block MANGROVE_DETECTOR_RAIL = BlockInit.MANGROVE_DETECTOR_RAIL.get();
     public static final Block SPRUCE_DETECTOR_RAIL = BlockInit.SPRUCE_DETECTOR_RAIL.get();
     public static final Block WARPED_DETECTOR_RAIL = BlockInit.WARPED_DETECTOR_RAIL.get();
+
+    public static final Block ACACIA_POWERED_RAIL = BlockInit.ACACIA_POWERED_RAIL.get();
+    public static final Block BIRCH_POWERED_RAIL = BlockInit.BIRCH_POWERED_RAIL.get();
+    public static final Block CRIMSON_POWERED_RAIL = BlockInit.CRIMSON_POWERED_RAIL.get();
+    public static final Block DARK_OAK_POWERED_RAIL = BlockInit.DARK_OAK_POWERED_RAIL.get();
+    public static final Block JUNGLE_POWERED_RAIL = BlockInit.JUNGLE_POWERED_RAIL.get();
+    public static final Block MANGROVE_POWERED_RAIL = BlockInit.MANGROVE_POWERED_RAIL.get();
+    public static final Block SPRUCE_POWERED_RAIL = BlockInit.SPRUCE_POWERED_RAIL.get();
+    public static final Block WARPED_POWERED_RAIL = BlockInit.WARPED_POWERED_RAIL.get();
+
+    public static final Block ACACIA_ACTIVATOR_RAIL = BlockInit.ACACIA_ACTIVATOR_RAIL.get();
+    public static final Block BIRCH_ACTIVATOR_RAIL = BlockInit.BIRCH_ACTIVATOR_RAIL.get();
+    public static final Block CRIMSON_ACTIVATOR_RAIL = BlockInit.CRIMSON_ACTIVATOR_RAIL.get();
+    public static final Block DARK_OAK_ACTIVATOR_RAIL = BlockInit.DARK_OAK_ACTIVATOR_RAIL.get();
+    public static final Block JUNGLE_ACTIVATOR_RAIL = BlockInit.JUNGLE_ACTIVATOR_RAIL.get();
+    public static final Block MANGROVE_ACTIVATOR_RAIL = BlockInit.MANGROVE_ACTIVATOR_RAIL.get();
+    public static final Block SPRUCE_ACTIVATOR_RAIL = BlockInit.SPRUCE_ACTIVATOR_RAIL.get();
+    public static final Block WARPED_ACTIVATOR_RAIL = BlockInit.WARPED_ACTIVATOR_RAIL.get();
 
     public static final Block ACACIA_HEDGE = BlockInit.ACACIA_HEDGE.get();
     public static final Block AZALEA_HEDGE = BlockInit.AZALEA_HEDGE.get();

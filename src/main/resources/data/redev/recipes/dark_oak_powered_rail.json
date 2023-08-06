@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "G G",
+    "GWG",
+    "GRG"
+  ],
+  "key":
+  {
+    "G":
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    "R":
+    {
+      "item": "minecraft:redstone"
+    },
+    "W":
+    {
+      "item": "minecraft:dark_oak_slab"
+    }
+  },
+  "result":
+  {
+    "item": "redev:dark_oak_powered_rail",
+    "count":  6
+  }
+}

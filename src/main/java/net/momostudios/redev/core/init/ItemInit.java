@@ -84,6 +84,24 @@ public class ItemInit
     public static final RegistryObject<Item> SPRUCE_DETECTOR_RAIL = ITEMS.register("spruce_detector_rail", () -> new BlockItem(BlockInit.SPRUCE_DETECTOR_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> WARPED_DETECTOR_RAIL = ITEMS.register("warped_detector_rail", () -> new BlockItem(BlockInit.WARPED_DETECTOR_RAIL.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> ACACIA_POWERED_RAIL = ITEMS.register("acacia_powered_rail", () -> new BlockItem(BlockInit.ACACIA_POWERED_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> BIRCH_POWERED_RAIL = ITEMS.register("birch_powered_rail", () -> new BlockItem(BlockInit.BIRCH_POWERED_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CRIMSON_POWERED_RAIL = ITEMS.register("crimson_powered_rail", () -> new BlockItem(BlockInit.CRIMSON_POWERED_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DARK_OAK_POWERED_RAIL = ITEMS.register("dark_oak_powered_rail", () -> new BlockItem(BlockInit.DARK_OAK_POWERED_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> JUNGLE_POWERED_RAIL = ITEMS.register("jungle_powered_rail", () -> new BlockItem(BlockInit.JUNGLE_POWERED_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> MANGROVE_POWERED_RAIL = ITEMS.register("mangrove_powered_rail", () -> new BlockItem(BlockInit.MANGROVE_POWERED_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SPRUCE_POWERED_RAIL = ITEMS.register("spruce_powered_rail", () -> new BlockItem(BlockInit.SPRUCE_POWERED_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WARPED_POWERED_RAIL = ITEMS.register("warped_powered_rail", () -> new BlockItem(BlockInit.WARPED_POWERED_RAIL.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> ACACIA_ACTIVATOR_RAIL = ITEMS.register("acacia_activator_rail", () -> new BlockItem(BlockInit.ACACIA_ACTIVATOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> BIRCH_ACTIVATOR_RAIL = ITEMS.register("birch_activator_rail", () -> new BlockItem(BlockInit.BIRCH_ACTIVATOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CRIMSON_ACTIVATOR_RAIL = ITEMS.register("crimson_activator_rail", () -> new BlockItem(BlockInit.CRIMSON_ACTIVATOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DARK_OAK_ACTIVATOR_RAIL = ITEMS.register("dark_oak_activator_rail", () -> new BlockItem(BlockInit.DARK_OAK_ACTIVATOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> JUNGLE_ACTIVATOR_RAIL = ITEMS.register("jungle_activator_rail", () -> new BlockItem(BlockInit.JUNGLE_ACTIVATOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> MANGROVE_ACTIVATOR_RAIL = ITEMS.register("mangrove_activator_rail", () -> new BlockItem(BlockInit.MANGROVE_ACTIVATOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SPRUCE_ACTIVATOR_RAIL = ITEMS.register("spruce_activator_rail", () -> new BlockItem(BlockInit.SPRUCE_ACTIVATOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WARPED_ACTIVATOR_RAIL = ITEMS.register("warped_activator_rail", () -> new BlockItem(BlockInit.WARPED_ACTIVATOR_RAIL.get(), new Item.Properties()));
+
     public static final RegistryObject<Item> ACACIA_HEDGE = ITEMS.register("acacia_hedge", () -> new BlockItem(BlockInit.ACACIA_HEDGE.get(), new Item.Properties()));
     public static final RegistryObject<Item> AZALEA_HEDGE = ITEMS.register("azalea_hedge", () -> new BlockItem(BlockInit.AZALEA_HEDGE.get(), new Item.Properties()));
     public static final RegistryObject<Item> FLOWERING_AZALEA_HEDGE = ITEMS.register("flowering_azalea_hedge", () -> new BlockItem(BlockInit.FLOWERING_AZALEA_HEDGE.get(), new Item.Properties()));

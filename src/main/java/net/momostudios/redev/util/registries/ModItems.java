@@ -77,6 +77,24 @@ public class ModItems
     public static final Item SPRUCE_DETECTOR_RAIL = ItemInit.SPRUCE_DETECTOR_RAIL.get();
     public static final Item WARPED_DETECTOR_RAIL = ItemInit.WARPED_DETECTOR_RAIL.get();
 
+    public static final Item ACACIA_POWERED_RAIL = ItemInit.ACACIA_POWERED_RAIL.get();
+    public static final Item BIRCH_POWERED_RAIL = ItemInit.BIRCH_POWERED_RAIL.get();
+    public static final Item CRIMSON_POWERED_RAIL = ItemInit.CRIMSON_POWERED_RAIL.get();
+    public static final Item DARK_OAK_POWERED_RAIL = ItemInit.DARK_OAK_POWERED_RAIL.get();
+    public static final Item JUNGLE_POWERED_RAIL = ItemInit.JUNGLE_POWERED_RAIL.get();
+    public static final Item MANGROVE_POWERED_RAIL = ItemInit.MANGROVE_POWERED_RAIL.get();
+    public static final Item SPRUCE_POWERED_RAIL = ItemInit.SPRUCE_POWERED_RAIL.get();
+    public static final Item WARPED_POWERED_RAIL = ItemInit.WARPED_POWERED_RAIL.get();
+
+    public static final Item ACACIA_ACTIVATOR_RAIL = ItemInit.ACACIA_ACTIVATOR_RAIL.get();
+    public static final Item BIRCH_ACTIVATOR_RAIL = ItemInit.BIRCH_ACTIVATOR_RAIL.get();
+    public static final Item CRIMSON_ACTIVATOR_RAIL = ItemInit.CRIMSON_ACTIVATOR_RAIL.get();
+    public static final Item DARK_OAK_ACTIVATOR_RAIL = ItemInit.DARK_OAK_ACTIVATOR_RAIL.get();
+    public static final Item JUNGLE_ACTIVATOR_RAIL = ItemInit.JUNGLE_ACTIVATOR_RAIL.get();
+    public static final Item MANGROVE_ACTIVATOR_RAIL = ItemInit.MANGROVE_ACTIVATOR_RAIL.get();
+    public static final Item SPRUCE_ACTIVATOR_RAIL = ItemInit.SPRUCE_ACTIVATOR_RAIL.get();
+    public static final Item WARPED_ACTIVATOR_RAIL = ItemInit.WARPED_ACTIVATOR_RAIL.get();
+
     public static final Item ACACIA_HEDGE = ItemInit.ACACIA_HEDGE.get();
     public static final Item AZALEA_HEDGE = ItemInit.AZALEA_HEDGE.get();
     public static final Item FLOWERING_AZALEA_HEDGE = ItemInit.FLOWERING_AZALEA_HEDGE.get();

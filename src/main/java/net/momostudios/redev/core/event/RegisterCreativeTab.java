@@ -24,7 +24,7 @@ public class RegisterCreativeTab
     @SubscribeEvent
     public static void onCreativeTabRegister(CreativeModeTabEvent.Register event)
     {
-        event.registerCreativeModeTab(new ResourceLocation(ReDev.MOD_ID, "redev_wood_items"), builder ->
+        event.registerCreativeModeTab(new ResourceLocation(ReDev.MOD_ID, "wooden_items"), builder ->
         {
              builder.title(Component.translatable("item_group." + ReDev.MOD_ID + ".wooden_items"))
                     .icon(ModItems.SPRUCE_BOOKSHELF::getDefaultInstance)
@@ -99,7 +99,27 @@ public class RegisterCreativeTab
                          ModItems.MANGROVE_DETECTOR_RAIL.getDefaultInstance(),
                          Items.DETECTOR_RAIL.getDefaultInstance(),
                          ModItems.SPRUCE_DETECTOR_RAIL.getDefaultInstance(),
-                         ModItems.WARPED_DETECTOR_RAIL.getDefaultInstance()));
+                         ModItems.WARPED_DETECTOR_RAIL.getDefaultInstance(),
+
+                         ModItems.ACACIA_POWERED_RAIL.getDefaultInstance(),
+                         ModItems.BIRCH_POWERED_RAIL.getDefaultInstance(),
+                         ModItems.CRIMSON_POWERED_RAIL.getDefaultInstance(),
+                         ModItems.DARK_OAK_POWERED_RAIL.getDefaultInstance(),
+                         ModItems.JUNGLE_POWERED_RAIL.getDefaultInstance(),
+                         ModItems.MANGROVE_POWERED_RAIL.getDefaultInstance(),
+                         Items.POWERED_RAIL.getDefaultInstance(),
+                         ModItems.SPRUCE_POWERED_RAIL.getDefaultInstance(),
+                         ModItems.WARPED_POWERED_RAIL.getDefaultInstance(),
+
+                         ModItems.ACACIA_ACTIVATOR_RAIL.getDefaultInstance(),
+                         ModItems.BIRCH_ACTIVATOR_RAIL.getDefaultInstance(),
+                         ModItems.CRIMSON_ACTIVATOR_RAIL.getDefaultInstance(),
+                         ModItems.DARK_OAK_ACTIVATOR_RAIL.getDefaultInstance(),
+                         ModItems.JUNGLE_ACTIVATOR_RAIL.getDefaultInstance(),
+                         ModItems.MANGROVE_ACTIVATOR_RAIL.getDefaultInstance(),
+                         Items.ACTIVATOR_RAIL.getDefaultInstance(),
+                         ModItems.SPRUCE_ACTIVATOR_RAIL.getDefaultInstance(),
+                         ModItems.WARPED_ACTIVATOR_RAIL.getDefaultInstance()));
                     }).build();
         });
 
