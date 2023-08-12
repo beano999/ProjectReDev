@@ -10,5 +10,16 @@
   "block.minecraft.smithing_table": "Oak Smithing Table",
   "block.minecraft.furnace":        "Stone Furnace",
   "block.minecraft.dispenser":      "Stone Dispenser",
-  "block.minecraft.dropper":        "Stone Dropper"
+  "block.minecraft.dropper":        "Stone Dropper",
+
+  "potion.potency.9": "X",
+  "potion.potency.8": "IX",
+  "potion.potency.7": "VIII",
+  "potion.potency.6": "VII",
+  "potion.potency.5": "VI",
+  "potion.potency.4": "V",
+  "potion.potency.3": "IV",
+  "potion.potency.2": "III",
+  "potion.potency.1": "II",
+  "potion.potency.0": "I"
 }

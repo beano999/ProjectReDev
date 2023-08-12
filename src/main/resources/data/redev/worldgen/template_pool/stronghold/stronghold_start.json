@@ -1,12 +1,12 @@
 {
-  "fallback": "minecraft:empty",
+  "fallback": "redev:stronghold/stronghold_end",
   "elements":
   [
     {
       "weight": 150,
       "element":
       {
-        "location": "redev:stronghold_portal",
+        "location": "redev:stronghold/stronghold_portal",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
