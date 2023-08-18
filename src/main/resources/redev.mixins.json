@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.momostudios.redev.mixin",
+  "package": "net.roadkill.redev.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "redev.refmap.json",
   "mixins": [
