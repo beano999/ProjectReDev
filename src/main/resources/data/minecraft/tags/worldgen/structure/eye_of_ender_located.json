@@ -1,0 +1,11 @@
+{
+  "replace": "false",
+  "values":
+  [
+    "redev:stronghold"
+  ],
+  "remove":
+  [
+    "minecraft:stronghold"
+  ]
+}
