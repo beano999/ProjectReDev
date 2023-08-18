@@ -1,5 +1,5 @@
 {
-  "fallback": "redev:stronghold/stronghold_end",
+  "fallback": "minecraft:empty",
   "elements":
   [
     {

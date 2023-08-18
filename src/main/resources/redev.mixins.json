@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "redev.refmap.json",
   "mixins": [
+    "MixinBlockConnections",
     "MixinBookshelf",
     "MixinCampfireInit",
     "MixinCreativeTabIcons",
@@ -12,6 +13,9 @@
     "MixinFurnaceInit",
     "MixinPhantomMovement",
     "MixinPhantomTargeting",
+    "MixinReplaceStronghold",
+    "MixinReplaceStronghold$DisableVanillaStrongholdsMixin",
+    "MixinReplaceStronghold$LocateStrongholdCommandMixin",
     "MixinSmithingMenu",
     "MixinSpecialPhantom",
     "MixinSplashPotion",

@@ -1,0 +1,16 @@
+{
+  "structures": [
+    {
+      "structure": "redev:stronghold",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 596441294,
+    "spread": 3,
+    "distance": 18,
+    "count": 128,
+    "preferred_biomes": [],
+    "type": "minecraft:concentric_rings"
+  }
+}
