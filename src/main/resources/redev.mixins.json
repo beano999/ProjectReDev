@@ -11,6 +11,7 @@
     "MixinCreativeTabIcons",
     "MixinCreativeTabIcons$ColorTabReset",
     "MixinFurnaceInit",
+    "MixinHangingLoad",
     "MixinMobSpawning",
     "MixinPhantomMovement",
     "MixinPhantomTargeting",
