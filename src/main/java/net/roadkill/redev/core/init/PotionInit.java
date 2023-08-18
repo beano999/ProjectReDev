@@ -25,9 +25,9 @@ public final class PotionInit
             new Potion("resistance", new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 9)));
 
     public static final RegistryObject<Potion> HASTE = POTIONS.register("haste", () ->
-            new Potion(new MobEffectInstance(MobEffects.DIG_SPEED, 12000)));
+            new Potion(new MobEffectInstance(MobEffects.DIG_SPEED, 36000)));
     public static final RegistryObject<Potion> HASTE_STRONG = POTIONS.register("haste_strong", () ->
-            new Potion("haste", new MobEffectInstance(MobEffects.DIG_SPEED, 8400, 1)));
+            new Potion("haste", new MobEffectInstance(MobEffects.DIG_SPEED, 18000, 1)));
 
     public static final RegistryObject<Potion> BLINDNESS = POTIONS.register("blindness", () ->
             new Potion(new MobEffectInstance(MobEffects.BLINDNESS, 400)));

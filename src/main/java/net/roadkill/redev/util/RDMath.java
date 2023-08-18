@@ -27,4 +27,11 @@ public final class RDMath
         }
         return true;
     }
+
+    public static double blend(double blendFrom, double blendTo, double factor, double rangeMin, double rangeMax)
+    {
+        if (factor <= rangeMin) return blendFrom;
+        if (factor >= rangeMax) return blendTo;
+        return ((1 / (rangeMax - rangeMin)) * (factor - rangeMin)) * (blendTo - blendFrom) + blendFrom;
+    }
 }

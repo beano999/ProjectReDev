@@ -1,0 +1,40 @@
+package net.roadkill.redev.data.biome_modifiers;
+
+import com.mojang.serialization.Codec;
+import net.minecraft.core.Holder;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraftforge.common.world.BiomeModifier;
+import net.minecraftforge.common.world.ModifiableBiomeInfo;
+import net.roadkill.redev.core.init.BiomeCodecInit;
+import net.roadkill.redev.data.FunctionalSpawnerData;
+
+
+public record AddSpawnsBiomeModifier(boolean dummy) implements BiomeModifier
+{
+    @Override
+    public void modify(Holder<Biome> biome, Phase phase, ModifiableBiomeInfo.BiomeInfo.Builder builder)
+    {
+        if (phase == Phase.ADD)
+        {
+            biome.unwrapKey().ifPresent(biomeKey ->
+            {
+                if (biome.is(BiomeTags.IS_OVERWORLD))
+                {
+                    builder.getMobSpawnSettings().addSpawn(MobCategory.MONSTER, new FunctionalSpawnerData(EntityType.CAVE_SPIDER, 500, 1, 3,
+                    (level, structureManager, chunkGenerator, category, spawnerData, pos) ->
+                    {
+                        return level.random.nextInt(level.getMinBuildHeight(), level.getSeaLevel()) > pos.getY();
+                    }));
+                }
+            });
+        }
+    }
+
+    @Override
+    public Codec<? extends BiomeModifier> codec()
+    {   return BiomeCodecInit.ADD_SPAWNS_CODEC.get();
+    }
+}

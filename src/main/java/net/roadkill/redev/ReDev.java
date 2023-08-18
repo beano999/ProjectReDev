@@ -32,6 +32,7 @@ public class ReDev
         BlockInit.BLOCKS.register(bus);
         ItemInit.ITEMS.register(bus);
         BlockEntityInit.BLOCK_ENTITY_TYPES.register(bus);
+        BiomeCodecInit.BIOME_MODIFIER_SERIALIZERS.register(bus);
     }
 
     public void onCommonSetup(final FMLCommonSetupEvent event)
