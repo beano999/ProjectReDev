@@ -157,7 +157,9 @@ public class RegisterCreativeTab
                     ModItems.JUNGLE_HEDGE_WALL.getDefaultInstance(),
                     ModItems.MANGROVE_HEDGE_WALL.getDefaultInstance(),
                     ModItems.OAK_HEDGE_WALL.getDefaultInstance(),
-                    ModItems.SPRUCE_HEDGE_WALL.getDefaultInstance()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                    ModItems.SPRUCE_HEDGE_WALL.getDefaultInstance()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.getEntries().putAfter(Items.NETHER_GOLD_ORE.getDefaultInstance(), ModItems.FOOLS_GOLD_ORE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
         else if (event.getTab() == CreativeModeTabs.FUNCTIONAL_BLOCKS)
         {
@@ -175,23 +177,30 @@ public class RegisterCreativeTab
                     ModItems.DEEPSLATE_DISPENSER.getDefaultInstance(),
                     ModItems.ANDESITE_DISPENSER.getDefaultInstance(),
                     ModItems.DIORITE_DISPENSER.getDefaultInstance(),
-                    ModItems.GRANITE_DISPENSER.getDefaultInstance()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                    ModItems.GRANITE_DISPENSER.getDefaultInstance()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             injectItemsAfter(Items.DROPPER.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.BLACKSTONE_DROPPER.getDefaultInstance(),
                     ModItems.DEEPSLATE_DROPPER.getDefaultInstance(),
                     ModItems.ANDESITE_DROPPER.getDefaultInstance(),
                     ModItems.DIORITE_DROPPER.getDefaultInstance(),
-                    ModItems.GRANITE_DROPPER.getDefaultInstance()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                    ModItems.GRANITE_DROPPER.getDefaultInstance()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             injectItemsAfter(Items.FURNACE.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.BLACKSTONE_FURNACE.getDefaultInstance(),
                     ModItems.DEEPSLATE_FURNACE.getDefaultInstance(),
                     ModItems.ANDESITE_FURNACE.getDefaultInstance(),
                     ModItems.DIORITE_FURNACE.getDefaultInstance(),
-                    ModItems.GRANITE_FURNACE.getDefaultInstance()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                    ModItems.GRANITE_FURNACE.getDefaultInstance()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
         else if (event.getTab() == CreativeModeTabs.INGREDIENTS)
         {
             event.getEntries().putAfter(Items.RABBIT_HIDE.getDefaultInstance(), ModItems.HOGLIN_HIDE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.getEntries().putAfter(Items.GOLD_NUGGET.getDefaultInstance(), ModItems.FOOLS_GOLD_NUGGET.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.getEntries().putAfter(Items.GOLD_INGOT.getDefaultInstance(), ModItems.FOOLS_GOLD_INGOT.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
         else if (event.getTab() == CreativeModeTabs.COMBAT)
         {
@@ -199,7 +208,14 @@ public class RegisterCreativeTab
                     ModItems.HOGLIN_HIDE_CAP.getDefaultInstance(),
                     ModItems.HOGLIN_HIDE_TUNIC.getDefaultInstance(),
                     ModItems.HOGLIN_HIDE_PANTS.getDefaultInstance(),
-                    ModItems.HOGLIN_HIDE_BOOTS.getDefaultInstance()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                    ModItems.HOGLIN_HIDE_BOOTS.getDefaultInstance()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
+        else if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS)
+        {
+            injectItemsAfter(Items.GOLD_BLOCK.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.FOOLS_GOLD_BLOCK.getDefaultInstance()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }
 

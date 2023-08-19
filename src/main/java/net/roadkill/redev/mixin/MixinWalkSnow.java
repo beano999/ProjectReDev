@@ -24,7 +24,7 @@ public class MixinWalkSnow
         if (entity instanceof LivingEntity living && state.is(Blocks.SNOW)
         && living.getItemBySlot(EquipmentSlot.FEET).isEmpty())
         {   Vec3 motion = living.getDeltaMovement();
-            living.setDeltaMovement(motion.x / 1.5, motion.y, motion.z / 1.5);
+            living.setDeltaMovement(motion.x / 1.25, motion.y, motion.z / 1.25);
         }
     }
 }

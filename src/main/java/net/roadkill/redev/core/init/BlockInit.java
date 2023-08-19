@@ -1,6 +1,10 @@
 package net.roadkill.redev.core.init;
 
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -128,4 +132,7 @@ public class BlockInit
     public static final RegistryObject<Block> ANDESITE_DROPPER = BLOCKS.register("andesite_dropper", () -> new ModDropperBlock(Block.Properties.copy(Blocks.DROPPER)));
     public static final RegistryObject<Block> DIORITE_DROPPER = BLOCKS.register("diorite_dropper", () -> new ModDropperBlock(Block.Properties.copy(Blocks.DROPPER)));
     public static final RegistryObject<Block> GRANITE_DROPPER = BLOCKS.register("granite_dropper", () -> new ModDropperBlock(Block.Properties.copy(Blocks.DROPPER)));
+
+    public static final RegistryObject<Block> FOOLS_GOLD_BLOCK = BLOCKS.register("fools_gold_block", () -> new Block(Block.Properties.copy(Blocks.GOLD_BLOCK)));
+    public static final RegistryObject<Block> FOOLS_GOLD_ORE = BLOCKS.register("fools_gold_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.NETHER).strength(1.0F, 3.0F).sound(SoundType.NETHER_GOLD_ORE), UniformInt.of(0, 1)));
 }

@@ -50,6 +50,9 @@
   "item.redev.hoglin_hide_leggings":   "Hoglin Hide Pants",
   "item.redev.hoglin_hide_boots":      "Hoglin Hide Boots",
 
+  "item.redev.fools_gold_nugget":      "Fool's Gold Nugget",
+  "item.redev.fools_gold_ingot":       "Fool's Gold Ingot",
+
 
   "effect.redev.sight": "Sight",
 
@@ -171,5 +174,8 @@
   "block.redev.deepslate_dropper":    "Deepslate Dropper",
   "block.redev.andesite_dropper":     "Andesite Dropper",
   "block.redev.diorite_dropper":      "Diorite Dropper",
-  "block.redev.granite_dropper":      "Granite Dropper"
+  "block.redev.granite_dropper":      "Granite Dropper",
+
+  "block.redev.fools_gold_block":       "Block of Fool's Gold",
+  "block.redev.fools_gold_ore":         "Fool's Gold Ore"
 }

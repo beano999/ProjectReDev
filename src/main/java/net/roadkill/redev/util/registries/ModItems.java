@@ -3,6 +3,8 @@ package net.roadkill.redev.util.registries;
 import net.minecraft.world.item.Item;
 import net.roadkill.redev.core.init.ItemInit;
 
+import javax.imageio.spi.IIORegistry;
+
 public class ModItems
 {
     public static final Item HOGLIN_HIDE = ItemInit.HOGLIN_HIDE.get();
@@ -132,4 +134,9 @@ public class ModItems
     public static final Item ANDESITE_DROPPER = ItemInit.ANDESITE_DROPPER.get();
     public static final Item DIORITE_DROPPER = ItemInit.DIORITE_DROPPER.get();
     public static final Item GRANITE_DROPPER = ItemInit.GRANITE_DROPPER.get();
+
+    public static final Item FOOLS_GOLD_NUGGET = ItemInit.FOOLS_GOLD_NUGGET.get();
+    public static final Item FOOLS_GOLD_INGOT = ItemInit.FOOLS_GOLD_INGOT.get();
+    public static final Item FOOLS_GOLD_BLOCK = ItemInit.FOOLS_GOLD_BLOCK.get();
+    public static final Item FOOLS_GOLD_ORE = ItemInit.FOOLS_GOLD_ORE.get();
 }

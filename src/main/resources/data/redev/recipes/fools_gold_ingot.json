@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "NN",
+    "NN"
+  ],
+  "key":
+  {
+    "N":
+    {
+      "item": "redev:fools_gold_nugget"
+    }
+  },
+  "result":
+  {
+    "item": "redev:fools_gold_ingot",
+    "count":  1
+  }
+}

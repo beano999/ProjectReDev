@@ -139,4 +139,9 @@ public class ItemInit
     public static final RegistryObject<Item> ANDESITE_DROPPER = ITEMS.register("andesite_dropper", () -> new BlockItem(BlockInit.ANDESITE_DROPPER.get(), new Item.Properties()));
     public static final RegistryObject<Item> DIORITE_DROPPER = ITEMS.register("diorite_dropper", () -> new BlockItem(BlockInit.DIORITE_DROPPER.get(), new Item.Properties()));
     public static final RegistryObject<Item> GRANITE_DROPPER = ITEMS.register("granite_dropper", () -> new BlockItem(BlockInit.GRANITE_DROPPER.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> FOOLS_GOLD_NUGGET = ITEMS.register("fools_gold_nugget", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FOOLS_GOLD_INGOT = ITEMS.register("fools_gold_ingot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FOOLS_GOLD_BLOCK = ITEMS.register("fools_gold_block", () -> new BlockItem(BlockInit.FOOLS_GOLD_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FOOLS_GOLD_ORE = ITEMS.register("fools_gold_ore", () -> new BlockItem(BlockInit.FOOLS_GOLD_ORE.get(), new Item.Properties()));
 }

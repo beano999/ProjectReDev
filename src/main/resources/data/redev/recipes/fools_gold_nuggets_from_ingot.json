@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item": "redev:fools_gold_nugget"
+    }
+  ],
+  "result":
+  {
+    "item": "redev:fools_gold_nugget",
+    "count":  4
+  }
+}

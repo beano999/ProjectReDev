@@ -123,4 +123,7 @@ public class ModBlocks
     public static final Block ANDESITE_DROPPER = BlockInit.ANDESITE_DROPPER.get();
     public static final Block DIORITE_DROPPER = BlockInit.DIORITE_DROPPER.get();
     public static final Block GRANITE_DROPPER = BlockInit.GRANITE_DROPPER.get();
+
+    public static final Block FOOLS_GOLD_BLOCK = BlockInit.FOOLS_GOLD_BLOCK.get();
+    public static final Block FOOLS_GOLD_ORE = BlockInit.FOOLS_GOLD_ORE.get();
 }
