@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "redev:fools_gold_nugget",
+          "name": "redev:nether_gold_nugget",
           "functions": [
             {
               "function": "minecraft:set_count",

@@ -3,12 +3,12 @@
   "ingredients":
   [
     {
-      "item": "redev:fools_gold_block"
+      "item": "redev:nether_gold_block"
     }
   ],
   "result":
   {
-    "item": "redev:fools_gold_ingot",
+    "item": "redev:nether_gold_ingot",
     "count":  9
   }
 }

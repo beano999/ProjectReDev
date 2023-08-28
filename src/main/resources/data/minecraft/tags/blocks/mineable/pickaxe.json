@@ -49,7 +49,7 @@
     "redev:andesite_dropper",
     "redev:diorite_dropper",
     "redev:granite_dropper",
-    "redev:fools_gold_block",
-    "redev:fools_gold_ore"
+    "redev:nether_gold_block",
+    "redev:nether_gold_ore"
   ]
 }

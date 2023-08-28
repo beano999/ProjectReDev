@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "redev:block/nether_gold_block"
+    }
+  }
+}

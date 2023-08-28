@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "features": "redev:ore_fools_gold",
+  "features": "redev:ore_nether_gold",
   "biomes": "#minecraft:is_nether",
   "step": "underground_ores"
 }

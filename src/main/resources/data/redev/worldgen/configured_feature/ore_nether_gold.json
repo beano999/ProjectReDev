@@ -7,10 +7,10 @@
       {
         "target": {
           "predicate_type": "minecraft:tag_match",
-          "tag": "minecraft:infiniburn_nether"
+          "tag": "forge:ore_bearing_ground/netherrack"
         },
         "state": {
-          "Name": "redev:fools_gold_ore"
+          "Name": "redev:nether_gold_ore"
         }
       }
     ]

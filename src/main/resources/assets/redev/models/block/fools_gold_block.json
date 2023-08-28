@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "redev:block/fools_gold_block_bottom",
-    "side": "redev:block/fools_gold_block_side",
-    "top": "redev:block/fools_gold_block_top"
-  }
-}

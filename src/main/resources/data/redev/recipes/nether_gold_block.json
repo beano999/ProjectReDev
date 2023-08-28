@@ -10,12 +10,12 @@
   {
     "I":
     {
-      "item": "redev:fools_gold_ingot"
+      "item": "redev:nether_gold_ingot"
     }
   },
   "result":
   {
-    "item": "redev:fools_gold_block",
+    "item": "redev:nether_gold_block",
     "count":  1
   }
 }

@@ -3,12 +3,12 @@
   "ingredients":
   [
     {
-      "item": "redev:fools_gold_nugget"
+      "item": "redev:nether_gold_nugget"
     }
   ],
   "result":
   {
-    "item": "redev:fools_gold_nugget",
+    "item": "redev:nether_gold_nugget",
     "count":  4
   }
 }

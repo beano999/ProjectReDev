@@ -9,12 +9,12 @@
   {
     "N":
     {
-      "item": "redev:fools_gold_nugget"
+      "item": "redev:nether_gold_nugget"
     }
   },
   "result":
   {
-    "item": "redev:fools_gold_ingot",
+    "item": "redev:nether_gold_ingot",
     "count":  1
   }
 }
