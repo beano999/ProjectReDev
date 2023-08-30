@@ -1,0 +1,6 @@
+{
+  "parent": "redev:block/template_orientable_trapdoor_top",
+  "textures": {
+    "texture": "redev:block/whispur_trapdoor"
+  }
+}

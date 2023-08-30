@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/ladder",
+  "textures": {
+    "texture": "redev:block/ladder/whispur_ladder",
+    "particle": "redev:block/ladder/whispur_ladder"
+  },
+  "render_type": "cutout"
+}

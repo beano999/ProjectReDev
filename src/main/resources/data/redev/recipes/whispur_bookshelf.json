@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "PPP",
+    "BBB",
+    "PPP"
+  ],
+  "key":
+  {
+    "P":
+    {
+      "item": "redev:whispur_planks"
+    },
+    "B":
+    {
+      "item": "minecraft:book"
+    }
+  },
+  "result":
+  {
+    "item": "redev:whispur_bookshelf",
+    "count": 1
+  }
+}

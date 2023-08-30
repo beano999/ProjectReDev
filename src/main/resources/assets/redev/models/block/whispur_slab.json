@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "redev:block/whispur_planks",
+    "side": "redev:block/whispur_planks",
+    "top": "redev:block/whispur_planks"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "redev:block/whispur_planks",
+    "side": "redev:block/bookshelf/whispur_bookshelf"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "redev:block/whispur_slab"
+    },
+    "type=double": {
+      "model": "redev:block/whispur_planks"
+    },
+    "type=top": {
+      "model": "redev:block/whispur_slab_top"
+    }
+  }
+}
