@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "redev:block/scrapwood_planks",
+    "side": "redev:block/bookshelf/scrapwood_bookshelf"
+  }
+}

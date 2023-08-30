@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wooden_sign",
+  "key":
+  {
+    "#":
+    {
+      "item": "redev:scrapwood_planks"
+    },
+    "X":
+    {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern":
+  [
+    "###",
+    "###",
+    " X "
+  ],
+  "result":
+  {
+    "count": 3,
+    "item": "redev:scrapwood_sign"
+  },
+  "show_notification": true
+}

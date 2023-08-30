@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_pressure_plate",
+  "key":
+  {
+    "#":
+    {
+      "item": "redev:scrapwood_planks"
+    }
+  },
+  "pattern":
+  [
+    "##"
+  ],
+  "result":
+  {
+    "item": "redev:scrapwood_pressure_plate"
+  },
+  "show_notification": true
+}

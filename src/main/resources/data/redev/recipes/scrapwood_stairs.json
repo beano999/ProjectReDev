@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_slab",
+  "pattern":
+  [
+    "W  ",
+    "WW ",
+    "WWW"
+  ],
+  "key":
+  {
+    "W":
+    {
+      "item": "redev:scrapwood_planks"
+    }
+  },
+  "result":
+  {
+    "item": "redev:scrapwood_stairs",
+    "count":  8
+  }
+}

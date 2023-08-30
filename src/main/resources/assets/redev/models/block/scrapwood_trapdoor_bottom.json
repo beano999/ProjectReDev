@@ -1,0 +1,6 @@
+{
+  "parent": "redev:block/template_orientable_trapdoor_bottom",
+  "textures": {
+    "texture": "redev:block/scrapwood_trapdoor"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "redev:block/scrapwood_heap",
+    "side": "redev:block/scrapwood_heap"
+  }
+}

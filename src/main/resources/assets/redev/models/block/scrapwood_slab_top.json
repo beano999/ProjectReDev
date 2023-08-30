@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "redev:block/scrapwood_planks",
+    "side": "redev:block/scrapwood_planks",
+    "top": "redev:block/scrapwood_planks"
+  }
+}

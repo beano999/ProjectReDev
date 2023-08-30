@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "redev:block/scrapwood_slab"
+    },
+    "type=double": {
+      "model": "redev:block/scrapwood_planks"
+    },
+    "type=top": {
+      "model": "redev:block/scrapwood_slab_top"
+    }
+  }
+}

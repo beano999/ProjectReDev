@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "wooden_button",
+  "ingredients": 
+  [
+    {
+      "item": "redev:scrapwood_planks"
+    }
+  ],
+  "result": 
+  {
+    "item": "redev:scrapwood_button"
+  }
+}
