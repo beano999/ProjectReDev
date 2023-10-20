@@ -1,0 +1,35 @@
+{
+  "replace": false,
+  "values":
+  [
+    "redev:scrapwood_heap",
+    "redev:scrapwood_planks",
+    "redev:scrapwood_slab",
+    "redev:scrapwood_stairs",
+    "redev:scrapwood_fence",
+    "redev:scrapwood_fence_gate",
+    "redev:scrapwood_door",
+    "redev:scrapwood_trapdoor",
+    "redev:scrapwood_pressure_plate",
+    "redev:scrapwood_button",
+    "redev:whispur_planks",
+    "redev:whispur_slab",
+    "redev:whispur_stairs",
+    "redev:whispur_fence",
+    "redev:whispur_fence_gate",
+    "redev:whispur_door",
+    "redev:whispur_trapdoor",
+    "redev:whispur_pressure_plate",
+    "redev:whispur_button",
+    "redev:petrified_log",
+    "redev:petrified_planks",
+    "redev:petrified_slab",
+    "redev:petrified_stairs",
+    "redev:petrified_fence",
+    "redev:petrified_fence_gate",
+    "redev:petrified_door",
+    "redev:petrified_trapdoor",
+    "redev:petrified_pressure_plate",
+    "redev:petrified_button"
+  ]
+}

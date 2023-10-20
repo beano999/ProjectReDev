@@ -2,6 +2,7 @@
   "replace": false,
   "values":
   [
-    "redev:hoglin_hide_boots"
+    "redev:nether_gold_boots",
+    "redev:withered_boots"
   ]
 }

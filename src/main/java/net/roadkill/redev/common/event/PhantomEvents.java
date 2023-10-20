@@ -10,6 +10,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.*;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.decoration.Painting;
 import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Snowball;
@@ -38,8 +39,12 @@ public class PhantomEvents
     @SubscribeEvent
     public static void onPhantomSnowball(LivingHurtEvent event)
     {
-        if (event.getSource().getDirectEntity() instanceof Snowball)
-        {   event.setAmount(Math.max(event.getAmount(), 4));
+        if (event.getEntity() instanceof Phantom phantom && event.getSource().getDirectEntity() instanceof Snowball)
+        {
+            if (((SpecialPhantom) phantom).getPhantomType() == PhantomType.BLUE)
+            {   event.setCanceled(true);
+            }
+            else event.setAmount(Math.max(event.getAmount(), 4));
         }
     }
 
@@ -54,7 +59,7 @@ public class PhantomEvents
             }
             else if (type == PhantomType.HOLLOW)
             {   event.setCanceled(true);
-                despawnHollowPhantom(phantom);
+                poofHollowPhantom(phantom);
             }
             else if (type == PhantomType.GREEN && event.getSource().getEntity() instanceof Player player)
             {
@@ -70,12 +75,12 @@ public class PhantomEvents
         {
             if (special.getPhantomType() == PhantomType.HOLLOW)
             {   event.setCanceled(true);
-                despawnHollowPhantom(phantom);
+                poofHollowPhantom(phantom);
             }
         }
     }
 
-    static void despawnHollowPhantom(Phantom phantom)
+    static void poofHollowPhantom(Phantom phantom)
     {
         Vec3 pos = phantom.position();
         if (phantom.level instanceof ServerLevel serverLevel)
@@ -123,25 +128,30 @@ public class PhantomEvents
         if (event.getEntity() instanceof Phantom phantom)
         {
             // Spawn ender particles
-            if (phantom.level.isClientSide && ((SpecialPhantom) phantom).getPhantomType() != PhantomType.HOLLOW)
+            if (phantom.level.isClientSide)
             {
-                RandomSource random = phantom.getRandom();
-                Vec3 speed = phantom.getDeltaMovement();
-                if (phantom.tickCount % 3 == 0 || random.nextDouble() < (Math.abs(speed.x) * Math.abs(speed.z) + Math.abs(speed.y)) * 10)
-                {
-                    Vec3 pos = phantom.position().add(random.nextDouble() - 0.5,
-                                                      random.nextDouble() - 0.5,
-                                                      random.nextDouble() - 0.5);
-                    phantom.level.addParticle(ParticleTypes.REVERSE_PORTAL, true, pos.x, pos.y, pos.z,
-                                              random.nextDouble() * 0.04 - 0.02, 0.06, random.nextDouble() * 0.04 - 0.02);
+                if (((SpecialPhantom) phantom).getPhantomType() != PhantomType.HOLLOW)
+                {   RandomSource random = phantom.getRandom();
+                    Vec3 speed = phantom.getDeltaMovement();
+                    if (phantom.tickCount % 3 == 0 || random.nextDouble() < (Math.abs(speed.x) * Math.abs(speed.z) + Math.abs(speed.y)) * 10)
+                    {
+                        Vec3 pos = phantom.position().add(random.nextDouble() - 0.5,
+                                                          random.nextDouble() - 0.5,
+                                                          random.nextDouble() - 0.5);
+                        phantom.level.addParticle(ParticleTypes.REVERSE_PORTAL, true, pos.x, pos.y, pos.z,
+                                                  random.nextDouble() * 0.04 - 0.02, 0.06, random.nextDouble() * 0.04 - 0.02);
+                    }
                 }
             }
             else
             {
+                if (phantom.isInWater() && ((SpecialPhantom) phantom).getPhantomType() != PhantomType.BLUE)
+                {   phantom.hurt(phantom.level.damageSources().drown(), 2);
+                }
+
                 if (phantom.horizontalCollision && !phantom.noPhysics)
-                {
-                    phantom.noPhysics = true;
-                    phantom.getPersistentData().putInt("NoClipCooldown", 80);
+                {   phantom.noPhysics = true;
+                    phantom.getPersistentData().putInt("NoclipCooldown", 80);
 
                     BlockPos anchorPoint = phantom.anchorPoint;
                     BlockPos pos = phantom.blockPosition();
@@ -159,14 +169,13 @@ public class PhantomEvents
                 }
 
                 CompoundTag tag = phantom.getPersistentData();
-                if (tag.contains("NoClipCooldown"))
-                {
-                    int clipCooldown = tag.getInt("NoClipCooldown");
-                    tag.putInt("NoClipCooldown", clipCooldown - 1);
+                if (tag.contains("NoclipCooldown"))
+                {   int clipCooldown = tag.getInt("NoclipCooldown");
+                    tag.putInt("NoclipCooldown", clipCooldown - 1);
 
                     if (clipCooldown <= 0)
                     {   phantom.noPhysics = false;
-                        tag.remove("NoClipCooldown");
+                        tag.remove("NoclipCooldown");
                     }
                 }
             }

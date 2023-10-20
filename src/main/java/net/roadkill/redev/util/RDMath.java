@@ -34,4 +34,12 @@ public final class RDMath
         if (factor >= rangeMax) return blendTo;
         return ((1 / (rangeMax - rangeMin)) * (factor - rangeMin)) * (blendTo - blendFrom) + blendFrom;
     }
+
+    public static boolean withinRange(int value, int min, int max)
+    {   return value >= min && value <= max;
+    }
+
+    public static boolean withinRange(long value, long min, long max)
+    {   return value >= min && value <= max;
+    }
 }

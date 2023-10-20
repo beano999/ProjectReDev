@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "   ",
+    "HHH",
+    "HHH"
+  ],
+  "key":
+  {
+    "H":
+    {
+      "item": "minecraft:mossy_cobblestone"
+    }
+  },
+  "result":
+  {
+    "item": "minecraft:mossy_cobblestone_wall",
+    "count": 12
+  }
+}

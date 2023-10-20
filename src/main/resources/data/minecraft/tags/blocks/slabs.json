@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values":
+  [
+    "redev:scrapwood_slab",
+    "redev:whispur_slab",
+    "redev:petrified_slab"
+  ]
+}

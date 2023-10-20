@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "HH",
+    "HH"
+  ],
+  "key":
+  {
+    "H":
+    {
+      "item": "minecraft:deepslate_brick_wall"
+    }
+  },
+  "result":
+  {
+    "item": "minecraft:deepslate_bricks",
+    "count": 2
+  }
+}

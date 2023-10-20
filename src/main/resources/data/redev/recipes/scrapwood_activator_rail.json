@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "GWG",
+    "GRG",
+    "GWG"
+  ],
+  "key":
+  {
+    "G":
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    "R":
+    {
+      "item": "minecraft:redstone"
+    },
+    "W":
+    {
+      "item": "redev:scrapwood_slab"
+    }
+  },
+  "result":
+  {
+    "item": "redev:scrapwood_activator_rail",
+    "count":  6
+  }
+}

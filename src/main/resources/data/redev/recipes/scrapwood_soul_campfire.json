@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "tag": "minecraft:soul_fire_base_blocks"
+    },
+    "L": {
+      "item": "redev:scrapwood_heap"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    " S ",
+    "SCS",
+    "LLL"
+  ],
+  "result": {
+    "item": "redev:scrapwood_soul_campfire"
+  },
+  "show_notification": true
+}

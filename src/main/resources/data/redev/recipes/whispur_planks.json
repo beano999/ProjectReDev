@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item": "redev:whispur_root"
+    }
+  ],
+  "result": 
+  {
+    "item": "redev:whispur_planks",
+    "count": 2
+  }
+}

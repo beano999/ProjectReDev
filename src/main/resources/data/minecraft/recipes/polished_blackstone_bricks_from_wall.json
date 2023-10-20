@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "HH",
+    "HH"
+  ],
+  "key":
+  {
+    "H":
+    {
+      "item": "minecraft:polished_blackstone_brick_wall"
+    }
+  },
+  "result":
+  {
+    "item": "minecraft:polished_blackstone_bricks",
+    "count": 2
+  }
+}

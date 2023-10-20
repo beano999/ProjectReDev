@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_slab",
+  "pattern":
+  [
+    "WWW"
+  ],
+  "key":
+  {
+    "W":
+    {
+      "item": "redev:petrified_planks"
+    }
+  },
+  "result":
+  {
+    "item": "redev:petrified_slab",
+    "count":  6
+  }
+}

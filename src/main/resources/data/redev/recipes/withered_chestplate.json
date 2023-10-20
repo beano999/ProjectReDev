@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "I I",
+    "III",
+    "III"
+  ],
+  "key":
+  {
+    "I":
+    {
+      "item": "redev:withered_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "redev:withered_chestplate",
+    "count": 1
+  }
+}

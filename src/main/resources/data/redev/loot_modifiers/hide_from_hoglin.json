@@ -8,8 +8,8 @@
   "addition": "redev:hoglin_hide",
   "count":
   {
-    "min": 1,
-    "max": 4
+    "min": 3,
+    "max": 6
   },
   "type": "redev:add_drops"
 }

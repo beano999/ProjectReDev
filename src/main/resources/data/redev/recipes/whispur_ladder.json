@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "S S",
+    "SBS",
+    "S S"
+  ],
+  "key":
+  {
+    "S":
+    {
+      "tag": "forge:rods/wooden"
+    },
+    "B":
+    {
+      "item": "redev:whispur_slab"
+    }
+  },
+  "result":
+  {
+    "item": "redev:whispur_ladder",
+    "count": 3
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/warped_roots",
+  "textures": {
+    "cross": "redev:block/warped_roots_drupel"
+  },
+  "render_type": "cutout"
+}

@@ -5,28 +5,37 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "redev.refmap.json",
   "mixins": [
+    "MixinBasaltPillarGen",
     "MixinBlockConnections",
+    "MixinBlockPlace",
+    "MixinBonesGeneration",
     "MixinBookshelf",
     "MixinCampfireInit",
     "MixinCreativeTabIcons",
     "MixinCreativeTabIcons$ColorTabReset",
     "MixinFurnaceInit",
-    "MixinHangingLoad",
+    "MixinHangingEntityLoad",
     "MixinMobSpawning",
     "MixinPhantomMovement",
     "MixinPhantomTargeting",
     "MixinReplaceStronghold",
     "MixinReplaceStronghold$DisableVanillaStrongholdsMixin",
     "MixinReplaceStronghold$LocateStrongholdCommandMixin",
+    "MixinSkeletonBase",
     "MixinSmithingMenu",
     "MixinSpecialPhantom",
     "MixinSplashPotion",
-    "MixinWalkSnow"
+    "MixinStackSize",
+    "MixinTwistingVineGen",
+    "MixinTwistingVines",
+    "MixinWalkSnow",
+    "WitherSkeletonArsenal"
   ],
   "client": [
     "MixinEntityInvisible",
     "MixinEntityRenderer",
-    "MixinPhantomEyes"
+    "MixinPhantomEyes",
+    "MixinZombieModel"
   ],
   "injectors": {
     "defaultRequire": 1

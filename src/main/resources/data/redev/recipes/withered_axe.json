@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "II",
+    "IS",
+    " S"
+  ],
+  "key":
+  {
+    "I":
+    {
+      "item": "redev:withered_ingot"
+    },
+    "S":
+    {
+      "item": "redev:charred_bone"
+    }
+  },
+  "result":
+  {
+    "item": "redev:withered_axe",
+    "count": 1
+  }
+}

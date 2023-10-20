@@ -1,0 +1,6 @@
+ {
+  "type": "forge:add_features",
+  "features": "redev:petrified_tree",
+  "biomes": "minecraft:basalt_deltas",
+  "step": "underground_decoration"
+}

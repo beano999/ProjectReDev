@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "redev:warped_drupel",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "redev:twisting_vines_plant",
+              "properties": {
+                "drupel": "true"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:twisting_vines"
+        }
+      ]
+    }
+  ]
+}

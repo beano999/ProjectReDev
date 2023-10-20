@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "I",
+    "S",
+    "S"
+  ],
+  "key":
+  {
+    "I":
+    {
+      "item": "redev:nether_gold_ingot"
+    },
+    "S":
+    {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result":
+  {
+    "item": "redev:nether_gold_shovel",
+    "count": 1
+  }
+}

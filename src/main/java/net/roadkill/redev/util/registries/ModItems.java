@@ -1,17 +1,46 @@
 package net.roadkill.redev.util.registries;
 
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.ForgeTier;
 import net.roadkill.redev.core.init.ItemInit;
-
-import javax.imageio.spi.IIORegistry;
 
 public class ModItems
 {
     public static final Item HOGLIN_HIDE = ItemInit.HOGLIN_HIDE.get();
-    public static final Item HOGLIN_HIDE_CAP = ItemInit.HOGLIN_HIDE_CAP.get();
-    public static final Item HOGLIN_HIDE_TUNIC = ItemInit.HOGLIN_HIDE_TUNIC.get();
-    public static final Item HOGLIN_HIDE_PANTS = ItemInit.HOGLIN_HIDE_PANTS.get();
-    public static final Item HOGLIN_HIDE_BOOTS = ItemInit.HOGLIN_HIDE_BOOTS.get();
+    //public static final Item HOGLIN_HIDE_CAP = ItemInit.HOGLIN_HIDE_CAP.get();
+    //public static final Item HOGLIN_HIDE_TUNIC = ItemInit.HOGLIN_HIDE_TUNIC.get();
+    //public static final Item HOGLIN_HIDE_PANTS = ItemInit.HOGLIN_HIDE_PANTS.get();
+    //public static final Item HOGLIN_HIDE_BOOTS = ItemInit.HOGLIN_HIDE_BOOTS.get();
+
+    public static final Item NETHER_GOLD_NUGGET = ItemInit.NETHER_GOLD_NUGGET.get();
+    public static final Item NETHER_GOLD_INGOT = ItemInit.NETHER_GOLD_INGOT.get();
+    public static final Item NETHER_GOLD_SWORD = ItemInit.NETHER_GOLD_SWORD.get();
+    public static final Item NETHER_GOLD_SHOVEL = ItemInit.NETHER_GOLD_SHOVEL.get();
+    public static final Item NETHER_GOLD_PICKAXE = ItemInit.NETHER_GOLD_PICKAXE.get();
+    public static final Item NETHER_GOLD_AXE = ItemInit.NETHER_GOLD_AXE.get();
+    public static final Item NETHER_GOLD_HOE = ItemInit.NETHER_GOLD_HOE.get();
+    public static final Item NETHER_GOLD_HELMET = ItemInit.NETHER_GOLD_HELMET.get();
+    public static final Item NETHER_GOLD_CHESTPLATE = ItemInit.NETHER_GOLD_CHESTPLATE.get();
+    public static final Item NETHER_GOLD_LEGGINGS = ItemInit.NETHER_GOLD_LEGGINGS.get();
+    public static final Item NETHER_GOLD_BOOTS = ItemInit.NETHER_GOLD_BOOTS.get();
+
+    public static final Item CHARRED_BONE = ItemInit.CHARRED_BONE.get();
+
+    public static final Item WITHERED_INGOT = ItemInit.WITHERED_INGOT.get();
+    public static final Item WITHERED_SWORD = ItemInit.WITHERED_SWORD.get();
+    public static final Item WITHERED_SHOVEL = ItemInit.WITHERED_SHOVEL.get();
+    public static final Item WITHERED_PICKAXE = ItemInit.WITHERED_PICKAXE.get();
+    public static final Item WITHERED_AXE = ItemInit.WITHERED_AXE.get();
+    public static final Item WITHERED_HOE = ItemInit.WITHERED_HOE.get();
+    public static final Item WITHERED_HELMET = ItemInit.WITHERED_HELMET.get();
+    public static final Item WITHERED_CHESTPLATE = ItemInit.WITHERED_CHESTPLATE.get();
+    public static final Item WITHERED_LEGGINGS = ItemInit.WITHERED_LEGGINGS.get();
+    public static final Item WITHERED_BOOTS = ItemInit.WITHERED_BOOTS.get();
+
+    public static final Item WARPED_DRUPEL = ItemInit.WARPED_DRUPEL.get();
 
     /*
      Block Items
@@ -24,6 +53,9 @@ public class ModItems
     public static final Item MANGROVE_BOOKSHELF = ItemInit.MANGROVE_BOOKSHELF.get();
     public static final Item SPRUCE_BOOKSHELF = ItemInit.SPRUCE_BOOKSHELF.get();
     public static final Item WARPED_BOOKSHELF = ItemInit.WARPED_BOOKSHELF.get();
+    public static final Item SCRAPWOOD_BOOKSHELF = ItemInit.SCRAPWOOD_BOOKSHELF.get();
+    public static final Item WHISPUR_BOOKSHELF = ItemInit.WHISPUR_BOOKSHELF.get();
+    public static final Item PETRIFIED_BOOKSHELF = ItemInit.PETRIFIED_BOOKSHELF.get();
 
     public static final Item ACACIA_LADDER = ItemInit.ACACIA_LADDER.get();
     public static final Item BIRCH_LADDER = ItemInit.BIRCH_LADDER.get();
@@ -33,6 +65,9 @@ public class ModItems
     public static final Item MANGROVE_LADDER = ItemInit.MANGROVE_LADDER.get();
     public static final Item SPRUCE_LADDER = ItemInit.SPRUCE_LADDER.get();
     public static final Item WARPED_LADDER = ItemInit.WARPED_LADDER.get();
+    public static final Item SCRAPWOOD_LADDER = ItemInit.SCRAPWOOD_LADDER.get();
+    public static final Item WHISPUR_LADDER = ItemInit.WHISPUR_LADDER.get();
+    public static final Item PETRIFIED_LADDER = ItemInit.PETRIFIED_LADDER.get();
 
     public static final Item ACACIA_SMITHING_TABLE = ItemInit.ACACIA_SMITHING_TABLE.get();
     public static final Item BIRCH_SMITHING_TABLE = ItemInit.BIRCH_SMITHING_TABLE.get();
@@ -42,6 +77,9 @@ public class ModItems
     public static final Item MANGROVE_SMITHING_TABLE = ItemInit.MANGROVE_SMITHING_TABLE.get();
     public static final Item SPRUCE_SMITHING_TABLE = ItemInit.SPRUCE_SMITHING_TABLE.get();
     public static final Item WARPED_SMITHING_TABLE = ItemInit.WARPED_SMITHING_TABLE.get();
+    public static final Item SCRAPWOOD_SMITHING_TABLE = ItemInit.SCRAPWOOD_SMITHING_TABLE.get();
+    public static final Item WHISPUR_SMITHING_TABLE = ItemInit.WHISPUR_SMITHING_TABLE.get();
+    public static final Item PETRIFIED_SMITHING_TABLE = ItemInit.PETRIFIED_SMITHING_TABLE.get();
 
     public static final Item ACACIA_CAMPFIRE = ItemInit.ACACIA_CAMPFIRE.get();
     public static final Item BIRCH_CAMPFIRE = ItemInit.BIRCH_CAMPFIRE.get();
@@ -51,6 +89,9 @@ public class ModItems
     public static final Item MANGROVE_CAMPFIRE = ItemInit.MANGROVE_CAMPFIRE.get();
     public static final Item SPRUCE_CAMPFIRE = ItemInit.SPRUCE_CAMPFIRE.get();
     public static final Item WARPED_CAMPFIRE = ItemInit.WARPED_CAMPFIRE.get();
+    public static final Item SCRAPWOOD_CAMPFIRE = ItemInit.SCRAPWOOD_CAMPFIRE.get();
+    public static final Item BONE_CAMPFIRE = ItemInit.BONE_CAMPFIRE.get();
+    public static final Item PETRIFIED_CAMPFIRE = ItemInit.PETRIFIED_CAMPFIRE.get();
 
     public static final Item ACACIA_SOUL_CAMPFIRE = ItemInit.ACACIA_SOUL_CAMPFIRE.get();
     public static final Item BIRCH_SOUL_CAMPFIRE = ItemInit.BIRCH_SOUL_CAMPFIRE.get();
@@ -60,6 +101,9 @@ public class ModItems
     public static final Item MANGROVE_SOUL_CAMPFIRE = ItemInit.MANGROVE_SOUL_CAMPFIRE.get();
     public static final Item SPRUCE_SOUL_CAMPFIRE = ItemInit.SPRUCE_SOUL_CAMPFIRE.get();
     public static final Item WARPED_SOUL_CAMPFIRE = ItemInit.WARPED_SOUL_CAMPFIRE.get();
+    public static final Item SCRAPWOOD_SOUL_CAMPFIRE = ItemInit.SCRAPWOOD_SOUL_CAMPFIRE.get();
+    public static final Item BONE_SOUL_CAMPFIRE = ItemInit.BONE_SOUL_CAMPFIRE.get();
+    public static final Item PETRIFIED_SOUL_CAMPFIRE = ItemInit.PETRIFIED_SOUL_CAMPFIRE.get();
 
     public static final Item ACACIA_RAIL = ItemInit.ACACIA_RAIL.get();
     public static final Item BIRCH_RAIL = ItemInit.BIRCH_RAIL.get();
@@ -69,6 +113,9 @@ public class ModItems
     public static final Item MANGROVE_RAIL = ItemInit.MANGROVE_RAIL.get();
     public static final Item SPRUCE_RAIL = ItemInit.SPRUCE_RAIL.get();
     public static final Item WARPED_RAIL = ItemInit.WARPED_RAIL.get();
+    public static final Item SCRAPWOOD_RAIL = ItemInit.SCRAPWOOD_RAIL.get();
+    public static final Item WHISPUR_RAIL = ItemInit.WHISPUR_RAIL.get();
+    public static final Item PETRIFIED_RAIL = ItemInit.PETRIFIED_RAIL.get();
 
     public static final Item ACACIA_DETECTOR_RAIL = ItemInit.ACACIA_DETECTOR_RAIL.get();
     public static final Item BIRCH_DETECTOR_RAIL = ItemInit.BIRCH_DETECTOR_RAIL.get();
@@ -78,6 +125,9 @@ public class ModItems
     public static final Item MANGROVE_DETECTOR_RAIL = ItemInit.MANGROVE_DETECTOR_RAIL.get();
     public static final Item SPRUCE_DETECTOR_RAIL = ItemInit.SPRUCE_DETECTOR_RAIL.get();
     public static final Item WARPED_DETECTOR_RAIL = ItemInit.WARPED_DETECTOR_RAIL.get();
+    public static final Item SCRAPWOOD_DETECTOR_RAIL = ItemInit.SCRAPWOOD_DETECTOR_RAIL.get();
+    public static final Item WHISPUR_DETECTOR_RAIL = ItemInit.WHISPUR_DETECTOR_RAIL.get();
+    public static final Item PETRIFIED_DETECTOR_RAIL = ItemInit.PETRIFIED_DETECTOR_RAIL.get();
 
     public static final Item ACACIA_POWERED_RAIL = ItemInit.ACACIA_POWERED_RAIL.get();
     public static final Item BIRCH_POWERED_RAIL = ItemInit.BIRCH_POWERED_RAIL.get();
@@ -87,6 +137,9 @@ public class ModItems
     public static final Item MANGROVE_POWERED_RAIL = ItemInit.MANGROVE_POWERED_RAIL.get();
     public static final Item SPRUCE_POWERED_RAIL = ItemInit.SPRUCE_POWERED_RAIL.get();
     public static final Item WARPED_POWERED_RAIL = ItemInit.WARPED_POWERED_RAIL.get();
+    public static final Item SCRAPWOOD_POWERED_RAIL = ItemInit.SCRAPWOOD_POWERED_RAIL.get();
+    public static final Item WHISPUR_POWERED_RAIL = ItemInit.WHISPUR_POWERED_RAIL.get();
+    public static final Item PETRIFIED_POWERED_RAIL = ItemInit.PETRIFIED_POWERED_RAIL.get();
 
     public static final Item ACACIA_ACTIVATOR_RAIL = ItemInit.ACACIA_ACTIVATOR_RAIL.get();
     public static final Item BIRCH_ACTIVATOR_RAIL = ItemInit.BIRCH_ACTIVATOR_RAIL.get();
@@ -96,6 +149,9 @@ public class ModItems
     public static final Item MANGROVE_ACTIVATOR_RAIL = ItemInit.MANGROVE_ACTIVATOR_RAIL.get();
     public static final Item SPRUCE_ACTIVATOR_RAIL = ItemInit.SPRUCE_ACTIVATOR_RAIL.get();
     public static final Item WARPED_ACTIVATOR_RAIL = ItemInit.WARPED_ACTIVATOR_RAIL.get();
+    public static final Item SCRAPWOOD_ACTIVATOR_RAIL = ItemInit.SCRAPWOOD_ACTIVATOR_RAIL.get();
+    public static final Item WHISPUR_ACTIVATOR_RAIL = ItemInit.WHISPUR_ACTIVATOR_RAIL.get();
+    public static final Item PETRIFIED_ACTIVATOR_RAIL = ItemInit.PETRIFIED_ACTIVATOR_RAIL.get();
 
     public static final Item ACACIA_HEDGE = ItemInit.ACACIA_HEDGE.get();
     public static final Item AZALEA_HEDGE = ItemInit.AZALEA_HEDGE.get();
@@ -135,8 +191,57 @@ public class ModItems
     public static final Item DIORITE_DROPPER = ItemInit.DIORITE_DROPPER.get();
     public static final Item GRANITE_DROPPER = ItemInit.GRANITE_DROPPER.get();
 
-    public static final Item FOOLS_GOLD_NUGGET = ItemInit.FOOLS_GOLD_NUGGET.get();
-    public static final Item FOOLS_GOLD_INGOT = ItemInit.FOOLS_GOLD_INGOT.get();
-    public static final Item FOOLS_GOLD_BLOCK = ItemInit.FOOLS_GOLD_BLOCK.get();
-    public static final Item FOOLS_GOLD_ORE = ItemInit.FOOLS_GOLD_ORE.get();
+    public static final Item NETHER_GOLD_BLOCK = ItemInit.NETHER_GOLD_BLOCK.get();
+    public static final Item NETHER_GOLD_ORE = ItemInit.NETHER_GOLD_ORE.get();
+    public static final Item NETHER_DIAMOND_ORE = ItemInit.NETHER_DIAMOND_ORE.get();
+    public static final Item BASALT_DIAMOND_ORE = ItemInit.BASALT_DIAMOND_ORE.get();
+
+    public static final Item WITHERED_BLOCK = ItemInit.WITHERED_BLOCK.get();
+
+    public static final Item NETHER_BRISTLE = ItemInit.NETHER_BRISTLE.get();
+    public static final Item WHISPUR_ROOT = ItemInit.WHISPUR_ROOT.get();
+
+    public static final Item WOOD_SCRAP = ItemInit.WOOD_SCRAP.get();
+    public static final Item SCRAPWOOD_HEAP = ItemInit.SCRAPWOOD_HEAP.get();
+    public static final Item SCRAPWOOD_PLANKS = ItemInit.SCRAPWOOD_PLANKS.get();
+    public static final Item SCRAPWOOD_SLAB = ItemInit.SCRAPWOOD_SLAB.get();
+    public static final Item SCRAPWOOD_STAIRS = ItemInit.SCRAPWOOD_STAIRS.get();
+    public static final Item SCRAPWOOD_FENCE = ItemInit.SCRAPWOOD_FENCE.get();
+    public static final Item SCRAPWOOD_FENCE_GATE = ItemInit.SCRAPWOOD_FENCE_GATE.get();
+    public static final Item SCRAPWOOD_BUTTON = ItemInit.SCRAPWOOD_BUTTON.get();
+    public static final Item SCRAPWOOD_PRESSURE_PLATE = ItemInit.SCRAPWOOD_PRESSURE_PLATE.get();
+    public static final Item SCRAPWOOD_DOOR = ItemInit.SCRAPWOOD_DOOR.get();
+    public static final Item SCRAPWOOD_TRAPDOOR = ItemInit.SCRAPWOOD_TRAPDOOR.get();
+    public static final Item SCRAPWOOD_SIGN = ItemInit.SCRAPWOOD_SIGN.get();
+
+    public static final Item WHISPUR_PLANKS = ItemInit.WHISPUR_PLANKS.get();
+    public static final Item WHISPUR_SLAB = ItemInit.WHISPUR_SLAB.get();
+    public static final Item WHISPUR_STAIRS = ItemInit.WHISPUR_STAIRS.get();
+    public static final Item WHISPUR_FENCE = ItemInit.WHISPUR_FENCE.get();
+    public static final Item WHISPUR_FENCE_GATE = ItemInit.WHISPUR_FENCE_GATE.get();
+    public static final Item WHISPUR_BUTTON = ItemInit.WHISPUR_BUTTON.get();
+    public static final Item WHISPUR_PRESSURE_PLATE = ItemInit.WHISPUR_PRESSURE_PLATE.get();
+    public static final Item WHISPUR_DOOR = ItemInit.WHISPUR_DOOR.get();
+    public static final Item WHISPUR_TRAPDOOR = ItemInit.WHISPUR_TRAPDOOR.get();
+    public static final Item WHISPUR_SIGN = ItemInit.WHISPUR_SIGN.get();
+
+    public static final Item PETRIFIED_LOG = ItemInit.PETRIFIED_LOG.get();
+    public static final Item STRIPPED_PETRIFIED_LOG = ItemInit.STRIPPED_PETRIFIED_LOG.get();
+    public static final Item PETRIFIED_PLANKS = ItemInit.PETRIFIED_PLANKS.get();
+    public static final Item PETRIFIED_SLAB = ItemInit.PETRIFIED_SLAB.get();
+    public static final Item PETRIFIED_STAIRS = ItemInit.PETRIFIED_STAIRS.get();
+    public static final Item PETRIFIED_FENCE = ItemInit.PETRIFIED_FENCE.get();
+    public static final Item PETRIFIED_FENCE_GATE = ItemInit.PETRIFIED_FENCE_GATE.get();
+    public static final Item PETRIFIED_BUTTON = ItemInit.PETRIFIED_BUTTON.get();
+    public static final Item PETRIFIED_PRESSURE_PLATE = ItemInit.PETRIFIED_PRESSURE_PLATE.get();
+    public static final Item PETRIFIED_DOOR = ItemInit.PETRIFIED_DOOR.get();
+    public static final Item PETRIFIED_TRAPDOOR = ItemInit.PETRIFIED_TRAPDOOR.get();
+    public static final Item PETRIFIED_SIGN = ItemInit.PETRIFIED_SIGN.get();
+
+    public static final Item CARAMINE_RYE_SEEDS = ItemInit.CARAMINE_RYE_SEEDS.get();
+
+    public static final class Tiers
+    {   public static final Tier NETHER_GOLD = new ForgeTier(0, 500, 3.0F, -1.0F, 50, BlockTags.NEEDS_STONE_TOOL, () -> Ingredient.of(ModItems.NETHER_GOLD_INGOT));
+        public static final Tier WITHERED = new ForgeTier(3, 2000, 9.0F, -1.0F, 18, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ModItems.WITHERED_INGOT));
+    }
 }

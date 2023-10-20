@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "BBB",
+    "BIB",
+    "BBB"
+  ],
+  "key":
+  {
+    "B":
+    {
+      "item": "redev:charred_bone"
+    },
+    "I":
+    {
+      "item": "redev:nether_gold_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "redev:withered_ingot",
+    "count": 1
+  }
+}

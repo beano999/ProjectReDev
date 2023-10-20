@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item": "redev:stripped_petrified_log"
+    }
+  ],
+  "result": 
+  {
+    "item": "redev:petrified_planks",
+    "count": 4
+  }
+}

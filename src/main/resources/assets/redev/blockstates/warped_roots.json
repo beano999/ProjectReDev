@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "drupel=false": {
+      "model": "redev:block/warped_roots"
+    },
+    "drupel=true": {
+      "model": "redev:block/warped_roots_drupel"
+    }
+  }
+}

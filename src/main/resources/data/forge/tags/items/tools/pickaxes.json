@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values":
+  [
+    "redev:nether_gold_pickaxe",
+    "redev:withered_pickaxe"
+  ]
+}

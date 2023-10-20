@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/rail_flat",
+  "textures": {
+    "rail": "redev:block/rail/petrified_detector_rail_on"
+  },
+  "render_type": "cutout"
+}

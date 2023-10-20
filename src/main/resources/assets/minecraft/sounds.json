@@ -1,0 +1,27 @@
+{
+  "block.glass.place": {
+    "category": "music",
+    "replace": true,
+    "sounds": [
+      {
+        "name": "redev:block/place/glass1",
+        "stream": true
+      },
+      {
+        "name": "redev:block/place/glass2",
+        "volume": 2,
+        "stream": true
+      },
+      {
+        "name": "redev:block/place/glass3",
+        "volume": 2,
+        "stream": true
+      },
+      {
+        "name": "redev:block/place/glass4",
+        "volume": 2,
+        "stream": true
+      }
+    ]
+  }
+}

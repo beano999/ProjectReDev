@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "HH",
+    "HH"
+  ],
+  "key":
+  {
+    "H":
+    {
+      "item": "minecraft:stone_brick_wall"
+    }
+  },
+  "result":
+  {
+    "item": "minecraft:stone_bricks",
+    "count": 2
+  }
+}

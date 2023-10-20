@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_rail_raised_ne",
+  "textures": {
+    "rail": "redev:block/rail/scrapwood_powered_rail_on"
+  },
+  "render_type": "cutout"
+}

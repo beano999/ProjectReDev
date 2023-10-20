@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "drupel=false": {
+      "model": "redev:block/twisting_vines_plant"
+    },
+    "drupel=true": {
+      "model": "redev:block/twisting_vines_plant_drupel"
+    }
+  }
+}

@@ -12,6 +12,9 @@
   "block.minecraft.dispenser":      "Stone Dispenser",
   "block.minecraft.dropper":        "Stone Dropper",
 
+  "entity.minecraft.zombified_piglin": "Zombie Piglin",
+  "item.minecraft.zombified_piglin_spawn_egg": "Zombie Piglin Spawn Egg",
+
   "potion.potency.9": "X",
   "potion.potency.8": "IX",
   "potion.potency.7": "VIII",

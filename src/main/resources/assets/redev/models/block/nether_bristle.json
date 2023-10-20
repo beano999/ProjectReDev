@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "redev:block/nether_bristle"
+  },
+  "render_type": "cutout"
+}

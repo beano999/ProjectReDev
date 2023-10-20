@@ -2,6 +2,7 @@
   "replace": false,
   "entries": [
     "redev:hide_from_hoglin",
+    "redev:bones_from_wither_skeleton",
     "redev:leather_from_hoglin"
   ]
 }

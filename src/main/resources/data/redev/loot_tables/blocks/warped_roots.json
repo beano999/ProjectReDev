@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "redev:warped_drupel",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "redev:warped_roots",
+              "properties": {
+                "drupel": "true"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:warped_roots"
+        }
+      ]
+    }
+  ]
+}

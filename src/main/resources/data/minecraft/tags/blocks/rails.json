@@ -10,6 +10,9 @@
     "redev:mangrove_rail",
     "redev:spruce_rail",
     "redev:warped_rail",
+    "redev:scrapwood_rail",
+    "redev:whispur_rail",
+    "redev:petrified_rail",
     "redev:acacia_detector_rail",
     "redev:birch_detector_rail",
     "redev:crimson_detector_rail",
@@ -18,6 +21,9 @@
     "redev:mangrove_detector_rail",
     "redev:spruce_detector_rail",
     "redev:warped_detector_rail",
+    "redev:scrapwood_detector_rail",
+    "redev:whispur_detector_rail",
+    "redev:petrified_detector_rail",
     "redev:acacia_powered_rail",
     "redev:birch_powered_rail",
     "redev:crimson_powered_rail",
@@ -26,6 +32,9 @@
     "redev:mangrove_powered_rail",
     "redev:spruce_powered_rail",
     "redev:warped_powered_rail",
+    "redev:scrapwood_powered_rail",
+    "redev:whispur_powered_rail",
+    "redev:petrified_powered_rail",
     "redev:acacia_activator_rail",
     "redev:birch_activator_rail",
     "redev:crimson_activator_rail",
@@ -33,6 +42,9 @@
     "redev:jungle_activator_rail",
     "redev:mangrove_activator_rail",
     "redev:spruce_activator_rail",
-    "redev:warped_activator_rail"
+    "redev:warped_activator_rail",
+    "redev:scrapwood_activator_rail",
+    "redev:whispur_activator_rail",
+    "redev:petrified_activator_rail"
   ]
 }

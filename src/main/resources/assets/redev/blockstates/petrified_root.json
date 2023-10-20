@@ -1,0 +1,222 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "redev:block/petrified_root_side"
+      },
+      "when": {
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "redev:block/petrified_root_side",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "redev:block/petrified_root_side",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "redev:block/petrified_root_side",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "redev:block/petrified_root_side",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "redev:block/petrified_root_side",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "true"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "redev:block/petrified_root_noside",
+          "weight": 2
+        },
+        {
+          "model": "redev:block/petrified_root_noside1"
+        },
+        {
+          "model": "redev:block/petrified_root_noside2"
+        },
+        {
+          "model": "redev:block/petrified_root_noside3"
+        }
+      ],
+      "when": {
+        "north": "false"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "redev:block/petrified_root_noside1",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "redev:block/petrified_root_noside2",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "redev:block/petrified_root_noside3",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "redev:block/petrified_root_noside",
+          "uvlock": true,
+          "weight": 2,
+          "y": 90
+        }
+      ],
+      "when": {
+        "east": "false"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "redev:block/petrified_root_noside2",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "redev:block/petrified_root_noside3",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "redev:block/petrified_root_noside",
+          "uvlock": true,
+          "weight": 2,
+          "y": 180
+        },
+        {
+          "model": "redev:block/petrified_root_noside1",
+          "uvlock": true,
+          "y": 180
+        }
+      ],
+      "when": {
+        "south": "false"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "redev:block/petrified_root_noside3",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "redev:block/petrified_root_noside",
+          "uvlock": true,
+          "weight": 2,
+          "y": 270
+        },
+        {
+          "model": "redev:block/petrified_root_noside1",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "redev:block/petrified_root_noside2",
+          "uvlock": true,
+          "y": 270
+        }
+      ],
+      "when": {
+        "west": "false"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "redev:block/petrified_root_noside",
+          "uvlock": true,
+          "weight": 2,
+          "x": 270
+        },
+        {
+          "model": "redev:block/petrified_root_noside3",
+          "uvlock": true,
+          "x": 270
+        },
+        {
+          "model": "redev:block/petrified_root_noside1",
+          "uvlock": true,
+          "x": 270
+        },
+        {
+          "model": "redev:block/petrified_root_noside2",
+          "uvlock": true,
+          "x": 270
+        }
+      ],
+      "when": {
+        "up": "false"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "redev:block/petrified_root_noside3",
+          "uvlock": true,
+          "x": 90
+        },
+        {
+          "model": "redev:block/petrified_root_noside2",
+          "uvlock": true,
+          "x": 90
+        },
+        {
+          "model": "redev:block/petrified_root_noside1",
+          "uvlock": true,
+          "x": 90
+        },
+        {
+          "model": "redev:block/petrified_root_noside",
+          "uvlock": true,
+          "weight": 2,
+          "x": 90
+        }
+      ],
+      "when": {
+        "down": "false"
+      }
+    }
+  ]
+}

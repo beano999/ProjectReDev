@@ -2,6 +2,7 @@
   "replace": false,
   "values":
   [
-    "redev:hoglin_hide_leggings"
+    "redev:nether_gold_leggings",
+    "redev:withered_leggings"
   ]
 }

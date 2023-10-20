@@ -1,0 +1,8 @@
+{
+  "parent": "redev:block/template_campfire_no_ash",
+  "textures": {
+    "log": "minecraft:block/campfire_log",
+    "particle": "minecraft:block/campfire_log"
+  },
+  "render_type": "cutout"
+}

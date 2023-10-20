@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "   ",
+    "HHH",
+    "HHH"
+  ],
+  "key":
+  {
+    "H":
+    {
+      "item": "minecraft:cobbled_deepslate"
+    }
+  },
+  "result":
+  {
+    "item": "minecraft:cobbled_deepslate_wall",
+    "count": 12
+  }
+}

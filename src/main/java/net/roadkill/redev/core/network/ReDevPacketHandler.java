@@ -4,6 +4,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.roadkill.redev.ReDev;
+import net.roadkill.redev.core.network.message.EntityPosMessage;
 import net.roadkill.redev.core.network.message.PhantomTypeSyncMessage;
 
 public class ReDevPacketHandler
@@ -19,5 +20,6 @@ public class ReDevPacketHandler
     public static void init()
     {
         INSTANCE.registerMessage(0, PhantomTypeSyncMessage.class, PhantomTypeSyncMessage::encode, PhantomTypeSyncMessage::decode, PhantomTypeSyncMessage::handle);
+        INSTANCE.registerMessage(1, EntityPosMessage.class, EntityPosMessage::encode, EntityPosMessage::decode, EntityPosMessage::handle);
     }
 }

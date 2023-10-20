@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "G G",
+    "G G"
+  ],
+  "key":
+  {
+    "G":
+    {
+      "item": "redev:nether_gold_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "redev:nether_gold_boots",
+    "count": 1
+  }
+}

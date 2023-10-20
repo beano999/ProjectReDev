@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "redev:block/petrified_slab"
+    },
+    "type=double": {
+      "model": "redev:block/petrified_planks"
+    },
+    "type=top": {
+      "model": "redev:block/petrified_slab_top"
+    }
+  }
+}

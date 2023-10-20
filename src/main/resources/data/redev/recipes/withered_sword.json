@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "I",
+    "I",
+    "S"
+  ],
+  "key":
+  {
+    "I":
+    {
+      "item": "redev:withered_ingot"
+    },
+    "S":
+    {
+      "item": "redev:charred_bone"
+    }
+  },
+  "result":
+  {
+    "item": "redev:withered_sword",
+    "count": 1
+  }
+}

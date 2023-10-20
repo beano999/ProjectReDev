@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "redev:block/caramine_rye_stage_3_top"
+  },
+  "render_type": "cutout"
+}

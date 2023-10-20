@@ -1,0 +1,24 @@
+{
+  "block.petrified_door.open":
+  {
+    "subtitle": "block.petrified_door.open",
+    "sounds":
+    [
+      {
+        "name": "redev:block/petrified_door_open",
+        "stream": true
+      }
+    ]
+  },
+  "block.petrified_door.close":
+  {
+    "subtitle": "block.petrified_door.close",
+    "sounds":
+    [
+      {
+          "name": "redev:block/petrified_door_close",
+          "stream": true
+      }
+    ]
+  }
+}

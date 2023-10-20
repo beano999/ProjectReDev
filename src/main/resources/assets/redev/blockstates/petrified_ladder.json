@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "redev:block/petrified_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "redev:block/petrified_ladder"
+    },
+    "facing=south": {
+      "model": "redev:block/petrified_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "redev:block/petrified_ladder",
+      "y": 270
+    }
+  }
+}

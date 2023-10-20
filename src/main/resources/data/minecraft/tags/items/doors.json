@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values":
+  [
+    "redev:whispur_door",
+    "redev:scrapwood_door",
+    "redev:petrified_door"
+  ]
+}

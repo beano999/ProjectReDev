@@ -42,6 +42,10 @@ public class MixinCreativeTabIcons
         else if (this.displayName.equals(Component.translatable("itemGroup.spawnEggs")))
         {   this.iconGenerator = () -> new ItemStack(Items.CREEPER_SPAWN_EGG);
         }
+        else if (this.displayName.equals(Component.translatable("itemGroup.tools")))
+        {
+            this.iconGenerator = () -> new ItemStack(Items.IRON_AXE);
+        }
     }
 
     @Mixin(CreativeModeTab.class)

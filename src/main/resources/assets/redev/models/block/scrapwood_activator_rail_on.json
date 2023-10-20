@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/rail_flat",
+  "textures": {
+    "rail": "redev:block/rail/scrapwood_activator_rail_on"
+  },
+  "render_type": "cutout"
+}

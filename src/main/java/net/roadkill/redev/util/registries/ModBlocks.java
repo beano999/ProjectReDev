@@ -1,6 +1,12 @@
 package net.roadkill.redev.util.registries;
 
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
+import net.roadkill.redev.common.block.CaramineRyeBlock;
+import net.roadkill.redev.common.block.WhispurRootBlock;
 import net.roadkill.redev.core.init.BlockInit;
 
 public class ModBlocks
@@ -38,8 +44,12 @@ public class ModBlocks
     public static final Block DARK_OAK_CAMPFIRE = BlockInit.DARK_OAK_CAMPFIRE.get();
     public static final Block JUNGLE_CAMPFIRE = BlockInit.JUNGLE_CAMPFIRE.get();
     public static final Block MANGROVE_CAMPFIRE = BlockInit.MANGROVE_CAMPFIRE.get();
+    public static final Block OAK_CAMPFIRE = BlockInit.OAK_CAMPFIRE.get();
     public static final Block SPRUCE_CAMPFIRE = BlockInit.SPRUCE_CAMPFIRE.get();
     public static final Block WARPED_CAMPFIRE = BlockInit.WARPED_CAMPFIRE.get();
+    public static final Block SCRAPWOOD_CAMPFIRE = BlockInit.SCRAPWOOD_CAMPFIRE.get();
+    public static final Block BONE_CAMPFIRE = BlockInit.BONE_CAMPFIRE.get();
+    public static final Block PETRIFIED_CAMPFIRE = BlockInit.PETRIFIED_CAMPFIRE.get();
 
     public static final Block ACACIA_SOUL_CAMPFIRE = BlockInit.ACACIA_SOUL_CAMPFIRE.get();
     public static final Block BIRCH_SOUL_CAMPFIRE = BlockInit.BIRCH_SOUL_CAMPFIRE.get();
@@ -47,8 +57,12 @@ public class ModBlocks
     public static final Block DARK_OAK_SOUL_CAMPFIRE = BlockInit.DARK_OAK_SOUL_CAMPFIRE.get();
     public static final Block JUNGLE_SOUL_CAMPFIRE = BlockInit.JUNGLE_SOUL_CAMPFIRE.get();
     public static final Block MANGROVE_SOUL_CAMPFIRE = BlockInit.MANGROVE_SOUL_CAMPFIRE.get();
+    public static final Block OAK_SOUL_CAMPFIRE = BlockInit.OAK_SOUL_CAMPFIRE.get();
     public static final Block SPRUCE_SOUL_CAMPFIRE = BlockInit.SPRUCE_SOUL_CAMPFIRE.get();
     public static final Block WARPED_SOUL_CAMPFIRE = BlockInit.WARPED_SOUL_CAMPFIRE.get();
+    public static final Block SCRAPWOOD_SOUL_CAMPFIRE = BlockInit.SCRAPWOOD_SOUL_CAMPFIRE.get();
+    public static final Block BONE_SOUL_CAMPFIRE = BlockInit.BONE_SOUL_CAMPFIRE.get();
+    public static final Block PETRIFIED_SOUL_CAMPFIRE = BlockInit.PETRIFIED_SOUL_CAMPFIRE.get();
 
     public static final Block ACACIA_RAIL = BlockInit.ACACIA_RAIL.get();
     public static final Block BIRCH_RAIL = BlockInit.BIRCH_RAIL.get();
@@ -124,6 +138,92 @@ public class ModBlocks
     public static final Block DIORITE_DROPPER = BlockInit.DIORITE_DROPPER.get();
     public static final Block GRANITE_DROPPER = BlockInit.GRANITE_DROPPER.get();
 
-    public static final Block FOOLS_GOLD_BLOCK = BlockInit.FOOLS_GOLD_BLOCK.get();
-    public static final Block FOOLS_GOLD_ORE = BlockInit.FOOLS_GOLD_ORE.get();
+    public static final Block NETHER_GOLD_BLOCK = BlockInit.NETHER_GOLD_BLOCK.get();
+    public static final Block NETHER_GOLD_ORE = BlockInit.NETHER_GOLD_ORE.get();
+    public static final Block NETHER_DIAMOND_ORE = BlockInit.NETHER_DIAMOND_ORE.get();
+    public static final Block BASALT_DIAMOND_ORE = BlockInit.BASALT_DIAMOND_ORE.get();
+
+    public static final Block WITHERED_BLOCK = BlockInit.WITHERED_BLOCK.get();
+
+    public static final Block NETHER_BRISTLE = BlockInit.NETHER_BRISTLE.get();
+    public static final Block SCRAPWOOD_HEAP = BlockInit.SCRAPWOOD_HEAP.get();
+    public static final Block SCRAPWOOD_PLANKS = BlockInit.SCRAPWOOD_PLANKS.get();
+    public static final Block SCRAPWOOD_SLAB = BlockInit.SCRAPWOOD_SLAB.get();
+    public static final Block SCRAPWOOD_STAIRS = BlockInit.SCRAPWOOD_STAIRS.get();
+    public static final Block SCRAPWOOD_FENCE = BlockInit.SCRAPWOOD_FENCE.get();
+    public static final Block SCRAPWOOD_FENCE_GATE = BlockInit.SCRAPWOOD_FENCE_GATE.get();
+    public static final Block SCRAPWOOD_BUTTON = BlockInit.SCRAPWOOD_BUTTON.get();
+    public static final Block SCRAPWOOD_PRESSURE_PLATE = BlockInit.SCRAPWOOD_PRESSURE_PLATE.get();
+    public static final Block SCRAPWOOD_DOOR = BlockInit.SCRAPWOOD_DOOR.get();
+    public static final Block SCRAPWOOD_TRAPDOOR = BlockInit.SCRAPWOOD_TRAPDOOR.get();
+    public static final Block SCRAPWOOD_SIGN = BlockInit.SCRAPWOOD_SIGN.get();
+    public static final Block SCRAPWOOD_WALL_SIGN = BlockInit.SCRAPWOOD_WALL_SIGN.get();
+    public static final Block SCRAPWOOD_BOOKSHELF = BlockInit.SCRAPWOOD_BOOKSHELF.get();
+    public static final Block SCRAPWOOD_LADDER = BlockInit.SCRAPWOOD_LADDER.get();
+
+    public static final WhispurRootBlock WHISPUR_ROOT = (WhispurRootBlock) BlockInit.WHISPUR_ROOT.get();
+    public static final Block WHISPUR_PLANKS = BlockInit.WHISPUR_PLANKS.get();
+    public static final Block WHISPUR_SLAB = BlockInit.WHISPUR_SLAB.get();
+    public static final Block WHISPUR_STAIRS = BlockInit.WHISPUR_STAIRS.get();
+    public static final Block WHISPUR_FENCE = BlockInit.WHISPUR_FENCE.get();
+    public static final Block WHISPUR_FENCE_GATE = BlockInit.WHISPUR_FENCE_GATE.get();
+    public static final Block WHISPUR_BUTTON = BlockInit.WHISPUR_BUTTON.get();
+    public static final Block WHISPUR_PRESSURE_PLATE = BlockInit.WHISPUR_PRESSURE_PLATE.get();
+    public static final Block WHISPUR_DOOR = BlockInit.WHISPUR_DOOR.get();
+    public static final Block WHISPUR_TRAPDOOR = BlockInit.WHISPUR_TRAPDOOR.get();
+    public static final Block WHISPUR_SIGN = BlockInit.WHISPUR_SIGN.get();
+    public static final Block WHISPUR_WALL_SIGN = BlockInit.WHISPUR_WALL_SIGN.get();
+    public static final Block WHISPUR_BOOKSHELF = BlockInit.WHISPUR_BOOKSHELF.get();
+    public static final Block WHISPUR_LADDER = BlockInit.WHISPUR_LADDER.get();
+
+    public static final Block PETRIFIED_LOG = BlockInit.PETRIFIED_LOG.get();
+    public static final Block STRIPPED_PETRIFIED_LOG = BlockInit.STRIPPED_PETRIFIED_LOG.get();
+    public static final Block PETRIFIED_PLANKS = BlockInit.PETRIFIED_PLANKS.get();
+    public static final Block PETRIFIED_SLAB = BlockInit.PETRIFIED_SLAB.get();
+    public static final Block PETRIFIED_STAIRS = BlockInit.PETRIFIED_STAIRS.get();
+    public static final Block PETRIFIED_FENCE = BlockInit.PETRIFIED_FENCE.get();
+    public static final Block PETRIFIED_FENCE_GATE = BlockInit.PETRIFIED_FENCE_GATE.get();
+    public static final Block PETRIFIED_BUTTON = BlockInit.PETRIFIED_BUTTON.get();
+    public static final Block PETRIFIED_PRESSURE_PLATE = BlockInit.PETRIFIED_PRESSURE_PLATE.get();
+    public static final Block PETRIFIED_DOOR = BlockInit.PETRIFIED_DOOR.get();
+    public static final Block PETRIFIED_TRAPDOOR = BlockInit.PETRIFIED_TRAPDOOR.get();
+    public static final Block PETRIFIED_SIGN = BlockInit.PETRIFIED_SIGN.get();
+    public static final Block PETRIFIED_WALL_SIGN = BlockInit.PETRIFIED_WALL_SIGN.get();
+    public static final Block PETRIFIED_BOOKSHELF = BlockInit.PETRIFIED_BOOKSHELF.get();
+    public static final Block PETRIFIED_LADDER = BlockInit.PETRIFIED_LADDER.get();
+
+    public static final CaramineRyeBlock CARAMINE_RYE = (CaramineRyeBlock) BlockInit.CARAMINE_RYE.get();
+    public static final Block TWISTING_VINES_PLANT = BlockInit.TWISTING_VINES_PLANT.get();
+    public static final Block WARPED_ROOTS = BlockInit.WARPED_ROOTS.get();
+
+    public static final class WoodTypes
+    {
+        public static final WoodType SCRAPWOOD = WoodType.register(new WoodType("scrapwood", BlockSets.SCRAPWOOD));
+        public static final WoodType WHISPUR = WoodType.register(new WoodType("whispur", BlockSets.WHISPUR));
+        public static final WoodType PETRIFIED = WoodType.register(new WoodType("petrified", BlockSets.PETRIFIED));
+    }
+
+    public static final class BlockSets
+    {
+        public static final BlockSetType SCRAPWOOD = BlockSetType.register(new BlockSetType("scrapwood",
+                                                                                            SoundType.NETHER_WOOD,
+                                                                                            SoundEvents.NETHER_WOOD_DOOR_CLOSE, SoundEvents.NETHER_WOOD_DOOR_OPEN,
+                                                                                            SoundEvents.NETHER_WOOD_TRAPDOOR_CLOSE, SoundEvents.NETHER_WOOD_TRAPDOOR_OPEN,
+                                                                                            SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_OFF, SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_ON,
+                                                                                            SoundEvents.NETHER_WOOD_BUTTON_CLICK_OFF, SoundEvents.NETHER_WOOD_BUTTON_CLICK_ON));
+
+        public static final BlockSetType WHISPUR = BlockSetType.register(new BlockSetType("whispur",
+                                                                                            SoundType.NETHER_WOOD,
+                                                                                            SoundEvents.NETHER_WOOD_DOOR_CLOSE, SoundEvents.NETHER_WOOD_DOOR_OPEN,
+                                                                                            SoundEvents.NETHER_WOOD_TRAPDOOR_CLOSE, SoundEvents.NETHER_WOOD_TRAPDOOR_OPEN,
+                                                                                            SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_OFF, SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_ON,
+                                                                                            SoundEvents.NETHER_WOOD_BUTTON_CLICK_OFF, SoundEvents.NETHER_WOOD_BUTTON_CLICK_ON));
+
+        public static final BlockSetType PETRIFIED = BlockSetType.register(new BlockSetType("petrified",
+                                                                                          ModSoundType.PETRIFIED_PLANKS,
+                                                                                          ModSounds.PETRIFIED_DOOR_CLOSE, ModSounds.PETRIFIED_DOOR_OPEN,
+                                                                                          ModSounds.PETRIFIED_DOOR_CLOSE, ModSounds.PETRIFIED_DOOR_OPEN,
+                                                                                          SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_OFF, SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_ON,
+                                                                                          SoundEvents.WOODEN_BUTTON_CLICK_OFF, SoundEvents.WOODEN_BUTTON_CLICK_ON));
+    }
 }
