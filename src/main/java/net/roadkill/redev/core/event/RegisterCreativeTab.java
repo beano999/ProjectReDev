@@ -353,6 +353,12 @@ public class RegisterCreativeTab
                     ModItems.WITHERED_HOE
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
+        else if (event.getTab().equals(CreativeModeTabs.SPAWN_EGGS))
+        {
+            injectItemsAfter(Items.ZOMBIFIED_PIGLIN_SPAWN_EGG.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.LITHICAN_SPAWN_EGG
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
     }
 
     static void injectItemsAfter(ItemStack injectPoint, MutableHashedLinkedMap<ItemStack, CreativeModeTab.TabVisibility> entries, Collection<Item> list, CreativeModeTab.TabVisibility visibility)

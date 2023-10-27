@@ -90,9 +90,14 @@
   "item.redev.caramine_rye_seeds":     "Caramine Rye Seeds",
   "item.redev.churk":                  "Churk",
   "item.redev.warped_drupel":          "Warped Drupel",
+  "item.redev.lithican_spawn_egg":     "Lithican Spawn Egg",
+
 
 
   "effect.redev.sight": "Sight",
+
+
+  "entity.redev.lithican": "Lithican",
 
 
   "block.redev.acacia_bookshelf":    "Acacia Bookshelf",

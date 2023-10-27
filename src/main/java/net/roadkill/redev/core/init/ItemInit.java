@@ -2,6 +2,7 @@ package net.roadkill.redev.core.init;
 
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -50,6 +51,8 @@ public class ItemInit
     public static final RegistryObject<Item> CHURK = ITEMS.register("churk", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().fast().nutrition(4).saturationMod(0.3f).build())));
     public static final RegistryObject<Item> CARAMINE_RYE = ITEMS.register("caramine_rye", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> WARPED_DRUPEL = ITEMS.register("warped_drupel", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().fast().nutrition(3).saturationMod(0.3f).build())));
+
+    public static final RegistryObject<Item> LITHICAN_SPAWN_EGG = ITEMS.register("lithican_spawn_egg", () -> new ForgeSpawnEggItem(EntityInit.LITHICAN, 6052956, 10782599, new Item.Properties()));
 
     /*
      Block Items
