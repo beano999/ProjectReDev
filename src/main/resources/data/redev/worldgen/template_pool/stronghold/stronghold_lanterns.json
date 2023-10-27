@@ -3,7 +3,7 @@
   "elements":
   [
     {
-      "weight": 15,
+      "weight": 30,
       "element":
       {
         "location": "redev:stronghold/stronghold_lantern",
