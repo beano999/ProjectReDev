@@ -11,9 +11,9 @@ import net.roadkill.redev.ReDev;
 import net.roadkill.redev.client.model.entity.LithicanModel;
 import net.roadkill.redev.client.renderer.layer.LithicanMoltenLayer;
 import net.roadkill.redev.client.renderer.layer.StuckArrowLayer;
-import net.roadkill.redev.common.entity.Lithican;
+import net.roadkill.redev.common.entity.LithicanEntity;
 
-public class LithicanRenderer<T extends Lithican, M extends LithicanModel<T>> extends AbstractZombieRenderer<T, M>
+public class LithicanRenderer<T extends LithicanEntity, M extends LithicanModel<T>> extends AbstractZombieRenderer<T, M>
 {
     public static final ResourceLocation TEXTURE_STONE = new ResourceLocation(ReDev.MOD_ID, "textures/entity/lithican/stone_lithican.png");
     public static final ResourceLocation TEXTURE_SANDSTONE = new ResourceLocation(ReDev.MOD_ID, "textures/entity/lithican/sandstone_lithican.png");
@@ -32,7 +32,7 @@ public class LithicanRenderer<T extends Lithican, M extends LithicanModel<T>> ex
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Lithican pEntity)
+    public ResourceLocation getTextureLocation(LithicanEntity pEntity)
     {   return switch (pEntity.getVariant())
         {
             case 0 -> TEXTURE_STONE;
@@ -42,7 +42,6 @@ public class LithicanRenderer<T extends Lithican, M extends LithicanModel<T>> ex
 
     @Override
     public void render(T pEntity, float pEntityYaw, float pPartialTicks, PoseStack pMatrixStack, MultiBufferSource pBuffer, int pPackedLight)
-    {
-        super.render(pEntity, pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight);
+    {   super.render(pEntity, pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight);
     }
 }

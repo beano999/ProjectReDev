@@ -8,10 +8,10 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.roadkill.redev.client.model.entity.LithicanModel;
 import net.roadkill.redev.client.renderer.entity.LithicanRenderer;
-import net.roadkill.redev.common.entity.Lithican;
+import net.roadkill.redev.common.entity.LithicanEntity;
 import net.roadkill.redev.util.RDMath;
 
-public class LithicanMoltenLayer<T extends Lithican, M extends LithicanModel<T>> extends RenderLayer<T, M>
+public class LithicanMoltenLayer<T extends LithicanEntity, M extends LithicanModel<T>> extends RenderLayer<T, M>
 {
     private static final RenderType MOLTEN_OVERLAY = RenderType.entityTranslucentEmissive(LithicanRenderer.TEXTURE_HEAT);
 
