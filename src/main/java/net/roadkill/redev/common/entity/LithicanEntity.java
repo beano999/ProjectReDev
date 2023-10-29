@@ -21,6 +21,8 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnGroupData;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.WrappedGoal;
 import net.minecraft.world.entity.monster.Zombie;
@@ -32,6 +34,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.Tags;
+import net.roadkill.redev.util.RDMath;
 import net.roadkill.redev.util.registries.ModSounds;
 import org.jetbrains.annotations.Nullable;
 
@@ -45,6 +48,10 @@ public class LithicanEntity extends Zombie
 
     public LithicanEntity(EntityType<? extends Zombie> pEntityType, Level pLevel)
     {   super(pEntityType, pLevel);
+    }
+
+    public static AttributeSupplier.Builder createAttributes()
+    {   return Zombie.createAttributes().add(Attributes.ATTACK_DAMAGE, 3).add(Attributes.ARMOR, 5);
     }
 
     @Override
@@ -131,6 +138,7 @@ public class LithicanEntity extends Zombie
                 if (player.distanceTo(this) < 6 && !player.isCreative() && !player.isSpectator())
                 {   this.setActive(true);
                     this.playBreakAnimation();
+                    this.playSound(SoundEvents.UI_STONECUTTER_TAKE_RESULT, 1, 1);
                     this.setTarget(player);
                     break;
                 }
@@ -240,7 +248,7 @@ public class LithicanEntity extends Zombie
         {   amount = 999;
         }
         else if (damageSource.is(DamageTypes.FIREWORKS) || damageSource.is(DamageTypes.EXPLOSION))
-        {   amount *= 3;
+        {   amount *= 5;
         }
         else if (damageSource.type().effects() == DamageEffects.BURNING)
         {   this.clearFire();
@@ -248,7 +256,7 @@ public class LithicanEntity extends Zombie
             return false;
         }
         // Trigger the super method
-        if (super.hurt(damageSource, amount))
+        if (super.hurt(damageSource, (float) RDMath.blend(amount, amount * 2, this.getHeat(), 0, 100)))
         {
             // Make all nearby lithicans active if damage passes
             this.level.getEntitiesOfClass(LithicanEntity.class, this.getBoundingBox().inflate(16)).forEach(lithican ->

@@ -53,6 +53,7 @@ public class ItemInit
     public static final RegistryObject<Item> WARPED_DRUPEL = ITEMS.register("warped_drupel", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().fast().nutrition(3).saturationMod(0.3f).build())));
 
     public static final RegistryObject<Item> LITHICAN_SPAWN_EGG = ITEMS.register("lithican_spawn_egg", () -> new ForgeSpawnEggItem(EntityInit.LITHICAN, 6052956, 10782599, new Item.Properties()));
+    public static final RegistryObject<Item> REVENANT_SPAWN_EGG = ITEMS.register("revenant_spawn_egg", () -> new ForgeSpawnEggItem(EntityInit.REVENANT, 7237294, 5874129, new Item.Properties()));
 
     /*
      Block Items

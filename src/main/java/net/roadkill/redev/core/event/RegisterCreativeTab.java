@@ -356,7 +356,8 @@ public class RegisterCreativeTab
         else if (event.getTab().equals(CreativeModeTabs.SPAWN_EGGS))
         {
             injectItemsAfter(Items.ZOMBIFIED_PIGLIN_SPAWN_EGG.getDefaultInstance(), event.getEntries(), List.of(
-                    ModItems.LITHICAN_SPAWN_EGG
+                    ModItems.LITHICAN_SPAWN_EGG,
+                    ModItems.REVENANT_SPAWN_EGG
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }

@@ -39,6 +39,10 @@ public final class RDMath
     {   return value >= min && value <= max;
     }
 
+    public static boolean withinRange(double value, double min, double max)
+    {   return value >= min && value <= max;
+    }
+
     public static boolean withinRange(long value, long min, long max)
     {   return value >= min && value <= max;
     }
