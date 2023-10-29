@@ -20,5 +20,54 @@
           "stream": true
       }
     ]
+  },
+  "entity.lithican.ambient":
+  {
+    "subtitle": "entity.lithican.ambient",
+    "sounds":
+    [
+      {
+        "name": "redev:entity/lithican/lithican_idle_0",
+        "stream": true
+      },
+      {
+        "name": "redev:entity/lithican/lithican_idle_1",
+        "stream": true
+      },
+      {
+        "name": "redev:entity/lithican/lithican_idle_2",
+        "stream": true
+      }
+    ]
+  },
+  "entity.lithican.death":
+  {
+    "subtitle": "entity.lithican.death",
+    "sounds":
+    [
+      {
+        "name": "redev:entity/lithican/lithican_death",
+        "stream": true
+      }
+    ]
+  },
+  "entity.lithican.hurt":
+  {
+    "subtitle": "entity.lithican.hurt",
+    "sounds":
+    [
+      {
+        "name": "redev:entity/lithican/lithican_hurt_0",
+        "stream": true
+      },
+      {
+        "name": "redev:entity/lithican/lithican_hurt_1",
+        "stream": true
+      },
+      {
+        "name": "redev:entity/lithican/lithican_hurt_2",
+        "stream": true
+      }
+    ]
   }
 }
