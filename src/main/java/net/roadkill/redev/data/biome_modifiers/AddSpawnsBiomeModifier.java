@@ -5,10 +5,13 @@ import net.minecraft.core.Holder;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ModifiableBiomeInfo;
 import net.roadkill.redev.core.init.BiomeCodecInit;
+import net.roadkill.redev.core.init.EntityInit;
 import net.roadkill.redev.data.FunctionalSpawnerData;
 
 
@@ -25,8 +28,12 @@ public record AddSpawnsBiomeModifier(boolean dummy) implements BiomeModifier
                 {
                     builder.getMobSpawnSettings().addSpawn(MobCategory.MONSTER, new FunctionalSpawnerData(EntityType.CAVE_SPIDER, 500, 1, 3,
                     (level, structureManager, chunkGenerator, category, spawnerData, pos) ->
-                    {
-                        return level.random.nextInt(level.getMinBuildHeight(), level.getSeaLevel()) > pos.getY();
+                    {   return level.random.nextInt(level.getMinBuildHeight(), level.getSeaLevel()) > pos.getY();
+                    }));
+
+                    builder.getMobSpawnSettings().addSpawn(MobCategory.MONSTER, new FunctionalSpawnerData(EntityInit.LITHICAN.get(), 100, 1, 3,
+                    (level, structureManager, chunkGenerator, category, spawnerData, pos) ->
+                    {   return level.getBlockState(pos.below()).is(Tags.Blocks.STONE) && level.getBrightness(LightLayer.SKY, pos) == 0;
                     }));
                 }
             });
