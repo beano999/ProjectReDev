@@ -122,6 +122,13 @@ public class PhantomEvents
         }
     }
 
+    private static final Field ANCHOR_POINT = ObfuscationReflectionHelper.findField(Phantom.class, "f_33098_");
+    private static final Field MOVE_POINT = ObfuscationReflectionHelper.findField(Phantom.class, "f_33097_");
+    static
+    {   ANCHOR_POINT.setAccessible(true);
+        MOVE_POINT.setAccessible(true);
+    }
+
     @SubscribeEvent
     public static void phantomTick(LivingEvent.LivingTickEvent event)
     {
@@ -153,16 +160,18 @@ public class PhantomEvents
                 {   phantom.noPhysics = true;
                     phantom.getPersistentData().putInt("NoclipCooldown", 80);
 
-                    BlockPos anchorPoint = phantom.anchorPoint;
-                    BlockPos pos = phantom.blockPosition();
-                    int levelHeight = phantom.level.getHeight(Heightmap.Types.MOTION_BLOCKING, pos.getX(), pos.getZ()) + 10;
-
-                    phantom.anchorPoint = new BlockPos(anchorPoint.getX(), levelHeight, anchorPoint.getZ());
-                    Field movePoint = ObfuscationReflectionHelper.findField(Phantom.class, "f_33097_");
-                    movePoint.setAccessible(true);
                     try
-                    {   Vec3 move = (Vec3) movePoint.get(phantom);
-                        movePoint.set(phantom, new Vec3(move.x + phantom.getRandom().nextInt(-20, 20),
+                    {
+                        BlockPos anchorPoint = (BlockPos) ANCHOR_POINT.get(phantom);
+                        BlockPos pos = phantom.blockPosition();
+                        int levelHeight = phantom.level.getHeight(Heightmap.Types.MOTION_BLOCKING, pos.getX(), pos.getZ()) + 10;
+
+                        ANCHOR_POINT.set(phantom, new BlockPos(anchorPoint.getX(), levelHeight, anchorPoint.getZ()));
+                    }
+                    catch (Exception ignored) {}
+                    try
+                    {   Vec3 move = (Vec3) MOVE_POINT.get(phantom);
+                        MOVE_POINT.set(phantom, new Vec3(move.x + phantom.getRandom().nextInt(-20, 20),
                                                         move.y + 10,
                                                         move.z + phantom.getRandom().nextInt(-20, 20)));
                     } catch (Exception ignored) {}

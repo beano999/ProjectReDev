@@ -18,7 +18,7 @@ public abstract class MixinEntityInvisible
 
     Entity entity = (Entity) (Object) this;
 
-    @Inject(method = "isInvisible", at = @At("HEAD"), cancellable = true, remap = ReDev.REMAP_MIXINS)
+    @Inject(method = "isInvisible", at = @At("HEAD"), cancellable = true)
     public void onInvisible(CallbackInfoReturnable<Boolean> cir)
     {
         Player player = Minecraft.getInstance().player;

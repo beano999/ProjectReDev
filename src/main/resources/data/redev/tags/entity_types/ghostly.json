@@ -5,6 +5,7 @@
     "minecraft:ghast",
     "minecraft:stray",
     "minecraft:phantom",
-    "minecraft:allay"
+    "minecraft:allay",
+    "redev:revenant"
   ]
 }

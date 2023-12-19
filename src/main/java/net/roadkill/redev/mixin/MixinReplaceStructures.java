@@ -33,7 +33,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Mixin({ChunkGenerator.class, LocateCommand.class})
-public class MixinReplaceStronghold
+public class MixinReplaceStructures
 {
     @Mixin(ChunkGenerator.class)
     public static class DisableVanillaStrongholdsMixin
@@ -42,11 +42,12 @@ public class MixinReplaceStronghold
          * Prevents vanilla strongholds from generating.
          */
         @Inject(method = "tryGenerateStructure", at = @At(value = "HEAD"), cancellable = true)
-        void betterstrongholds_disableVanillaStrongholds(StructureSet.StructureSelectionEntry structureSetEntry, StructureManager structureManager, RegistryAccess registryAccess,
-                                                         RandomState randomState, StructureTemplateManager structureTemplateManager, long seed, ChunkAccess chunkAccess,
-                                                         ChunkPos chunkPos, SectionPos sectionPos, CallbackInfoReturnable<Boolean> cir)
+        void disableVanillaStrongholds(StructureSet.StructureSelectionEntry structureSetEntry, StructureManager structureManager, RegistryAccess registryAccess,
+                                       RandomState randomState, StructureTemplateManager structureTemplateManager, long seed, ChunkAccess chunkAccess,
+                                       ChunkPos chunkPos, SectionPos sectionPos, CallbackInfoReturnable<Boolean> cir)
         {
-            if (structureSetEntry.structure().value().type() == StructureType.STRONGHOLD)
+            if (structureSetEntry.structure().value().type() == StructureType.STRONGHOLD
+            ||  structureSetEntry.structure().value().type() == StructureType.DESERT_PYRAMID)
             {   cir.setReturnValue(false);
             }
         }
@@ -61,12 +62,13 @@ public class MixinReplaceStronghold
                 method = "getNearestGeneratedStructure(Ljava/util/Set;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/StructureManager;Lnet/minecraft/core/BlockPos;ZLnet/minecraft/world/level/levelgen/structure/placement/ConcentricRingsStructurePlacement;)Lcom/mojang/datafixers/util/Pair;",
                 at = @At(value = "HEAD"),
                 cancellable = true)
-        public void betterstrongholds_disableVanillaStrongholds2(Set<Holder<Structure>> structureHolders, ServerLevel serverLevel, StructureManager structureManager, BlockPos blockPos,
-                                                                 boolean bl, ConcentricRingsStructurePlacement structurePlacement, CallbackInfoReturnable<Pair<BlockPos, Holder<Structure>>> cir)
+        public void disableVanillaStrongholds2(Set<Holder<Structure>> structureHolders, ServerLevel serverLevel, StructureManager structureManager, BlockPos blockPos,
+                                               boolean bl, ConcentricRingsStructurePlacement structurePlacement, CallbackInfoReturnable<Pair<BlockPos, Holder<Structure>>> cir)
         {
             for (Holder<Structure> structureHolder : structureHolders)
             {
-                if (structureHolder.is(new ResourceLocation("stronghold")))
+                if (structureHolder.is(new ResourceLocation("stronghold"))
+                ||  structureHolder.is(new ResourceLocation("desert_pyramid")))
                 {   cir.setReturnValue(Pair.of(new BlockPos(29000000, 0, 29000000), structureHolder));
                 }
             }
@@ -76,16 +78,15 @@ public class MixinReplaceStronghold
     @Mixin(LocateCommand.class)
     public static class LocateStrongholdCommandMixin
     {
-        private static final SimpleCommandExceptionType OLD_STRONGHOLD_EXCEPTION =
-                new SimpleCommandExceptionType(Component.literal("Use /locate structure redev:stronghold instead!"));
-
         @Inject(method = "locateStructure", at = @At(value = "HEAD"))
         private static void overrideLocateVanillaStronghold(CommandSourceStack cmdSource, ResourceOrTagKeyArgument.Result<Structure> result, CallbackInfoReturnable<Integer> ci)
         throws CommandSyntaxException
         {
             Optional<ResourceKey<Structure>> optional = result.unwrap().left();
-            if (optional.isPresent() && optional.get().location().equals(new ResourceLocation("stronghold")))
-            {   throw OLD_STRONGHOLD_EXCEPTION.create();
+            if (optional.isPresent()
+            && (optional.get().location().equals(new ResourceLocation("stronghold")))
+            ||  optional.get().location().equals(new ResourceLocation("desert_pyramid")))
+            {   throw new SimpleCommandExceptionType(Component.literal(String.format("Use /locate structure redev:%s instead!", optional.get().location().getPath()))).create();
             }
         }
     }

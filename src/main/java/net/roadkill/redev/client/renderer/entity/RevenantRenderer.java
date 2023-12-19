@@ -1,6 +1,5 @@
 package net.roadkill.redev.client.renderer.entity;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -12,15 +11,18 @@ import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
 import net.roadkill.redev.client.model.entity.RevenantModel;
+import net.roadkill.redev.client.renderer.layer.RevenantVeinsLayer;
 import net.roadkill.redev.common.entity.RevenantEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class RevenantRenderer<T extends RevenantEntity, M extends RevenantModel<T>> extends HumanoidMobRenderer<T, M>
 {
     private static final ResourceLocation TEXTURE = new ResourceLocation("redev", "textures/entity/revenant/revenant.png");
+    public static final ResourceLocation TEXTURE_VEINS = new ResourceLocation("redev", "textures/entity/revenant/revenant_veins.png");
 
     public RevenantRenderer(EntityRendererProvider.Context context)
     {   this(context, ModelLayers.SKELETON, ModelLayers.SKELETON_INNER_ARMOR, ModelLayers.SKELETON_OUTER_ARMOR);
+        this.addLayer(new RevenantVeinsLayer<>(this));
     }
 
     public RevenantRenderer(EntityRendererProvider.Context pContext, ModelLayerLocation layerLocation, ModelLayerLocation pInnerModelLayer, ModelLayerLocation pOuterModelLayer)

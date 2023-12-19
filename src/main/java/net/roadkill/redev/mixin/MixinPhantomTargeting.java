@@ -19,8 +19,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class MixinPhantomTargeting
 {
     @Redirect(method = "canUse()Z",
-              at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/monster/Phantom;canAttack(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/ai/targeting/TargetingConditions;)Z"),
-              remap = ReDev.REMAP_MIXINS)
+              at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/monster/Phantom;canAttack(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/ai/targeting/TargetingConditions;)Z"))
     public boolean canAttack(Phantom phantom, LivingEntity target, TargetingConditions conditions)
     {   SpecialPhantom special = ((SpecialPhantom) phantom);
         PhantomType type = special.getPhantomType();

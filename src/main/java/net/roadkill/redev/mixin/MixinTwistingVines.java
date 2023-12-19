@@ -12,8 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(TwistingVinesBlock.class)
 public class MixinTwistingVines
 {
-    @Inject(method = "getBodyBlock", at = @At("RETURN"),
-            remap = ReDev.REMAP_MIXINS, cancellable = true)
+    @Inject(method = "getBodyBlock", at = @At("RETURN"), cancellable = true)
     private void onGetBodyBlock(CallbackInfoReturnable<Block> cir)
     {   cir.setReturnValue(ModBlocks.TWISTING_VINES_PLANT);
     }

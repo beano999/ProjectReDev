@@ -244,7 +244,7 @@ public class ModItems
     public static final Item CARAMINE_RYE_SEEDS = ItemInit.CARAMINE_RYE_SEEDS.get();
 
     public static final class Tiers
-    {   public static final Tier NETHER_GOLD = new ForgeTier(0, 500, 3.0F, -1.0F, 50, BlockTags.NEEDS_STONE_TOOL, () -> Ingredient.of(ModItems.NETHER_GOLD_INGOT));
-        public static final Tier WITHERED = new ForgeTier(3, 2000, 9.0F, -1.0F, 18, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ModItems.WITHERED_INGOT));
+    {   public static final Tier NETHER_GOLD = new ForgeTier(0, 300, 3.0F, -1.0F, 50, BlockTags.NEEDS_STONE_TOOL, () -> Ingredient.of(ModItems.NETHER_GOLD_INGOT));
+        public static final Tier WITHERED = new ForgeTier(3, 800, 9.0F, -1.0F, 18, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ModItems.WITHERED_INGOT));
     }
 }

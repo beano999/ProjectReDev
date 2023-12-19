@@ -22,7 +22,6 @@ import org.apache.logging.log4j.Logger;
 public class ReDev
 {
     public static final String MOD_ID = "redev";
-    public static final boolean REMAP_MIXINS = false;
     public static final Logger LOGGER = LogManager.getFormatterLogger("ReDev");
 
     public ReDev()

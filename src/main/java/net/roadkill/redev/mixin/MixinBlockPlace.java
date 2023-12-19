@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicReference;
 @Mixin(BlockBehaviour.class)
 public class MixinBlockPlace
 {
-    @Inject(method = "onPlace", at = @At(value = "TAIL"), remap = ReDev.REMAP_MIXINS)
+    @Inject(method = "onPlace", at = @At(value = "TAIL"))
     private void onBlockPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston, CallbackInfo ci)
     {
         if (state.is(Blocks.CAMPFIRE))

@@ -26,14 +26,14 @@ public abstract class MixinEntityRenderer<T extends LivingEntity, M extends Enti
     private LivingEntity entity = null;
 
     @Inject(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V",
-            at = @At("HEAD"), remap = ReDev.REMAP_MIXINS)
+            at = @At("HEAD"))
     public void storeData(T entity, float f1, float f2, PoseStack poseStack, MultiBufferSource multiBufferSource, int i, CallbackInfo ci)
     {   this.entity = entity;
     }
 
     @ModifyArg(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V",
               at = @At(value = "INVOKE", target = "Lnet/minecraft/client/model/EntityModel;renderToBuffer(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;IIFFFF)V"),
-              index = 7, remap = ReDev.REMAP_MIXINS)
+              index = 7)
     public float setRenderOpacity(float alpha)
     {
         if (Minecraft.getInstance().player != null)
@@ -49,8 +49,7 @@ public abstract class MixinEntityRenderer<T extends LivingEntity, M extends Enti
     }
 
     @Redirect(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V",
-              at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/entity/layers/RenderLayer;render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/Entity;FFFFFF)V"),
-              remap = ReDev.REMAP_MIXINS)
+              at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/entity/layers/RenderLayer;render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/Entity;FFFFFF)V"))
     public void conditionalLayerRender(RenderLayer<Entity, EntityModel<Entity>> layer, PoseStack stack, MultiBufferSource bufferSource, int i, Entity t, float f1, float f2, float f3, float f4, float f5, float f6)
     {   if (entity.isSpectator()) return;
         if (entity.getPersistentData().getBoolean("PartialInvisible")
@@ -61,7 +60,7 @@ public abstract class MixinEntityRenderer<T extends LivingEntity, M extends Enti
     }
 
     @Inject(method = "getRenderType(Lnet/minecraft/world/entity/LivingEntity;ZZZ)Lnet/minecraft/client/renderer/RenderType;",
-            at = @At("HEAD"), cancellable = true, remap = ReDev.REMAP_MIXINS)
+            at = @At("HEAD"), cancellable = true)
     public void getRenderType(T entity, boolean bool1, boolean bool2, boolean bool3, CallbackInfoReturnable<RenderType> cir)
     {
         if (entity.getPersistentData().getBoolean("PartialInvisible"))

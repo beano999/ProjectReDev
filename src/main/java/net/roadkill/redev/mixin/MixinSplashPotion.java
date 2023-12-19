@@ -17,7 +17,7 @@ import java.util.List;
 public class MixinSplashPotion
 {
     @Inject(method = "applySplash(Ljava/util/List;Lnet/minecraft/world/entity/Entity;)V",
-            at = @At(value = "HEAD"), cancellable = true, remap = ReDev.REMAP_MIXINS)
+            at = @At(value = "HEAD"), cancellable = true)
     private void applySplash(List<MobEffectInstance> effects, Entity entity, CallbackInfo info)
     {
         if (entity instanceof ItemFrame itemFrame && effects.stream().anyMatch(effect -> effect.getEffect().equals(MobEffects.INVISIBILITY)))

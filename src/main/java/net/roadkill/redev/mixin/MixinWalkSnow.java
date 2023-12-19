@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(BlockBehaviour.class)
 public class MixinWalkSnow
 {
-    @Inject(method = "entityInside", at = @At("HEAD"), remap = ReDev.REMAP_MIXINS)
+    @Inject(method = "entityInside", at = @At("HEAD"))
     public void onStepSnow(BlockState state, Level level, BlockPos pos, Entity entity, CallbackInfo ci)
     {
         if (entity instanceof LivingEntity living && !living.isFallFlying() && !(living instanceof Player player && player.getAbilities().flying)

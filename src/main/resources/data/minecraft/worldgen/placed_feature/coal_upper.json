@@ -1,9 +1,9 @@
 {
-  "feature": "redev:ore_big_redstone",
+  "feature": "minecraft:ore_coal",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 20
+      "type": "minecraft:count",
+      "count": 80
     },
     {
       "type": "minecraft:in_square"
@@ -13,12 +13,15 @@
       "height": {
         "type": "minecraft:uniform",
         "min_inclusive": {
-          "absolute": -32
+          "above_bottom": 3
         },
         "max_inclusive": {
-          "absolute": 45
+          "below_top": 0
         }
       }
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }

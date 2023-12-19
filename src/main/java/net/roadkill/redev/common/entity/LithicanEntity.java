@@ -42,7 +42,7 @@ public class LithicanEntity extends Zombie
 {
     private static final EntityDataAccessor<Boolean> ACTIVE = SynchedEntityData.defineId(LithicanEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(LithicanEntity.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Integer> HEAT = SynchedEntityData.defineId(LithicanEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Float> HEAT = SynchedEntityData.defineId(LithicanEntity.class, EntityDataSerializers.FLOAT);
 
     private int awakenDelay = -1;
 
@@ -59,7 +59,7 @@ public class LithicanEntity extends Zombie
     {   super.defineSynchedData();
         this.entityData.define(ACTIVE, true);
         this.entityData.define(VARIANT, 0);
-        this.entityData.define(HEAT, 0);
+        this.entityData.define(HEAT, 0f);
     }
 
     @Override
@@ -87,10 +87,10 @@ public class LithicanEntity extends Zombie
     {   this.entityData.set(VARIANT, variant);
     }
 
-    public int getHeat()
+    public float getHeat()
     {   return this.entityData.get(HEAT);
     }
-    public void setHeat(int heat)
+    public void setHeat(float heat)
     {   this.entityData.set(HEAT, heat);
     }
 
@@ -98,9 +98,9 @@ public class LithicanEntity extends Zombie
     public void tick()
     {
         // Decrease heat gradually
-        int heat = this.getHeat();
+        float heat = this.getHeat();
         if (heat > 0)
-        {   this.setHeat(heat - 1);
+        {   this.setHeat(heat - 0.2f);
             if (this.level.isClientSide && this.random.nextInt(100) < heat)
             {
                 //spawn dripping lava particles within the entity's hitbox
@@ -148,14 +148,6 @@ public class LithicanEntity extends Zombie
     }
 
     @Override
-    public void serverAiStep()
-    {
-        if (this.isActive())
-        {   super.serverAiStep();
-        }
-    }
-
-    @Override
     public void knockback(double strength, double x, double z)
     {   super.knockback(0, x, z);
     }
@@ -181,7 +173,7 @@ public class LithicanEntity extends Zombie
         if (canSave)
         {   nbt.putBoolean("Active", this.isActive());
             nbt.putInt("Variant", this.getVariant());
-            nbt.putInt("Heat", this.getHeat());
+            nbt.putFloat("Heat", this.getHeat());
         }
         return canSave;
     }
@@ -221,9 +213,9 @@ public class LithicanEntity extends Zombie
     @Override
     public boolean doHurtTarget(Entity target)
     {
-        if (this.getHeat() > 20)
+        if (this.getHeat() > 5)
         {   target.invulnerableTime = 0;
-            target.setSecondsOnFire(Math.max((int) Math.ceil(target.getRemainingFireTicks() / 20d), this.getHeat() / 20));
+            target.setRemainingFireTicks((int) Math.max(target.getRemainingFireTicks(), this.getHeat()));
             target.hurt(this.damageSources().onFire(), 1f);
         }
         return super.doHurtTarget(target);
@@ -309,9 +301,28 @@ public class LithicanEntity extends Zombie
     protected void dropCustomDeathLoot(DamageSource pSource, int pLooting, boolean pRecentlyHit)
     {
         super.dropCustomDeathLoot(pSource, pLooting, pRecentlyHit);
+        // Drop appropriately for variant
         switch (this.getVariant())
         {
-            case 0 -> this.spawnAtLocation(new ItemStack(Blocks.STONE, this.random.nextIntBetweenInclusive(1, 3 + pLooting)));
+            case 0 ->
+            {
+                // 1/10 chance to drop ores
+                switch (this.random.nextInt(3))
+                {
+                    case 0 ->
+                    {
+                        // Drop random ore
+                        switch (this.random.nextInt(4))
+                        {
+                            case 0 -> this.spawnAtLocation(new ItemStack(Blocks.COAL_ORE, this.random.nextIntBetweenInclusive(1, 3 + pLooting)));
+                            case 1 -> this.spawnAtLocation(new ItemStack(Blocks.IRON_ORE, this.random.nextIntBetweenInclusive(1, 2 + pLooting)));
+                            case 2 -> this.spawnAtLocation(new ItemStack(Blocks.GOLD_ORE, this.random.nextIntBetweenInclusive(1, 2 + pLooting)));
+                            case 3 -> this.spawnAtLocation(new ItemStack(Blocks.DIAMOND_ORE, this.random.nextIntBetweenInclusive(1, 1 + pLooting)));
+                        }
+                    }
+                    default -> this.spawnAtLocation(new ItemStack(Blocks.STONE, this.random.nextIntBetweenInclusive(1, 3 + pLooting)));
+                }
+            }
             case 1 -> this.spawnAtLocation(new ItemStack(Blocks.SANDSTONE, this.random.nextIntBetweenInclusive(1, 3 + pLooting)));
         }
     }

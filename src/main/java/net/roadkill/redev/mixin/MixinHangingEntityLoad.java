@@ -1,20 +1,10 @@
 package net.roadkill.redev.mixin;
 
-import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.QuartPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.protocol.game.ClientboundMoveEntityPacket;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.decoration.HangingEntity;
 import net.minecraft.world.entity.decoration.Painting;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.phys.AABB;
-import net.minecraftforge.network.PacketDistributor;
-import net.roadkill.redev.core.network.ReDevPacketHandler;
-import net.roadkill.redev.core.network.message.EntityPosMessage;
-import net.roadkill.redev.util.RDMath;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -40,7 +30,7 @@ public abstract class MixinHangingEntityLoad
     HangingEntity self = (HangingEntity) (Object) this;
 
     @Inject(method = "readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V",
-            at = @At(value = "INVOKE", target = "Lorg/slf4j/Logger;error(Ljava/lang/String;Ljava/lang/Object;)V"), cancellable = true)
+            at = @At(value = "INVOKE", target = "Lorg/slf4j/Logger;error(Ljava/lang/String;Ljava/lang/Object;)V"))
     public void onLoadFault(CompoundTag tag, CallbackInfo ci)
     {   self.getPersistentData().putBoolean("LoadError", true);
     }

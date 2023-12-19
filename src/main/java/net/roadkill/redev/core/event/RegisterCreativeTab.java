@@ -197,6 +197,9 @@ public class RegisterCreativeTab
                     ModItems.NETHER_DIAMOND_ORE
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
+            injectItemsAfter(Items.DEEPSLATE_DIAMOND_ORE.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.BASALT_DIAMOND_ORE
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
         /*

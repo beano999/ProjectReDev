@@ -1,9 +1,9 @@
 {
-  "feature": "redev:ore_big_redstone",
+  "feature": "redev:ore_redstone_savanna",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 20
+      "type": "minecraft:count",
+      "count": 64
     },
     {
       "type": "minecraft:in_square"
@@ -12,13 +12,16 @@
       "type": "minecraft:height_range",
       "height": {
         "type": "minecraft:uniform",
-        "min_inclusive": {
-          "absolute": -32
-        },
         "max_inclusive": {
-          "absolute": 45
+          "below_top": 0
+        },
+        "min_inclusive": {
+          "absolute": 0
         }
       }
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }

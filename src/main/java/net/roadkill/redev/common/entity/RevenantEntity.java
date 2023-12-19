@@ -6,7 +6,10 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -14,6 +17,10 @@ import net.minecraft.world.level.Level;
 
 public class RevenantEntity extends AbstractSkeleton
 {
+    public static AttributeSupplier.Builder createAttributes()
+    {   return Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 0.4D);
+    }
+
     public RevenantEntity(EntityType<? extends AbstractSkeleton> entityType, Level level)
     {   super(entityType, level);
     }

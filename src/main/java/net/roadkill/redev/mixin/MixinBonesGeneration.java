@@ -26,8 +26,7 @@ import java.util.List;
 @Mixin(NetherFossilPieces.NetherFossilPiece.class)
 public class MixinBonesGeneration
 {
-    @Inject(method = "postProcess", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/levelgen/structure/BoundingBox;encapsulate(Lnet/minecraft/world/level/levelgen/structure/BoundingBox;)Lnet/minecraft/world/level/levelgen/structure/BoundingBox;"),
-            remap = ReDev.REMAP_MIXINS)
+    @Inject(method = "postProcess", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/levelgen/structure/BoundingBox;encapsulate(Lnet/minecraft/world/level/levelgen/structure/BoundingBox;)Lnet/minecraft/world/level/levelgen/structure/BoundingBox;"))
     public void onPostProcess(WorldGenLevel level, StructureManager structureManager, ChunkGenerator chunkGenerator, RandomSource rand, BoundingBox box, ChunkPos chunkPos, BlockPos pos, CallbackInfo ci)
     {
         BlockPos.MutableBlockPos blockPos = new BlockPos.MutableBlockPos();
@@ -52,7 +51,6 @@ public class MixinBonesGeneration
 
                                 if (level.getBlockState(newPos).isAir() && Direction.stream().noneMatch(dir -> dir != finalDir.getOpposite() && level.getBlockState(newPos.relative(dir)).is(ModBlocks.WHISPUR_ROOT)))
                                 {
-                                    //blockPos.move(direction);
                                     BlockState state = ModBlocks.WHISPUR_ROOT.defaultBlockState()
                                             .setValue(WhispurRootBlock.DISTANCE, i+1).setValue(WhispurRootBlock.GROWING, false)
                                             .setValue(WhispurRootBlock.NORTH, WhispurRootBlock.isSupportingBlock(level.getBlockState(blockPos.north())))
