@@ -1,0 +1,99 @@
+{
+  "variants":
+  {
+    "facing=east,pumpkin_type=0":
+    {
+      "model": "redev:block/carved_pumpkin",
+      "y": 90
+    },
+    "facing=east,pumpkin_type=1":
+    {
+      "model": "redev:block/creepy_pumpkin",
+      "y": 90
+    },
+    "facing=east,pumpkin_type=2":
+    {
+      "model": "redev:block/horrified_pumpkin",
+      "y": 90
+    },
+    "facing=east,pumpkin_type=3":
+    {
+      "model": "redev:block/creeper_pumpkin",
+      "y": 90
+    },
+    "facing=east,pumpkin_type=4":
+    {
+      "model": "redev:block/scowling_pumpkin"
+    },
+    "facing=north,pumpkin_type=0":
+    {
+      "model": "redev:block/carved_pumpkin"
+    },
+    "facing=north,pumpkin_type=1":
+    {
+      "model": "redev:block/creepy_pumpkin"
+    },
+    "facing=north,pumpkin_type=2":
+    {
+      "model": "redev:block/horrified_pumpkin"
+    },
+    "facing=north,pumpkin_type=3":
+    {
+      "model": "redev:block/creeper_pumpkin"
+    },
+    "facing=north,pumpkin_type=4":
+    {
+      "model": "redev:block/scowling_pumpkin"
+    },
+    "facing=south,pumpkin_type=0":
+    {
+      "model": "redev:block/carved_pumpkin",
+      "y": 180
+    },
+    "facing=south,pumpkin_type=1":
+    {
+      "model": "redev:block/creepy_pumpkin",
+      "y": 180
+    },
+    "facing=south,pumpkin_type=2":
+    {
+      "model": "redev:block/horrified_pumpkin",
+      "y": 180
+    },
+    "facing=south,pumpkin_type=3":
+    {
+      "model": "redev:block/creeper_pumpkin",
+      "y": 180
+    },
+    "facing=south,pumpkin_type=4":
+    {
+      "model": "redev:block/scowling_pumpkin",
+      "y": 180
+    },
+    "facing=west,pumpkin_type=0":
+    {
+      "model": "redev:block/carved_pumpkin",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=1":
+    {
+      "model": "redev:block/creepy_pumpkin",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=2":
+    {
+      "model": "redev:block/horrified_pumpkin",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=3":
+    {
+      "model": "redev:block/creeper_pumpkin",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=4":
+    {
+      "model": "redev:block/scowling_pumpkin",
+      "y": 270
+    }
+  }
+}

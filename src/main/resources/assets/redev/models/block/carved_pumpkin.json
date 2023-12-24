@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/carved_pumpkin",
+  "textures": {
+    "all": "redev:block/pumpkin/carved_pumpkin"
+  }
+}

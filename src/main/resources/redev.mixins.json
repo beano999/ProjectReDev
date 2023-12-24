@@ -11,6 +11,7 @@
     "MixinBonesGeneration",
     "MixinBookshelf",
     "MixinCampfireInit",
+    "MixinCarvedPumpkin",
     "MixinCreativeTabIcons",
     "MixinCreativeTabIcons$ColorTabReset",
     "MixinFurnaceInit",
