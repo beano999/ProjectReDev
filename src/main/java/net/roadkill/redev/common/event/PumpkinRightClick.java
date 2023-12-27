@@ -22,7 +22,7 @@ import net.roadkill.redev.core.init.BlockInit;
 @Mod.EventBusSubscriber
 public class PumpkinRightClick
 {
-    @SubscribeEvent
+//    @SubscribeEvent
     public static void onPumpkinRightClick(PlayerInteractEvent event)
     {
         if(!event.getLevel().isClientSide())
@@ -38,7 +38,7 @@ public class PumpkinRightClick
                 player.getItemInHand(event.getHand()).setDamageValue(event.getItemStack().getDamageValue() - 1);
                 ItemEntity itementity = new ItemEntity(world, (double)pPos.getX() + 0.5D + (double)direction1.getStepX() * 0.65D, (double)pPos.getY() + 0.1D, (double)pPos.getZ() + 0.5D + (double)direction1.getStepZ() * 0.65D, new ItemStack(Items.PUMPKIN_SEEDS, 4));
                 itementity.setDeltaMovement(0.05D * (double)direction1.getStepX() + world.random.nextDouble() * 0.02D, 0.05D, 0.05D * (double)direction1.getStepZ() + world.random.nextDouble() * 0.02D);
-                player.playSound(SoundEvents.PUMPKIN_CARVE, 1, 1);
+
             }
         }
     }

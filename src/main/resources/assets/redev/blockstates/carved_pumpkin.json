@@ -1,98 +1,308 @@
 {
   "variants":
   {
-    "facing=east,pumpkin_type=0":
+    "facing=east,pumpkin_type=0,lit=false":
     {
       "model": "redev:block/carved_pumpkin",
       "y": 90
     },
-    "facing=east,pumpkin_type=1":
+    "facing=east,pumpkin_type=1,lit=false":
     {
       "model": "redev:block/creepy_pumpkin",
       "y": 90
     },
-    "facing=east,pumpkin_type=2":
+    "facing=east,pumpkin_type=2,lit=false":
     {
       "model": "redev:block/horrified_pumpkin",
       "y": 90
     },
-    "facing=east,pumpkin_type=3":
+    "facing=east,pumpkin_type=3,lit=false":
     {
       "model": "redev:block/creeper_pumpkin",
       "y": 90
     },
-    "facing=east,pumpkin_type=4":
+    "facing=east,pumpkin_type=4,lit=false":
     {
-      "model": "redev:block/scowling_pumpkin"
+      "model": "redev:block/scowling_pumpkin",
+      "y": 90
     },
-    "facing=north,pumpkin_type=0":
+    "facing=east,pumpkin_type=5,lit=false":
+    {
+      "model": "redev:block/scowling_pumpkin",
+      "y": 90
+    },
+    "facing=east,pumpkin_type=6,lit=false":
+    {
+      "model": "redev:block/scowling_pumpkin",
+      "y": 90
+    },
+    "facing=east,pumpkin_type=7,lit=false":
+    {
+      "model": "redev:block/scowling_pumpkin",
+      "y": 90
+    },
+    "facing=north,pumpkin_type=0,lit=false":
     {
       "model": "redev:block/carved_pumpkin"
     },
-    "facing=north,pumpkin_type=1":
+    "facing=north,pumpkin_type=1,lit=false":
     {
       "model": "redev:block/creepy_pumpkin"
     },
-    "facing=north,pumpkin_type=2":
+    "facing=north,pumpkin_type=2,lit=false":
     {
       "model": "redev:block/horrified_pumpkin"
     },
-    "facing=north,pumpkin_type=3":
+    "facing=north,pumpkin_type=3,lit=false":
     {
       "model": "redev:block/creeper_pumpkin"
     },
-    "facing=north,pumpkin_type=4":
+    "facing=north,pumpkin_type=4,lit=false":
     {
       "model": "redev:block/scowling_pumpkin"
     },
-    "facing=south,pumpkin_type=0":
+    "facing=north,pumpkin_type=5,lit=false":
+    {
+      "model": "redev:block/horrified_pumpkin"
+    },
+    "facing=north,pumpkin_type=6,lit=false":
+    {
+      "model": "redev:block/creeper_pumpkin"
+    },
+    "facing=north,pumpkin_type=7,lit=false":
+    {
+      "model": "redev:block/scowling_pumpkin"
+    },
+    "facing=south,pumpkin_type=0,lit=false":
     {
       "model": "redev:block/carved_pumpkin",
       "y": 180
     },
-    "facing=south,pumpkin_type=1":
+    "facing=south,pumpkin_type=1,lit=false":
     {
       "model": "redev:block/creepy_pumpkin",
       "y": 180
     },
-    "facing=south,pumpkin_type=2":
+    "facing=south,pumpkin_type=2,lit=false":
     {
       "model": "redev:block/horrified_pumpkin",
       "y": 180
     },
-    "facing=south,pumpkin_type=3":
+    "facing=south,pumpkin_type=3,lit=false":
     {
       "model": "redev:block/creeper_pumpkin",
       "y": 180
     },
-    "facing=south,pumpkin_type=4":
+    "facing=south,pumpkin_type=4,lit=false":
     {
       "model": "redev:block/scowling_pumpkin",
       "y": 180
     },
-    "facing=west,pumpkin_type=0":
+    "facing=south,pumpkin_type=5,lit=false":
+    {
+      "model": "redev:block/horrified_pumpkin",
+      "y": 180
+    },
+    "facing=south,pumpkin_type=6,lit=false":
+    {
+      "model": "redev:block/creeper_pumpkin",
+      "y": 180
+    },
+    "facing=south,pumpkin_type=7,lit=false":
+    {
+      "model": "redev:block/scowling_pumpkin",
+      "y": 180
+    },
+    "facing=west,pumpkin_type=0,lit=false":
     {
       "model": "redev:block/carved_pumpkin",
       "y": 270
     },
-    "facing=west,pumpkin_type=1":
+    "facing=west,pumpkin_type=1,lit=false":
     {
       "model": "redev:block/creepy_pumpkin",
       "y": 270
     },
-    "facing=west,pumpkin_type=2":
+    "facing=west,pumpkin_type=2,lit=false":
     {
       "model": "redev:block/horrified_pumpkin",
       "y": 270
     },
-    "facing=west,pumpkin_type=3":
+    "facing=west,pumpkin_type=3,lit=false":
     {
       "model": "redev:block/creeper_pumpkin",
       "y": 270
     },
-    "facing=west,pumpkin_type=4":
+    "facing=west,pumpkin_type=4,lit=false":
     {
       "model": "redev:block/scowling_pumpkin",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=5,lit=false":
+    {
+      "model": "redev:block/horrified_pumpkin",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=6,lit=false":
+    {
+      "model": "redev:block/creeper_pumpkin",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=7,lit=false":
+    {
+      "model": "redev:block/scowling_pumpkin",
+      "y": 270
+    },
+    "facing=east,pumpkin_type=0,lit=true":
+    {
+      "model": "redev:block/carved_pumpkin_lit",
+      "y": 90
+    },
+    "facing=east,pumpkin_type=1,lit=true":
+    {
+      "model": "redev:block/creepy_pumpkin_lit",
+      "y": 90
+    },
+    "facing=east,pumpkin_type=2,lit=true":
+    {
+      "model": "redev:block/horrified_pumpkin_lit",
+      "y": 90
+    },
+    "facing=east,pumpkin_type=3,lit=true":
+    {
+      "model": "redev:block/creeper_pumpkin_lit",
+      "y": 90
+    },
+    "facing=east,pumpkin_type=4,lit=true":
+    {
+      "model": "redev:block/scowling_pumpkin_lit",
+      "y": 90
+    },
+    "facing=east,pumpkin_type=5,lit=true":
+    {
+      "model": "redev:block/scowling_pumpkin_lit",
+      "y": 90
+    },
+    "facing=east,pumpkin_type=6,lit=true":
+    {
+      "model": "redev:block/scowling_pumpkin_lit",
+      "y": 90
+    },
+    "facing=east,pumpkin_type=7,lit=true":
+    {
+      "model": "redev:block/scowling_pumpkin_lit",
+      "y": 90
+    },
+    "facing=north,pumpkin_type=0,lit=true":
+    {
+      "model": "redev:block/carved_pumpkin_lit"
+    },
+    "facing=north,pumpkin_type=1,lit=true":
+    {
+      "model": "redev:block/creepy_pumpkin_lit"
+    },
+    "facing=north,pumpkin_type=2,lit=true":
+    {
+      "model": "redev:block/horrified_pumpkin_lit"
+    },
+    "facing=north,pumpkin_type=3,lit=true":
+    {
+      "model": "redev:block/creeper_pumpkin_lit"
+    },
+    "facing=north,pumpkin_type=4,lit=true":
+    {
+      "model": "redev:block/scowling_pumpkin_lit"
+    },
+    "facing=north,pumpkin_type=5,lit=true":
+    {
+      "model": "redev:block/horrified_pumpkin_lit"
+    },
+    "facing=north,pumpkin_type=6,lit=true":
+    {
+      "model": "redev:block/creeper_pumpkin_lit"
+    },
+    "facing=north,pumpkin_type=7,lit=true":
+    {
+      "model": "redev:block/scowling_pumpkin_lit"
+    },
+    "facing=south,pumpkin_type=0,lit=true":
+    {
+      "model": "redev:block/carved_pumpkin_lit",
+      "y": 180
+    },
+    "facing=south,pumpkin_type=1,lit=true":
+    {
+      "model": "redev:block/creepy_pumpkin_lit",
+      "y": 180
+    },
+    "facing=south,pumpkin_type=2,lit=true":
+    {
+      "model": "redev:block/horrified_pumpkin_lit",
+      "y": 180
+    },
+    "facing=south,pumpkin_type=3,lit=true":
+    {
+      "model": "redev:block/creeper_pumpkin_lit",
+      "y": 180
+    },
+    "facing=south,pumpkin_type=4,lit=true":
+    {
+      "model": "redev:block/scowling_pumpkin_lit",
+      "y": 180
+    },
+    "facing=south,pumpkin_type=5,lit=true":
+    {
+      "model": "redev:block/horrified_pumpkin_lit",
+      "y": 180
+    },
+    "facing=south,pumpkin_type=6,lit=true":
+    {
+      "model": "redev:block/creeper_pumpkin_lit",
+      "y": 180
+    },
+    "facing=south,pumpkin_type=7,lit=true":
+    {
+      "model": "redev:block/scowling_pumpkin_lit",
+      "y": 180
+    },
+    "facing=west,pumpkin_type=0,lit=true":
+    {
+      "model": "redev:block/carved_pumpkin_lit",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=1,lit=true":
+    {
+      "model": "redev:block/creepy_pumpkin_lit",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=2,lit=true":
+    {
+      "model": "redev:block/horrified_pumpkin_lit",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=3,lit=true":
+    {
+      "model": "redev:block/creeper_pumpkin_lit",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=4,lit=true":
+    {
+      "model": "redev:block/scowling_pumpkin_lit",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=5,lit=true":
+    {
+      "model": "redev:block/horrified_pumpkin_lit",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=6,lit=true":
+    {
+      "model": "redev:block/creeper_pumpkin_lit",
+      "y": 270
+    },
+    "facing=west,pumpkin_type=7,lit=true":
+    {
+      "model": "redev:block/scowling_pumpkin_lit",
       "y": 270
     }
   }

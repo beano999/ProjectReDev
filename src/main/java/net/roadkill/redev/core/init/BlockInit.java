@@ -219,5 +219,5 @@ public class BlockInit
     public static final RegistryObject<Block> TWISTING_VINES_PLANT = BLOCKS.register("twisting_vines_plant", () -> new ModTwistingVinesPlantBlock(Block.Properties.copy(Blocks.TWISTING_VINES_PLANT)));
     public static final RegistryObject<Block> WARPED_ROOTS = BLOCKS.register("warped_roots", () -> new ModWarpedRootsBlock(Block.Properties.copy(Blocks.WARPED_ROOTS)));
 
-    public static final RegistryObject<Block> CARVED_PUMPKIN = BLOCKS.register("carved_pumpkin", () -> new ModCarvedPumpkinBlock(Block.Properties.copy(Blocks.CARVED_PUMPKIN)));
+    public static final RegistryObject<Block> CARVED_PUMPKIN = BLOCKS.register("carved_pumpkin", () -> new ModCarvedPumpkinBlock(Block.Properties.copy(Blocks.CARVED_PUMPKIN).lightLevel(value -> value.getValue(ModCarvedPumpkinBlock.LIT) ? 15 : 0)));
 }
