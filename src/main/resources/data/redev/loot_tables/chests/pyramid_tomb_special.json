@@ -21,7 +21,7 @@
                 {
                   "attribute": "forge:block_reach",
                   "name": "Jens's Reach",
-                  "amount": 1,
+                  "amount": 2,
                   "operation": "addition",
                   "id": "d94a4689-b07f-4001-a10f-ed349087263b",
                   "slot": "mainhand"
@@ -39,8 +39,8 @@
     },
     {
       "rolls": {
-        "min": 5,
-        "max": 8
+        "min": 10,
+        "max": 15
       },
       "entries": [
         {
