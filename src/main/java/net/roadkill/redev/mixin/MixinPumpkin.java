@@ -13,18 +13,24 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CarvedPumpkinBlock;
 import net.minecraft.world.level.block.PumpkinBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.roadkill.redev.common.block.ModCarvedPumpkinBlock;
 import net.roadkill.redev.core.init.BlockInit;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.function.Predicate;
+
 @Mixin(PumpkinBlock.class)
-public class MixinCarvedPumpkin
+public class MixinPumpkin
 {
     @Inject(method = "use", at = @At(value = "HEAD"), cancellable = true)
     private void use(BlockState pState, Level level, BlockPos pos, Player player, InteractionHand pHand, BlockHitResult pHit, CallbackInfoReturnable<InteractionResult> returnable)
@@ -50,5 +56,13 @@ public class MixinCarvedPumpkin
             }
         }
         returnable.setReturnValue(InteractionResult.FAIL);
+    }
+
+    @Mixin(CarvedPumpkinBlock.class)
+    public static class MixinCarvedPumpkin
+    {
+        @Final
+        @Shadow
+        private static final Predicate<BlockState> PUMPKINS_PREDICATE = (state) -> state != null && (state.getBlock() instanceof CarvedPumpkinBlock || state.is(Blocks.JACK_O_LANTERN));
     }
 }

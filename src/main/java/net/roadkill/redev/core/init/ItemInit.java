@@ -249,4 +249,9 @@ public class ItemInit
     public static final RegistryObject<Item> PETRIFIED_DOOR = ITEMS.register("petrified_door", () -> new BlockItem(BlockInit.PETRIFIED_DOOR.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_TRAPDOOR = ITEMS.register("petrified_trapdoor", () -> new BlockItem(BlockInit.PETRIFIED_TRAPDOOR.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_SIGN = ITEMS.register("petrified_sign", () -> new SignItem(new Item.Properties().stacksTo(16), BlockInit.PETRIFIED_SIGN.get(), BlockInit.PETRIFIED_WALL_SIGN.get()));
+
+
+
+    public static final RegistryObject<Item> CARVED_PUMPKIN = ITEMS.register("carved_pumpkin", () -> new BlockItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties()));
+
 }

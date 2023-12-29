@@ -8,6 +8,7 @@ import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.roadkill.redev.ReDev;
+import net.roadkill.redev.core.init.ItemInit;
 import net.roadkill.redev.util.registries.ModItems;
 
 import java.util.ArrayList;
@@ -200,6 +201,8 @@ public class RegisterCreativeTab
             injectItemsAfter(Items.DEEPSLATE_DIAMOND_ORE.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.BASALT_DIAMOND_ORE
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            injectItemsAfter(Items.CARVED_PUMPKIN.getDefaultInstance(), event.getEntries(), List.of(ItemInit.CARVED_PUMPKIN.get()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.getEntries().remove(Items.CARVED_PUMPKIN.getDefaultInstance());
         }
 
         /*

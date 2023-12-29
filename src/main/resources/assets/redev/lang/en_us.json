@@ -291,5 +291,7 @@
   "block.redev.petrified_door":           "Petrified Door",
   "block.redev.petrified_trapdoor":       "Petrified Trapdoor",
   "block.redev.petrified_button":         "Petrified Button",
-  "block.redev.petrified_sign":           "Petrified Sign"
+  "block.redev.petrified_sign":           "Petrified Sign",
+
+  "block.redev.carved_pumpkin": "Carved Pumpkin"
 }

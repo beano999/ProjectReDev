@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "redev:block/pumpkin/carved_pumpkin"
-  }
+  "parent": "minecraft:block/carved_pumpkin"
 }
