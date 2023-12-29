@@ -66,6 +66,7 @@ public class MixinCustomChestLoot
                         }
                     }
                     self.setItem(slot, stack.get().getData());
+                    artifacts = WeightedRandomList.create(artifacts.unwrap().stream().filter(e -> e.getData() != stack.get().getData()).toArray(WeightedEntry.Wrapper[]::new));
                 }
             }
         }
