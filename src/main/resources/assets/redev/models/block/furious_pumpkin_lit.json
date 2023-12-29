@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "front": "redev:block/pumpkin/ghast_pumpkin_lit",
+    "front": "redev:block/pumpkin/furious_pumpkin_lit",
     "side": "minecraft:block/pumpkin_side",
     "top": "minecraft:block/pumpkin_top"
   }

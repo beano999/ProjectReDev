@@ -33,7 +33,7 @@
     },
     "facing=east,pumpkin_type=6,lit=false":
     {
-      "model": "redev:block/ghast_pumpkin",
+      "model": "redev:block/furious_pumpkin",
       "y": 90
     },
     "facing=east,pumpkin_type=7,lit=false":
@@ -67,7 +67,7 @@
     },
     "facing=north,pumpkin_type=6,lit=false":
     {
-      "model": "redev:block/ghast_pumpkin"
+      "model": "redev:block/furious_pumpkin"
     },
     "facing=north,pumpkin_type=7,lit=false":
     {
@@ -105,7 +105,7 @@
     },
     "facing=south,pumpkin_type=6,lit=false":
     {
-      "model": "redev:block/ghast_pumpkin",
+      "model": "redev:block/furious_pumpkin",
       "y": 180
     },
     "facing=south,pumpkin_type=7,lit=false":
@@ -145,7 +145,7 @@
     },
     "facing=west,pumpkin_type=6,lit=false":
     {
-      "model": "redev:block/ghast_pumpkin",
+      "model": "redev:block/furious_pumpkin",
       "y": 270
     },
     "facing=west,pumpkin_type=7,lit=false":
@@ -185,7 +185,7 @@
     },
     "facing=east,pumpkin_type=6,lit=true":
     {
-      "model": "redev:block/ghast_pumpkin_lit",
+      "model": "redev:block/furious_pumpkin_lit",
       "y": 90
     },
     "facing=east,pumpkin_type=7,lit=true":
@@ -219,7 +219,7 @@
     },
     "facing=north,pumpkin_type=6,lit=true":
     {
-      "model": "redev:block/ghast_pumpkin_lit"
+      "model": "redev:block/furious_pumpkin_lit"
     },
     "facing=north,pumpkin_type=7,lit=true":
     {
@@ -257,7 +257,7 @@
     },
     "facing=south,pumpkin_type=6,lit=true":
     {
-      "model": "redev:block/ghast_pumpkin_lit",
+      "model": "redev:block/furious_pumpkin_lit",
       "y": 180
     },
     "facing=south,pumpkin_type=7,lit=true":
@@ -297,7 +297,7 @@
     },
     "facing=west,pumpkin_type=6,lit=true":
     {
-      "model": "redev:block/ghast_pumpkin_lit",
+      "model": "redev:block/furious_pumpkin_lit",
       "y": 270
     },
     "facing=west,pumpkin_type=7,lit=true":
