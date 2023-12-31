@@ -71,8 +71,8 @@ public class MixinPlayerAttackSpeed implements OldCombatPlayer
             if (stack.getItem() instanceof SwordItem && entity instanceof Player player)
             {   ((OldCombatPlayer) player).setSwordBlocking(false);
                 if (level.isClientSide)
-                {   SwordBlockAnimation.isMainBlocking = false;
-                    SwordBlockAnimation.isOffBlocking = false;
+                {   SwordBlockAnimation.IS_MAIN_BLOCKING = false;
+                    SwordBlockAnimation.IS_OFF_BLOCKING = false;
                 }
             }
         }

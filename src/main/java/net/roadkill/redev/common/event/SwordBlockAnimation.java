@@ -25,8 +25,8 @@ public class SwordBlockAnimation
     static final Field OFF_HAND_HEIGHT = ObfuscationReflectionHelper.findField(ItemInHandRenderer.class, "f_109304_");
     static final Field O_OFF_HAND_HEIGHT = ObfuscationReflectionHelper.findField(ItemInHandRenderer.class, "f_109305_");
 
-    public static boolean isMainBlocking = false;
-    public static boolean isOffBlocking = false;
+    public static boolean IS_MAIN_BLOCKING = false;
+    public static boolean IS_OFF_BLOCKING = false;
 
     @SubscribeEvent
     public static void onRenderSword(RenderHandEvent event)
@@ -46,17 +46,17 @@ public class SwordBlockAnimation
             ps.mulPose(Axis.ZP.rotationDegrees(horizontal * 78.05F));
             try
             {
-                if (isMainHand && !isMainBlocking)
+                if (isMainHand && !IS_MAIN_BLOCKING)
                 {
                     MAIN_HAND_HEIGHT.set(Minecraft.getInstance().getEntityRenderDispatcher().getItemInHandRenderer(), 1);
                     O_MAIN_HAND_HEIGHT.set(Minecraft.getInstance().getEntityRenderDispatcher().getItemInHandRenderer(), 1);
-                    isMainBlocking = true;
+                    IS_MAIN_BLOCKING = true;
                 }
-                else if (!isMainHand && !isOffBlocking)
+                else if (!isMainHand && !IS_OFF_BLOCKING)
                 {
                     OFF_HAND_HEIGHT.set(Minecraft.getInstance().getEntityRenderDispatcher().getItemInHandRenderer(), 1);
                     O_OFF_HAND_HEIGHT.set(Minecraft.getInstance().getEntityRenderDispatcher().getItemInHandRenderer(), 1);
-                    isOffBlocking = true;
+                    IS_OFF_BLOCKING = true;
                 }
             }
             catch (Exception ignored) {}
