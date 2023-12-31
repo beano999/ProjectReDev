@@ -14,6 +14,7 @@ import net.roadkill.redev.core.init.*;
 
 import net.roadkill.redev.core.network.ReDevPacketHandler;
 import net.roadkill.redev.util.registries.ModBlocks;
+import net.roadkill.redev.util.registries.ModGameRules;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,6 +30,7 @@ public class ReDev
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::onClientSetup);
         bus.addListener(this::onCommonSetup);
+        ModGameRules.registerGameRules();
 
         PotionInit.POTIONS.register(bus);
         EffectInit.EFFECTS.register(bus);

@@ -1,5 +1,10 @@
 package net.roadkill.redev.util;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.common.util.LogicalSidedProvider;
+import net.minecraftforge.fml.LogicalSide;
+
 import java.util.function.Predicate;
 
 public final class RDMath
@@ -57,5 +62,9 @@ public final class RDMath
 
     public static int clamp (int value, int min, int max)
     {   return Math.max(min, Math.min(max, value));
+    }
+
+    public static Level getClientLevel()
+    {   return ((Minecraft) LogicalSidedProvider.WORKQUEUE.get(LogicalSide.CLIENT)).level;
     }
 }

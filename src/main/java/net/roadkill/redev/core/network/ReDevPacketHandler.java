@@ -6,6 +6,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import net.roadkill.redev.ReDev;
 import net.roadkill.redev.core.network.message.EntityPosMessage;
 import net.roadkill.redev.core.network.message.PhantomTypeSyncMessage;
+import net.roadkill.redev.core.network.message.SyncGameRuleMessage;
 
 public class ReDevPacketHandler
 {
@@ -21,5 +22,6 @@ public class ReDevPacketHandler
     {
         INSTANCE.registerMessage(0, PhantomTypeSyncMessage.class, PhantomTypeSyncMessage::encode, PhantomTypeSyncMessage::decode, PhantomTypeSyncMessage::handle);
         INSTANCE.registerMessage(1, EntityPosMessage.class, EntityPosMessage::encode, EntityPosMessage::decode, EntityPosMessage::handle);
+        INSTANCE.registerMessage(2, SyncGameRuleMessage.class, SyncGameRuleMessage::encode, SyncGameRuleMessage::decode, SyncGameRuleMessage::handle);
     }
 }
