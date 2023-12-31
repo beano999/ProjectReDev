@@ -7,6 +7,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.roadkill.redev.common.event.SwordBlockAnimation;
 import net.roadkill.redev.mixin_interfaces.OldCombatPlayer;
@@ -51,6 +52,8 @@ public class MixinPlayerAttackSpeed implements OldCombatPlayer
         public void use(Level level, Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> cir)
         {
             if (!level.getGameRules().getBoolean(ModGameRules.DO_OLD_COMBAT)) return;
+            ItemStack offHandItem = player.getItemInHand(InteractionHand.OFF_HAND);
+            if (hand.equals(InteractionHand.MAIN_HAND) && offHandItem.getUseAnimation() != UseAnim.NONE) return;
 
             ItemStack stack = player.getItemInHand(hand);
             if (stack.getItem() instanceof SwordItem)
