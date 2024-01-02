@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.roadkill.redev.ReDev;
+import net.roadkill.redev.common.item.ChainLadderItem;
 import net.roadkill.redev.util.registries.ArmorMaterials;
 import net.roadkill.redev.util.registries.ModItems;
 
@@ -81,6 +82,7 @@ public class ItemInit
     public static final RegistryObject<Item> SCRAPWOOD_LADDER = ITEMS.register("scrapwood_ladder", () -> new BlockItem(BlockInit.SCRAPWOOD_LADDER.get(), new Item.Properties()));
     public static final RegistryObject<Item> WHISPUR_LADDER = ITEMS.register("whispur_ladder", () -> new BlockItem(BlockInit.WHISPUR_LADDER.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_LADDER = ITEMS.register("petrified_ladder", () -> new BlockItem(BlockInit.PETRIFIED_LADDER.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CHAIN_LADDER = ITEMS.register("chain_ladder", () -> new ChainLadderItem(BlockInit.CHAIN_LADDER.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> ACACIA_SMITHING_TABLE = ITEMS.register("acacia_smithing_table", () -> new BlockItem(BlockInit.ACACIA_SMITHING_TABLE.get(), new Item.Properties()));
     public static final RegistryObject<Item> BIRCH_SMITHING_TABLE = ITEMS.register("birch_smithing_table", () -> new BlockItem(BlockInit.BIRCH_SMITHING_TABLE.get(), new Item.Properties()));
@@ -250,8 +252,19 @@ public class ItemInit
     public static final RegistryObject<Item> PETRIFIED_TRAPDOOR = ITEMS.register("petrified_trapdoor", () -> new BlockItem(BlockInit.PETRIFIED_TRAPDOOR.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_SIGN = ITEMS.register("petrified_sign", () -> new SignItem(new Item.Properties().stacksTo(16), BlockInit.PETRIFIED_SIGN.get(), BlockInit.PETRIFIED_WALL_SIGN.get()));
 
-
-
     public static final RegistryObject<Item> CARVED_PUMPKIN = ITEMS.register("carved_pumpkin", () -> new BlockItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> SHADE_LOG = ITEMS.register("shade_log", () -> new BlockItem(BlockInit.SHADE_LOG.get(), new Item.Properties()));
+    public static final RegistryObject<Item> STRIPPED_SHADE_LOG = ITEMS.register("stripped_shade_log", () -> new BlockItem(BlockInit.STRIPPED_SHADE_LOG.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_WOOD = ITEMS.register("shade_wood", () -> new BlockItem(BlockInit.SHADE_WOOD.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_PLANKS = ITEMS.register("shade_planks", () -> new BlockItem(BlockInit.SHADE_PLANKS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_SLAB = ITEMS.register("shade_slab", () -> new BlockItem(BlockInit.SHADE_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_STAIRS = ITEMS.register("shade_stairs", () -> new BlockItem(BlockInit.SHADE_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_FENCE = ITEMS.register("shade_fence", () -> new BlockItem(BlockInit.SHADE_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_FENCE_GATE = ITEMS.register("shade_fence_gate", () -> new BlockItem(BlockInit.SHADE_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_BUTTON = ITEMS.register("shade_button", () -> new BlockItem(BlockInit.SHADE_BUTTON.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_PRESSURE_PLATE = ITEMS.register("shade_pressure_plate", () -> new BlockItem(BlockInit.SHADE_PRESSURE_PLATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_DOOR = ITEMS.register("shade_door", () -> new BlockItem(BlockInit.SHADE_DOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_TRAPDOOR = ITEMS.register("shade_trapdoor", () -> new BlockItem(BlockInit.SHADE_TRAPDOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_SIGN = ITEMS.register("shade_sign", () -> new SignItem(new Item.Properties().stacksTo(16), BlockInit.SHADE_SIGN.get(), BlockInit.SHADE_WALL_SIGN.get()));
 }

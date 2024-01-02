@@ -4,6 +4,7 @@
   [
     "redev:scrapwood_door",
     "redev:whispur_door",
-    "redev:petrified_door"
+    "redev:petrified_door",
+    "redev:shade_door"
   ]
 }

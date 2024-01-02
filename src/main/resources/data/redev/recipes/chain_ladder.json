@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "# #",
+    "#I#",
+    "# #"
+  ],
+  "key":
+  {
+    "#":
+    {
+      "tag": "forge:nuggets/iron"
+    },
+    "B":
+    {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result":
+  {
+    "item": "redev:chain_ladder",
+    "count": 8
+  }
+}
