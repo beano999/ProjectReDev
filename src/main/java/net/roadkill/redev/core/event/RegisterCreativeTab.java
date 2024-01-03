@@ -36,11 +36,11 @@ public class RegisterCreativeTab
                          ModItems.JUNGLE_BOOKSHELF.getDefaultInstance(),
                          ModItems.MANGROVE_BOOKSHELF.getDefaultInstance(),
                          Items.BOOKSHELF.getDefaultInstance(),
+                         ModItems.PETRIFIED_BOOKSHELF.getDefaultInstance(),
                          ModItems.SCRAPWOOD_BOOKSHELF.getDefaultInstance(),
                          ModItems.SPRUCE_BOOKSHELF.getDefaultInstance(),
                          ModItems.WARPED_BOOKSHELF.getDefaultInstance(),
                          ModItems.WHISPUR_BOOKSHELF.getDefaultInstance(),
-                         ModItems.PETRIFIED_BOOKSHELF.getDefaultInstance(),
 
                          ModItems.ACACIA_LADDER.getDefaultInstance(),
                          ModItems.BIRCH_LADDER.getDefaultInstance(),
@@ -167,6 +167,9 @@ public class RegisterCreativeTab
         if (event.getTab().equals(CreativeModeTabs.NATURAL_BLOCKS))
         {
             injectItemsAfter(Items.FLOWERING_AZALEA_LEAVES.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.TEAL_SHADE_LEAVES,
+                    ModItems.RED_SHADE_LEAVES,
+                    ModItems.PURPLE_SHADE_LEAVES,
                     ModItems.ACACIA_HEDGE,
                     ModItems.AZALEA_HEDGE,
                     ModItems.FLOWERING_AZALEA_HEDGE,
@@ -201,6 +204,7 @@ public class RegisterCreativeTab
             injectItemsAfter(Items.DEEPSLATE_DIAMOND_ORE.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.BASALT_DIAMOND_ORE
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             injectItemsAfter(Items.CARVED_PUMPKIN.getDefaultInstance(), event.getEntries(), List.of(ItemInit.CARVED_PUMPKIN.get()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.getEntries().remove(Items.CARVED_PUMPKIN.getDefaultInstance());
 
@@ -225,6 +229,10 @@ public class RegisterCreativeTab
                     ModItems.SCRAPWOOD_SIGN,
                     ModItems.WHISPUR_SIGN,
                     ModItems.PETRIFIED_SIGN
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            injectItemsAfter(Items.LADDER.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.CHAIN_LADDER
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 

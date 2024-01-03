@@ -242,6 +242,10 @@ public class ModItems
     public static final Item PETRIFIED_TRAPDOOR = ItemInit.PETRIFIED_TRAPDOOR.get();
     public static final Item PETRIFIED_SIGN = ItemInit.PETRIFIED_SIGN.get();
 
+    public static final Item TEAL_SHADE_LEAVES = ItemInit.TEAL_SHADE_LEAVES.get();
+    public static final Item RED_SHADE_LEAVES = ItemInit.RED_SHADE_LEAVES.get();
+    public static final Item PURPLE_SHADE_LEAVES = ItemInit.PURPLE_SHADE_LEAVES.get();
+
     public static final Item SHADE_LOG = ItemInit.SHADE_LOG.get();
     public static final Item STRIPPED_SHADE_LOG = ItemInit.STRIPPED_SHADE_LOG.get();
     public static final Item SHADE_PLANKS = ItemInit.SHADE_PLANKS.get();
