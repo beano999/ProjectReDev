@@ -203,6 +203,10 @@ public class RegisterCreativeTab
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             injectItemsAfter(Items.CARVED_PUMPKIN.getDefaultInstance(), event.getEntries(), List.of(ItemInit.CARVED_PUMPKIN.get()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.getEntries().remove(Items.CARVED_PUMPKIN.getDefaultInstance());
+
+            injectItemsAfter(Items.JACK_O_LANTERN.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.DURIAN
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
         /*

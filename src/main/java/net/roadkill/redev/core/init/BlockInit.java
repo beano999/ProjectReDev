@@ -242,4 +242,6 @@ public class BlockInit
     public static final RegistryObject<Block> TEAL_SHADE_LEAVES = BLOCKS.register("teal_shade_leaves", () -> new LeavesBlock(Block.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<Block> RED_SHADE_LEAVES = BLOCKS.register("red_shade_leaves", () -> new LeavesBlock(Block.Properties.of(Material.LEAVES, MaterialColor.COLOR_RED).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<Block> PURPLE_SHADE_LEAVES = BLOCKS.register("purple_shade_leaves", () -> new LeavesBlock(Block.Properties.of(Material.LEAVES, MaterialColor.COLOR_PURPLE).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
+
+    public static final RegistryObject<Block> DURIAN = BLOCKS.register("durian", () -> new DurianBlock(Block.Properties.of(Material.PLANT, MaterialColor.COLOR_BROWN).strength(0.2F).sound(SoundType.WOOD).noOcclusion()));
 }

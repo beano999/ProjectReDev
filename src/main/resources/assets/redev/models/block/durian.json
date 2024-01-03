@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "redev:block/durian_top",
+    "side": "redev:block/durian_side"
+  }
+}

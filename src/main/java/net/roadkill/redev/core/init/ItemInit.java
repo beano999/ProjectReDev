@@ -267,4 +267,6 @@ public class ItemInit
     public static final RegistryObject<Item> SHADE_DOOR = ITEMS.register("shade_door", () -> new BlockItem(BlockInit.SHADE_DOOR.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHADE_TRAPDOOR = ITEMS.register("shade_trapdoor", () -> new BlockItem(BlockInit.SHADE_TRAPDOOR.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHADE_SIGN = ITEMS.register("shade_sign", () -> new SignItem(new Item.Properties().stacksTo(16), BlockInit.SHADE_SIGN.get(), BlockInit.SHADE_WALL_SIGN.get()));
+
+    public static final RegistryObject<Item> DURIAN = ITEMS.register("durian", () -> new BlockItem(BlockInit.DURIAN.get(), new Item.Properties()));
 }

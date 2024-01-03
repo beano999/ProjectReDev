@@ -255,6 +255,8 @@ public class ModItems
     public static final Item SHADE_TRAPDOOR = ItemInit.SHADE_TRAPDOOR.get();
     public static final Item SHADE_SIGN = ItemInit.SHADE_SIGN.get();
 
+    public static final Item DURIAN = ItemInit.DURIAN.get();
+
     public static final Item CARAMINE_RYE_SEEDS = ItemInit.CARAMINE_RYE_SEEDS.get();
 
     public static final class Tiers
