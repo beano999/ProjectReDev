@@ -34,6 +34,7 @@
     "MixinSpecialPhantom",
     "MixinSplashPotion",
     "MixinStackSize",
+    "MixinTNTPig",
     "MixinTwistingVineGen",
     "MixinTwistingVines",
     "MixinWalkSnow",
@@ -44,6 +45,7 @@
     "MixinEntityRenderer",
     "MixinHumanoidModel",
     "MixinPhantomEyes",
+    "MixinPigTNTRenderer",
     "MixinZombieModel"
   ],
   "injectors": {
