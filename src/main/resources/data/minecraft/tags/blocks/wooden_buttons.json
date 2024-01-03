@@ -4,6 +4,7 @@
   [
     "redev:whispur_button",
     "redev:scrapwood_button",
-    "redev:petrified_button"
+    "redev:petrified_button",
+    "redev:shade_button"
   ]
 }

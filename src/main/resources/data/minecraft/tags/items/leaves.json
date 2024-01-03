@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "redev:teal_shade_leaves",
+    "redev:red_shade_leaves",
+    "redev:purple_shade_leaves"
+  ]
+}

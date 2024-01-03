@@ -70,6 +70,7 @@ public class MixinCustomChestLoot
                 }
             }
         }
+        STORED_LOOT_TABLE = null;
     }
 
     @Inject(method = "unpackLootTable", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/MinecraftServer;getLootTables()Lnet/minecraft/world/level/storage/loot/LootTables;", shift = At.Shift.AFTER))

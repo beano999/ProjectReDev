@@ -13,6 +13,7 @@
     "redev:scrapwood_rail",
     "redev:whispur_rail",
     "redev:petrified_rail",
+    "redev:shade_rail",
     "redev:acacia_detector_rail",
     "redev:birch_detector_rail",
     "redev:crimson_detector_rail",
@@ -24,6 +25,7 @@
     "redev:scrapwood_detector_rail",
     "redev:whispur_detector_rail",
     "redev:petrified_detector_rail",
+    "redev:shade_detector_rail",
     "redev:acacia_powered_rail",
     "redev:birch_powered_rail",
     "redev:crimson_powered_rail",
@@ -35,6 +37,7 @@
     "redev:scrapwood_powered_rail",
     "redev:whispur_powered_rail",
     "redev:petrified_powered_rail",
+    "redev:shade_powered_rail",
     "redev:acacia_activator_rail",
     "redev:birch_activator_rail",
     "redev:crimson_activator_rail",
@@ -45,6 +48,7 @@
     "redev:warped_activator_rail",
     "redev:scrapwood_activator_rail",
     "redev:whispur_activator_rail",
-    "redev:petrified_activator_rail"
+    "redev:petrified_activator_rail",
+    "redev:shade_activator_rail"
   ]
 }

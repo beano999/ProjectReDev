@@ -42,7 +42,6 @@
     "redev:warped_ladder",
     "redev:scrapwood_ladder",
     "redev:whispur_ladder",
-    "redev:petrified_ladder",
     "redev:acacia_smithing_table",
     "redev:birch_smithing_table",
     "redev:crimson_smithing_table",
@@ -53,7 +52,6 @@
     "redev:warped_smithing_table",
     "redev:scrapwood_smithing_table",
     "redev:whispur_smithing_table",
-    "redev:petrified_smithing_table",
     "redev:scrapwood_heap",
     "redev:scrapwood_planks",
     "redev:scrapwood_slab",
@@ -79,5 +77,19 @@
     "redev:whispur_sign",
     "redev:whispur_wall_sign",
     "redev:whispur_bookshelf"
+  ],
+  "remove":
+  [
+    "redev:petrified_log",
+    "redev:stripped_petrified_log",
+    "redev:petrified_planks",
+    "redev:petrified_slab",
+    "redev:petrified_stairs",
+    "redev:petrified_fence",
+    "redev:petrified_fence_gate",
+    "redev:petrified_door",
+    "redev:petrified_trapdoor",
+    "redev:petrified_pressure_plate",
+    "redev:petrified_button"
   ]
 }

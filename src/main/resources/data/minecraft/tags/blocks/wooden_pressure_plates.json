@@ -4,6 +4,7 @@
   [
     "redev:whispur_pressure_plate",
     "redev:scrapwood_pressure_plate",
-    "redev:petrified_pressure_plate"
+    "redev:petrified_pressure_plate",
+    "redev:shade_pressure_plate"
   ]
 }

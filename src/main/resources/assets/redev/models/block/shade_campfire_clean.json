@@ -1,0 +1,8 @@
+{
+  "parent": "redev:block/template_campfire_no_ash",
+  "textures": {
+    "log": "redev:block/campfire/shade_campfire_log",
+    "particle": "redev:block/campfire/shade_campfire_log"
+  },
+  "render_type": "cutout"
+}

@@ -71,6 +71,7 @@ public class ModItems
     public static final Item SCRAPWOOD_LADDER = ItemInit.SCRAPWOOD_LADDER.get();
     public static final Item WHISPUR_LADDER = ItemInit.WHISPUR_LADDER.get();
     public static final Item PETRIFIED_LADDER = ItemInit.PETRIFIED_LADDER.get();
+    public static final Item CHAIN_LADDER = ItemInit.CHAIN_LADDER.get();
 
     public static final Item ACACIA_SMITHING_TABLE = ItemInit.ACACIA_SMITHING_TABLE.get();
     public static final Item BIRCH_SMITHING_TABLE = ItemInit.BIRCH_SMITHING_TABLE.get();
@@ -240,6 +241,19 @@ public class ModItems
     public static final Item PETRIFIED_DOOR = ItemInit.PETRIFIED_DOOR.get();
     public static final Item PETRIFIED_TRAPDOOR = ItemInit.PETRIFIED_TRAPDOOR.get();
     public static final Item PETRIFIED_SIGN = ItemInit.PETRIFIED_SIGN.get();
+
+    public static final Item SHADE_LOG = ItemInit.SHADE_LOG.get();
+    public static final Item STRIPPED_SHADE_LOG = ItemInit.STRIPPED_SHADE_LOG.get();
+    public static final Item SHADE_PLANKS = ItemInit.SHADE_PLANKS.get();
+    public static final Item SHADE_SLAB = ItemInit.SHADE_SLAB.get();
+    public static final Item SHADE_STAIRS = ItemInit.SHADE_STAIRS.get();
+    public static final Item SHADE_FENCE = ItemInit.SHADE_FENCE.get();
+    public static final Item SHADE_FENCE_GATE = ItemInit.SHADE_FENCE_GATE.get();
+    public static final Item SHADE_BUTTON = ItemInit.SHADE_BUTTON.get();
+    public static final Item SHADE_PRESSURE_PLATE = ItemInit.SHADE_PRESSURE_PLATE.get();
+    public static final Item SHADE_DOOR = ItemInit.SHADE_DOOR.get();
+    public static final Item SHADE_TRAPDOOR = ItemInit.SHADE_TRAPDOOR.get();
+    public static final Item SHADE_SIGN = ItemInit.SHADE_SIGN.get();
 
     public static final Item CARAMINE_RYE_SEEDS = ItemInit.CARAMINE_RYE_SEEDS.get();
 

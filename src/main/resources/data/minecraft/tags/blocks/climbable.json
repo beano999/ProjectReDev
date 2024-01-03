@@ -13,6 +13,8 @@
     "redev:warped_ladder",
     "redev:whispur_ladder",
     "redev:petrified_ladder",
+    "redev:shade_ladder",
+    "redev:chain_ladder",
     "redev:twisting_vines_plant"
   ]
 }

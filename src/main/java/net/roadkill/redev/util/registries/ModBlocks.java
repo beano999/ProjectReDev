@@ -28,6 +28,7 @@ public class ModBlocks
     public static final Block MANGROVE_LADDER = BlockInit.MANGROVE_LADDER.get();
     public static final Block SPRUCE_LADDER = BlockInit.SPRUCE_LADDER.get();
     public static final Block WARPED_LADDER = BlockInit.WARPED_LADDER.get();
+    public static final Block CHAIN_LADDER = BlockInit.CHAIN_LADDER.get();
 
     public static final Block ACACIA_SMITHING_TABLE = BlockInit.ACACIA_SMITHING_TABLE.get();
     public static final Block BIRCH_SMITHING_TABLE = BlockInit.BIRCH_SMITHING_TABLE.get();
@@ -196,11 +197,32 @@ public class ModBlocks
     public static final Block TWISTING_VINES_PLANT = BlockInit.TWISTING_VINES_PLANT.get();
     public static final Block WARPED_ROOTS = BlockInit.WARPED_ROOTS.get();
 
+    public static final Block SHADE_LOG = BlockInit.SHADE_LOG.get();
+    public static final Block STRIPPED_SHADE_LOG = BlockInit.STRIPPED_SHADE_LOG.get();
+    public static final Block SHADE_PLANKS = BlockInit.SHADE_PLANKS.get();
+    public static final Block SHADE_SLAB = BlockInit.SHADE_SLAB.get();
+    public static final Block SHADE_STAIRS = BlockInit.SHADE_STAIRS.get();
+    public static final Block SHADE_FENCE = BlockInit.SHADE_FENCE.get();
+    public static final Block SHADE_FENCE_GATE = BlockInit.SHADE_FENCE_GATE.get();
+    public static final Block SHADE_BUTTON = BlockInit.SHADE_BUTTON.get();
+    public static final Block SHADE_PRESSURE_PLATE = BlockInit.SHADE_PRESSURE_PLATE.get();
+    public static final Block SHADE_DOOR = BlockInit.SHADE_DOOR.get();
+    public static final Block SHADE_TRAPDOOR = BlockInit.SHADE_TRAPDOOR.get();
+    public static final Block SHADE_SIGN = BlockInit.SHADE_SIGN.get();
+    public static final Block SHADE_WALL_SIGN = BlockInit.SHADE_WALL_SIGN.get();
+    public static final Block SHADE_BOOKSHELF = BlockInit.SHADE_BOOKSHELF.get();
+    public static final Block SHADE_LADDER = BlockInit.SHADE_LADDER.get();
+    
+    public static final Block TEAL_SHADE_LEAVES = BlockInit.TEAL_SHADE_LEAVES.get();
+    public static final Block RED_SHADE_LEAVES = BlockInit.RED_SHADE_LEAVES.get();
+    public static final Block PURPLE_SHADE_LEAVES = BlockInit.PURPLE_SHADE_LEAVES.get();
+
     public static final class WoodTypes
     {
         public static final WoodType SCRAPWOOD = WoodType.register(new WoodType("scrapwood", BlockSets.SCRAPWOOD));
         public static final WoodType WHISPUR = WoodType.register(new WoodType("whispur", BlockSets.WHISPUR));
         public static final WoodType PETRIFIED = WoodType.register(new WoodType("petrified", BlockSets.PETRIFIED));
+        public static final WoodType SHADE = WoodType.register(new WoodType("shade", BlockSets.SHADE));
     }
 
     public static final class BlockSets
@@ -225,5 +247,12 @@ public class ModBlocks
                                                                                           ModSounds.PETRIFIED_DOOR_CLOSE, ModSounds.PETRIFIED_DOOR_OPEN,
                                                                                           SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_OFF, SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_ON,
                                                                                           SoundEvents.WOODEN_BUTTON_CLICK_OFF, SoundEvents.WOODEN_BUTTON_CLICK_ON));
+
+        public static BlockSetType SHADE = BlockSetType.register(new BlockSetType("shade",
+                                                                                   SoundType.WOOD,
+                                                                                   SoundEvents.WOODEN_DOOR_CLOSE, SoundEvents.WOODEN_DOOR_OPEN,
+                                                                                   SoundEvents.WOODEN_TRAPDOOR_CLOSE, SoundEvents.WOODEN_TRAPDOOR_OPEN,
+                                                                                   SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_OFF, SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_ON,
+                                                                                   SoundEvents.WOODEN_BUTTON_CLICK_OFF, SoundEvents.WOODEN_BUTTON_CLICK_ON));
     }
 }

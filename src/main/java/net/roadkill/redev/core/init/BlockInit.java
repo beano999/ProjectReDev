@@ -29,6 +29,7 @@ public class BlockInit
     public static final RegistryObject<Block> SCRAPWOOD_BOOKSHELF = BLOCKS.register("scrapwood_bookshelf", () -> new Block(Block.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> WHISPUR_BOOKSHELF = BLOCKS.register("whispur_bookshelf", () -> new Block(Block.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<Block> PETRIFIED_BOOKSHELF = BLOCKS.register("petrified_bookshelf", () -> new Block(Block.Properties.copy(Blocks.BOOKSHELF).strength(3.0F, 8.0F).sound(ModSoundType.PETRIFIED_PLANKS)));
+    public static final RegistryObject<Block> SHADE_BOOKSHELF = BLOCKS.register("shade_bookshelf", () -> new Block(Block.Properties.copy(Blocks.BOOKSHELF)));
 
     public static final RegistryObject<Block> ACACIA_LADDER = BLOCKS.register("acacia_ladder", () -> new LadderBlock(Block.Properties.copy(Blocks.LADDER)));
     public static final RegistryObject<Block> BIRCH_LADDER  = BLOCKS.register("birch_ladder", () -> new LadderBlock(Block.Properties.copy(Blocks.LADDER)));
@@ -41,6 +42,8 @@ public class BlockInit
     public static final RegistryObject<Block> SCRAPWOOD_LADDER = BLOCKS.register("scrapwood_ladder", () -> new LadderBlock(Block.Properties.copy(Blocks.LADDER)));
     public static final RegistryObject<Block> WHISPUR_LADDER = BLOCKS.register("whispur_ladder", () -> new LadderBlock(Block.Properties.copy(Blocks.LADDER)));
     public static final RegistryObject<Block> PETRIFIED_LADDER = BLOCKS.register("petrified_ladder", () -> new LadderBlock(Block.Properties.copy(Blocks.LADDER).strength(3.0F, 8.0F).sound(ModSoundType.PETRIFIED_PLANKS)));
+    public static final RegistryObject<Block> SHADE_LADDER = BLOCKS.register("shade_ladder", () -> new LadderBlock(Block.Properties.copy(Blocks.LADDER)));
+    public static final RegistryObject<Block> CHAIN_LADDER = BLOCKS.register("chain_ladder", () -> new ChainLadderBlock(Block.Properties.copy(Blocks.LADDER).strength(3F, 8F).sound(SoundType.CHAIN)));
 
     public static final RegistryObject<Block> ACACIA_SMITHING_TABLE = BLOCKS.register("acacia_smithing_table", () -> new SmithingTableBlock(Block.Properties.copy(Blocks.SMITHING_TABLE)));
     public static final RegistryObject<Block> BIRCH_SMITHING_TABLE = BLOCKS.register("birch_smithing_table", () -> new SmithingTableBlock(Block.Properties.copy(Blocks.SMITHING_TABLE)));
@@ -220,4 +223,23 @@ public class BlockInit
     public static final RegistryObject<Block> WARPED_ROOTS = BLOCKS.register("warped_roots", () -> new ModWarpedRootsBlock(Block.Properties.copy(Blocks.WARPED_ROOTS)));
 
     public static final RegistryObject<Block> CARVED_PUMPKIN = BLOCKS.register("carved_pumpkin", () -> new ModCarvedPumpkinBlock(Block.Properties.copy(Blocks.CARVED_PUMPKIN).lightLevel(value -> value.getValue(ModCarvedPumpkinBlock.LIT) ? 15 : 0)));
+
+    public static final RegistryObject<Block> STRIPPED_SHADE_LOG = BLOCKS.register("stripped_shade_log", () -> new RotatedPillarBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> SHADE_LOG = BLOCKS.register("shade_log", () -> new RotatedPillarBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> SHADE_WOOD = BLOCKS.register("shade_wood", () -> new RotatedPillarBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> SHADE_PLANKS = BLOCKS.register("shade_planks", () -> new Block(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> SHADE_SLAB = BLOCKS.register("shade_slab", () -> new SlabBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> SHADE_STAIRS = BLOCKS.register("shade_stairs", () -> new StairBlock(() -> SHADE_PLANKS.get().defaultBlockState(), Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> SHADE_FENCE = BLOCKS.register("shade_fence", () -> new FenceBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> SHADE_FENCE_GATE = BLOCKS.register("shade_fence_gate", () -> new FenceGateBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD), WoodType.OAK));
+    public static final RegistryObject<Block> SHADE_BUTTON = BLOCKS.register("shade_button", () -> new ButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(SoundType.WOOD), ModBlocks.BlockSets.SHADE, 30, true));
+    public static final RegistryObject<Block> SHADE_PRESSURE_PLATE = BLOCKS.register("shade_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(SoundType.WOOD), ModBlocks.BlockSets.SHADE));
+    public static final RegistryObject<Block> SHADE_DOOR = BLOCKS.register("shade_door", () -> new DoorBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD), ModBlocks.BlockSets.SHADE));
+    public static final RegistryObject<Block> SHADE_TRAPDOOR = BLOCKS.register("shade_trapdoor", () -> new TrapDoorBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD), ModBlocks.BlockSets.SHADE));
+    public static final RegistryObject<Block> SHADE_SIGN = BLOCKS.register("shade_sign", () -> new ModStandingSignBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD), ModBlocks.WoodTypes.SHADE));
+    public static final RegistryObject<Block> SHADE_WALL_SIGN = BLOCKS.register("shade_wall_sign", () -> new ModWallSignBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD), ModBlocks.WoodTypes.SHADE));
+
+    public static final RegistryObject<Block> TEAL_SHADE_LEAVES = BLOCKS.register("teal_shade_leaves", () -> new LeavesBlock(Block.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> RED_SHADE_LEAVES = BLOCKS.register("red_shade_leaves", () -> new LeavesBlock(Block.Properties.of(Material.LEAVES, MaterialColor.COLOR_RED).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> PURPLE_SHADE_LEAVES = BLOCKS.register("purple_shade_leaves", () -> new LeavesBlock(Block.Properties.of(Material.LEAVES, MaterialColor.COLOR_PURPLE).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
 }

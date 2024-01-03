@@ -331,6 +331,7 @@ public class RegisterCreativeTab
                     ModItems.WHISPUR_BUTTON,
 
                     ModItems.PETRIFIED_LOG,
+                    ModItems.STRIPPED_PETRIFIED_LOG,
                     ModItems.PETRIFIED_PLANKS,
                     ModItems.PETRIFIED_STAIRS,
                     ModItems.PETRIFIED_SLAB,
@@ -339,7 +340,19 @@ public class RegisterCreativeTab
                     ModItems.PETRIFIED_DOOR,
                     ModItems.PETRIFIED_TRAPDOOR,
                     ModItems.PETRIFIED_PRESSURE_PLATE,
-                    ModItems.PETRIFIED_BUTTON
+                    ModItems.PETRIFIED_BUTTON,
+
+                    ModItems.SHADE_LOG,
+                    ModItems.STRIPPED_SHADE_LOG,
+                    ModItems.SHADE_PLANKS,
+                    ModItems.SHADE_STAIRS,
+                    ModItems.SHADE_SLAB,
+                    ModItems.SHADE_FENCE,
+                    ModItems.SHADE_FENCE_GATE,
+                    ModItems.SHADE_DOOR,
+                    ModItems.SHADE_TRAPDOOR,
+                    ModItems.SHADE_PRESSURE_PLATE,
+                    ModItems.SHADE_BUTTON
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 

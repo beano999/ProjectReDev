@@ -2,8 +2,9 @@
   "replace": false,
   "values":
   [
-    "redev:whispur_planks",
     "redev:scrapwood_planks",
-    "redev:petrified_planks"
+    "redev:whispur_planks",
+    "redev:petrified_planks",
+    "redev:shade_planks"
   ]
 }
