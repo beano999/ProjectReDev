@@ -111,6 +111,7 @@
   "block.redev.warped_bookshelf":    "Warped Bookshelf",
   "block.redev.whispur_bookshelf":   "Whispur Bookshelf",
   "block.redev.petrified_bookshelf": "Petrified Bookshelf",
+  "block.redev.shade_bookshelf":     "Shade Bookshelf",
 
   "block.redev.acacia_campfire":     "Acacia Campfire",
   "block.redev.birch_campfire":      "Birch Campfire",
@@ -123,6 +124,7 @@
   "block.redev.scrapwood_campfire":  "Scrapwood Campfire",
   "block.redev.bone_campfire":       "Bone Campfire",
   "block.redev.petrified_campfire":  "Petrified Campfire",
+  "block.redev.shade_campfire":      "Shade Campfire",
 
   "block.redev.acacia_soul_campfire":    "Acacia Soul Campfire",
   "block.redev.birch_soul_campfire":     "Birch Soul Campfire",
@@ -135,6 +137,7 @@
   "block.redev.scrapwood_soul_campfire": "Scrapwood Soul Campfire",
   "block.redev.bone_soul_campfire":      "Bone Soul Campfire",
   "block.redev.petrified_soul_campfire": "Petrified Soul Campfire",
+  "block.redev.shade_soul_campfire":     "Shade Soul Campfire",
 
   "block.redev.acacia_ladder":       "Acacia Ladder",
   "block.redev.birch_ladder":        "Birch Ladder",
@@ -147,6 +150,8 @@
   "block.redev.warped_ladder":       "Warped Ladder",
   "block.redev.whispur_ladder":      "Whispur Ladder",
   "block.redev.petrified_ladder":    "Petrified Ladder",
+  "block.redev.shade_ladder":        "Shade Ladder",
+  "block.redev.chain_ladder":        "Chain Ladder",
 
   "block.redev.acacia_smithing_table":    "Acacia Smithing Table",
   "block.redev.birch_smithing_table":     "Birch Smithing Table",
@@ -159,6 +164,7 @@
   "block.redev.scrapwood_smithing_table": "Scrapwood Smithing Table",
   "block.redev.whispur_smithing_table":   "Whispur Smithing Table",
   "block.redev.petrified_smithing_table": "Petrified Smithing Table",
+  "block.redev.shade_smithing_table":     "Shade Smithing Table",
 
   "block.redev.acacia_rail":       "Acacia Rail",
   "block.redev.birch_rail":        "Birch Rail",
@@ -171,6 +177,7 @@
   "block.redev.scrapwood_rail":    "Scrapwood Rail",
   "block.redev.whispur_rail":      "Whispur Rail",
   "block.redev.petrified_rail":    "Petrified Rail",
+  "block.redev.shade_rail":        "Shade Rail",
 
   "block.redev.acacia_detector_rail":       "Acacia Detector Rail",
   "block.redev.birch_detector_rail":        "Birch Detector Rail",
@@ -183,6 +190,7 @@
   "block.redev.scrapwood_detector_rail":    "Scrapwood Detector Rail",
   "block.redev.whispur_detector_rail":      "Whispur Detector Rail",
   "block.redev.petrified_detector_rail":    "Petrified Detector Rail",
+  "block.redev.shade_detector_rail":        "Shade Detector Rail",
 
   "block.redev.acacia_powered_rail":       "Acacia Powered Rail",
   "block.redev.birch_powered_rail":        "Birch Powered Rail",
@@ -195,6 +203,7 @@
   "block.redev.scrapwood_powered_rail":    "Scrapwood Powered Rail",
   "block.redev.whispur_powered_rail":      "Whispur Powered Rail",
   "block.redev.petrified_powered_rail":    "Petrified Powered Rail",
+  "block.redev.shade_powered_rail":        "Shade Powered Rail",
 
 
   "block.redev.acacia_activator_rail":       "Acacia Activator Rail",
@@ -208,6 +217,7 @@
   "block.redev.scrapwood_activator_rail":    "Scrapwood Activator Rail",
   "block.redev.whispur_activator_rail":      "Whispur Activator Rail",
   "block.redev.petrified_activator_rail":    "Petrified Activator Rail",
+  "block.redev.shade_activator_rail":        "Shade Activator Rail",
 
   "block.redev.acacia_hedge":           "Acacia Hedge",
   "block.redev.azalea_hedge":           "Azalea Hedge",
@@ -218,6 +228,9 @@
   "block.redev.mangrove_hedge":         "Mangrove Hedge",
   "block.redev.oak_hedge":              "Oak Hedge",
   "block.redev.spruce_hedge":           "Spruce Hedge",
+  "block.redev.teal_shade_hedge":       "Teal Shade Hedge",
+  "block.redev.red_shade_hedge":        "Red Shade Hedge",
+  "block.redev.purple_shade_hedge":     "Purple Shade Hedge",
 
   "block.redev.acacia_hedge_wall":           "Acacia Hedge Wall",
   "block.redev.azalea_hedge_wall":           "Azalea Hedge Wall",
@@ -228,6 +241,9 @@
   "block.redev.mangrove_hedge_wall":         "Mangrove Hedge Wall",
   "block.redev.oak_hedge_wall":              "Oak Hedge Wall",
   "block.redev.spruce_hedge_wall":           "Spruce Hedge Wall",
+  "block.redev.teal_shade_hedge_wall":       "Teal Shade Hedge Wall",
+  "block.redev.red_shade_hedge_wall":        "Red Shade Hedge Wall",
+  "block.redev.purple_shade_hedge_wall":     "Purple Shade Hedge Wall",
 
   "block.redev.blackstone_furnace":   "Blackstone Furnace",
   "block.redev.deepslate_furnace":    "Deepslate Furnace",
@@ -292,6 +308,26 @@
   "block.redev.petrified_trapdoor":       "Petrified Trapdoor",
   "block.redev.petrified_button":         "Petrified Button",
   "block.redev.petrified_sign":           "Petrified Sign",
+
+  "block.redev.shade_log":            "Shade Log",
+  "block.redev.stripped_shade_log":   "Stripped Shade Log",
+  "block.redev.shade_wood":           "Shade Wood",
+  "block.redev.shade_planks":         "Shade Planks",
+  "block.redev.shade_slab":           "Shade Slab",
+  "block.redev.shade_stairs":         "Shade Stairs",
+  "block.redev.shade_fence":          "Shade Fence",
+  "block.redev.shade_fence_gate":     "Shade Fence Gate",
+  "block.redev.shade_pressure_plate": "Shade Pressure Plate",
+  "block.redev.shade_door":           "Shade Door",
+  "block.redev.shade_trapdoor":       "Shade Trapdoor",
+  "block.redev.shade_button":         "Shade Button",
+  "block.redev.shade_sign":           "Shade Sign",
+
+  "block.redev.teal_shade_leaves":   "Teal Shade Leaves",
+  "block.redev.red_shade_leaves":    "Red Shade Leaves",
+  "block.redev.purple_shade_leaves": "Purple Shade Leaves",
+
+  "block.redev.durian": "Durian",
 
   "block.redev.carved_pumpkin": "Carved Pumpkin"
 }
