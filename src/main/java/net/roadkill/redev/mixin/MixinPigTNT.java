@@ -9,8 +9,8 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.ItemBasedSteering;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.WrappedGoal;
 import net.minecraft.world.entity.animal.Pig;
@@ -18,9 +18,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.roadkill.redev.mixin_interfaces.IPigTNT;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -31,79 +29,75 @@ import java.util.Set;
 
 @Mixin(Pig.class)
 @Unique
-public abstract class MixinTNTPig extends Mob implements IPigTNT
+public abstract class MixinPigTNT extends Mob implements IPigTNT
 {
-    @Shadow @Final private ItemBasedSteering steering;
-
-    @Shadow public abstract void addAdditionalSaveData(CompoundTag pCompound);
-
     private static final EntityDataAccessor<Boolean> HAS_TNT = SynchedEntityData.defineId(Pig.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> FUSE = SynchedEntityData.defineId(Pig.class, EntityDataSerializers.INT);
 
-    protected MixinTNTPig(EntityType<? extends Mob> pEntityType, Level pLevel) {
+    protected MixinPigTNT(EntityType<? extends Mob> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
-
     @Inject(method = "defineSynchedData", at = @At("TAIL"))
     public void addData(CallbackInfo info)
-    {
-            this.getEntityData().define(HAS_TNT, false);
-            this.getEntityData().define(FUSE, -1);
+    {   this.getEntityData().define(HAS_TNT, false);
+        this.getEntityData().define(FUSE, -1);
     }
+
     @Inject(method = "mobInteract", at = @At("HEAD"))
     public void mobInteract(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir)
     {
-        if(this.isBaby())
-        {
-            return;
-        }
-        if(player.getItemInHand(hand).getItem() == Items.TNT && !(getHasTNT()))
+        if (this.isBaby()) return;
+
+        // TNT is placed
+        if (player.getItemInHand(hand).getItem() == Items.TNT && !(hasTNT()))
         {
             setHasTNT(true);
             player.swing(hand, true);
-            if(!player.isCreative())
-            {
-                player.getItemInHand(hand).shrink(1);
+            if (!player.isCreative())
+            {   player.getItemInHand(hand).shrink(1);
             }
-            this.playSound(SoundEvents.GRASS_PLACE);
+            this.playSound(SoundEvents.GRASS_PLACE, 1f, 0.8f);
+            this.playSound(SoundEvents.PIG_HURT, 1f, 1.3f);
+            // Set the pose so a hitbox update event is triggered
+            this.setPose(Pose.CROAKING);
         }
-        else if (getHasTNT() && player.getItemInHand(hand).getItem() == Items.FLINT_AND_STEEL && player instanceof ServerPlayer)
+        // TNT is lit
+        else if (hasTNT() && player.getItemInHand(hand).getItem() == Items.FLINT_AND_STEEL && player instanceof ServerPlayer)
         {
             player.swing(hand, true);
             setFuse(80);
             this.playSound(SoundEvents.FLINTANDSTEEL_USE);
             this.playSound(SoundEvents.TNT_PRIMED);
-            player.getItemInHand(hand).hurt(1, player.getRandom(), ((ServerPlayer) player));
+            this.playSound(SoundEvents.PIG_DEATH, 1f, 1.5f);
+            player.getItemInHand(hand).hurtAndBreak(1, player, (playerIn) -> playerIn.broadcastBreakEvent(hand));
+            // Make the pig panic
             Set<WrappedGoal> set = this.goalSelector.getAvailableGoals();
-            set.forEach(p ->
+            for (WrappedGoal wrappedGoal : set)
             {
-                if(p.getGoal() instanceof PanicGoal)
-                {
-                    this.setLastHurtByMob(player);
-                    p.start();
+                if (wrappedGoal.getGoal() instanceof PanicGoal)
+                {   this.setLastHurtByMob(player);
+                    wrappedGoal.start();
+                    break;
                 }
-            });
+            }
         }
     }
 
     @Inject(method = "addAdditionalSaveData", at = @At("TAIL"))
     public void addData(CompoundTag pCompound, CallbackInfo ci)
-    {
-        pCompound.putBoolean("pig_has_tnt", getHasTNT());
+    {   pCompound.putBoolean("pig_has_tnt", hasTNT());
         pCompound.putInt("pig_fuse", getFuse());
     }
 
     @Inject(method = "readAdditionalSaveData", at = @At("TAIL"))
     public void readData(CompoundTag pCompound, CallbackInfo ci)
-    {
-        setFuse(pCompound.getInt("pig_fuse"));
+    {   setFuse(pCompound.getInt("pig_fuse"));
         setHasTNT(pCompound.getBoolean("pig_has_tnt"));
     }
-    public boolean getHasTNT()
-    {
-        return this.getEntityData().get(HAS_TNT);
 
+    public boolean hasTNT()
+    {   return this.getEntityData().get(HAS_TNT);
     }
 
     public void setHasTNT(boolean bool)

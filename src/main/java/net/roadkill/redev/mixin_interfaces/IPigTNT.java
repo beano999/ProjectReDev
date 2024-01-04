@@ -2,7 +2,7 @@ package net.roadkill.redev.mixin_interfaces;
 
 public interface IPigTNT
 {
-    boolean getHasTNT();
+    boolean hasTNT();
     void setHasTNT(boolean bool);
 
     int getFuse();
