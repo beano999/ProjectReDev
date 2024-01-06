@@ -1,6 +1,8 @@
 package net.roadkill.redev.mixin_interfaces;
 
-public interface IPigTNT
+import net.minecraft.world.item.ItemStack;
+
+public interface IPig
 {
     boolean getHasTNT();
     void setHasTNT(boolean bool);
@@ -8,4 +10,8 @@ public interface IPigTNT
     int getFuse();
 
     void setFuse(int fuse);
+
+    ItemStack getHelmet();
+
+    void setHelmet(ItemStack armorItem);
 }
