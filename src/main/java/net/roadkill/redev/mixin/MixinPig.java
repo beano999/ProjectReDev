@@ -12,6 +12,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.goal.PanicGoal;
+import net.minecraft.world.entity.ai.goal.WrappedGoal;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
@@ -26,6 +28,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.Set;
 
 @Mixin(Pig.class)
 @Unique
@@ -71,7 +75,6 @@ public abstract class MixinPig extends Mob implements IPig
             this.playSound(SoundEvents.FLINTANDSTEEL_USE);
             this.playSound(SoundEvents.TNT_PRIMED);
             heldItemStack.hurt(1, player.getRandom(), ((ServerPlayer) player));
-            /*
             Set<WrappedGoal> set = this.goalSelector.getAvailableGoals();
             set.forEach(p ->
             {
@@ -81,8 +84,6 @@ public abstract class MixinPig extends Mob implements IPig
                     p.start();
                 }
             });
-
-             */
         }
         
         if(LivingEntity.getEquipmentSlotForItem(potentialHelmet) == EquipmentSlot.HEAD && !heldItemStack.isEmpty())

@@ -37,7 +37,7 @@ public class TNTLayer<T extends Entity, M extends EntityModel<T>> extends Render
             {
                 fuse = 85;
             }
-            if(pigTNT.hasTNT())
+            if(pigTNT.getHasTNT())
             {
                 if ((float)fuse - pPartialTicks + 1.0F < 10.0F)
                 {

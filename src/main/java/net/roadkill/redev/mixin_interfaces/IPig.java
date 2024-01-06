@@ -4,7 +4,7 @@ import net.minecraft.world.item.ItemStack;
 
 public interface IPig
 {
-    boolean hasTNT();
+    boolean getHasTNT();
     void setHasTNT(boolean bool);
 
     int getFuse();
