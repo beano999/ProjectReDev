@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.PigRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.animal.Pig;
+import net.roadkill.redev.client.renderer.layer.PigHelmetLayer;
 import net.roadkill.redev.client.renderer.layer.TNTLayer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,6 +27,7 @@ public abstract class MixinPigTNTRenderer extends MobRenderer<Pig, PigModel<Pig>
     private void addTNT(EntityRendererProvider.Context context ,CallbackInfo ci)
     {
         this.addLayer(new TNTLayer<>(this, new PigModel<>(context.bakeLayer(ModelLayers.PIG_SADDLE)), new ResourceLocation("textures/block/tnt_side.png")));
+        this.addLayer(new PigHelmetLayer<>(this));
     }
 }
 

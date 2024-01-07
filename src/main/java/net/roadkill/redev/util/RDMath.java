@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.util.LogicalSidedProvider;
 import net.minecraftforge.fml.LogicalSide;
+import org.joml.Quaternionf;
 
 import java.util.function.Predicate;
 
@@ -66,5 +67,25 @@ public final class RDMath
 
     public static Level getClientLevel()
     {   return ((Minecraft) LogicalSidedProvider.WORKQUEUE.get(LogicalSide.CLIENT)).level;
+    }
+
+    public static Quaternionf getQuaternion(double x, double y, double z)
+    {
+        double cy = Math.cos(z * 0.5);
+        double sy = Math.sin(z * 0.5);
+        double cp = Math.cos(y * 0.5);
+        double sp = Math.sin(y * 0.5);
+        double cr = Math.cos(x * 0.5);
+        double sr = Math.sin(x * 0.5);
+
+        return new Quaternionf(
+                (float) (sr * cp * cy - cr * sp * sy),
+                (float) (cr * sp * cy + sr * cp * sy),
+                (float) (cr * cp * sy - sr * sp * cy),
+                (float) (cr * cp * cy + sr * sp * sy));
+    }
+
+    public static float toRadians(float input)
+    {   return input * (float) (Math.PI / 180);
     }
 }

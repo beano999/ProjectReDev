@@ -14,7 +14,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.level.block.Blocks;
-import net.roadkill.redev.mixin_interfaces.IPigTNT;
+import net.roadkill.redev.mixin_interfaces.IPig;
 
 public class TNTLayer<T extends Entity, M extends EntityModel<T>> extends RenderLayer<T, M>
 {
@@ -31,13 +31,13 @@ public class TNTLayer<T extends Entity, M extends EntityModel<T>> extends Render
     public void render(PoseStack pMatrixStack, MultiBufferSource pBuffer, int pPackedLight, T pLivingEntity, float pLimbSwing, float pLimbSwingAmount, float pPartialTicks, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
         if (pLivingEntity instanceof Pig)
         {
-            IPigTNT pigTNT = ((IPigTNT) pLivingEntity);
+            IPig pigTNT = ((IPig) pLivingEntity);
             int fuse = pigTNT.getFuse();
             if(fuse == -1)
             {
                 fuse = 85;
             }
-            if(pigTNT.hasTNT())
+            if(pigTNT.getHasTNT())
             {
                 if ((float)fuse - pPartialTicks + 1.0F < 10.0F)
                 {
