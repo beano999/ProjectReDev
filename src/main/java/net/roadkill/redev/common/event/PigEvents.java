@@ -26,7 +26,7 @@ public class PigEvents
     public static void tickCounter (LivingEvent.LivingTickEvent event)
     {
         LivingEntity entity = event.getEntity();
-        if(entity instanceof Pig pig && ((IPig) pig).getHasTNT())
+        if(entity instanceof Pig pig && ((IPig) pig).hasTNT())
         {
             IPig pigTNT = ((IPig) pig);
             if(pigTNT.getFuse() > 0)
@@ -53,7 +53,7 @@ public class PigEvents
         if(!entity.getLevel().isClientSide() && entity instanceof Pig pig)
         {
             IPig tnt = ((IPig) pig);
-            if(tnt.getHasTNT() && (event.getSource().is(DamageTypes.EXPLOSION) || event.getSource().is(DamageTypes.PLAYER_EXPLOSION)))
+            if(tnt.hasTNT() && (event.getSource().is(DamageTypes.EXPLOSION) || event.getSource().is(DamageTypes.PLAYER_EXPLOSION)))
             {
                 if(entity.getHealth() - event.getAmount() < -4)
                 {

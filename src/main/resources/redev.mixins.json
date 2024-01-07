@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "redev.refmap.json",
   "mixins": [
+    "MixinArmorItem",
     "MixinBasaltPillarGen",
     "MixinBlockConnections",
     "MixinBlockPlace",
@@ -21,6 +22,7 @@
     "MixinMobSpawning",
     "MixinPhantomMovement",
     "MixinPhantomTargeting",
+    "MixinPig",
     "MixinPlaceStructure",
     "MixinPlayerAttackSpeed",
     "MixinPlayerAttackSpeed$MixinSwordBlock",
@@ -34,7 +36,6 @@
     "MixinSpecialPhantom",
     "MixinSplashPotion",
     "MixinStackSize",
-    "MixinPig",
     "MixinTwistingVineGen",
     "MixinTwistingVines",
     "MixinWalkSnow",

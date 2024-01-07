@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ArmorStandArmorModel;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -20,6 +21,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.DyeableLeatherItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.ForgeHooksClient;
@@ -40,50 +42,54 @@ public class PigHelmetLayer<T extends Entity, M extends EntityModel<T>> extends 
     }
 
     @Override
-    public void render (PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, T pLivingEntity, float pLimbSwing,
-                       float pLimbSwingAmount, float pPartialTick, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch)
+    public void render (PoseStack ps, MultiBufferSource pBuffer, int pPackedLight, T pLivingEntity, float pLimbSwing,
+                       float pLimbSwingAmount, float pPartialTick, float pAgeInTicks, float headYaw, float headPitch)
     {
-        if(pLivingEntity instanceof Pig pig)
+        if (pLivingEntity instanceof Pig pig)
         {
             IPig iPig = ((IPig) pig);
             ItemStack potentialHelmet = iPig.getHelmet();
-            if(!potentialHelmet.isEmpty())
+            if (!potentialHelmet.isEmpty())
             {
-                pPoseStack.pushPose();
-                float xRot = RDMath.toRadians(pLivingEntity.getViewXRot(pPartialTick));
-                float yRot = RDMath.toRadians(pLivingEntity.getViewYRot(pPartialTick));
-                pPoseStack.mulPose(RDMath.getQuaternion(xRot, yRot, 0));
-                //Axis.YP.rotationDegrees(-pLivingEntity.getViewYRot(pPartialTick))
-                //pPoseStack.translate(0, -.3F, -.6F);
-                //pPoseStack.mulPose(Axis.XP.rotationDegrees(-pLivingEntity.getViewXRot(pPartialTick)));
-               // pPoseStack.scale(1.25F, 1.25F, 1.25F);
+                ps.pushPose();
+                float yRot = RDMath.toRadians(headYaw);
+                float xRot = RDMath.toRadians(headPitch);
+                ps.translate(0, 0.75F, -0.375F);
+                ps.mulPose(RDMath.getQuaternion(xRot, yRot, 0));
+                ps.translate(0, -0.775F, -0.25F);
+                ps.scale(1.25F, 1.25F, 1.25F);
 
-                renderArmorPiece(pPoseStack, pBuffer, pLivingEntity, EquipmentSlot.HEAD, pPackedLight,
+                this.renderArmorPiece(ps, pBuffer, pLivingEntity, EquipmentSlot.HEAD, pPackedLight,
                         new ArmorStandArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(ModelLayers.ARMOR_STAND_OUTER_ARMOR)), potentialHelmet);
-                pPoseStack.popPose();
+                ps.popPose();
             }
         }
     }
 
-    private void renderArmorPiece(PoseStack pPoseStack, MultiBufferSource pBuffer, T pLivingEntity, EquipmentSlot pSlot, int pPackedLight, HumanoidModel<?> pModel, ItemStack armor) {
+    private void renderArmorPiece(PoseStack pPoseStack, MultiBufferSource pBuffer, T pLivingEntity, EquipmentSlot pSlot, int pPackedLight, HumanoidModel<?> pModel, ItemStack armor)
+    {
         Item $$9 = armor.getItem();
-        if ($$9 instanceof ArmorItem armoritem) {
-            if (armoritem.getEquipmentSlot() == EquipmentSlot.HEAD) {
+        if ($$9 instanceof ArmorItem armoritem)
+        {
+            if (armoritem.getEquipmentSlot() == EquipmentSlot.HEAD)
+            {
                 this.getParentModel().copyPropertiesTo((EntityModel<T>) pModel);
-
-                net.minecraft.client.model.Model model = ForgeHooksClient.getArmorModel((LivingEntity) pLivingEntity, armor, EquipmentSlot.HEAD,
-                        new ArmorStandArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(ModelLayers.ARMOR_STAND_OUTER_ARMOR)));
-                boolean flag1 = false;
+                HumanoidModel<?> model = (HumanoidModel<?>) ForgeHooksClient.getArmorModel((LivingEntity) pLivingEntity, armor, EquipmentSlot.HEAD,
+                                                                                     new ArmorStandArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(ModelLayers.ARMOR_STAND_OUTER_ARMOR)));
+                model.setAllVisible(false);
+                model.head.visible = true;
                 boolean flag = armor.hasFoil();
-                if (armoritem instanceof net.minecraft.world.item.DyeableLeatherItem) {
-                    int i = ((net.minecraft.world.item.DyeableLeatherItem)armoritem).getColor(armor);
+                if (armoritem instanceof DyeableLeatherItem leather)
+                {
+                    int i = leather.getColor(armor);
                     float f = (float)(i >> 16 & 255) / 255.0F;
                     float f1 = (float)(i >> 8 & 255) / 255.0F;
                     float f2 = (float)(i & 255) / 255.0F;
                     this.renderModel(pPoseStack, pBuffer, pPackedLight, flag, model, f, f1, f2, this.getArmorResource(pLivingEntity, armor, pSlot, null));;
                     this.renderModel(pPoseStack, pBuffer, pPackedLight, flag, model, 1.0F, 1.0F, 1.0F, this.getArmorResource(pLivingEntity, armor, pSlot, "overlay"));
-                } else {
-                    this.renderModel(pPoseStack, pBuffer, pPackedLight, flag, model, 1.0F, 1.0F, 1.0F, this.getArmorResource(pLivingEntity, armor, pSlot, null));
+                }
+                else
+                {   this.renderModel(pPoseStack, pBuffer, pPackedLight, flag, model, 1.0F, 1.0F, 1.0F, this.getArmorResource(pLivingEntity, armor, pSlot, null));
                 }
             }
         }
