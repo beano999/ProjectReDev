@@ -12,7 +12,7 @@
     {
       "tag": "forge:nuggets/iron"
     },
-    "B":
+    "I":
     {
       "tag": "forge:ingots/iron"
     }
@@ -20,6 +20,6 @@
   "result":
   {
     "item": "redev:chain_ladder",
-    "count": 8
+    "count": 4
   }
 }

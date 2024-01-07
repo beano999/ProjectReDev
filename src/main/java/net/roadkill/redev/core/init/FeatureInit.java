@@ -7,10 +7,12 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.roadkill.redev.ReDev;
 import net.roadkill.redev.common.world.PetrifiedTreeFeature;
+import net.roadkill.redev.common.world.ShadeTreeFeature;
 
 public class FeatureInit
 {
     public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, ReDev.MOD_ID);
 
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> PETRIFIED_TREE_FEATURE = FEATURES.register("petrified_tree", () -> new PetrifiedTreeFeature(NoneFeatureConfiguration.CODEC));
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> SHADE_TREE_FEATURE = FEATURES.register("shade_tree", () -> new ShadeTreeFeature(NoneFeatureConfiguration.CODEC));
 }
