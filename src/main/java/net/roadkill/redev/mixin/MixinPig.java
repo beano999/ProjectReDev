@@ -16,7 +16,6 @@ import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.WrappedGoal;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Equipable;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -48,6 +47,7 @@ public abstract class MixinPig extends Mob implements IPig
     {
         if (this.isBaby() || this.getLevel().isClientSide()) return;
         ItemStack heldItem = player.getItemInHand(hand);
+        ItemStack heldItemCopy = heldItem.copy();
 
         // Add TNT to pig
         if (heldItem.getItem() == Items.TNT && !(this.hasTNT()))
@@ -81,10 +81,11 @@ public abstract class MixinPig extends Mob implements IPig
         // Add/swap helmet on pig
         else if (LivingEntity.getEquipmentSlotForItem(heldItem) == EquipmentSlot.HEAD && heldItem.getItem() instanceof Equipable helmet)
         {
+            player.getItemInHand(hand).shrink(1);
             if (!this.getHelmet().isEmpty())
             {   player.setItemInHand(hand, this.getHelmet());
             }
-            this.setHelmet(heldItem.copy());
+            this.setHelmet(heldItemCopy);
             this.playSound(helmet.getEquipSound());
             player.swing(hand, true);
             cir.setReturnValue(InteractionResult.sidedSuccess(this.getLevel().isClientSide()));

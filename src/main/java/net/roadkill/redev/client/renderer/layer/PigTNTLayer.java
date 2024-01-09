@@ -28,7 +28,7 @@ public class PigTNTLayer<T extends Entity, M extends EntityModel<T>> extends Ren
             IPig pigTNT = ((IPig) pLivingEntity);
             int fuse = pigTNT.getFuse();
             if (fuse == -1)
-            {   fuse = 80;
+            {   fuse = 85;
             }
             if (pigTNT.hasTNT())
             {
@@ -43,7 +43,15 @@ public class PigTNTLayer<T extends Entity, M extends EntityModel<T>> extends Ren
                 BlockRenderDispatcher blockRenderer = Minecraft.getInstance().getBlockRenderer();
                 pMatrixStack.pushPose();
                 pMatrixStack.mulPose(Axis.ZP.rotationDegrees(180));
-                pMatrixStack.translate(-.5F, -.625F, -.4F);
+                pMatrixStack.translate(-.375F, -1F, .1F);
+                pMatrixStack.scale(.35F, .35F, .35F);
+                TntMinecartRenderer.renderWhiteSolidBlock(blockRenderer, Blocks.TNT.defaultBlockState(), pMatrixStack, pBuffer, pPackedLight, fuse / 5 % 2 == 0);
+                pMatrixStack.popPose();
+
+                pMatrixStack.pushPose();
+                pMatrixStack.mulPose(Axis.ZP.rotationDegrees(180));
+                pMatrixStack.translate(.025F, -1F, .1F);
+                pMatrixStack.scale(.35F, .35F, .35F);
                 TntMinecartRenderer.renderWhiteSolidBlock(blockRenderer, Blocks.TNT.defaultBlockState(), pMatrixStack, pBuffer, pPackedLight, fuse / 5 % 2 == 0);
                 pMatrixStack.popPose();
             }
