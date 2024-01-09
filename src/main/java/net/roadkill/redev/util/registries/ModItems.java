@@ -230,6 +230,7 @@ public class ModItems
     public static final Item WHISPUR_SIGN = ItemInit.WHISPUR_SIGN.get();
 
     public static final Item PETRIFIED_LOG = ItemInit.PETRIFIED_LOG.get();
+    public static final Item PETRIFIED_WOOD = ItemInit.PETRIFIED_WOOD.get();
     public static final Item STRIPPED_PETRIFIED_LOG = ItemInit.STRIPPED_PETRIFIED_LOG.get();
     public static final Item PETRIFIED_PLANKS = ItemInit.PETRIFIED_PLANKS.get();
     public static final Item PETRIFIED_SLAB = ItemInit.PETRIFIED_SLAB.get();

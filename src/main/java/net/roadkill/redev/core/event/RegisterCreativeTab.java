@@ -351,6 +351,7 @@ public class RegisterCreativeTab
                     ModItems.WHISPUR_BUTTON,
 
                     ModItems.PETRIFIED_LOG,
+                    ModItems.PETRIFIED_WOOD,
                     ModItems.STRIPPED_PETRIFIED_LOG,
                     ModItems.PETRIFIED_PLANKS,
                     ModItems.PETRIFIED_STAIRS,
