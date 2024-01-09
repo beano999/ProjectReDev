@@ -78,7 +78,6 @@ public class MixinMobSpawning
                 break;
             }
         }
-        if (canSpawnInStructure.getValue()) System.out.println("Can spawn in structure " + Math.sqrt(distance) + " " + RDMath.withinRange(distance, 8*8, 80*80));
         cir.setReturnValue(canSpawnInStructure.getValue() ? RDMath.withinRange(distance, 8*8, 80*80) : distance > 24*24);
     }
 }

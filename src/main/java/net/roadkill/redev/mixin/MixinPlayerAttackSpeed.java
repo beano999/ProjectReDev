@@ -9,7 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.roadkill.redev.common.event.SwordBlockAnimation;
+import net.roadkill.redev.client.event.SwordBlockAnimation;
 import net.roadkill.redev.mixin_interfaces.OldCombatPlayer;
 import net.roadkill.redev.util.registries.ModGameRules;
 import org.spongepowered.asm.mixin.Mixin;
