@@ -6,8 +6,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.roadkill.redev.ReDev;
-import net.roadkill.redev.common.world.PetrifiedTreeFeature;
-import net.roadkill.redev.common.world.ShadeTreeFeature;
+import net.roadkill.redev.common.world.feature.PetrifiedTreeFeature;
+import net.roadkill.redev.common.world.feature.ShadeTreeFeature;
 
 public class FeatureInit
 {

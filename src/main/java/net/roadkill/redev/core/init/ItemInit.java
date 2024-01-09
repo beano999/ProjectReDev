@@ -254,9 +254,15 @@ public class ItemInit
 
     public static final RegistryObject<Item> CARVED_PUMPKIN = ITEMS.register("carved_pumpkin", () -> new BlockItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> SHADE_LEAVES = ITEMS.register("shade_leaves", () -> new BlockItem(BlockInit.SHADE_LEAVES.get(), new Item.Properties()));
     public static final RegistryObject<Item> TEAL_SHADE_LEAVES = ITEMS.register("teal_shade_leaves", () -> new BlockItem(BlockInit.TEAL_SHADE_LEAVES.get(), new Item.Properties()));
     public static final RegistryObject<Item> RED_SHADE_LEAVES = ITEMS.register("red_shade_leaves", () -> new BlockItem(BlockInit.RED_SHADE_LEAVES.get(), new Item.Properties()));
     public static final RegistryObject<Item> PURPLE_SHADE_LEAVES = ITEMS.register("purple_shade_leaves", () -> new BlockItem(BlockInit.PURPLE_SHADE_LEAVES.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> SHADE_SAPLING = ITEMS.register("shade_sapling", () -> new BlockItem(BlockInit.SHADE_SAPLING.get(), new Item.Properties()));
+    public static final RegistryObject<Item> TEAL_SHADE_SAPLING = ITEMS.register("teal_shade_sapling", () -> new BlockItem(BlockInit.TEAL_SHADE_SAPLING.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RED_SHADE_SAPLING = ITEMS.register("red_shade_sapling", () -> new BlockItem(BlockInit.RED_SHADE_SAPLING.get(), new Item.Properties()));
+    public static final RegistryObject<Item> PURPLE_SHADE_SAPLING = ITEMS.register("purple_shade_sapling", () -> new BlockItem(BlockInit.PURPLE_SHADE_SAPLING.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> SHADE_LOG = ITEMS.register("shade_log", () -> new BlockItem(BlockInit.SHADE_LOG.get(), new Item.Properties()));
     public static final RegistryObject<Item> STRIPPED_SHADE_LOG = ITEMS.register("stripped_shade_log", () -> new BlockItem(BlockInit.STRIPPED_SHADE_LOG.get(), new Item.Properties()));

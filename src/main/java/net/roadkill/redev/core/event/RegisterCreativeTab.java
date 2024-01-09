@@ -167,6 +167,7 @@ public class RegisterCreativeTab
         if (event.getTab().equals(CreativeModeTabs.NATURAL_BLOCKS))
         {
             injectItemsAfter(Items.FLOWERING_AZALEA_LEAVES.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.SHADE_LEAVES,
                     ModItems.TEAL_SHADE_LEAVES,
                     ModItems.RED_SHADE_LEAVES,
                     ModItems.PURPLE_SHADE_LEAVES,
@@ -189,6 +190,13 @@ public class RegisterCreativeTab
                     ModItems.MANGROVE_HEDGE_WALL,
                     ModItems.OAK_HEDGE_WALL,
                     ModItems.SPRUCE_HEDGE_WALL
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            injectItemsAfter(Items.MANGROVE_PROPAGULE.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.SHADE_SAPLING,
+                    ModItems.TEAL_SHADE_SAPLING,
+                    ModItems.RED_SHADE_SAPLING,
+                    ModItems.PURPLE_SHADE_SAPLING
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             injectItemsAfter(Items.WARPED_FUNGUS.getDefaultInstance(), event.getEntries(), List.of(
@@ -355,6 +363,7 @@ public class RegisterCreativeTab
                     ModItems.PETRIFIED_BUTTON,
 
                     ModItems.SHADE_LOG,
+                    ModItems.SHADE_WOOD,
                     ModItems.STRIPPED_SHADE_LOG,
                     ModItems.SHADE_PLANKS,
                     ModItems.SHADE_STAIRS,

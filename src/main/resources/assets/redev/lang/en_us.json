@@ -323,9 +323,15 @@
   "block.redev.shade_button":         "Shade Button",
   "block.redev.shade_sign":           "Shade Sign",
 
+  "block.redev.shade_leaves":        "Shade Leaves",
   "block.redev.teal_shade_leaves":   "Teal Shade Leaves",
   "block.redev.red_shade_leaves":    "Red Shade Leaves",
   "block.redev.purple_shade_leaves": "Purple Shade Leaves",
+
+  "block.redev.shade_sapling":        "Shade Sapling",
+  "block.redev.teal_shade_sapling":   "Teal Shade Sapling",
+  "block.redev.red_shade_sapling":    "Red Shade Sapling",
+  "block.redev.purple_shade_sapling": "Purple Shade Sapling",
 
   "block.redev.durian": "Durian",
 

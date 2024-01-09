@@ -11,6 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.roadkill.redev.ReDev;
 import net.roadkill.redev.common.block.*;
+import net.roadkill.redev.common.world.tree.ShadeTree;
 import net.roadkill.redev.util.registries.ModBlocks;
 import net.roadkill.redev.util.registries.ModSoundType;
 
@@ -239,9 +240,15 @@ public class BlockInit
     public static final RegistryObject<Block> SHADE_SIGN = BLOCKS.register("shade_sign", () -> new ModStandingSignBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD), ModBlocks.WoodTypes.SHADE));
     public static final RegistryObject<Block> SHADE_WALL_SIGN = BLOCKS.register("shade_wall_sign", () -> new ModWallSignBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD), ModBlocks.WoodTypes.SHADE));
 
-    public static final RegistryObject<Block> TEAL_SHADE_LEAVES = BLOCKS.register("teal_shade_leaves", () -> new LeavesBlock(Block.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
-    public static final RegistryObject<Block> RED_SHADE_LEAVES = BLOCKS.register("red_shade_leaves", () -> new LeavesBlock(Block.Properties.of(Material.LEAVES, MaterialColor.COLOR_RED).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
-    public static final RegistryObject<Block> PURPLE_SHADE_LEAVES = BLOCKS.register("purple_shade_leaves", () -> new LeavesBlock(Block.Properties.of(Material.LEAVES, MaterialColor.COLOR_PURPLE).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> SHADE_LEAVES = BLOCKS.register("shade_leaves", () -> new LeavesBlock(Block.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> TEAL_SHADE_LEAVES = BLOCKS.register("teal_shade_leaves", () -> new LeavesBlock(Block.Properties.copy(SHADE_LEAVES.get())));
+    public static final RegistryObject<Block> RED_SHADE_LEAVES = BLOCKS.register("red_shade_leaves", () -> new LeavesBlock(Block.Properties.copy(SHADE_LEAVES.get())));
+    public static final RegistryObject<Block> PURPLE_SHADE_LEAVES = BLOCKS.register("purple_shade_leaves", () -> new LeavesBlock(Block.Properties.copy(SHADE_LEAVES.get())));
 
-    public static final RegistryObject<Block> DURIAN = BLOCKS.register("durian", () -> new DurianBlock(Block.Properties.of(Material.PLANT, MaterialColor.COLOR_BROWN).strength(0.2F).sound(SoundType.WOOD).noOcclusion()));
+    public static final RegistryObject<Block> SHADE_SAPLING = BLOCKS.register("shade_sapling", () -> new ShadeSaplingBlock(new ShadeTree(ShadeTree.Color.NORMAL), Block.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+    public static final RegistryObject<Block> TEAL_SHADE_SAPLING = BLOCKS.register("teal_shade_sapling", () -> new ShadeSaplingBlock(new ShadeTree(ShadeTree.Color.TEAL), Block.Properties.copy(SHADE_SAPLING.get())));
+    public static final RegistryObject<Block> RED_SHADE_SAPLING = BLOCKS.register("red_shade_sapling", () -> new ShadeSaplingBlock(new ShadeTree(ShadeTree.Color.RED), Block.Properties.copy(SHADE_SAPLING.get())));
+    public static final RegistryObject<Block> PURPLE_SHADE_SAPLING = BLOCKS.register("purple_shade_sapling", () -> new ShadeSaplingBlock(new ShadeTree(ShadeTree.Color.PURPLE), Block.Properties.copy(SHADE_SAPLING.get())));
+
+    public static final RegistryObject<Block> DURIAN = BLOCKS.register("durian", () -> new DurianBlock(Block.Properties.of(Material.VEGETABLE, MaterialColor.COLOR_BROWN).strength(0.2F).sound(SoundType.WOOD).noOcclusion()));
 }

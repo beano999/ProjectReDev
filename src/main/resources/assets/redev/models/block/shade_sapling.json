@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "redev:block/shade_sapling"
+  },
+  "render_type": "cutout"
+}
