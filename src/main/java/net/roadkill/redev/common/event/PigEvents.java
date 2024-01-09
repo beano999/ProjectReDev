@@ -3,16 +3,21 @@ package net.roadkill.redev.common.event;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.damagesource.CombatRules;
 import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.roadkill.redev.mixin_interfaces.IPig;
@@ -34,14 +39,27 @@ public class PigEvents
                 pigTNT.setFuse(pigTNT.getFuse() - 1);
                 if (entity.getLevel().isClientSide())
                 {
-                    entity.getLevel().addParticle(ParticleTypes.SMOKE, entity.getX(), entity.getY() + 2D, entity.getZ(), 0.0D, 0.0D, 0.0D);
+                    entity.getLevel().addParticle(ParticleTypes.SMOKE, entity.getX(), entity.getY() + 1, entity.getZ() + -.375, 0.0D, 0.0D, 0.0D);
+                    entity.getLevel().addParticle(ParticleTypes.SMOKE, entity.getX(), entity.getY() + 1, entity.getZ() + .25, 0.0D, 0.0D, 0.0D);
+                }
+                boolean hasSpeed = false;
+                for (MobEffectInstance activeEffect : entity.getActiveEffects())
+                {
+                    if(activeEffect.getEffect() == MobEffects.MOVEMENT_SPEED)
+                    {
+                        hasSpeed = true;
+                    }
+                }
+                if(!hasSpeed)
+                {
+                    entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 2, true, false));
                 }
             }
             else if(pigTNT.getFuse() == 0 && !entity.getLevel().isClientSide())
             {
-                pig.getLevel().explode(pig, pig.getX(), pig.getY(), pig.getZ(), 4F, Level.ExplosionInteraction.TNT);
+                pig.getLevel().explode(null, pig.getX(), pig.getY(), pig.getZ(), 4F, Level.ExplosionInteraction.TNT);
                 pigTNT.setHasTNT(false);
-                pig.kill();
+                pigTNT.setFuse(-1);
             }
         }
     }
@@ -82,7 +100,7 @@ public class PigEvents
     }
     
     @SubscribeEvent
-    public static void pigArmor (LivingDamageEvent event)
+    public static void pigArmor (LivingHurtEvent event)
     {
         if (event.getEntity() instanceof Pig pig && !event.getEntity().getLevel().isClientSide())
         {
@@ -92,10 +110,27 @@ public class PigEvents
             {
                 float actualDamage = CombatRules.getDamageAfterAbsorb(event.getAmount(), armorItem.getDefense(), armorItem.getToughness());
                 actualDamage = CombatRules.getDamageAfterMagicAbsorb(actualDamage, EnchantmentHelper.getDamageProtection(List.of(potentialHelmet), event.getSource()));
-                event.setAmount(actualDamage);
+
+                if(EnchantmentHelper.getEnchantments(potentialHelmet).entrySet().stream().anyMatch(enchantmentIntegerEntry ->
+                {
+                    Enchantment enchantment = enchantmentIntegerEntry.getKey();
+                    int level = enchantmentIntegerEntry.getValue();
+                    if(enchantment == Enchantments.BLAST_PROTECTION && level >= 4)
+                    {
+
+                        return true;
+                    }
+                    return false;
+                }))
+                {
+                    event.setAmount(Math.min(pig.getMaxHealth() - 1, actualDamage));
+                }
+                else
+                {
+                    event.setAmount(actualDamage);
+                }
                 potentialHelmet.hurtAndBreak(((int) actualDamage), pig, (a) -> a.broadcastBreakEvent(EquipmentSlot.HEAD));
             }
         }
-            
     }
 }
