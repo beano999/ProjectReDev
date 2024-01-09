@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -15,6 +16,7 @@ import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.FallingBlock;
+import net.minecraft.world.level.block.SupportType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
@@ -35,8 +37,12 @@ public class DurianBlock extends FallingBlock
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction facing, BlockState neighbor, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos)
-    {   return state;
+    public BlockState updateShape(BlockState state, Direction facing, BlockState neighbor, LevelAccessor level, BlockPos pos, BlockPos neighborDir)
+    {   BlockState aboveBlock = level.getBlockState(pos.above());
+        if (!(aboveBlock.isFaceSturdy(level, pos, Direction.DOWN, SupportType.CENTER) || aboveBlock.is(BlockTags.LEAVES)))
+        {   return super.updateShape(state, facing, neighbor, level, pos, neighborDir);
+        }
+        return state;
     }
 
     @Override
