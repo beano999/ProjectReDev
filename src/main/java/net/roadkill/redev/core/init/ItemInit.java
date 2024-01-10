@@ -279,4 +279,5 @@ public class ItemInit
     public static final RegistryObject<Item> SHADE_SIGN = ITEMS.register("shade_sign", () -> new SignItem(new Item.Properties().stacksTo(16), BlockInit.SHADE_SIGN.get(), BlockInit.SHADE_WALL_SIGN.get()));
 
     public static final RegistryObject<Item> DURIAN = ITEMS.register("durian", () -> new BlockItem(BlockInit.DURIAN.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DURIAN_SLICE = ITEMS.register("durian_slice", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build())));
 }

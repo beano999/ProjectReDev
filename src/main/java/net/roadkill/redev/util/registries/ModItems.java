@@ -268,6 +268,7 @@ public class ModItems
     public static final Item PURPLE_SHADE_SAPLING = ItemInit.PURPLE_SHADE_SAPLING.get();
 
     public static final Item DURIAN = ItemInit.DURIAN.get();
+    public static final Item DURIAN_SLICE = ItemInit.DURIAN_SLICE.get();
 
     public static final Item CARAMINE_RYE_SEEDS = ItemInit.CARAMINE_RYE_SEEDS.get();
 

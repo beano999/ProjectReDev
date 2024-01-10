@@ -401,6 +401,12 @@ public class RegisterCreativeTab
                     ModItems.REVENANT_SPAWN_EGG
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
+        else if (event.getTab().equals(CreativeModeTabs.FOOD_AND_DRINKS))
+        {
+            injectItemsAfter(Items.MELON_SLICE.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.DURIAN_SLICE
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
     }
 
     static void injectItemsAfter(ItemStack injectPoint, MutableHashedLinkedMap<ItemStack, CreativeModeTab.TabVisibility> entries, Collection<Item> list, CreativeModeTab.TabVisibility visibility)
