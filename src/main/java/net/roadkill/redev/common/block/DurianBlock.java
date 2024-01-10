@@ -11,6 +11,9 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.FallingBlockEntity;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.Level;
@@ -57,6 +60,21 @@ public class DurianBlock extends FallingBlock
             areaEffectCloud.setFixedColor(7312189);
             level.addFreshEntity(areaEffectCloud);
 
+            // Shoot thorns in random directions
+            int thornCount = level.random.nextIntBetweenInclusive(10, 16);
+            for (int i = 0; i < thornCount; i++)
+            {   DurianThornEntity thorn = new DurianThornEntity(EntityInit.DURIAN_THORN.get(), level);
+                thorn.setPos(fallingBlock.getX(), fallingBlock.getY(), fallingBlock.getZ());
+                thorn.setBaseDamage(4);
+                thorn.setKnockback(1);
+                thorn.setPierceLevel((byte) 0);
+                thorn.setSoundEvent(SoundEvents.ARROW_HIT);
+                Vec3 motion = RDMath.randomVector3f(level.random, 0.5f);
+                thorn.setDeltaMovement(new Vec3(motion.x, 0.3f, motion.y));
+                level.addFreshEntity(thorn);
+            }
+
+            // Hurt entities directly below
             for (Entity entity : level.getEntities(null, fallingBlock.getBoundingBox()))
             {   entity.hurt(level.damageSources().fallingBlock(fallingBlock), Math.min(fallingBlock.time / 5, 6));
             }
