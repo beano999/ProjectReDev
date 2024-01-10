@@ -1,7 +1,12 @@
 package net.roadkill.redev.util;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.LogicalSidedProvider;
 import net.minecraftforge.fml.LogicalSide;
 import org.joml.Quaternionf;
@@ -87,5 +92,19 @@ public final class RDMath
 
     public static float toRadians(float input)
     {   return input * (float) (Math.PI / 180);
+    }
+
+    public static void dropItem(Level level, Vec3 position, ItemStack stack)
+    {
+        double xVel = Mth.nextDouble(level.random, -0.15, 0.15);
+        double yVel = 0.1;
+        double zVel = Mth.nextDouble(level.random, -0.15, 0.15);
+        ItemEntity item = new ItemEntity(level, position.x, position.y, position.z, stack);
+        item.setDeltaMovement(xVel, yVel, zVel);
+        level.addFreshEntity(item);
+    }
+
+    public static Vec3 randomVector3f(RandomSource random, float magnitude)
+    {   return new Vec3(Mth.nextFloat(random, -1, 1), Mth.nextFloat(random, -1, 1), Mth.nextFloat(random, -1, 1)).normalize().scale(magnitude);
     }
 }
