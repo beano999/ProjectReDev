@@ -40,7 +40,7 @@ public class MixinCoralBlockWaxing
         }
     }
 
-    @ModifyArg(method = "getStateForPlacement", at = @At(value = "HEAD", target = "Lnet/minecraft/world/level/Level;scheduleTick(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;I)V", ordinal = 0), index = 2)
+    @ModifyArg(method = "getStateForPlacement", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;scheduleTick(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;I)V", ordinal = 0), index = 2)
     private int increaseDecayTime(int delay)
     {   return 200 + RandomSource.create().nextInt(200);
     }
@@ -73,7 +73,7 @@ public class MixinCoralBlockWaxing
         protected final void registerDefaultState(BlockState state) {}
 
         @Inject(method = "getStateForPlacement", at = @At("HEAD"), cancellable = true)
-        private void addWaxStateForPlacement(BlockPlaceContext context, CallbackInfoReturnable<BlockState> cir)
+        public void addWaxStateForPlacement(BlockPlaceContext context, CallbackInfoReturnable<BlockState> cir)
         {
             if (self instanceof CoralBlock)
             {   cir.setReturnValue(cir.getReturnValue().setValue(CoralBlockData.WAXED, false));
@@ -81,7 +81,7 @@ public class MixinCoralBlockWaxing
         }
 
         @Inject(method = "<init>", at = @At("RETURN"))
-        private void initWaxedProperty(BlockBehaviour.Properties properties, CallbackInfo ci)
+        public void initWaxedProperty(BlockBehaviour.Properties properties, CallbackInfo ci)
         {
             if (self instanceof CoralBlock)
             {   registerDefaultState(self.defaultBlockState().setValue(CoralBlockData.WAXED, false));
@@ -89,7 +89,7 @@ public class MixinCoralBlockWaxing
         }
 
         @Inject(method = "createBlockStateDefinition", at = @At("RETURN"))
-        private void addWaxedStateDefinition(StateDefinition.Builder<Block, BlockState> builder, CallbackInfo ci)
+        protected void addWaxedStateDefinition(StateDefinition.Builder<Block, BlockState> builder, CallbackInfo ci)
         {
             if (self instanceof CoralBlock)
             {   builder.add(CoralBlockData.WAXED);
