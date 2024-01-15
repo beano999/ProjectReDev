@@ -18,6 +18,7 @@
     "MixinCreativeTabIcons",
     "MixinCreativeTabIcons$ColorTabReset",
     "MixinCustomChestLoot",
+    "MixinFireworkDamage",
     "MixinFurnaceInit",
     "MixinGameRuleChange",
     "MixinHangingEntityLoad",
