@@ -31,6 +31,7 @@
     "MixinPlayerAttackSpeed$MixinSwordBlock",
     "MixinPumpkin",
     "MixinPumpkin$MixinCarvedPumpkin",
+    "MixinRemoveMangroveSwamp",
     "MixinReplaceStructures",
     "MixinReplaceStructures$DisableVanillaStrongholdsMixin",
     "MixinReplaceStructures$LocateStrongholdCommandMixin",
