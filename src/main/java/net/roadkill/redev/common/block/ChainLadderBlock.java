@@ -63,7 +63,7 @@ public class ChainLadderBlock extends LadderBlock
                 blockstate1 = blockstate1.setValue(FACING, direction.getOpposite());
                 if (blockstate1.canSurvive(levelreader, blockpos))
                 {
-                    return blockstate1.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+                    return blockstate1.setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
                 }
             }
         }

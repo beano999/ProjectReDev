@@ -9,6 +9,10 @@
     "redev:jungle_soul_campfire",
     "redev:mangrove_soul_campfire",
     "redev:spruce_soul_campfire",
-    "redev:warped_soul_campfire"
+    "redev:warped_soul_campfire",
+    "redev:scrapwood_soul_campfire",
+    "redev:whispur_soul_campfire",
+    "redev:petrified_soul_campfire",
+    "redev:shade_soul_campfire"
   ]
 }
