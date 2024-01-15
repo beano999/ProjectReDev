@@ -12,6 +12,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageEffects;
 import net.minecraft.world.damagesource.DamageSource;
@@ -189,6 +190,12 @@ public class LithicanEntity extends Zombie
         || groundState.is(Tags.Blocks.SANDSTONE) || groundState.is(Tags.Blocks.SAND))
         {   this.setVariant(1);
         }
+        else if (groundState.is(BlockTags.DEEPSLATE_ORE_REPLACEABLES))
+        {   this.setVariant(2);
+        }
+        else if (groundState.is(Blocks.BASALT))
+        {   this.setVariant(3);
+        }
         else this.setVariant(0);
         return spawnData;
     }
@@ -200,8 +207,7 @@ public class LithicanEntity extends Zombie
 
     @Override
     public boolean addEffect(MobEffectInstance pEffectInstance, @Nullable Entity pEntity)
-    {
-        return super.addEffect(pEffectInstance, pEntity);
+    {   return super.addEffect(pEffectInstance, pEntity);
     }
 
     @Override
@@ -301,29 +307,24 @@ public class LithicanEntity extends Zombie
     protected void dropCustomDeathLoot(DamageSource pSource, int pLooting, boolean pRecentlyHit)
     {
         super.dropCustomDeathLoot(pSource, pLooting, pRecentlyHit);
-        // Drop appropriately for variant
-        switch (this.getVariant())
+        if (this.getVariant() == 0)
         {
-            case 0 ->
+            if (this.random.nextInt(3) == 0)
             {
-                // 1/10 chance to drop ores
-                switch (this.random.nextInt(3))
+                switch (this.random.nextInt(4))
                 {
-                    case 0 ->
-                    {
-                        // Drop random ore
-                        switch (this.random.nextInt(4))
-                        {
-                            case 0 -> this.spawnAtLocation(new ItemStack(Blocks.COAL_ORE, this.random.nextIntBetweenInclusive(1, 3 + pLooting)));
-                            case 1 -> this.spawnAtLocation(new ItemStack(Blocks.IRON_ORE, this.random.nextIntBetweenInclusive(1, 2 + pLooting)));
-                            case 2 -> this.spawnAtLocation(new ItemStack(Blocks.GOLD_ORE, this.random.nextIntBetweenInclusive(1, 2 + pLooting)));
-                            case 3 -> this.spawnAtLocation(new ItemStack(Blocks.DIAMOND_ORE, this.random.nextIntBetweenInclusive(1, 1 + pLooting)));
-                        }
-                    }
-                    default -> this.spawnAtLocation(new ItemStack(Blocks.STONE, this.random.nextIntBetweenInclusive(1, 3 + pLooting)));
+                    case 0 -> this.spawnAtLocation(new ItemStack(Blocks.COAL_ORE, this.random.nextIntBetweenInclusive(1, 3 + pLooting)));
+                    case 1 -> this.spawnAtLocation(new ItemStack(Blocks.IRON_ORE, this.random.nextIntBetweenInclusive(1, 2 + pLooting)));
+                    case 2 -> this.spawnAtLocation(new ItemStack(Blocks.GOLD_ORE, this.random.nextIntBetweenInclusive(1, 2 + pLooting)));
+                    case 3 -> this.spawnAtLocation(new ItemStack(Blocks.DIAMOND_ORE, this.random.nextIntBetweenInclusive(1, 1 + pLooting)));
                 }
             }
-            case 1 -> this.spawnAtLocation(new ItemStack(Blocks.SANDSTONE, this.random.nextIntBetweenInclusive(1, 3 + pLooting)));
+            else
+            {   this.spawnAtLocation(new ItemStack(Blocks.STONE, this.random.nextIntBetweenInclusive(1, 3 + pLooting)));
+            }
+        }
+        else
+        {   this.spawnAtLocation(new ItemStack(this.getBlockForVariant().getBlock(), this.random.nextIntBetweenInclusive(1, 3 + pLooting)));
         }
     }
 
@@ -358,8 +359,10 @@ public class LithicanEntity extends Zombie
     {
         return switch (this.getVariant())
         {
-            case 0 -> Blocks.STONE.defaultBlockState();
-            default -> Blocks.SANDSTONE.defaultBlockState();
+            default -> Blocks.STONE.defaultBlockState();
+            case 1  -> Blocks.SANDSTONE.defaultBlockState();
+            case 2 -> Blocks.DEEPSLATE.defaultBlockState();
+            case 3 -> Blocks.BASALT.defaultBlockState();
         };
     }
 }

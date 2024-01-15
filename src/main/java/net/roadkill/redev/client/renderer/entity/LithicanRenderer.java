@@ -13,10 +13,15 @@ import net.roadkill.redev.client.renderer.layer.LithicanMoltenLayer;
 import net.roadkill.redev.client.renderer.layer.StuckArrowLayer;
 import net.roadkill.redev.common.entity.LithicanEntity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LithicanRenderer<T extends LithicanEntity, M extends LithicanModel<T>> extends AbstractZombieRenderer<T, M>
 {
     public static final ResourceLocation TEXTURE_STONE = new ResourceLocation(ReDev.MOD_ID, "textures/entity/lithican/stone_lithican.png");
     public static final ResourceLocation TEXTURE_SANDSTONE = new ResourceLocation(ReDev.MOD_ID, "textures/entity/lithican/sandstone_lithican.png");
+    public static final ResourceLocation TEXTURE_DEEPSLATE = new ResourceLocation(ReDev.MOD_ID, "textures/entity/lithican/deepslate_lithican.png");
+    public static final ResourceLocation TEXTURE_BASALT = new ResourceLocation(ReDev.MOD_ID, "textures/entity/lithican/basalt_lithican.png");
     public static final ResourceLocation TEXTURE_HEAT = new ResourceLocation(ReDev.MOD_ID, "textures/entity/lithican/molten_lithican.png");
 
     public LithicanRenderer(EntityRendererProvider.Context pContext)
@@ -25,18 +30,21 @@ public class LithicanRenderer<T extends LithicanEntity, M extends LithicanModel<
         this.addLayer(new LithicanMoltenLayer<>(this));
     }
 
-    private LithicanRenderer(EntityRendererProvider.Context pContext, ModelLayerLocation pZombieLayer, ModelLayerLocation pInnerArmor, ModelLayerLocation pOuterArmor)
-    {   super(pContext, (M) new LithicanModel(pContext.bakeLayer(pZombieLayer)),
-                        (M) new LithicanModel(pContext.bakeLayer(pInnerArmor)),
+    private LithicanRenderer(EntityRendererProvider.Context pContext, ModelLayerLocation zombieModel, ModelLayerLocation innerArmorModel, ModelLayerLocation pOuterArmor)
+    {   super(pContext, (M) new LithicanModel(pContext.bakeLayer(zombieModel)),
+                        (M) new LithicanModel(pContext.bakeLayer(innerArmorModel)),
                         (M) new LithicanModel(pContext.bakeLayer(pOuterArmor)));
     }
 
     @Override
     public ResourceLocation getTextureLocation(LithicanEntity pEntity)
-    {   return switch (pEntity.getVariant())
+    {
+        return switch (pEntity.getVariant())
         {
-            case 0 -> TEXTURE_STONE;
-            default -> TEXTURE_SANDSTONE;
+            default -> TEXTURE_STONE;
+            case 1 -> TEXTURE_SANDSTONE;
+            case 2 -> TEXTURE_DEEPSLATE;
+            case 3 -> TEXTURE_BASALT;
         };
     }
 
