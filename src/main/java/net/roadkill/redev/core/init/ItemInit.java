@@ -82,6 +82,7 @@ public class ItemInit
     public static final RegistryObject<Item> SCRAPWOOD_LADDER = ITEMS.register("scrapwood_ladder", () -> new BlockItem(BlockInit.SCRAPWOOD_LADDER.get(), new Item.Properties()));
     public static final RegistryObject<Item> WHISPUR_LADDER = ITEMS.register("whispur_ladder", () -> new BlockItem(BlockInit.WHISPUR_LADDER.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_LADDER = ITEMS.register("petrified_ladder", () -> new BlockItem(BlockInit.PETRIFIED_LADDER.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_LADDER = ITEMS.register("shade_ladder", () -> new BlockItem(BlockInit.SHADE_LADDER.get(), new Item.Properties()));
     public static final RegistryObject<Item> CHAIN_LADDER = ITEMS.register("chain_ladder", () -> new ChainLadderItem(BlockInit.CHAIN_LADDER.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> ACACIA_SMITHING_TABLE = ITEMS.register("acacia_smithing_table", () -> new BlockItem(BlockInit.ACACIA_SMITHING_TABLE.get(), new Item.Properties()));

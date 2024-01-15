@@ -71,6 +71,8 @@ public class ModItems
     public static final Item SCRAPWOOD_LADDER = ItemInit.SCRAPWOOD_LADDER.get();
     public static final Item WHISPUR_LADDER = ItemInit.WHISPUR_LADDER.get();
     public static final Item PETRIFIED_LADDER = ItemInit.PETRIFIED_LADDER.get();
+    public static final Item SHADE_LADDER = ItemInit.SHADE_LADDER.get();
+
     public static final Item CHAIN_LADDER = ItemInit.CHAIN_LADDER.get();
 
     public static final Item ACACIA_SMITHING_TABLE = ItemInit.ACACIA_SMITHING_TABLE.get();

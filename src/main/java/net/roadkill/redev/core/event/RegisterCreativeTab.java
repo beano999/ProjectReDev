@@ -49,6 +49,7 @@ public class RegisterCreativeTab
                          ModItems.JUNGLE_LADDER.getDefaultInstance(),
                          ModItems.MANGROVE_LADDER.getDefaultInstance(),
                          Items.LADDER.getDefaultInstance(),
+                         ModItems.SHADE_LADDER.getDefaultInstance(),
                          ModItems.SPRUCE_LADDER.getDefaultInstance(),
                          ModItems.WARPED_LADDER.getDefaultInstance(),
                          ModItems.SCRAPWOOD_LADDER.getDefaultInstance(),
@@ -147,15 +148,6 @@ public class RegisterCreativeTab
                          ModItems.PETRIFIED_ACTIVATOR_RAIL.getDefaultInstance()));
                     }).build();
         });
-
-        /*event.registerCreativeModeTab(new ResourceLocation(ReDev.MOD_ID, "redev_main"), builder ->
-        {
-             builder.title(Component.translatable("item_group." + ReDev.MOD_ID + ".main"))
-                    .icon(ModItems.BLACKSTONE_FURNACE::getDefaultInstance)
-                    .displayItems((params, list) ->
-                    {
-                    }).build();
-        });*/
     }
 
     @SubscribeEvent

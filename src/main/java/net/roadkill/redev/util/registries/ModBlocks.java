@@ -28,6 +28,10 @@ public class ModBlocks
     public static final Block MANGROVE_LADDER = BlockInit.MANGROVE_LADDER.get();
     public static final Block SPRUCE_LADDER = BlockInit.SPRUCE_LADDER.get();
     public static final Block WARPED_LADDER = BlockInit.WARPED_LADDER.get();
+    public static final Block SCRAPWOOD_LADDER = BlockInit.SCRAPWOOD_LADDER.get();
+    public static final Block WHISPUR_LADDER = BlockInit.WHISPUR_LADDER.get();
+    public static final Block PETRIFIED_LADDER = BlockInit.PETRIFIED_LADDER.get();
+    public static final Block SHADE_LADDER = BlockInit.SHADE_LADDER.get();
     public static final Block CHAIN_LADDER = BlockInit.CHAIN_LADDER.get();
 
     public static final Block ACACIA_SMITHING_TABLE = BlockInit.ACACIA_SMITHING_TABLE.get();
@@ -160,7 +164,6 @@ public class ModBlocks
     public static final Block SCRAPWOOD_SIGN = BlockInit.SCRAPWOOD_SIGN.get();
     public static final Block SCRAPWOOD_WALL_SIGN = BlockInit.SCRAPWOOD_WALL_SIGN.get();
     public static final Block SCRAPWOOD_BOOKSHELF = BlockInit.SCRAPWOOD_BOOKSHELF.get();
-    public static final Block SCRAPWOOD_LADDER = BlockInit.SCRAPWOOD_LADDER.get();
 
     public static final WhispurRootBlock WHISPUR_ROOT = (WhispurRootBlock) BlockInit.WHISPUR_ROOT.get();
     public static final Block WHISPUR_PLANKS = BlockInit.WHISPUR_PLANKS.get();
@@ -175,7 +178,6 @@ public class ModBlocks
     public static final Block WHISPUR_SIGN = BlockInit.WHISPUR_SIGN.get();
     public static final Block WHISPUR_WALL_SIGN = BlockInit.WHISPUR_WALL_SIGN.get();
     public static final Block WHISPUR_BOOKSHELF = BlockInit.WHISPUR_BOOKSHELF.get();
-    public static final Block WHISPUR_LADDER = BlockInit.WHISPUR_LADDER.get();
 
     public static final Block PETRIFIED_LOG = BlockInit.PETRIFIED_LOG.get();
     public static final Block STRIPPED_PETRIFIED_LOG = BlockInit.STRIPPED_PETRIFIED_LOG.get();
@@ -191,7 +193,6 @@ public class ModBlocks
     public static final Block PETRIFIED_SIGN = BlockInit.PETRIFIED_SIGN.get();
     public static final Block PETRIFIED_WALL_SIGN = BlockInit.PETRIFIED_WALL_SIGN.get();
     public static final Block PETRIFIED_BOOKSHELF = BlockInit.PETRIFIED_BOOKSHELF.get();
-    public static final Block PETRIFIED_LADDER = BlockInit.PETRIFIED_LADDER.get();
 
     public static final CaramineRyeBlock CARAMINE_RYE = (CaramineRyeBlock) BlockInit.CARAMINE_RYE.get();
     public static final Block TWISTING_VINES_PLANT = BlockInit.TWISTING_VINES_PLANT.get();
@@ -211,8 +212,7 @@ public class ModBlocks
     public static final Block SHADE_SIGN = BlockInit.SHADE_SIGN.get();
     public static final Block SHADE_WALL_SIGN = BlockInit.SHADE_WALL_SIGN.get();
     public static final Block SHADE_BOOKSHELF = BlockInit.SHADE_BOOKSHELF.get();
-    public static final Block SHADE_LADDER = BlockInit.SHADE_LADDER.get();
-    
+
     public static final Block TEAL_SHADE_LEAVES = BlockInit.TEAL_SHADE_LEAVES.get();
     public static final Block RED_SHADE_LEAVES = BlockInit.RED_SHADE_LEAVES.get();
     public static final Block PURPLE_SHADE_LEAVES = BlockInit.PURPLE_SHADE_LEAVES.get();
