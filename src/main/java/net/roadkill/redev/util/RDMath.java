@@ -43,7 +43,21 @@ public final class RDMath
     {
         if (factor <= rangeMin) return blendFrom;
         if (factor >= rangeMax) return blendTo;
-        return ((1 / (rangeMax - rangeMin)) * (factor - rangeMin)) * (blendTo - blendFrom) + blendFrom;
+        return (blendTo - blendFrom) / (rangeMax - rangeMin) * (factor - rangeMin) + blendFrom;
+    }
+
+    public static double blendExp(double blendFrom, double blendTo, double factor, double rangeMin, double rangeMax)
+    {
+        if (factor <= rangeMin) return blendFrom;
+        if (factor >= rangeMax) return blendTo;
+        return (blendTo - blendFrom) / Math.pow(rangeMax - rangeMin, 2) * Math.pow(factor - rangeMin, 2) + blendFrom;
+    }
+
+    public static double blendLog(double blendFrom, double blendTo, double factor, double rangeMin, double rangeMax)
+    {
+        if (factor <= rangeMin) return blendFrom;
+        if (factor >= rangeMax) return blendTo;
+        return (blendTo - blendFrom) / Math.log(rangeMax - rangeMin) * Math.log(factor - rangeMin + 1) + blendFrom;
     }
 
     public static boolean withinRange(int value, int min, int max)

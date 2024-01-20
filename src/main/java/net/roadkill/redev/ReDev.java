@@ -41,6 +41,7 @@ public class ReDev
         BiomeCodecInit.BIOME_MODIFIER_SERIALIZERS.register(bus);
         FeatureInit.FEATURES.register(bus);
         EntityInit.ENTITY_TYPES.register(bus);
+        ParticleTypesInit.PARTICLES.register(bus);
     }
 
     public void onCommonSetup(final FMLCommonSetupEvent event)
