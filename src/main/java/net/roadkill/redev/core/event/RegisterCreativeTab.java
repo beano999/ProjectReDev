@@ -166,6 +166,10 @@ public class RegisterCreativeTab
          */
         if (event.getTab().equals(CreativeModeTabs.NATURAL_BLOCKS))
         {
+            injectItemsAfter(Items.BEDROCK.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.HADALITE
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             injectItemsAfter(Items.FLOWERING_AZALEA_LEAVES.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.SHADE_LEAVES,
                     ModItems.TEAL_SHADE_LEAVES,
@@ -324,7 +328,7 @@ public class RegisterCreativeTab
         else if (event.getTab().equals(CreativeModeTabs.BUILDING_BLOCKS))
         {
             injectItemsAfter(Items.GOLD_BLOCK.getDefaultInstance(), event.getEntries(), List.of(
-                    ModItems.NETHER_GOLD_BLOCK
+                    ModItems.NETHER_GOLD_BLOCK, ModItems.OLD_GOLD, ModItems.OLD_NETHER_GOLD
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             injectItemsAfter(Items.WARPED_BUTTON.getDefaultInstance(), event.getEntries(), List.of(

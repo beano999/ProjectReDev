@@ -43,15 +43,15 @@ public class PigTNTLayer<T extends Entity, M extends EntityModel<T>> extends Ren
                 BlockRenderDispatcher blockRenderer = Minecraft.getInstance().getBlockRenderer();
                 pMatrixStack.pushPose();
                 pMatrixStack.mulPose(Axis.ZP.rotationDegrees(180));
-                pMatrixStack.translate(-.375F, -1F, .1F);
-                pMatrixStack.scale(.35F, .35F, .35F);
+                pMatrixStack.translate(-.405F, -1.075F, .05F);
+                pMatrixStack.scale(.4F, .4F, .4F);
                 TntMinecartRenderer.renderWhiteSolidBlock(blockRenderer, Blocks.TNT.defaultBlockState(), pMatrixStack, pBuffer, pPackedLight, fuse / 5 % 2 == 0);
                 pMatrixStack.popPose();
 
                 pMatrixStack.pushPose();
                 pMatrixStack.mulPose(Axis.ZP.rotationDegrees(180));
-                pMatrixStack.translate(.025F, -1F, .1F);
-                pMatrixStack.scale(.35F, .35F, .35F);
+                pMatrixStack.translate(0F, -1.075F, .05F);
+                pMatrixStack.scale(.4F, .4F, .4F);
                 TntMinecartRenderer.renderWhiteSolidBlock(blockRenderer, Blocks.TNT.defaultBlockState(), pMatrixStack, pBuffer, pPackedLight, fuse / 5 % 2 == 0);
                 pMatrixStack.popPose();
             }

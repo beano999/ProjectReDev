@@ -279,4 +279,9 @@ public class ItemInit
     public static final RegistryObject<Item> SHADE_SIGN = ITEMS.register("shade_sign", () -> new SignItem(new Item.Properties().stacksTo(16), BlockInit.SHADE_SIGN.get(), BlockInit.SHADE_WALL_SIGN.get()));
 
     public static final RegistryObject<Item> DURIAN = ITEMS.register("durian", () -> new BlockItem(BlockInit.DURIAN.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> HADALITE = ITEMS.register("hadalite", () -> new BlockItem(BlockInit.HADALITE.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> OLD_GOLD = ITEMS.register("old_gold", () -> new BlockItem(BlockInit.OLD_GOLD.get(), new Item.Properties()));
+    public static final RegistryObject<Item> OLD_NETHER_GOLD = ITEMS.register("old_nether_gold", () -> new BlockItem(BlockInit.OLD_NETHER_GOLD.get(), new Item.Properties()));
 }

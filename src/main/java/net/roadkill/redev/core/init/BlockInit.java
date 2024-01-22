@@ -251,4 +251,9 @@ public class BlockInit
     public static final RegistryObject<Block> PURPLE_SHADE_SAPLING = BLOCKS.register("purple_shade_sapling", () -> new ShadeSaplingBlock(new ShadeTree(ShadeTree.Color.PURPLE), Block.Properties.copy(SHADE_SAPLING.get())));
 
     public static final RegistryObject<Block> DURIAN = BLOCKS.register("durian", () -> new DurianBlock(Block.Properties.of(Material.VEGETABLE, MaterialColor.COLOR_BROWN).strength(0.2F).sound(SoundType.WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> HADALITE = BLOCKS.register("hadalite", () -> new HadaliteBlock(Block.Properties.copy(Blocks.BEDROCK)));
+
+    public static final RegistryObject<Block> OLD_GOLD = BLOCKS.register("old_gold", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
+    public static final RegistryObject<Block> OLD_NETHER_GOLD = BLOCKS.register("old_nether_gold", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
 }

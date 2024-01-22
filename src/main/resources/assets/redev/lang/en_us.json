@@ -335,5 +335,10 @@
 
   "block.redev.durian": "Durian",
 
-  "block.redev.carved_pumpkin": "Carved Pumpkin"
+  "block.redev.carved_pumpkin": "Carved Pumpkin",
+
+  "block.redev.hadalite": "Hadalite",
+
+  "block.redev.old_gold": "Old Gold Block",
+  "block.redev.old_nether_gold": "Old Nether Gold Block"
 }

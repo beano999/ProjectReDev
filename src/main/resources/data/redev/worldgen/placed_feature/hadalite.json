@@ -1,0 +1,9 @@
+{
+  "feature": "redev:hadalite",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 1
+    }
+  ]
+}

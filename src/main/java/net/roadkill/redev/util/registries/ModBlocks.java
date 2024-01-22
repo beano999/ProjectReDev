@@ -217,6 +217,11 @@ public class ModBlocks
     public static final Block RED_SHADE_LEAVES = BlockInit.RED_SHADE_LEAVES.get();
     public static final Block PURPLE_SHADE_LEAVES = BlockInit.PURPLE_SHADE_LEAVES.get();
 
+    public static final Block HADALITE = BlockInit.HADALITE.get();
+
+    public static final Block OLD_GOLD = BlockInit.OLD_GOLD.get();
+    public static final Block OLD_NETHER_GOLD = BlockInit.OLD_NETHER_GOLD.get();
+
     public static final class WoodTypes
     {
         public static final WoodType SCRAPWOOD = WoodType.register(new WoodType("scrapwood", BlockSets.SCRAPWOOD));

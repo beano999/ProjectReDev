@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient":
+  {
+    "item": "redev:old_gold"
+  },
+  "result": "redev:old_nether_gold",
+  "experience": 1.0,
+  "cookingtime": 200
+}

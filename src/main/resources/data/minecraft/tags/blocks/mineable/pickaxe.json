@@ -82,6 +82,8 @@
     "redev:petrified_ladder",
     "redev:petrified_campfire",
     "redev:petrified_soul_campfire",
-    "redev:petrified_bookshelf"
+    "redev:petrified_bookshelf",
+    "redev:old_gold",
+    "redev:old_nether_gold"
   ]
 }
