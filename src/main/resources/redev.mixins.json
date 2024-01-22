@@ -21,6 +21,7 @@
     "MixinFireworkDamage",
     "MixinFurnaceInit",
     "MixinGameRuleChange",
+    "MixinGhostlyArrow",
     "MixinHangingEntityLoad",
     "MixinLithicanAI",
     "MixinMobSpawning",

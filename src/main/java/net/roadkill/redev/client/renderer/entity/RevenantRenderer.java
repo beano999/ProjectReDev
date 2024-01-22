@@ -31,13 +31,6 @@ public class RevenantRenderer<T extends RevenantEntity, M extends RevenantModel<
                                                      new RevenantModel<T>(pContext.bakeLayer(pOuterModelLayer)), pContext.getModelManager()));
     }
 
-    /**
-     * Returns the location of an entity's texture.
-     */
-    public ResourceLocation getTextureLocation(AbstractSkeleton pEntity) {
-        return TEXTURE;
-    }
-
     @Override
     public ResourceLocation getTextureLocation(T entity)
     {   return TEXTURE;
@@ -51,7 +44,6 @@ public class RevenantRenderer<T extends RevenantEntity, M extends RevenantModel<
 
     @Override
     public void render(T pEntity, float pEntityYaw, float pPartialTicks, PoseStack pMatrixStack, MultiBufferSource pBuffer, int pPackedLight)
-    {
-        super.render(pEntity, pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight);
+    {   super.render(pEntity, pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight);
     }
 }

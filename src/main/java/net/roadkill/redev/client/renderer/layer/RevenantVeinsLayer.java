@@ -1,5 +1,6 @@
 package net.roadkill.redev.client.renderer.layer;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -13,7 +14,7 @@ import net.roadkill.redev.util.RDMath;
 
 public class RevenantVeinsLayer<T extends RevenantEntity, M extends RevenantModel<T>> extends RenderLayer<T, M>
 {
-    private static final RenderType VEINS_OVERLAY = RenderType.entityTranslucentEmissive(RevenantRenderer.TEXTURE_VEINS);
+    private static final RenderType VEINS_OVERLAY = RenderType.entityTranslucentEmissive(RevenantRenderer.TEXTURE_VEINS, false);
 
     public RevenantVeinsLayer(RenderLayerParent<T, M> parentLayer)
     {   super(parentLayer);
@@ -24,7 +25,7 @@ public class RevenantVeinsLayer<T extends RevenantEntity, M extends RevenantMode
                        float pLimbSwing, float pLimbSwingAmount, float pPartialTick, float pAgeInTicks,
                        float pNetHeadYaw, float pHeadPitch)
     {
-        this.getParentModel().renderToBuffer(pPoseStack, pBuffer.getBuffer(VEINS_OVERLAY), pPackedLight,
-                                             LivingEntityRenderer.getOverlayCoords(pLivingEntity, 0.0F), 1.0F, 1.0F, 1.0F, (float) RDMath.blend(0, 0.5f, pLivingEntity.tickCount % 20 + pPartialTick, 0, 20));
+        this.getParentModel().renderWithVeins(pPoseStack, pBuffer.getBuffer(VEINS_OVERLAY), pPackedLight,
+                                             LivingEntityRenderer.getOverlayCoords(pLivingEntity, 0.0F), 1.0F, 1.0F, 1.0F, (float) Math.sin((pLivingEntity.tickCount + pPartialTick) / 32) / 10 + 0.5F);
     }
 }
