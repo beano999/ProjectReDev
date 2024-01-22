@@ -34,6 +34,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import net.minecraftforge.common.Tags;
 import net.roadkill.redev.util.RDMath;
 import net.roadkill.redev.util.registries.ModSounds;
@@ -52,7 +53,7 @@ public class LithicanEntity extends Zombie
     }
 
     public static AttributeSupplier.Builder createAttributes()
-    {   return Zombie.createAttributes().add(Attributes.ATTACK_DAMAGE, 3).add(Attributes.ARMOR, 5);
+    {   return Zombie.createAttributes().add(Attributes.ATTACK_DAMAGE, 3).add(Attributes.ARMOR, 5).add(Attributes.KNOCKBACK_RESISTANCE, 1);
     }
 
     @Override
@@ -146,11 +147,6 @@ public class LithicanEntity extends Zombie
             }
         }
         super.tick();
-    }
-
-    @Override
-    public void knockback(double strength, double x, double z)
-    {   super.knockback(0, x, z);
     }
 
     @Override
@@ -257,7 +253,7 @@ public class LithicanEntity extends Zombie
         if (super.hurt(damageSource, (float) RDMath.blend(amount, amount * 2, this.getHeat(), 0, 100)))
         {
             // Make all nearby lithicans active if damage passes
-            this.level.getEntitiesOfClass(LithicanEntity.class, this.getBoundingBox().inflate(16)).forEach(lithican ->
+            this.level.getEntitiesOfClass(LithicanEntity.class, new AABB(this.blockPosition()).inflate(8)).forEach(lithican ->
             {
                 if (!lithican.isActive())
                 {   lithican.wakeUp();

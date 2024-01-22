@@ -53,7 +53,7 @@ public class ItemInit
     public static final RegistryObject<Item> CARAMINE_RYE = ITEMS.register("caramine_rye", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> WARPED_DRUPEL = ITEMS.register("warped_drupel", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().fast().nutrition(3).saturationMod(0.3f).build())));
 
-    public static final RegistryObject<Item> NETHERITE_HORSE_ARMOR = ITEMS.register("netherite_horse_armor", () -> new HorseArmorItem(11, "netherite", new Item.Properties().stacksTo(1).fireResistant()));
+    public static final RegistryObject<Item> NETHERITE_HORSE_ARMOR = ITEMS.register("netherite_horse_armor", () -> new HorseArmorItem(16, "netherite", new Item.Properties().stacksTo(1).fireResistant()));
 
     public static final RegistryObject<Item> LITHICAN_SPAWN_EGG = ITEMS.register("lithican_spawn_egg", () -> new ForgeSpawnEggItem(EntityInit.LITHICAN, 5263440, 10782599, new Item.Properties()));
     public static final RegistryObject<Item> REVENANT_SPAWN_EGG = ITEMS.register("revenant_spawn_egg", () -> new ForgeSpawnEggItem(EntityInit.REVENANT, 5395605, 5874129, new Item.Properties()));
@@ -121,6 +121,8 @@ public class ItemInit
     public static final RegistryObject<Item> BONE_SOUL_CAMPFIRE = ITEMS.register("bone_soul_campfire", () -> new BlockItem(BlockInit.BONE_SOUL_CAMPFIRE.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_CAMPFIRE = ITEMS.register("petrified_campfire", () -> new BlockItem(BlockInit.PETRIFIED_CAMPFIRE.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_SOUL_CAMPFIRE = ITEMS.register("petrified_soul_campfire", () -> new BlockItem(BlockInit.PETRIFIED_SOUL_CAMPFIRE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_CAMPFIRE = ITEMS.register("shade_campfire", () -> new BlockItem(BlockInit.SHADE_CAMPFIRE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_SOUL_CAMPFIRE = ITEMS.register("shade_soul_campfire", () -> new BlockItem(BlockInit.SHADE_SOUL_CAMPFIRE.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> ACACIA_RAIL = ITEMS.register("acacia_rail", () -> new BlockItem(BlockInit.ACACIA_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> BIRCH_RAIL = ITEMS.register("birch_rail", () -> new BlockItem(BlockInit.BIRCH_RAIL.get(), new Item.Properties()));

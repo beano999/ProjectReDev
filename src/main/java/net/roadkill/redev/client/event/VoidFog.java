@@ -20,8 +20,8 @@ public class VoidFog
     {   double y = Minecraft.getInstance().player.getY();
         Level level = Minecraft.getInstance().level;
         if (y < 0 && level.dimensionTypeId() == BuiltinDimensionTypes.OVERWORLD)
-        {   event.setFarPlaneDistance((float) RDMath.blendExp(32, event.getFarPlaneDistance(), y, -32, 0));
-            event.setNearPlaneDistance((float) RDMath.blendExp(16, event.getNearPlaneDistance(), y, -32, 0));
+        {   event.setFarPlaneDistance((float) RDMath.blendExp(16, event.getFarPlaneDistance(), y, -32, 0));
+            event.setNearPlaneDistance((float) RDMath.blendExp(8, event.getNearPlaneDistance(), y, -32, 0));
             event.setCanceled(true);
         }
     }
@@ -48,7 +48,7 @@ public class VoidFog
         double y = Minecraft.getInstance().player.getY();
         if (y < 0 && level.dimensionTypeId() == BuiltinDimensionTypes.OVERWORLD && !Minecraft.getInstance().isPaused())
         {
-            for (int i = 0; i < RDMath.blend(4, 0, y, minHeight + 10, 0); i++)
+            for (int i = 0; i < RDMath.blend(5, 0, y, minHeight + 10, 0); i++)
             {
                 level.addParticle(ParticleTypesInit.VOID_DUST.get(),
                                   Minecraft.getInstance().player.getX() + level.random.nextIntBetweenInclusive(-16, 16),

@@ -55,6 +55,7 @@ public class ModBlocks
     public static final Block SCRAPWOOD_CAMPFIRE = BlockInit.SCRAPWOOD_CAMPFIRE.get();
     public static final Block BONE_CAMPFIRE = BlockInit.BONE_CAMPFIRE.get();
     public static final Block PETRIFIED_CAMPFIRE = BlockInit.PETRIFIED_CAMPFIRE.get();
+    public static final Block SHADE_CAMPFIRE = BlockInit.SHADE_CAMPFIRE.get();
 
     public static final Block ACACIA_SOUL_CAMPFIRE = BlockInit.ACACIA_SOUL_CAMPFIRE.get();
     public static final Block BIRCH_SOUL_CAMPFIRE = BlockInit.BIRCH_SOUL_CAMPFIRE.get();
@@ -68,6 +69,7 @@ public class ModBlocks
     public static final Block SCRAPWOOD_SOUL_CAMPFIRE = BlockInit.SCRAPWOOD_SOUL_CAMPFIRE.get();
     public static final Block BONE_SOUL_CAMPFIRE = BlockInit.BONE_SOUL_CAMPFIRE.get();
     public static final Block PETRIFIED_SOUL_CAMPFIRE = BlockInit.PETRIFIED_SOUL_CAMPFIRE.get();
+    public static final Block SHADE_SOUL_CAMPFIRE = BlockInit.SHADE_SOUL_CAMPFIRE.get();
 
     public static final Block ACACIA_RAIL = BlockInit.ACACIA_RAIL.get();
     public static final Block BIRCH_RAIL = BlockInit.BIRCH_RAIL.get();

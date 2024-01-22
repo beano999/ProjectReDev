@@ -20,12 +20,14 @@ public class BlockEntityInit
                                         ModBlocks.OAK_CAMPFIRE,     ModBlocks.SPRUCE_CAMPFIRE,
                                         ModBlocks.WARPED_CAMPFIRE,  ModBlocks.PETRIFIED_CAMPFIRE,
                                         ModBlocks.SCRAPWOOD_CAMPFIRE, ModBlocks.BONE_CAMPFIRE,
+                                        ModBlocks.SHADE_CAMPFIRE,
                                         ModBlocks.ACACIA_SOUL_CAMPFIRE,  ModBlocks.BIRCH_SOUL_CAMPFIRE,
                                         ModBlocks.CRIMSON_SOUL_CAMPFIRE, ModBlocks.DARK_OAK_SOUL_CAMPFIRE,
                                         ModBlocks.JUNGLE_SOUL_CAMPFIRE,  ModBlocks.MANGROVE_SOUL_CAMPFIRE,
                                         ModBlocks.OAK_SOUL_CAMPFIRE,     ModBlocks.SPRUCE_SOUL_CAMPFIRE,
                                         ModBlocks.WARPED_SOUL_CAMPFIRE, ModBlocks.PETRIFIED_SOUL_CAMPFIRE,
-                                        ModBlocks.SCRAPWOOD_SOUL_CAMPFIRE, ModBlocks.BONE_SOUL_CAMPFIRE).build(null));
+                                        ModBlocks.SCRAPWOOD_SOUL_CAMPFIRE, ModBlocks.BONE_SOUL_CAMPFIRE,
+                                        ModBlocks.SHADE_SOUL_CAMPFIRE).build(null));
 
     public static final RegistryObject<BlockEntityType<ModFurnaceBlockEntity>> FURNACE_BLOCK_ENTITY_TYPE =
             BLOCK_ENTITY_TYPES.register("furnace", () -> BlockEntityType.Builder.of(ModFurnaceBlockEntity::new,
@@ -46,5 +48,6 @@ public class BlockEntityInit
             BLOCK_ENTITY_TYPES.register("sign", () -> BlockEntityType.Builder.of(ModSignBlockEntity::new,
                                         ModBlocks.SCRAPWOOD_SIGN, ModBlocks.SCRAPWOOD_WALL_SIGN,
                                         ModBlocks.WHISPUR_SIGN, ModBlocks.WHISPUR_WALL_SIGN,
-                                        ModBlocks.PETRIFIED_SIGN, ModBlocks.PETRIFIED_WALL_SIGN).build(null));
+                                        ModBlocks.PETRIFIED_SIGN, ModBlocks.PETRIFIED_WALL_SIGN,
+                                        ModBlocks.SHADE_SIGN, ModBlocks.SHADE_WALL_SIGN).build(null));
 }
