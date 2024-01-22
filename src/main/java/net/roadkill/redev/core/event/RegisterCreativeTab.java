@@ -300,13 +300,19 @@ public class RegisterCreativeTab
                     ModItems.WITHERED_LEGGINGS,
                     ModItems.WITHERED_BOOTS
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             injectItemsAfter(Items.NETHERITE_SWORD.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.NETHER_GOLD_SWORD,
                     ModItems.WITHERED_SWORD
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             injectItemsAfter(Items.NETHERITE_AXE.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.NETHER_GOLD_AXE,
                     ModItems.WITHERED_AXE
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            injectItemsAfter(Items.DIAMOND_HORSE_ARMOR.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.NETHERITE_HORSE_ARMOR
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 

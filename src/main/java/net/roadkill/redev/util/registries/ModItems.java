@@ -42,6 +42,8 @@ public class ModItems
 
     public static final Item WARPED_DRUPEL = ItemInit.WARPED_DRUPEL.get();
 
+    public static final Item NETHERITE_HORSE_ARMOR = ItemInit.NETHERITE_HORSE_ARMOR.get();
+
     public static final Item LITHICAN_SPAWN_EGG = ItemInit.LITHICAN_SPAWN_EGG.get();
     public static final Item REVENANT_SPAWN_EGG = ItemInit.REVENANT_SPAWN_EGG.get();
 
