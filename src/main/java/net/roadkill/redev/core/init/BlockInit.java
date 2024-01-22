@@ -57,6 +57,7 @@ public class BlockInit
     public static final RegistryObject<Block> SCRAPWOOD_SMITHING_TABLE = BLOCKS.register("scrapwood_smithing_table", () -> new SmithingTableBlock(Block.Properties.copy(Blocks.SMITHING_TABLE)));
     public static final RegistryObject<Block> WHISPUR_SMITHING_TABLE = BLOCKS.register("whispur_smithing_table", () -> new SmithingTableBlock(Block.Properties.copy(Blocks.SMITHING_TABLE)));
     public static final RegistryObject<Block> PETRIFIED_SMITHING_TABLE = BLOCKS.register("petrified_smithing_table", () -> new SmithingTableBlock(Block.Properties.copy(Blocks.SMITHING_TABLE)));
+    public static final RegistryObject<Block> SHADE_SMITHING_TABLE = BLOCKS.register("shade_smithing_table", () -> new SmithingTableBlock(Block.Properties.copy(Blocks.SMITHING_TABLE)));
 
     public static final RegistryObject<Block> ACACIA_CAMPFIRE = BLOCKS.register("acacia_campfire", () -> new ModCampfireBlock(true, 1, Block.Properties.copy(Blocks.CAMPFIRE)));
     public static final RegistryObject<Block> ACACIA_SOUL_CAMPFIRE = BLOCKS.register("acacia_soul_campfire", () -> new ModCampfireBlock(true, 1, Block.Properties.copy(Blocks.SOUL_CAMPFIRE)));
@@ -82,6 +83,8 @@ public class BlockInit
     public static final RegistryObject<Block> SCRAPWOOD_SOUL_CAMPFIRE = BLOCKS.register("scrapwood_soul_campfire", () -> new ModCampfireBlock(true, 1, Block.Properties.copy(Blocks.SOUL_CAMPFIRE)));
     public static final RegistryObject<Block> BONE_CAMPFIRE = BLOCKS.register("bone_campfire", () -> new ModCampfireBlock(true, 1, Block.Properties.copy(Blocks.CAMPFIRE)));
     public static final RegistryObject<Block> BONE_SOUL_CAMPFIRE = BLOCKS.register("bone_soul_campfire", () -> new ModCampfireBlock(true, 1, Block.Properties.copy(Blocks.SOUL_CAMPFIRE)));
+    public static final RegistryObject<Block> SHADE_CAMPFIRE = BLOCKS.register("shade_campfire", () -> new ModCampfireBlock(true, 1, Block.Properties.copy(Blocks.CAMPFIRE)));
+    public static final RegistryObject<Block> SHADE_SOUL_CAMPFIRE = BLOCKS.register("shade_soul_campfire", () -> new ModCampfireBlock(true, 1, Block.Properties.copy(Blocks.SOUL_CAMPFIRE)));
 
     public static final RegistryObject<Block> ACACIA_RAIL = BLOCKS.register("acacia_rail", () -> new RailBlock(Block.Properties.copy(Blocks.RAIL)));
     public static final RegistryObject<Block> BIRCH_RAIL = BLOCKS.register("birch_rail", () -> new RailBlock(Block.Properties.copy(Blocks.RAIL)));
@@ -94,6 +97,7 @@ public class BlockInit
     public static final RegistryObject<Block> SCRAPWOOD_RAIL = BLOCKS.register("scrapwood_rail", () -> new RailBlock(Block.Properties.copy(Blocks.RAIL)));
     public static final RegistryObject<Block> WHISPUR_RAIL = BLOCKS.register("whispur_rail", () -> new RailBlock(Block.Properties.copy(Blocks.RAIL)));
     public static final RegistryObject<Block> PETRIFIED_RAIL = BLOCKS.register("petrified_rail", () -> new RailBlock(Block.Properties.copy(Blocks.RAIL)));
+    public static final RegistryObject<Block> SHADE_RAIL = BLOCKS.register("shade_rail", () -> new RailBlock(Block.Properties.copy(Blocks.RAIL)));
 
     public static final RegistryObject<Block> ACACIA_DETECTOR_RAIL = BLOCKS.register("acacia_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
     public static final RegistryObject<Block> BIRCH_DETECTOR_RAIL = BLOCKS.register("birch_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
@@ -106,6 +110,7 @@ public class BlockInit
     public static final RegistryObject<Block> SCRAPWOOD_DETECTOR_RAIL = BLOCKS.register("scrapwood_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
     public static final RegistryObject<Block> WHISPUR_DETECTOR_RAIL = BLOCKS.register("whispur_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
     public static final RegistryObject<Block> PETRIFIED_DETECTOR_RAIL = BLOCKS.register("petrified_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
+    public static final RegistryObject<Block> SHADE_DETECTOR_RAIL = BLOCKS.register("shade_detector_rail", () -> new DetectorRailBlock(Block.Properties.copy(Blocks.DETECTOR_RAIL)));
 
     public static final RegistryObject<Block> ACACIA_POWERED_RAIL = BLOCKS.register("acacia_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
     public static final RegistryObject<Block> BIRCH_POWERED_RAIL = BLOCKS.register("birch_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
@@ -118,6 +123,7 @@ public class BlockInit
     public static final RegistryObject<Block> SCRAPWOOD_POWERED_RAIL = BLOCKS.register("scrapwood_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
     public static final RegistryObject<Block> WHISPUR_POWERED_RAIL = BLOCKS.register("whispur_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
     public static final RegistryObject<Block> PETRIFIED_POWERED_RAIL = BLOCKS.register("petrified_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
+    public static final RegistryObject<Block> SHADE_POWERED_RAIL = BLOCKS.register("shade_powered_rail", () -> new ModPoweredRailBlock(Block.Properties.copy(Blocks.POWERED_RAIL)));
 
     public static final RegistryObject<Block> ACACIA_ACTIVATOR_RAIL = BLOCKS.register("acacia_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
     public static final RegistryObject<Block> BIRCH_ACTIVATOR_RAIL = BLOCKS.register("birch_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
@@ -130,6 +136,7 @@ public class BlockInit
     public static final RegistryObject<Block> SCRAPWOOD_ACTIVATOR_RAIL = BLOCKS.register("scrapwood_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
     public static final RegistryObject<Block> WHISPUR_ACTIVATOR_RAIL = BLOCKS.register("whispur_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
     public static final RegistryObject<Block> PETRIFIED_ACTIVATOR_RAIL = BLOCKS.register("petrified_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
+    public static final RegistryObject<Block> SHADE_ACTIVATOR_RAIL = BLOCKS.register("shade_activator_rail", () -> new ModActivatorRailBlock(Block.Properties.copy(Blocks.ACTIVATOR_RAIL)));
 
     public static final RegistryObject<Block> ACACIA_HEDGE = BLOCKS.register("acacia_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.ACACIA_LEAVES)));
     public static final RegistryObject<Block> AZALEA_HEDGE = BLOCKS.register("azalea_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.AZALEA_LEAVES)));
@@ -140,6 +147,10 @@ public class BlockInit
     public static final RegistryObject<Block> MANGROVE_HEDGE = BLOCKS.register("mangrove_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.MANGROVE_LEAVES)));
     public static final RegistryObject<Block> OAK_HEDGE = BLOCKS.register("oak_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> SPRUCE_HEDGE = BLOCKS.register("spruce_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.SPRUCE_LEAVES)));
+    public static final RegistryObject<Block> SHADE_HEDGE = BLOCKS.register("shade_hedge", () -> new HedgeBlock(Block.Properties.copy(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<Block> TEAL_SHADE_HEDGE = BLOCKS.register("teal_shade_hedge", () -> new HedgeBlock(Block.Properties.copy(SHADE_HEDGE.get())));
+    public static final RegistryObject<Block> RED_SHADE_HEDGE = BLOCKS.register("red_shade_hedge", () -> new HedgeBlock(Block.Properties.copy(SHADE_HEDGE.get())));
+    public static final RegistryObject<Block> PURPLE_SHADE_HEDGE = BLOCKS.register("purple_shade_hedge", () -> new HedgeBlock(Block.Properties.copy(SHADE_HEDGE.get())));
 
     public static final RegistryObject<Block> ACACIA_HEDGE_WALL = BLOCKS.register("acacia_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.ACACIA_LEAVES)));
     public static final RegistryObject<Block> AZALEA_HEDGE_WALL = BLOCKS.register("azalea_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.AZALEA_LEAVES)));
@@ -150,6 +161,10 @@ public class BlockInit
     public static final RegistryObject<Block> MANGROVE_HEDGE_WALL = BLOCKS.register("mangrove_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.MANGROVE_LEAVES)));
     public static final RegistryObject<Block> OAK_HEDGE_WALL = BLOCKS.register("oak_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> SPRUCE_HEDGE_WALL = BLOCKS.register("spruce_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.SPRUCE_LEAVES)));
+    public static final RegistryObject<Block> SHADE_HEDGE_WALL = BLOCKS.register("shade_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<Block> TEAL_SHADE_HEDGE_WALL = BLOCKS.register("teal_shade_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(SHADE_HEDGE.get())));
+    public static final RegistryObject<Block> RED_SHADE_HEDGE_WALL = BLOCKS.register("red_shade_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(SHADE_HEDGE.get())));
+    public static final RegistryObject<Block> PURPLE_SHADE_HEDGE_WALL = BLOCKS.register("purple_shade_hedge_wall", () -> new LeafyWallBlock(Block.Properties.copy(SHADE_HEDGE.get())));
 
     public static final RegistryObject<Block> BLACKSTONE_FURNACE = BLOCKS.register("blackstone_furnace", () -> new ModFurnaceBlock(Block.Properties.copy(Blocks.FURNACE)));
     public static final RegistryObject<Block> DEEPSLATE_FURNACE = BLOCKS.register("deepslate_furnace", () -> new ModFurnaceBlock(Block.Properties.copy(Blocks.FURNACE)));
@@ -236,7 +251,7 @@ public class BlockInit
     public static final RegistryObject<Block> SHADE_BUTTON = BLOCKS.register("shade_button", () -> new ButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(SoundType.WOOD), ModBlocks.BlockSets.SHADE, 30, true));
     public static final RegistryObject<Block> SHADE_PRESSURE_PLATE = BLOCKS.register("shade_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(SoundType.WOOD), ModBlocks.BlockSets.SHADE));
     public static final RegistryObject<Block> SHADE_DOOR = BLOCKS.register("shade_door", () -> new DoorBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD), ModBlocks.BlockSets.SHADE));
-    public static final RegistryObject<Block> SHADE_TRAPDOOR = BLOCKS.register("shade_trapdoor", () -> new TrapDoorBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD), ModBlocks.BlockSets.SHADE));
+    public static final RegistryObject<Block> SHADE_TRAPDOOR = BLOCKS.register("shade_trapdoor", () -> new TrapDoorBlock(Block.Properties.copy(Blocks.OAK_TRAPDOOR), ModBlocks.BlockSets.SHADE));
     public static final RegistryObject<Block> SHADE_SIGN = BLOCKS.register("shade_sign", () -> new ModStandingSignBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD), ModBlocks.WoodTypes.SHADE));
     public static final RegistryObject<Block> SHADE_WALL_SIGN = BLOCKS.register("shade_wall_sign", () -> new ModWallSignBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).strength(2.0F).sound(SoundType.WOOD), ModBlocks.WoodTypes.SHADE));
 

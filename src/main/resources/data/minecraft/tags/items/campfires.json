@@ -21,6 +21,8 @@
     "redev:spruce_soul_campfire",
     "redev:warped_soul_campfire",
     "redev:bone_soul_campfire",
+    "redev:scrapwood_campfire",
+    "redev:petrified_campfire",
     "redev:shade_soul_campfire"
   ]
 }

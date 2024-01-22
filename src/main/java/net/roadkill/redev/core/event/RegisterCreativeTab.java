@@ -49,6 +49,7 @@ public class RegisterCreativeTab
                          ModItems.JUNGLE_LADDER.getDefaultInstance(),
                          ModItems.MANGROVE_LADDER.getDefaultInstance(),
                          Items.LADDER.getDefaultInstance(),
+                         ModItems.SHADE_LADDER.getDefaultInstance(),
                          ModItems.SPRUCE_LADDER.getDefaultInstance(),
                          ModItems.WARPED_LADDER.getDefaultInstance(),
                          ModItems.SCRAPWOOD_LADDER.getDefaultInstance(),
@@ -147,15 +148,6 @@ public class RegisterCreativeTab
                          ModItems.PETRIFIED_ACTIVATOR_RAIL.getDefaultInstance()));
                     }).build();
         });
-
-        /*event.registerCreativeModeTab(new ResourceLocation(ReDev.MOD_ID, "redev_main"), builder ->
-        {
-             builder.title(Component.translatable("item_group." + ReDev.MOD_ID + ".main"))
-                    .icon(ModItems.BLACKSTONE_FURNACE::getDefaultInstance)
-                    .displayItems((params, list) ->
-                    {
-                    }).build();
-        });*/
     }
 
     @SubscribeEvent
@@ -312,13 +304,19 @@ public class RegisterCreativeTab
                     ModItems.WITHERED_LEGGINGS,
                     ModItems.WITHERED_BOOTS
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             injectItemsAfter(Items.NETHERITE_SWORD.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.NETHER_GOLD_SWORD,
                     ModItems.WITHERED_SWORD
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             injectItemsAfter(Items.NETHERITE_AXE.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.NETHER_GOLD_AXE,
                     ModItems.WITHERED_AXE
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            injectItemsAfter(Items.DIAMOND_HORSE_ARMOR.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.NETHERITE_HORSE_ARMOR
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
@@ -403,6 +401,12 @@ public class RegisterCreativeTab
             injectItemsAfter(Items.ZOMBIFIED_PIGLIN_SPAWN_EGG.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.LITHICAN_SPAWN_EGG,
                     ModItems.REVENANT_SPAWN_EGG
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
+        else if (event.getTab().equals(CreativeModeTabs.FOOD_AND_DRINKS))
+        {
+            injectItemsAfter(Items.MELON_SLICE.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.DURIAN_SLICE
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }

@@ -1,7 +1,12 @@
 package net.roadkill.redev.util;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.LogicalSidedProvider;
 import net.minecraftforge.fml.LogicalSide;
 import org.joml.Quaternionf;
@@ -38,7 +43,21 @@ public final class RDMath
     {
         if (factor <= rangeMin) return blendFrom;
         if (factor >= rangeMax) return blendTo;
-        return ((1 / (rangeMax - rangeMin)) * (factor - rangeMin)) * (blendTo - blendFrom) + blendFrom;
+        return (blendTo - blendFrom) / (rangeMax - rangeMin) * (factor - rangeMin) + blendFrom;
+    }
+
+    public static double blendExp(double blendFrom, double blendTo, double factor, double rangeMin, double rangeMax)
+    {
+        if (factor <= rangeMin) return blendFrom;
+        if (factor >= rangeMax) return blendTo;
+        return (blendTo - blendFrom) / Math.pow(rangeMax - rangeMin, 2) * Math.pow(factor - rangeMin, 2) + blendFrom;
+    }
+
+    public static double blendLog(double blendFrom, double blendTo, double factor, double rangeMin, double rangeMax)
+    {
+        if (factor <= rangeMin) return blendFrom;
+        if (factor >= rangeMax) return blendTo;
+        return (blendTo - blendFrom) / Math.log(rangeMax - rangeMin) * Math.log(factor - rangeMin + 1) + blendFrom;
     }
 
     public static boolean withinRange(int value, int min, int max)
@@ -87,5 +106,19 @@ public final class RDMath
 
     public static float toRadians(float input)
     {   return input * (float) (Math.PI / 180);
+    }
+
+    public static void dropItem(Level level, Vec3 position, ItemStack stack)
+    {
+        double xVel = Mth.nextDouble(level.random, -0.15, 0.15);
+        double yVel = 0.1;
+        double zVel = Mth.nextDouble(level.random, -0.15, 0.15);
+        ItemEntity item = new ItemEntity(level, position.x, position.y, position.z, stack);
+        item.setDeltaMovement(xVel, yVel, zVel);
+        level.addFreshEntity(item);
+    }
+
+    public static Vec3 randomVector3f(RandomSource random, float magnitude)
+    {   return new Vec3(Mth.nextFloat(random, -1, 1), Mth.nextFloat(random, -1, 1), Mth.nextFloat(random, -1, 1)).normalize().scale(magnitude);
     }
 }

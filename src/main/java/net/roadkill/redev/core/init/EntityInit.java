@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.roadkill.redev.ReDev;
+import net.roadkill.redev.common.entity.DurianThornEntity;
 import net.roadkill.redev.common.entity.LithicanEntity;
 import net.roadkill.redev.common.entity.RevenantEntity;
 
@@ -14,6 +15,12 @@ public class EntityInit
 {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, ReDev.MOD_ID);
 
-    public static final RegistryObject<EntityType<LithicanEntity>> LITHICAN = ENTITY_TYPES.register("lithican", () -> EntityType.Builder.of(LithicanEntity::new, MobCategory.MONSTER).sized(0.6f, 1.95f).build(new ResourceLocation(ReDev.MOD_ID, "lithican").toString()));
-    public static final RegistryObject<EntityType<RevenantEntity>> REVENANT = ENTITY_TYPES.register("revenant", () -> EntityType.Builder.of(RevenantEntity::new, MobCategory.MONSTER).sized(0.6f, 1.95f).build(new ResourceLocation(ReDev.MOD_ID, "revenant").toString()));
+    public static final RegistryObject<EntityType<LithicanEntity>> LITHICAN = ENTITY_TYPES.register("lithican", () ->
+            EntityType.Builder.of(LithicanEntity::new, MobCategory.MONSTER).sized(0.6f, 1.95f).build(new ResourceLocation(ReDev.MOD_ID, "lithican").toString()));
+
+    public static final RegistryObject<EntityType<RevenantEntity>> REVENANT = ENTITY_TYPES.register("revenant", () ->
+            EntityType.Builder.of(RevenantEntity::new, MobCategory.MONSTER).sized(0.6f, 1.95f).build(new ResourceLocation(ReDev.MOD_ID, "revenant").toString()));
+
+    public static final RegistryObject<EntityType<DurianThornEntity>> DURIAN_THORN = ENTITY_TYPES.register("durian_thorn", () ->
+            EntityType.Builder.of(DurianThornEntity::new, MobCategory.MISC).sized(0.5f, 0.5f).build(new ResourceLocation(ReDev.MOD_ID, "durian_thorn").toString()));
 }

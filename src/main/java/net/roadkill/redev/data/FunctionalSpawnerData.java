@@ -11,7 +11,6 @@ import net.minecraft.world.level.chunk.ChunkGenerator;
 public class FunctionalSpawnerData extends MobSpawnSettings.SpawnerData
 {
     private final SpawnFunction spawnFunction;
-    private int weight;
 
     public FunctionalSpawnerData(EntityType<?> entityType, int weight, int min, int max, SpawnFunction spawnFunction)
     {   super(entityType, weight, min, max);

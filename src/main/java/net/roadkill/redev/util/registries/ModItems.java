@@ -42,6 +42,8 @@ public class ModItems
 
     public static final Item WARPED_DRUPEL = ItemInit.WARPED_DRUPEL.get();
 
+    public static final Item NETHERITE_HORSE_ARMOR = ItemInit.NETHERITE_HORSE_ARMOR.get();
+
     public static final Item LITHICAN_SPAWN_EGG = ItemInit.LITHICAN_SPAWN_EGG.get();
     public static final Item REVENANT_SPAWN_EGG = ItemInit.REVENANT_SPAWN_EGG.get();
 
@@ -71,6 +73,8 @@ public class ModItems
     public static final Item SCRAPWOOD_LADDER = ItemInit.SCRAPWOOD_LADDER.get();
     public static final Item WHISPUR_LADDER = ItemInit.WHISPUR_LADDER.get();
     public static final Item PETRIFIED_LADDER = ItemInit.PETRIFIED_LADDER.get();
+    public static final Item SHADE_LADDER = ItemInit.SHADE_LADDER.get();
+
     public static final Item CHAIN_LADDER = ItemInit.CHAIN_LADDER.get();
 
     public static final Item ACACIA_SMITHING_TABLE = ItemInit.ACACIA_SMITHING_TABLE.get();
@@ -268,6 +272,7 @@ public class ModItems
     public static final Item PURPLE_SHADE_SAPLING = ItemInit.PURPLE_SHADE_SAPLING.get();
 
     public static final Item DURIAN = ItemInit.DURIAN.get();
+    public static final Item DURIAN_SLICE = ItemInit.DURIAN_SLICE.get();
 
     public static final Item CARAMINE_RYE_SEEDS = ItemInit.CARAMINE_RYE_SEEDS.get();
 

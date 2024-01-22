@@ -13,6 +13,7 @@ public final class ModTags
     public final static class Blocks
     {
         public static final TagKey<Block> NETHER_BRISTLE_PLACEABLE = create("nether_bristle_placeable");
+        public static final TagKey<Block> BOILS_CAULDRON = create("boils_cauldron");
 
         private static TagKey<Block> create(String name)
         {   return TagKey.create(Registries.BLOCK, new ResourceLocation(ReDev.MOD_ID, name));

@@ -14,6 +14,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.roadkill.redev.ReDev;
 import net.roadkill.redev.util.ItemStackBuilder;
+import net.roadkill.redev.util.registries.ModItems;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,8 +27,8 @@ import java.util.Optional;
 public class MixinCustomChestLoot
 {
     private static final WeightedRandomList<WeightedEntry.Wrapper<ItemStack>> SPECIAL_ARTIFACTS = WeightedRandomList.create(
-            WeightedEntry.wrap(new ItemStack(Items.DIAMOND_HORSE_ARMOR), 8),
-            WeightedEntry.wrap(new ItemStack(Items.GOLDEN_HORSE_ARMOR), 10),
+            WeightedEntry.wrap(new ItemStack(ModItems.NETHERITE_HORSE_ARMOR), 8),
+            WeightedEntry.wrap(new ItemStack(Items.DIAMOND_HORSE_ARMOR), 10),
             WeightedEntry.wrap(ItemStackBuilder.create(new ItemStack(Items.SHIELD))
                                        .addAttributeModifier(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier("Shield knockback resistance", 0.5, AttributeModifier.Operation.ADDITION), EquipmentSlot.OFFHAND)
                                        .setName("{\"text\":\"Shield of Unwavering\",\"italic\":false,\"color\":\"light_purple\"}")
