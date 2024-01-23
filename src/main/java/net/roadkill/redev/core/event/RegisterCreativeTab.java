@@ -217,10 +217,28 @@ public class RegisterCreativeTab
                     ModItems.BASALT_DIAMOND_ORE
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            injectItemsAfter(Items.CARVED_PUMPKIN.getDefaultInstance(), event.getEntries(), List.of(ItemInit.CARVED_PUMPKIN.get()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            injectItemsAfter(Items.CARVED_PUMPKIN.getDefaultInstance(), event.getEntries(), List.of(
+                    ItemInit.CARVED_PUMPKIN.get(),
+                    ItemInit.CARVED_PUMPKIN_CREEPY.get(),
+                    ItemInit.CARVED_PUMPKIN_SCOWLING.get(),
+                    ItemInit.CARVED_PUMPKIN_CREEPER.get(),
+                    ItemInit.CARVED_PUMPKIN_TWISTED.get(),
+                    ItemInit.CARVED_PUMPKIN_HORRIFIED.get(),
+                    ItemInit.CARVED_PUMPKIN_FURIOUS.get(),
+                    ItemInit.CARVED_PUMPKIN_ZOMBIE.get(),
+                    ItemInit.CARVED_PUMPKIN_LIT.get(),
+                    ItemInit.CARVED_PUMPKIN_CREEPY_LIT.get(),
+                    ItemInit.CARVED_PUMPKIN_SCOWLING_LIT.get(),
+                    ItemInit.CARVED_PUMPKIN_CREEPER_LIT.get(),
+                    ItemInit.CARVED_PUMPKIN_TWISTED_LIT.get(),
+                    ItemInit.CARVED_PUMPKIN_HORRIFIED_LIT.get(),
+                    ItemInit.CARVED_PUMPKIN_FURIOUS_LIT.get(),
+                    ItemInit.CARVED_PUMPKIN_ZOMBIE_LIT.get()),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.getEntries().remove(Items.CARVED_PUMPKIN.getDefaultInstance());
+            event.getEntries().remove(Items.JACK_O_LANTERN.getDefaultInstance());
 
-            injectItemsAfter(Items.JACK_O_LANTERN.getDefaultInstance(), event.getEntries(), List.of(
+            injectItemsAfter(ItemInit.CARVED_PUMPKIN_ZOMBIE_LIT.get().getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.DURIAN
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }

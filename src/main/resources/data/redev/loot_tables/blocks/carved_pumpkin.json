@@ -1,0 +1,262 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:alternatives",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_lit",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "redev:carved_pumpkin",
+                      "properties": {
+                        "lit": "true"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin"
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "redev:carved_pumpkin",
+                  "properties": {
+                    "pumpkin_type": "0"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:alternatives",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_creepy_lit",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "redev:carved_pumpkin",
+                      "properties": {
+                        "lit": "true"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_creepy"
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "redev:carved_pumpkin",
+                  "properties": {
+                    "pumpkin_type": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:alternatives",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_horrified_lit",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "redev:carved_pumpkin",
+                      "properties": {
+                        "lit": "true"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_horrified"
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "redev:carved_pumpkin",
+                  "properties": {
+                    "pumpkin_type": "2"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:alternatives",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_creeper_lit",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "redev:carved_pumpkin",
+                      "properties": {
+                        "lit": "true"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_creeper"
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "redev:carved_pumpkin",
+                  "properties": {
+                    "pumpkin_type": "3"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:alternatives",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_scowling_lit",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "redev:carved_pumpkin",
+                      "properties": {
+                        "lit": "true"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_scowling"
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "redev:carved_pumpkin",
+                  "properties": {
+                    "pumpkin_type": "4"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:alternatives",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_twisted_lit",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "redev:carved_pumpkin",
+                      "properties": {
+                        "lit": "true"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_twisted"
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "redev:carved_pumpkin",
+                  "properties": {
+                    "pumpkin_type": "5"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:alternatives",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_furious_lit",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "redev:carved_pumpkin",
+                      "properties": {
+                        "lit": "true"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_furious"
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "redev:carved_pumpkin",
+                  "properties": {
+                    "pumpkin_type": "6"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:alternatives",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_zombie_lit",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "redev:carved_pumpkin",
+                      "properties": {
+                        "lit": "true"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "redev:carved_pumpkin_zombie"
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "redev:carved_pumpkin",
+                  "properties": {
+                    "pumpkin_type": "7"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.roadkill.redev.ReDev;
+import net.roadkill.redev.common.item.CarvedPumpkinItem;
 import net.roadkill.redev.common.item.ChainLadderItem;
 import net.roadkill.redev.util.registries.ArmorMaterials;
 import net.roadkill.redev.util.registries.ModItems;
@@ -263,7 +264,22 @@ public class ItemInit
     public static final RegistryObject<Item> PETRIFIED_TRAPDOOR = ITEMS.register("petrified_trapdoor", () -> new BlockItem(BlockInit.PETRIFIED_TRAPDOOR.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_SIGN = ITEMS.register("petrified_sign", () -> new SignItem(new Item.Properties().stacksTo(16), BlockInit.PETRIFIED_SIGN.get(), BlockInit.PETRIFIED_WALL_SIGN.get()));
 
-    public static final RegistryObject<Item> CARVED_PUMPKIN = ITEMS.register("carved_pumpkin", () -> new BlockItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CARVED_PUMPKIN = ITEMS.register("carved_pumpkin", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 0, false));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_CREEPY = ITEMS.register("carved_pumpkin_creepy", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 1, false));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_HORRIFIED = ITEMS.register("carved_pumpkin_horrified", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 2, false));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_CREEPER = ITEMS.register("carved_pumpkin_creeper", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 3, false));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_SCOWLING = ITEMS.register("carved_pumpkin_scowling", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 4, false));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_TWISTED = ITEMS.register("carved_pumpkin_twisted", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 5, false));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_FURIOUS = ITEMS.register("carved_pumpkin_furious", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 6, false));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_ZOMBIE = ITEMS.register("carved_pumpkin_zombie", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 7, false));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_CREEPY_LIT = ITEMS.register("carved_pumpkin_creepy_lit", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 1, true));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_HORRIFIED_LIT = ITEMS.register("carved_pumpkin_horrified_lit", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 2, true));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_CREEPER_LIT = ITEMS.register("carved_pumpkin_creeper_lit", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 3, true));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_SCOWLING_LIT = ITEMS.register("carved_pumpkin_scowling_lit", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 4, true));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_TWISTED_LIT = ITEMS.register("carved_pumpkin_twisted_lit", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 5, true));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_FURIOUS_LIT = ITEMS.register("carved_pumpkin_furious_lit", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 6, true));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_ZOMBIE_LIT = ITEMS.register("carved_pumpkin_zombie_lit", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 7, true));
+    public static final RegistryObject<Item> CARVED_PUMPKIN_LIT = ITEMS.register("carved_pumpkin_lit", () -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), new Item.Properties(), 0, true));
 
     public static final RegistryObject<Item> SHADE_LEAVES = ITEMS.register("shade_leaves", () -> new BlockItem(BlockInit.SHADE_LEAVES.get(), new Item.Properties()));
     public static final RegistryObject<Item> TEAL_SHADE_LEAVES = ITEMS.register("teal_shade_leaves", () -> new BlockItem(BlockInit.TEAL_SHADE_LEAVES.get(), new Item.Properties()));
