@@ -72,6 +72,7 @@ public class ItemInit
     public static final RegistryObject<Item> SCRAPWOOD_BOOKSHELF = ITEMS.register("scrapwood_bookshelf", () -> new BlockItem(BlockInit.SCRAPWOOD_BOOKSHELF.get(), new Item.Properties()));
     public static final RegistryObject<Item> WHISPUR_BOOKSHELF = ITEMS.register("whispur_bookshelf", () -> new BlockItem(BlockInit.WHISPUR_BOOKSHELF.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_BOOKSHELF = ITEMS.register("petrified_bookshelf", () -> new BlockItem(BlockInit.PETRIFIED_BOOKSHELF.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_BOOKSHELF = ITEMS.register("shade_bookshelf", () -> new BlockItem(BlockInit.SHADE_BOOKSHELF.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> ACACIA_LADDER = ITEMS.register("acacia_ladder", () -> new BlockItem(BlockInit.ACACIA_LADDER.get(), new Item.Properties()));
     public static final RegistryObject<Item> BIRCH_LADDER = ITEMS.register("birch_ladder", () -> new BlockItem(BlockInit.BIRCH_LADDER.get(), new Item.Properties()));
@@ -98,6 +99,7 @@ public class ItemInit
     public static final RegistryObject<Item> SCRAPWOOD_SMITHING_TABLE = ITEMS.register("scrapwood_smithing_table", () -> new BlockItem(BlockInit.SCRAPWOOD_SMITHING_TABLE.get(), new Item.Properties()));
     public static final RegistryObject<Item> WHISPUR_SMITHING_TABLE = ITEMS.register("whispur_smithing_table", () -> new BlockItem(BlockInit.WHISPUR_SMITHING_TABLE.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_SMITHING_TABLE = ITEMS.register("petrified_smithing_table", () -> new BlockItem(BlockInit.PETRIFIED_SMITHING_TABLE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_SMITHING_TABLE = ITEMS.register("shade_smithing_table", () -> new BlockItem(BlockInit.SHADE_SMITHING_TABLE.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> ACACIA_CAMPFIRE = ITEMS.register("acacia_campfire", () -> new BlockItem(BlockInit.ACACIA_CAMPFIRE.get(), new Item.Properties()));
     public static final RegistryObject<Item> ACACIA_SOUL_CAMPFIRE = ITEMS.register("acacia_soul_campfire", () -> new BlockItem(BlockInit.ACACIA_SOUL_CAMPFIRE.get(), new Item.Properties()));
@@ -135,6 +137,7 @@ public class ItemInit
     public static final RegistryObject<Item> SCRAPWOOD_RAIL = ITEMS.register("scrapwood_rail", () -> new BlockItem(BlockInit.SCRAPWOOD_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> WHISPUR_RAIL = ITEMS.register("whispur_rail", () -> new BlockItem(BlockInit.WHISPUR_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_RAIL = ITEMS.register("petrified_rail", () -> new BlockItem(BlockInit.PETRIFIED_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_RAIL = ITEMS.register("shade_rail", () -> new BlockItem(BlockInit.SHADE_RAIL.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> ACACIA_DETECTOR_RAIL = ITEMS.register("acacia_detector_rail", () -> new BlockItem(BlockInit.ACACIA_DETECTOR_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> BIRCH_DETECTOR_RAIL = ITEMS.register("birch_detector_rail", () -> new BlockItem(BlockInit.BIRCH_DETECTOR_RAIL.get(), new Item.Properties()));
@@ -147,6 +150,7 @@ public class ItemInit
     public static final RegistryObject<Item> SCRAPWOOD_DETECTOR_RAIL = ITEMS.register("scrapwood_detector_rail", () -> new BlockItem(BlockInit.SCRAPWOOD_DETECTOR_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> WHISPUR_DETECTOR_RAIL = ITEMS.register("whispur_detector_rail", () -> new BlockItem(BlockInit.WHISPUR_DETECTOR_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_DETECTOR_RAIL = ITEMS.register("petrified_detector_rail", () -> new BlockItem(BlockInit.PETRIFIED_DETECTOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_DETECTOR_RAIL = ITEMS.register("shade_detector_rail", () -> new BlockItem(BlockInit.SHADE_DETECTOR_RAIL.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> ACACIA_POWERED_RAIL = ITEMS.register("acacia_powered_rail", () -> new BlockItem(BlockInit.ACACIA_POWERED_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> BIRCH_POWERED_RAIL = ITEMS.register("birch_powered_rail", () -> new BlockItem(BlockInit.BIRCH_POWERED_RAIL.get(), new Item.Properties()));
@@ -159,6 +163,7 @@ public class ItemInit
     public static final RegistryObject<Item> SCRAPWOOD_POWERED_RAIL = ITEMS.register("scrapwood_powered_rail", () -> new BlockItem(BlockInit.SCRAPWOOD_POWERED_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> WHISPUR_POWERED_RAIL = ITEMS.register("whispur_powered_rail", () -> new BlockItem(BlockInit.WHISPUR_POWERED_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_POWERED_RAIL = ITEMS.register("petrified_powered_rail", () -> new BlockItem(BlockInit.PETRIFIED_POWERED_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_POWERED_RAIL = ITEMS.register("shade_powered_rail", () -> new BlockItem(BlockInit.SHADE_POWERED_RAIL.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> ACACIA_ACTIVATOR_RAIL = ITEMS.register("acacia_activator_rail", () -> new BlockItem(BlockInit.ACACIA_ACTIVATOR_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> BIRCH_ACTIVATOR_RAIL = ITEMS.register("birch_activator_rail", () -> new BlockItem(BlockInit.BIRCH_ACTIVATOR_RAIL.get(), new Item.Properties()));
@@ -171,6 +176,7 @@ public class ItemInit
     public static final RegistryObject<Item> SCRAPWOOD_ACTIVATOR_RAIL = ITEMS.register("scrapwood_activator_rail", () -> new BlockItem(BlockInit.SCRAPWOOD_ACTIVATOR_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> WHISPUR_ACTIVATOR_RAIL = ITEMS.register("whispur_activator_rail", () -> new BlockItem(BlockInit.WHISPUR_ACTIVATOR_RAIL.get(), new Item.Properties()));
     public static final RegistryObject<Item> PETRIFIED_ACTIVATOR_RAIL = ITEMS.register("petrified_activator_rail", () -> new BlockItem(BlockInit.PETRIFIED_ACTIVATOR_RAIL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_ACTIVATOR_RAIL = ITEMS.register("shade_activator_rail", () -> new BlockItem(BlockInit.SHADE_ACTIVATOR_RAIL.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> ACACIA_HEDGE = ITEMS.register("acacia_hedge", () -> new BlockItem(BlockInit.ACACIA_HEDGE.get(), new Item.Properties()));
     public static final RegistryObject<Item> AZALEA_HEDGE = ITEMS.register("azalea_hedge", () -> new BlockItem(BlockInit.AZALEA_HEDGE.get(), new Item.Properties()));

@@ -42,6 +42,10 @@ public class ModBlocks
     public static final Block MANGROVE_SMITHING_TABLE = BlockInit.MANGROVE_SMITHING_TABLE.get();
     public static final Block SPRUCE_SMITHING_TABLE = BlockInit.SPRUCE_SMITHING_TABLE.get();
     public static final Block WARPED_SMITHING_TABLE = BlockInit.WARPED_SMITHING_TABLE.get();
+    public static final Block SCRAPWOOD_SMITHING_TABLE = BlockInit.SCRAPWOOD_SMITHING_TABLE.get();
+    public static final Block WHISPUR_SMITHING_TABLE = BlockInit.WHISPUR_SMITHING_TABLE.get();
+    public static final Block PETRIFIED_SMITHING_TABLE = BlockInit.PETRIFIED_SMITHING_TABLE.get();
+    public static final Block SHADE_SMITHING_TABLE = BlockInit.SHADE_SMITHING_TABLE.get();
 
     public static final Block ACACIA_CAMPFIRE = BlockInit.ACACIA_CAMPFIRE.get();
     public static final Block BIRCH_CAMPFIRE = BlockInit.BIRCH_CAMPFIRE.get();

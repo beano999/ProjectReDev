@@ -41,6 +41,7 @@ public class RegisterCreativeTab
                          ModItems.SPRUCE_BOOKSHELF.getDefaultInstance(),
                          ModItems.WARPED_BOOKSHELF.getDefaultInstance(),
                          ModItems.WHISPUR_BOOKSHELF.getDefaultInstance(),
+                         ModItems.SHADE_BOOKSHELF.getDefaultInstance(),
 
                          ModItems.ACACIA_LADDER.getDefaultInstance(),
                          ModItems.BIRCH_LADDER.getDefaultInstance(),
@@ -49,12 +50,12 @@ public class RegisterCreativeTab
                          ModItems.JUNGLE_LADDER.getDefaultInstance(),
                          ModItems.MANGROVE_LADDER.getDefaultInstance(),
                          Items.LADDER.getDefaultInstance(),
-                         ModItems.SHADE_LADDER.getDefaultInstance(),
                          ModItems.SPRUCE_LADDER.getDefaultInstance(),
                          ModItems.WARPED_LADDER.getDefaultInstance(),
                          ModItems.SCRAPWOOD_LADDER.getDefaultInstance(),
                          ModItems.WHISPUR_LADDER.getDefaultInstance(),
                          ModItems.PETRIFIED_LADDER.getDefaultInstance(),
+                         ModItems.SHADE_LADDER.getDefaultInstance(),
 
                          ModItems.ACACIA_CAMPFIRE.getDefaultInstance(),
                          ModItems.BIRCH_CAMPFIRE.getDefaultInstance(),
@@ -68,6 +69,7 @@ public class RegisterCreativeTab
                          ModItems.SCRAPWOOD_CAMPFIRE.getDefaultInstance(),
                          ModItems.BONE_CAMPFIRE.getDefaultInstance(),
                          ModItems.PETRIFIED_CAMPFIRE.getDefaultInstance(),
+                         ModItems.SHADE_CAMPFIRE.getDefaultInstance(),
 
                          ModItems.ACACIA_SOUL_CAMPFIRE.getDefaultInstance(),
                          ModItems.BIRCH_SOUL_CAMPFIRE.getDefaultInstance(),
@@ -81,6 +83,7 @@ public class RegisterCreativeTab
                          ModItems.SCRAPWOOD_SOUL_CAMPFIRE.getDefaultInstance(),
                          ModItems.BONE_SOUL_CAMPFIRE.getDefaultInstance(),
                          ModItems.PETRIFIED_SOUL_CAMPFIRE.getDefaultInstance(),
+                         ModItems.SHADE_SOUL_CAMPFIRE.getDefaultInstance(),
 
                          ModItems.ACACIA_SMITHING_TABLE.getDefaultInstance(),
                          ModItems.BIRCH_SMITHING_TABLE.getDefaultInstance(),
@@ -94,6 +97,7 @@ public class RegisterCreativeTab
                          ModItems.SCRAPWOOD_SMITHING_TABLE.getDefaultInstance(),
                          ModItems.WHISPUR_SMITHING_TABLE.getDefaultInstance(),
                          ModItems.PETRIFIED_SMITHING_TABLE.getDefaultInstance(),
+                         ModItems.SHADE_SMITHING_TABLE.getDefaultInstance(),
 
                          ModItems.ACACIA_RAIL.getDefaultInstance(),
                          ModItems.BIRCH_RAIL.getDefaultInstance(),
@@ -107,6 +111,7 @@ public class RegisterCreativeTab
                          ModItems.SCRAPWOOD_RAIL.getDefaultInstance(),
                          ModItems.WHISPUR_RAIL.getDefaultInstance(),
                          ModItems.PETRIFIED_RAIL.getDefaultInstance(),
+                         ModItems.SHADE_RAIL.getDefaultInstance(),
 
                          ModItems.ACACIA_DETECTOR_RAIL.getDefaultInstance(),
                          ModItems.BIRCH_DETECTOR_RAIL.getDefaultInstance(),
@@ -120,6 +125,7 @@ public class RegisterCreativeTab
                          ModItems.SCRAPWOOD_DETECTOR_RAIL.getDefaultInstance(),
                          ModItems.WHISPUR_DETECTOR_RAIL.getDefaultInstance(),
                          ModItems.PETRIFIED_DETECTOR_RAIL.getDefaultInstance(),
+                         ModItems.SHADE_DETECTOR_RAIL.getDefaultInstance(),
 
                          ModItems.ACACIA_POWERED_RAIL.getDefaultInstance(),
                          ModItems.BIRCH_POWERED_RAIL.getDefaultInstance(),
@@ -133,6 +139,7 @@ public class RegisterCreativeTab
                          ModItems.SCRAPWOOD_POWERED_RAIL.getDefaultInstance(),
                          ModItems.WHISPUR_POWERED_RAIL.getDefaultInstance(),
                          ModItems.PETRIFIED_POWERED_RAIL.getDefaultInstance(),
+                         ModItems.SHADE_POWERED_RAIL.getDefaultInstance(),
 
                          ModItems.ACACIA_ACTIVATOR_RAIL.getDefaultInstance(),
                          ModItems.BIRCH_ACTIVATOR_RAIL.getDefaultInstance(),
@@ -145,7 +152,8 @@ public class RegisterCreativeTab
                          ModItems.WARPED_ACTIVATOR_RAIL.getDefaultInstance(),
                          ModItems.SCRAPWOOD_ACTIVATOR_RAIL.getDefaultInstance(),
                          ModItems.WHISPUR_ACTIVATOR_RAIL.getDefaultInstance(),
-                         ModItems.PETRIFIED_ACTIVATOR_RAIL.getDefaultInstance()));
+                         ModItems.PETRIFIED_ACTIVATOR_RAIL.getDefaultInstance(),
+                         ModItems.SHADE_ACTIVATOR_RAIL.getDefaultInstance()));
                     }).build();
         });
     }

@@ -61,6 +61,7 @@ public class ModItems
     public static final Item SCRAPWOOD_BOOKSHELF = ItemInit.SCRAPWOOD_BOOKSHELF.get();
     public static final Item WHISPUR_BOOKSHELF = ItemInit.WHISPUR_BOOKSHELF.get();
     public static final Item PETRIFIED_BOOKSHELF = ItemInit.PETRIFIED_BOOKSHELF.get();
+    public static final Item SHADE_BOOKSHELF = ItemInit.SHADE_BOOKSHELF.get();
 
     public static final Item ACACIA_LADDER = ItemInit.ACACIA_LADDER.get();
     public static final Item BIRCH_LADDER = ItemInit.BIRCH_LADDER.get();
@@ -88,6 +89,7 @@ public class ModItems
     public static final Item SCRAPWOOD_SMITHING_TABLE = ItemInit.SCRAPWOOD_SMITHING_TABLE.get();
     public static final Item WHISPUR_SMITHING_TABLE = ItemInit.WHISPUR_SMITHING_TABLE.get();
     public static final Item PETRIFIED_SMITHING_TABLE = ItemInit.PETRIFIED_SMITHING_TABLE.get();
+    public static final Item SHADE_SMITHING_TABLE = ItemInit.SHADE_SMITHING_TABLE.get();
 
     public static final Item ACACIA_CAMPFIRE = ItemInit.ACACIA_CAMPFIRE.get();
     public static final Item BIRCH_CAMPFIRE = ItemInit.BIRCH_CAMPFIRE.get();
@@ -100,6 +102,7 @@ public class ModItems
     public static final Item SCRAPWOOD_CAMPFIRE = ItemInit.SCRAPWOOD_CAMPFIRE.get();
     public static final Item BONE_CAMPFIRE = ItemInit.BONE_CAMPFIRE.get();
     public static final Item PETRIFIED_CAMPFIRE = ItemInit.PETRIFIED_CAMPFIRE.get();
+    public static final Item SHADE_CAMPFIRE = ItemInit.SHADE_CAMPFIRE.get();
 
     public static final Item ACACIA_SOUL_CAMPFIRE = ItemInit.ACACIA_SOUL_CAMPFIRE.get();
     public static final Item BIRCH_SOUL_CAMPFIRE = ItemInit.BIRCH_SOUL_CAMPFIRE.get();
@@ -112,6 +115,7 @@ public class ModItems
     public static final Item SCRAPWOOD_SOUL_CAMPFIRE = ItemInit.SCRAPWOOD_SOUL_CAMPFIRE.get();
     public static final Item BONE_SOUL_CAMPFIRE = ItemInit.BONE_SOUL_CAMPFIRE.get();
     public static final Item PETRIFIED_SOUL_CAMPFIRE = ItemInit.PETRIFIED_SOUL_CAMPFIRE.get();
+    public static final Item SHADE_SOUL_CAMPFIRE = ItemInit.SHADE_SOUL_CAMPFIRE.get();
 
     public static final Item ACACIA_RAIL = ItemInit.ACACIA_RAIL.get();
     public static final Item BIRCH_RAIL = ItemInit.BIRCH_RAIL.get();
@@ -124,6 +128,7 @@ public class ModItems
     public static final Item SCRAPWOOD_RAIL = ItemInit.SCRAPWOOD_RAIL.get();
     public static final Item WHISPUR_RAIL = ItemInit.WHISPUR_RAIL.get();
     public static final Item PETRIFIED_RAIL = ItemInit.PETRIFIED_RAIL.get();
+    public static final Item SHADE_RAIL = ItemInit.SHADE_RAIL.get();
 
     public static final Item ACACIA_DETECTOR_RAIL = ItemInit.ACACIA_DETECTOR_RAIL.get();
     public static final Item BIRCH_DETECTOR_RAIL = ItemInit.BIRCH_DETECTOR_RAIL.get();
@@ -136,6 +141,7 @@ public class ModItems
     public static final Item SCRAPWOOD_DETECTOR_RAIL = ItemInit.SCRAPWOOD_DETECTOR_RAIL.get();
     public static final Item WHISPUR_DETECTOR_RAIL = ItemInit.WHISPUR_DETECTOR_RAIL.get();
     public static final Item PETRIFIED_DETECTOR_RAIL = ItemInit.PETRIFIED_DETECTOR_RAIL.get();
+    public static final Item SHADE_DETECTOR_RAIL = ItemInit.SHADE_DETECTOR_RAIL.get();
 
     public static final Item ACACIA_POWERED_RAIL = ItemInit.ACACIA_POWERED_RAIL.get();
     public static final Item BIRCH_POWERED_RAIL = ItemInit.BIRCH_POWERED_RAIL.get();
@@ -148,6 +154,7 @@ public class ModItems
     public static final Item SCRAPWOOD_POWERED_RAIL = ItemInit.SCRAPWOOD_POWERED_RAIL.get();
     public static final Item WHISPUR_POWERED_RAIL = ItemInit.WHISPUR_POWERED_RAIL.get();
     public static final Item PETRIFIED_POWERED_RAIL = ItemInit.PETRIFIED_POWERED_RAIL.get();
+    public static final Item SHADE_POWERED_RAIL = ItemInit.SHADE_POWERED_RAIL.get();
 
     public static final Item ACACIA_ACTIVATOR_RAIL = ItemInit.ACACIA_ACTIVATOR_RAIL.get();
     public static final Item BIRCH_ACTIVATOR_RAIL = ItemInit.BIRCH_ACTIVATOR_RAIL.get();
@@ -160,6 +167,7 @@ public class ModItems
     public static final Item SCRAPWOOD_ACTIVATOR_RAIL = ItemInit.SCRAPWOOD_ACTIVATOR_RAIL.get();
     public static final Item WHISPUR_ACTIVATOR_RAIL = ItemInit.WHISPUR_ACTIVATOR_RAIL.get();
     public static final Item PETRIFIED_ACTIVATOR_RAIL = ItemInit.PETRIFIED_ACTIVATOR_RAIL.get();
+    public static final Item SHADE_ACTIVATOR_RAIL = ItemInit.SHADE_ACTIVATOR_RAIL.get();
 
     public static final Item ACACIA_HEDGE = ItemInit.ACACIA_HEDGE.get();
     public static final Item AZALEA_HEDGE = ItemInit.AZALEA_HEDGE.get();
