@@ -93,8 +93,9 @@
 
   "item.redev.netherite_horse_armor":  "Netherite Horse Armor",
 
-  "item.redev.lithican_spawn_egg":     "Lithican Spawn Egg",
-  "item.redev.revenant_spawn_egg":     "Revenant Spawn Egg",
+  "item.redev.lithican_spawn_egg": "Lithican Spawn Egg",
+  "item.redev.revenant_spawn_egg": "Revenant Spawn Egg",
+  "item.redev.hovering_inferno_spawn_egg": "Hovering Inferno Spawn Egg",
 
   "item.redev.durian_slice": "Durian Slice",
 
@@ -103,6 +104,8 @@
 
 
   "entity.redev.lithican": "Lithican",
+  "entity.redev.revenant": "Revenant",
+  "entity.redev.hovering_inferno": "Hovering Inferno",
 
 
   "block.redev.acacia_bookshelf":    "Acacia Bookshelf",

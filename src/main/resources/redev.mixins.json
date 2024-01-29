@@ -53,6 +53,7 @@
   "client": [
     "MixinEntityInvisible",
     "MixinEntityRenderer",
+    "MixinHoveringInfernoFire",
     "MixinHumanoidModel",
     "MixinPhantomEyes",
     "MixinPigTNTRenderer",
