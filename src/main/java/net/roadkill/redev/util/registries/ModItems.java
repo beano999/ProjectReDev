@@ -291,6 +291,7 @@ public class ModItems
 
     public static final Item OLD_GOLD = ItemInit.OLD_GOLD.get();
     public static final Item OLD_NETHER_GOLD = ItemInit.OLD_NETHER_GOLD.get();
+    public static final Item NETHERITE_SHIELD = ItemInit.NETHERITE_SHIELD.get();
 
     public static final class Tiers
     {   public static final Tier NETHER_GOLD = new ForgeTier(0, 300, 3.0F, -1.0F, 50, BlockTags.NEEDS_STONE_TOOL, () -> Ingredient.of(ModItems.NETHER_GOLD_INGOT));

@@ -344,6 +344,10 @@ public class RegisterCreativeTab
             injectItemsAfter(Items.DIAMOND_HORSE_ARMOR.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.NETHERITE_HORSE_ARMOR
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            injectItemsAfter(Items.SHIELD.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.NETHERITE_SHIELD
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
         /*
