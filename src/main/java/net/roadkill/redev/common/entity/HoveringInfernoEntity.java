@@ -21,9 +21,6 @@ import net.roadkill.redev.common.entity.goal.RamTargetGoal;
 import net.roadkill.redev.common.entity.goal.ShieldGoal;
 import net.roadkill.redev.util.RDMath;
 
-import java.util.List;
-import java.util.Map;
-
 public class HoveringInfernoEntity extends Blaze
 {
     private static final EntityDataAccessor<Float> SHIELD_ROTATION_SPEED = SynchedEntityData.defineId(HoveringInfernoEntity.class, EntityDataSerializers.FLOAT);
@@ -31,10 +28,6 @@ public class HoveringInfernoEntity extends Blaze
 
     // Used clientside for shield rotation animations
     public float shieldYRot = 0f;
-    public ModelPart shieldTransforms = new ModelPart(List.of(), Map.of());
-    public ModelPart desiredShieldTransforms = new ModelPart(List.of(), Map.of());
-    public ModelPart smallShieldTransforms = new ModelPart(List.of(), Map.of());
-    public ModelPart desiredSmallShieldTransforms = new ModelPart(List.of(), Map.of());
     public float shieldRotationSpeed = 0f;
     public boolean hurtAnimation = false;
 

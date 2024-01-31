@@ -14,9 +14,14 @@ import net.roadkill.redev.ReDev;
 import net.roadkill.redev.common.entity.HoveringInfernoEntity;
 import net.roadkill.redev.util.RDMath;
 
+import java.util.List;
+import java.util.Map;
+import java.util.WeakHashMap;
+
 public class HoveringInfernoModel<T extends HoveringInfernoEntity> extends EntityModel<T>
 {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(ReDev.MOD_ID, "hovering_inferno"), "main");
+	private static final Map<HoveringInfernoEntity, List<ModelPart>> SHIELD_ANIMATIONS = new WeakHashMap<>();
 
 	private final ModelPart head;
 	private final ModelPart body;
@@ -94,6 +99,12 @@ public class HoveringInfernoModel<T extends HoveringInfernoEntity> extends Entit
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch)
 	{
+		SHIELD_ANIMATIONS.putIfAbsent(entity, List.of(
+				new ModelPart(List.of(), Map.of()),
+				new ModelPart(List.of(), Map.of()),
+				new ModelPart(List.of(), Map.of()),
+				new ModelPart(List.of(), Map.of())));
+
 		// Lerp entity shield rotation speed
 		entity.shieldRotationSpeed += (entity.getShieldRotationSpeed() - entity.shieldRotationSpeed) * Minecraft.getInstance().getDeltaFrameTime() / (entity.hurtAnimation ? 2 : 5);
 		// Stop lerping if close enough
@@ -125,6 +136,9 @@ public class HoveringInfernoModel<T extends HoveringInfernoEntity> extends Entit
 
 	private void transformShield(T entity, ModelPart shield, String child, float offset, float ageInTicks)
 	{
+		ModelPart shieldTransforms = getShieldTransforms(entity);
+		ModelPart desiredShieldTransforms = getDesiredShieldTransforms(entity);
+		
 		ModelPart shield1 = shield.getChild(child);
 		shield.yRot = ageInTicks * 0.1f + RDMath.toRadians(offset);
 
@@ -132,37 +146,40 @@ public class HoveringInfernoModel<T extends HoveringInfernoEntity> extends Entit
         {
             case BLOCKING ->
             {
-                entity.desiredShieldTransforms.zRot = 0f;
-				entity.desiredShieldTransforms.y = -16;
-				entity.desiredShieldTransforms.x = 10;
+                desiredShieldTransforms.zRot = 0f;
+			    desiredShieldTransforms.y = -16;
+			    desiredShieldTransforms.x = 10;
             }
             case FLAMETHROWER ->
             {
-                entity.desiredShieldTransforms.zRot = -1.2f;
-				entity.desiredShieldTransforms.y = -6;
-				entity.desiredShieldTransforms.x = 10;
+                desiredShieldTransforms.zRot = -1.2f;
+				desiredShieldTransforms.y = -6;
+				desiredShieldTransforms.x = 10;
             }
             default ->
             {
-                entity.desiredShieldTransforms.zRot = -0.3f;
-				entity.desiredShieldTransforms.y = -12;
-				entity.desiredShieldTransforms.x = 12;
+                desiredShieldTransforms.zRot = -0.3f;
+				desiredShieldTransforms.y = -12;
+				desiredShieldTransforms.x = 12;
             }
         }
 		shield.y = (float) Math.sin((entity.tickCount + Minecraft.getInstance().getPartialTick()) * 0.2f + offset / 9) * 3 - 4;
 
 		float frametime = Minecraft.getInstance().getDeltaFrameTime() / 8;
-		entity.shieldTransforms.x += (entity.desiredShieldTransforms.x - entity.shieldTransforms.x) * frametime;
-		entity.shieldTransforms.y += (entity.desiredShieldTransforms.y - entity.shieldTransforms.y) * frametime;
-		entity.shieldTransforms.z += (entity.desiredShieldTransforms.z - entity.shieldTransforms.z) * frametime;
-		entity.shieldTransforms.xRot += (entity.desiredShieldTransforms.xRot - entity.shieldTransforms.xRot) * frametime;
-		entity.shieldTransforms.yRot += (entity.desiredShieldTransforms.yRot - entity.shieldTransforms.yRot) * frametime;
-		entity.shieldTransforms.zRot += (entity.desiredShieldTransforms.zRot - entity.shieldTransforms.zRot) * frametime / 2;
-		shield1.copyFrom(entity.shieldTransforms);
+		shieldTransforms.x += (desiredShieldTransforms.x - shieldTransforms.x) * frametime;
+		shieldTransforms.y += (desiredShieldTransforms.y - shieldTransforms.y) * frametime;
+		shieldTransforms.z += (desiredShieldTransforms.z - shieldTransforms.z) * frametime;
+		shieldTransforms.xRot += (desiredShieldTransforms.xRot - shieldTransforms.xRot) * frametime;
+		shieldTransforms.yRot += (desiredShieldTransforms.yRot - shieldTransforms.yRot) * frametime;
+		shieldTransforms.zRot += (desiredShieldTransforms.zRot - shieldTransforms.zRot) * frametime / 2;
+		shield1.copyFrom(shieldTransforms);
 	}
 
 	private void transformSmallShield(T entity, ModelPart shield, String child, float offset, float ageInTicks)
 	{
+		ModelPart smallShieldTransforms = getSmallShieldTransforms(entity);
+		ModelPart desiredSmallShieldTransforms = getDesiredSmallShieldTransforms(entity);
+
 		ModelPart shield1 = shield.getChild(child);
 		shield.yRot = ageInTicks * 0.2f + RDMath.toRadians(offset);
 
@@ -170,34 +187,50 @@ public class HoveringInfernoModel<T extends HoveringInfernoEntity> extends Entit
         {
             case BLOCKING ->
             {
-                entity.desiredSmallShieldTransforms.zRot = 0.2f;
-				entity.desiredSmallShieldTransforms.y = -1;
-				entity.desiredSmallShieldTransforms.x = 7;
+                desiredSmallShieldTransforms.zRot = 0.2f;
+				desiredSmallShieldTransforms.y = -1;
+				desiredSmallShieldTransforms.x = 7;
             }
             case FLAMETHROWER ->
             {
-                entity.desiredSmallShieldTransforms.zRot = -0.8f;
-				entity.desiredSmallShieldTransforms.y = -1;
-				entity.desiredSmallShieldTransforms.x = 7;
+                desiredSmallShieldTransforms.zRot = -0.8f;
+				desiredSmallShieldTransforms.y = -1;
+				desiredSmallShieldTransforms.x = 7;
             }
             default ->
             {
-                entity.desiredSmallShieldTransforms.zRot = 0.2f;
-				entity.desiredSmallShieldTransforms.x = 9;
+                desiredSmallShieldTransforms.zRot = 0.2f;
+				desiredSmallShieldTransforms.x = 9;
             }
         }
 		shield.y = (float) Math.sin((entity.tickCount + Minecraft.getInstance().getPartialTick()) * 0.1f + offset / 9 + 10) * 3;
 
 		float frametime = Minecraft.getInstance().getDeltaFrameTime() / 8;
-		entity.smallShieldTransforms.x += (entity.desiredSmallShieldTransforms.x - entity.smallShieldTransforms.x) * frametime;
-		entity.smallShieldTransforms.y += (entity.desiredSmallShieldTransforms.y - entity.smallShieldTransforms.y) * frametime;
-		entity.smallShieldTransforms.z += (entity.desiredSmallShieldTransforms.z - entity.smallShieldTransforms.z) * frametime;
-		entity.smallShieldTransforms.xRot += (entity.desiredSmallShieldTransforms.xRot - entity.smallShieldTransforms.xRot) * frametime;
-		entity.smallShieldTransforms.yRot += (entity.desiredSmallShieldTransforms.yRot - entity.smallShieldTransforms.yRot) * frametime;
-		entity.smallShieldTransforms.zRot += (entity.desiredSmallShieldTransforms.zRot - entity.smallShieldTransforms.zRot) * frametime;
-		shield1.copyFrom(entity.smallShieldTransforms);
+		smallShieldTransforms.x += (desiredSmallShieldTransforms.x - smallShieldTransforms.x) * frametime;
+		smallShieldTransforms.y += (desiredSmallShieldTransforms.y - smallShieldTransforms.y) * frametime;
+		smallShieldTransforms.z += (desiredSmallShieldTransforms.z - smallShieldTransforms.z) * frametime;
+		smallShieldTransforms.xRot += (desiredSmallShieldTransforms.xRot - smallShieldTransforms.xRot) * frametime;
+		smallShieldTransforms.yRot += (desiredSmallShieldTransforms.yRot - smallShieldTransforms.yRot) * frametime;
+		smallShieldTransforms.zRot += (desiredSmallShieldTransforms.zRot - smallShieldTransforms.zRot) * frametime;
+		shield1.copyFrom(smallShieldTransforms);
 		shield1.yRot = RDMath.toRadians(-90);
 		shield1.z = 0;
+	}
+	
+	private ModelPart getShieldTransforms(HoveringInfernoEntity entity)
+	{	return SHIELD_ANIMATIONS.get(entity).get(0);
+	}
+	
+	private ModelPart getDesiredShieldTransforms(HoveringInfernoEntity entity)
+	{	return SHIELD_ANIMATIONS.get(entity).get(1);
+	}
+	
+	private ModelPart getSmallShieldTransforms(HoveringInfernoEntity entity)
+	{	return SHIELD_ANIMATIONS.get(entity).get(2);
+	}
+	
+	private ModelPart getDesiredSmallShieldTransforms(HoveringInfernoEntity entity)
+	{	return SHIELD_ANIMATIONS.get(entity).get(3);
 	}
 
 	@Override
