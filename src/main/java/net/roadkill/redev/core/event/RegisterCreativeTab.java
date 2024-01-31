@@ -346,7 +346,8 @@ public class RegisterCreativeTab
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             injectItemsAfter(Items.SHIELD.getDefaultInstance(), event.getEntries(), List.of(
-                    ModItems.NETHERITE_SHIELD
+                    ModItems.NETHERITE_SHIELD,
+                    ModItems.INFERNO_PLATE
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 

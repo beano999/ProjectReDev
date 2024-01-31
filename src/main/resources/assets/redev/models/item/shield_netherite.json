@@ -75,7 +75,7 @@
 	"overrides": [
 		{
 			"predicate": {
-				"blocking": 1
+				"redev:blocking": 1
 			},
 			"model": "redev:item/shield_netherite_blocking"
 		}
