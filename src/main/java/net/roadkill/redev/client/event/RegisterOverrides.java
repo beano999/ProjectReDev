@@ -19,7 +19,15 @@ public class RegisterOverrides
        {
            ItemProperties.register(ItemInit.NETHERITE_SHIELD.get(), new ResourceLocation(ReDev.MOD_ID, "blocking"), (stack, level, entity, id) ->
            {
-               if(entity.isBlocking())
+               if(entity != null && entity.getTicksUsingItem() > 0)
+               {
+                   return 1;
+               }
+               return 0;
+           });
+           ItemProperties.register(ItemInit.INFERNO_PLATE.get(), new ResourceLocation(ReDev.MOD_ID, "blocking"), (stack, level, entity, id) ->
+           {
+               if(entity != null && entity.getTicksUsingItem() > 0)
                {
                    return 1;
                }

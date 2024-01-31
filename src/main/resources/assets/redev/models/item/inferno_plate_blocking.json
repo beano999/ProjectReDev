@@ -1,8 +1,8 @@
 {
 	"credit": "Skinnymomo",
 	"textures": {
-		"1": "redev:item/shield_netherite",
-		"particle": "redev:item/shield_netherite"
+		"1": "redev:item/inferno_plate",
+		"particle": "redev:item/inferno_plate"
 	},
 	"elements": [
 		{

@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "redev:item/shield_netherite"
+		"0": "redev:item/inferno_plate"
 	},
 	"elements": [
 		{
@@ -35,6 +35,9 @@
 		}
 	],
 	"gui_light": "front",
+	"overrides": [
+		{"predicate": {"redev:blocking": 1}, "model": "redev:item/inferno_plate_blocking"}
+	],
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [0, -90, 0],
@@ -72,14 +75,6 @@
 			"origin": [7, 15.5, 11],
 			"color": 0,
 			"children": [0, 1]
-		}
-	],
-	"overrides": [
-		{
-			"predicate": {
-				"redev:blocking": 1
-			},
-			"model": "redev:item/shield_netherite_blocking"
 		}
 	]
 }

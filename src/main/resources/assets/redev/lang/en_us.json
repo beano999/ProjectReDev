@@ -350,5 +350,6 @@
   "block.redev.old_gold": "Old Gold Block",
   "block.redev.old_nether_gold": "Old Nether Gold Block",
 
-  "item.redev.shield_netherite": "Netherite Shield"
+  "item.redev.shield_netherite": "Netherite Shield",
+  "item.redev.inferno_plate": "Inferno Plate"
 }
