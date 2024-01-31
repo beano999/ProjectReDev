@@ -8,6 +8,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.network.NetworkEvent;
+import net.roadkill.redev.util.ClientOnlyHelper;
 
 import java.util.function.Supplier;
 
@@ -37,11 +38,10 @@ public class ParticlesMessage
         this.count = count;
     }
 
-    ParticlesMessage(ParticleOptions particle, ResourceLocation level, double x, double y, double z,
-                     double spreadX, double spreadY, double spreadZ,
-                     double xSpeed, double ySpeed, double zSpeed, int count)
-    {
-        this.particle = particle;
+    public ParticlesMessage(ParticleOptions particle, ResourceLocation level, double x, double y, double z,
+                            double spreadX, double spreadY, double spreadZ,
+                            double xSpeed, double ySpeed, double zSpeed, int count)
+    {   this.particle = particle;
         this.level = level;
         this.x = x;
         this.y = y;
@@ -89,7 +89,7 @@ public class ParticlesMessage
         {
             context.enqueueWork(() ->
             {
-                Level level = Minecraft.getInstance().level;
+                Level level = ClientOnlyHelper.getClientLevel();
                 if (level != null && level.dimension().location().equals(message.level))
                 {
                     for (int i = 0; i < message.count; i++)
