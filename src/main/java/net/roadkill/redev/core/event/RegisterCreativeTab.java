@@ -431,13 +431,22 @@ public class RegisterCreativeTab
         {
             injectItemsAfter(Items.ZOMBIFIED_PIGLIN_SPAWN_EGG.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.LITHICAN_SPAWN_EGG,
-                    ModItems.REVENANT_SPAWN_EGG
+                    ModItems.REVENANT_SPAWN_EGG,
+                    ModItems.HOVERING_INFERNO_SPAWN_EGG
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
         else if (event.getTab().equals(CreativeModeTabs.FOOD_AND_DRINKS))
         {
             injectItemsAfter(Items.MELON_SLICE.getDefaultInstance(), event.getEntries(), List.of(
                     ModItems.DURIAN_SLICE
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            injectItemsAfter(Items.BREAD.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.CHURK
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            injectItemsAfter(Items.WHEAT.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.CARAMINE_RYE
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }

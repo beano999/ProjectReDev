@@ -21,6 +21,24 @@ import net.roadkill.redev.data.FunctionalSpawnerData;
 
 public record AddSpawnsBiomeModifier(boolean dummy) implements BiomeModifier
 {
+    public static final FunctionalSpawnerData CAVE_SPIDER = new FunctionalSpawnerData(EntityType.CAVE_SPIDER, 500, 1, 3,
+                                                                                      (level, structureManager, chunkGenerator, category, spawnerData, pos) ->
+                                                                                      {   return level.random.nextInt(level.getMinBuildHeight(), level.getSeaLevel()) > pos.getY();
+                                                                                      });
+
+    public static final FunctionalSpawnerData LITHICAN = new FunctionalSpawnerData(EntityInit.LITHICAN.get(), 100, 1, 3,
+                                                                                   (level, structureManager, chunkGenerator, category, spawnerData, pos) ->
+                                                                                   {
+                                                                                       BlockState state = level.getBlockState(pos.below());
+                                                                                       return state.is(Tags.Blocks.STONE) && level.getBrightness(LightLayer.SKY, pos) == 0
+                                                                                               || state.is(Blocks.BASALT) && level.dimensionTypeId().equals(BuiltinDimensionTypes.NETHER);
+                                                                                   });
+
+    public static final FunctionalSpawnerData HOVERING_INFERNO = new FunctionalSpawnerData(EntityInit.HOVERING_INFERNO.get(), 60, 1, 1,
+                                                                                           (level, structureManager, chunkGenerator, category, spawnerData, pos) ->
+                                                                                           {   return level.dimensionTypeId().equals(BuiltinDimensionTypes.NETHER) && level.getBlockState(pos.below()).is(Blocks.NETHER_BRICKS);
+                                                                                           });
+
     @Override
     public void modify(Holder<Biome> biome, Phase phase, ModifiableBiomeInfo.BiomeInfo.Builder builder)
     {
@@ -30,18 +48,13 @@ public record AddSpawnsBiomeModifier(boolean dummy) implements BiomeModifier
             {
                 if (biome.is(BiomeTags.IS_OVERWORLD))
                 {
-                    builder.getMobSpawnSettings().addSpawn(MobCategory.MONSTER, new FunctionalSpawnerData(EntityType.CAVE_SPIDER, 500, 1, 3,
-                    (level, structureManager, chunkGenerator, category, spawnerData, pos) ->
-                    {   return level.random.nextInt(level.getMinBuildHeight(), level.getSeaLevel()) > pos.getY();
-                    }));
-
-                    builder.getMobSpawnSettings().addSpawn(MobCategory.MONSTER, new FunctionalSpawnerData(EntityInit.LITHICAN.get(), 100, 1, 3,
-                    (level, structureManager, chunkGenerator, category, spawnerData, pos) ->
-                    {
-                        BlockState state = level.getBlockState(pos.below());
-                        return state.is(Tags.Blocks.STONE) && level.getBrightness(LightLayer.SKY, pos) == 0
-                            || state.is(Blocks.BASALT) && level.dimensionTypeId().equals(BuiltinDimensionTypes.NETHER);
-                    }));
+                    builder.getMobSpawnSettings().addSpawn(MobCategory.MONSTER, CAVE_SPIDER);
+                    builder.getMobSpawnSettings().addSpawn(MobCategory.MONSTER, LITHICAN);
+                }
+                else if (biome.is(BiomeTags.IS_NETHER))
+                {
+                    builder.getMobSpawnSettings().addSpawn(MobCategory.MONSTER, LITHICAN);
+                    builder.getMobSpawnSettings().addSpawn(MobCategory.MONSTER, HOVERING_INFERNO);
                 }
             });
         }

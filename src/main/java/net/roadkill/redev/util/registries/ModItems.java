@@ -41,11 +41,14 @@ public class ModItems
     public static final Item WITHERED_BOOTS = ItemInit.WITHERED_BOOTS.get();
 
     public static final Item WARPED_DRUPEL = ItemInit.WARPED_DRUPEL.get();
+    public static final Item CARAMINE_RYE = ItemInit.CARAMINE_RYE.get();
+    public static final Item CHURK = ItemInit.CHURK.get();
 
     public static final Item NETHERITE_HORSE_ARMOR = ItemInit.NETHERITE_HORSE_ARMOR.get();
 
     public static final Item LITHICAN_SPAWN_EGG = ItemInit.LITHICAN_SPAWN_EGG.get();
     public static final Item REVENANT_SPAWN_EGG = ItemInit.REVENANT_SPAWN_EGG.get();
+    public static final Item HOVERING_INFERNO_SPAWN_EGG = ItemInit.HOVERING_INFERNO_SPAWN_EGG.get();
 
     /*
      Block Items

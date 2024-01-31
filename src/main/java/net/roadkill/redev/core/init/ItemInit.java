@@ -58,6 +58,7 @@ public class ItemInit
 
     public static final RegistryObject<Item> LITHICAN_SPAWN_EGG = ITEMS.register("lithican_spawn_egg", () -> new ForgeSpawnEggItem(EntityInit.LITHICAN, 5263440, 10782599, new Item.Properties()));
     public static final RegistryObject<Item> REVENANT_SPAWN_EGG = ITEMS.register("revenant_spawn_egg", () -> new ForgeSpawnEggItem(EntityInit.REVENANT, 5395605, 5874129, new Item.Properties()));
+    public static final RegistryObject<Item> HOVERING_INFERNO_SPAWN_EGG = ITEMS.register("hovering_inferno_spawn_egg", () -> new ForgeSpawnEggItem(EntityInit.HOVERING_INFERNO, 13932032, 16750138, new Item.Properties()));
 
     /*
      Block Items

@@ -121,4 +121,12 @@ public final class RDMath
     public static Vec3 randomVector3f(RandomSource random, float magnitude)
     {   return new Vec3(Mth.nextFloat(random, -1, 1), Mth.nextFloat(random, -1, 1), Mth.nextFloat(random, -1, 1)).normalize().scale(magnitude);
     }
+
+    public static double randomDouble(RandomSource rand, double min, double max)
+    {   return rand.nextDouble() * (max - min) + min;
+    }
+
+    public static float randomFloat(RandomSource rand, float min, float max)
+    {   return rand.nextFloat() * (max - min) + min;
+    }
 }

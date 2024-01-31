@@ -34,6 +34,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.common.Tags;
 import net.roadkill.redev.util.RDMath;
@@ -50,6 +51,8 @@ public class LithicanEntity extends Zombie
 
     public LithicanEntity(EntityType<? extends Zombie> pEntityType, Level pLevel)
     {   super(pEntityType, pLevel);
+        this.setPathfindingMalus(BlockPathTypes.DANGER_FIRE, 0.0F);
+        this.setPathfindingMalus(BlockPathTypes.DAMAGE_FIRE, 0.0F);
     }
 
     public static AttributeSupplier.Builder createAttributes()
