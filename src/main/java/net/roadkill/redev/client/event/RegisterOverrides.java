@@ -25,9 +25,9 @@ public class RegisterOverrides
                }
                return 0;
            });
-           ItemProperties.register(ItemInit.INFERNO_PLATE.get(), new ResourceLocation(ReDev.MOD_ID, "blocking"), (stack, level, entity, id) ->
+           ItemProperties.register(ItemInit.INFERNAL_PLATE.get(), new ResourceLocation(ReDev.MOD_ID, "blocking"), (stack, level, entity, id) ->
            {
-               if(entity != null && entity.getTicksUsingItem() > 0 && entity.getUseItem().equals(stack))
+               if(entity != null && level != null && entity.getTicksUsingItem() > 0 && entity.getUseItem().equals(stack))
                {
                    return 1;
                }

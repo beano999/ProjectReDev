@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "redev:old_nether_gold"
+          "name": "redev:classic_nether_gold_block"
         }
       ],
       "rolls": 1.0

@@ -1,0 +1,7 @@
+{
+	"parent": "redev:item/generic_shield_blocking",
+	"textures": {
+		"shield": "redev:item/infernal_plate",
+		"particle": "redev:item/infernal_plate"
+	}
+}

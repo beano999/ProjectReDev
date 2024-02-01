@@ -311,9 +311,9 @@ public class ItemInit
 
     public static final RegistryObject<Item> HADALITE = ITEMS.register("hadalite", () -> new BlockItem(BlockInit.HADALITE.get(), new Item.Properties()));
 
-    public static final RegistryObject<Item> OLD_GOLD = ITEMS.register("old_gold", () -> new BlockItem(BlockInit.OLD_GOLD.get(), new Item.Properties()));
-    public static final RegistryObject<Item> OLD_NETHER_GOLD = ITEMS.register("old_nether_gold", () -> new BlockItem(BlockInit.OLD_NETHER_GOLD.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CLASSIC_GOLD_BLOCK = ITEMS.register("classic_gold_block", () -> new BlockItem(BlockInit.CLASSIC_GOLD_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CLASSIC_NETHER_GOLD_BLOCK = ITEMS.register("classic_nether_gold_block", () -> new BlockItem(BlockInit.CLASSIC_NETHER_GOLD_BLOCK.get(), new Item.Properties()));
 
-    public static final RegistryObject<Item> NETHERITE_SHIELD = ITEMS.register("shield_netherite", () -> new ShieldItem(new Item.Properties().durability(300)));
-    public static final RegistryObject<Item> INFERNO_PLATE = ITEMS.register("inferno_plate", () -> new ShieldItem(new Item.Properties().durability(150)));
+    public static final RegistryObject<Item> NETHERITE_SHIELD = ITEMS.register("netherite_shield", () -> new ShieldItem(new Item.Properties().durability(300)));
+    public static final RegistryObject<Item> INFERNAL_PLATE = ITEMS.register("infernal_plate", () -> new ShieldItem(new Item.Properties().durability(150)));
 }

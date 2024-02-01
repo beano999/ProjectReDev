@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "redev:inferno_plate",
+          "name": "redev:infernal_plate",
           "conditions": [
             {
               "condition": "minecraft:random_chance",

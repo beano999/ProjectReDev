@@ -1,0 +1,15 @@
+{
+	"parent": "redev:item/generic_shield",
+	"textures": {
+		"shield": "redev:item/netherite_shield",
+		"particle": "redev:item/netherite_shield"
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"redev:blocking": 1
+			},
+			"model": "redev:item/netherite_shield_blocking"
+		}
+	]
+}

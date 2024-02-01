@@ -1,6 +1,5 @@
 package net.roadkill.redev.common.entity;
 
-import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;

@@ -1,0 +1,15 @@
+{
+	"parent": "redev:item/generic_shield",
+	"textures": {
+		"shield": "redev:item/infernal_plate",
+		"particle": "redev:item/infernal_plate"
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"redev:blocking": 1
+			},
+			"model": "redev:item/infernal_plate_blocking"
+		}
+	]
+}

@@ -225,8 +225,8 @@ public class ModBlocks
 
     public static final Block HADALITE = BlockInit.HADALITE.get();
 
-    public static final Block OLD_GOLD = BlockInit.OLD_GOLD.get();
-    public static final Block OLD_NETHER_GOLD = BlockInit.OLD_NETHER_GOLD.get();
+    public static final Block OLD_GOLD = BlockInit.CLASSIC_GOLD_BLOCK.get();
+    public static final Block OLD_NETHER_GOLD = BlockInit.CLASSIC_NETHER_GOLD_BLOCK.get();
 
     public static final class WoodTypes
     {

@@ -84,10 +84,6 @@ public final class RDMath
     {   return Math.max(min, Math.min(max, value));
     }
 
-    public static Level getClientLevel()
-    {   return ((Minecraft) LogicalSidedProvider.WORKQUEUE.get(LogicalSide.CLIENT)).level;
-    }
-
     public static Quaternionf getQuaternion(double x, double y, double z)
     {
         double cy = Math.cos(z * 0.5);
