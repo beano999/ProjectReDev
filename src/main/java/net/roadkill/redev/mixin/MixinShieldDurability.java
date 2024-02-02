@@ -17,7 +17,7 @@ public class MixinShieldDurability
     {
         if(shieldItem.maxDamage == 336)
         {
-            shieldItem.maxDamage = 100;
+            shieldItem.maxDamage = 200;
         }
     }
 

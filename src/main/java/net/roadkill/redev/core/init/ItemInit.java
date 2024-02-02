@@ -314,6 +314,6 @@ public class ItemInit
     public static final RegistryObject<Item> OLD_GOLD = ITEMS.register("old_gold", () -> new BlockItem(BlockInit.OLD_GOLD.get(), new Item.Properties()));
     public static final RegistryObject<Item> OLD_NETHER_GOLD = ITEMS.register("old_nether_gold", () -> new BlockItem(BlockInit.OLD_NETHER_GOLD.get(), new Item.Properties()));
 
-    public static final RegistryObject<Item> NETHERITE_SHIELD = ITEMS.register("shield_netherite", () -> new ShieldItem(new Item.Properties().durability(300)));
-    public static final RegistryObject<Item> INFERNO_PLATE = ITEMS.register("inferno_plate", () -> new ShieldItem(new Item.Properties().durability(150)));
+    public static final RegistryObject<Item> NETHERITE_SHIELD = ITEMS.register("shield_netherite", () -> new ShieldItem(new Item.Properties().durability(1200)));
+    public static final RegistryObject<Item> INFERNO_PLATE = ITEMS.register("inferno_plate", () -> new ShieldItem(new Item.Properties().durability(600)));
 }

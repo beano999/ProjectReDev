@@ -25,13 +25,16 @@ public class ShieldBlock
         {
             event.setBlockedDamage(event.getBlockedDamage() / 2);
         }
-
+        if(!entity.getUseItem().is(ModItems.INFERNO_PLATE))
+        {
+            return;
+        }
         if(entity.getUseItem().is(ModItems.INFERNO_PLATE) && (event.getDamageSource().is(DamageTypes.MOB_ATTACK) || event.getDamageSource().is(DamageTypes.PLAYER_ATTACK)))
         {
             event.setBlockedDamage(event.getBlockedDamage() / 2);
         }
 
-        if (!(event.getDamageSource().getDirectEntity() instanceof Projectile projectile) || event.getDamageSource().getEntity() == null && entity.getUseItem().is(ModItems.INFERNO_PLATE)) return;
+        if (!(event.getDamageSource().getDirectEntity() instanceof Projectile projectile) || event.getDamageSource().getEntity() == null) {return;}
 
         Entity shooter = event.getDamageSource().getEntity();
 
