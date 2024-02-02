@@ -1,0 +1,7 @@
+{
+	"parent": "redev:item/generic_shield_blocking",
+	"textures": {
+		"shield": "redev:item/netherite_shield",
+		"particle": "redev:item/netherite_shield"
+	}
+}

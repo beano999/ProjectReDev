@@ -7,7 +7,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.common.util.LogicalSidedProvider;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.network.NetworkEvent;
-import net.roadkill.redev.util.RDMath;
+import net.roadkill.redev.util.ClientOnlyHelper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -73,7 +73,7 @@ public class SyncGameRulesMessage
         {
             context.enqueueWork(() ->
             {
-                Level level = RDMath.getClientLevel();
+                Level level = ClientOnlyHelper.getClientLevel();
                 GameRules gameRules = level.getGameRules();
                 GameRules.visitGameRuleTypes(new GameRules.GameRuleTypeVisitor()
                 {

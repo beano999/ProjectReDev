@@ -1,0 +1,13 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures":
+  {
+    "down": "redev:block/classic_nether_gold_block_bottom",
+    "up": "redev:block/classic_nether_gold_block_top",
+    "north": "redev:block/classic_nether_gold_block_side",
+    "south": "redev:block/classic_nether_gold_block_side",
+    "west": "redev:block/classic_nether_gold_block_side",
+    "east": "redev:block/classic_nether_gold_block_side",
+    "particle": "redev:block/classic_nether_gold_block_side"
+  }
+}

@@ -269,6 +269,6 @@ public class BlockInit
 
     public static final RegistryObject<Block> HADALITE = BLOCKS.register("hadalite", () -> new HadaliteBlock(Block.Properties.copy(Blocks.BEDROCK)));
 
-    public static final RegistryObject<Block> OLD_GOLD = BLOCKS.register("old_gold", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
-    public static final RegistryObject<Block> OLD_NETHER_GOLD = BLOCKS.register("old_nether_gold", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
+    public static final RegistryObject<Block> CLASSIC_GOLD_BLOCK = BLOCKS.register("classic_gold_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
+    public static final RegistryObject<Block> CLASSIC_NETHER_GOLD_BLOCK = BLOCKS.register("classic_nether_gold_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
 }

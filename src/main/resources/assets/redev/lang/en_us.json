@@ -11,7 +11,7 @@
   "item.minecraft.potion.effect.resistance":           "Potion of Resistance",
   "item.minecraft.splash_potion.effect.resistance":    "Splash Potion of Resistance",
   "item.minecraft.lingering_potion.effect.resistance": "Lingering Potion of Resistance",
-  "item.minecraft.tipped_arrow.effect.resistance":     "Tipped Arrow of Resistance",
+  "item.minecraft.tipped_arrow.effect.resistazgfnce":     "Tipped Arrow of Resistance",
 
   "item.minecraft.potion.effect.haste":           "Potion of Haste",
   "item.minecraft.splash_potion.effect.haste":    "Splash Potion of Haste",
@@ -347,9 +347,9 @@
 
   "block.redev.hadalite": "Hadalite",
 
-  "block.redev.old_gold": "Old Gold Block",
-  "block.redev.old_nether_gold": "Old Nether Gold Block",
+  "block.redev.classic_gold_block": "Block of Classic Gold",
+  "block.redev.classic_nether_gold_block": "Block of Classic Nether Gold",
 
-  "item.redev.shield_netherite": "Netherite Shield",
-  "item.redev.inferno_plate": "Inferno Plate"
+  "item.redev.netherite_shield": "Netherite Shield",
+  "item.redev.infernal_plate": "Infernal Plate"
 }

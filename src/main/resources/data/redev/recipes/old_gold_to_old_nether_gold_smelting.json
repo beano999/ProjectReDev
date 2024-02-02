@@ -2,9 +2,9 @@
   "type": "minecraft:smelting",
   "ingredient":
   {
-    "item": "redev:old_gold"
+    "item": "redev:classic_gold_block"
   },
-  "result": "redev:old_nether_gold",
+  "result": "redev:classic_nether_gold_block",
   "experience": 1.0,
   "cookingtime": 200
 }
