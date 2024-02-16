@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stone_slab",
+  "pattern":
+  [
+    "WWW",
+    "WWW"
+  ],
+  "key":
+  {
+    "W":
+    {
+      "item": "minecraft:polished_basalt"
+    }
+  },
+  "result":
+  {
+    "item": "redev:polished_basalt_wall",
+    "count":  12
+  }
+}

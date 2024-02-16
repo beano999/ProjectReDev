@@ -350,6 +350,16 @@
   "block.redev.classic_gold_block": "Block of Classic Gold",
   "block.redev.classic_nether_gold_block": "Block of Classic Nether Gold",
 
+  "block.redev.basalt_slab": "Basalt Slab",
+  "block.redev.smooth_basalt_slab": "Smooth Basalt Slab",
+  "block.redev.polished_basalt_slab": "Polished Basalt Slab",
+  "block.redev.basalt_stairs": "Basalt Stairs",
+  "block.redev.smooth_basalt_stairs": "Smooth Basalt Stairs",
+  "block.redev.polished_basalt_stairs": "Polished Basalt Stairs",
+  "block.redev.basalt_wall": "Basalt Wall",
+  "block.redev.smooth_basalt_wall": "Smooth Basalt Wall",
+  "block.redev.polished_basalt_wall": "Polished Basalt Wall",
+
   "item.redev.netherite_shield": "Netherite Shield",
   "item.redev.infernal_plate": "Infernal Plate"
 }

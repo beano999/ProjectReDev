@@ -1,0 +1,7 @@
+{
+  "parent": "redev:block/template_wall_side_tall",
+  "textures": {
+    "wall": "redev:block/polished_basalt_wall_side",
+    "wall_top": "redev:block/polished_basalt_wall_side"
+  }
+}

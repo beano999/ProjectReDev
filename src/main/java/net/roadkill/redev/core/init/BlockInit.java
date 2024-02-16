@@ -269,6 +269,18 @@ public class BlockInit
 
     public static final RegistryObject<Block> HADALITE = BLOCKS.register("hadalite", () -> new HadaliteBlock(Block.Properties.copy(Blocks.BEDROCK)));
 
+    public static final RegistryObject<Block> BASALT_SLAB = BLOCKS.register("basalt_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.BASALT)));
+    public static final RegistryObject<Block> SMOOTH_BASALT_SLAB = BLOCKS.register("smooth_basalt_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.SMOOTH_BASALT)));
+    public static final RegistryObject<Block> POLISHED_BASALT_SLAB = BLOCKS.register("polished_basalt_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.POLISHED_BASALT)));
+
+    public static final RegistryObject<Block> BASALT_STAIRS = BLOCKS.register("basalt_stairs", () -> new StairBlock(() -> Blocks.BASALT.defaultBlockState(), Block.Properties.copy(Blocks.BASALT)));
+    public static final RegistryObject<Block> SMOOTH_BASALT_STAIRS = BLOCKS.register("smooth_basalt_stairs", () -> new StairBlock(() -> Blocks.SMOOTH_BASALT.defaultBlockState(), Block.Properties.copy(Blocks.SMOOTH_BASALT)));
+    public static final RegistryObject<Block> POLISHED_BASALT_STAIRS = BLOCKS.register("polished_basalt_stairs", () -> new StairBlock(() -> Blocks.POLISHED_BASALT.defaultBlockState(), Block.Properties.copy(Blocks.POLISHED_BASALT)));
+
+    public static final RegistryObject<Block> BASALT_WALL = BLOCKS.register("basalt_wall", () -> new WallBlock(Block.Properties.copy(Blocks.BASALT)));
+    public static final RegistryObject<Block> SMOOTH_BASALT_WALL = BLOCKS.register("smooth_basalt_wall", () -> new WallBlock(Block.Properties.copy(Blocks.SMOOTH_BASALT)));
+    public static final RegistryObject<Block> POLISHED_BASALT_WALL = BLOCKS.register("polished_basalt_wall", () -> new WallBlock(Block.Properties.copy(Blocks.POLISHED_BASALT)));
+
     public static final RegistryObject<Block> CLASSIC_GOLD_BLOCK = BLOCKS.register("classic_gold_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
     public static final RegistryObject<Block> CLASSIC_NETHER_GOLD_BLOCK = BLOCKS.register("classic_nether_gold_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
 }

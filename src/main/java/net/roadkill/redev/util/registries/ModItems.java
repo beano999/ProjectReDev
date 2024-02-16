@@ -292,6 +292,16 @@ public class ModItems
     public static final Item OLD_GOLD = ItemInit.CLASSIC_GOLD_BLOCK.get();
     public static final Item OLD_NETHER_GOLD = ItemInit.CLASSIC_NETHER_GOLD_BLOCK.get();
 
+    public static final Item BASALT_SLAB = ItemInit.BASALT_SLAB.get();
+    public static final Item BASALT_STAIRS = ItemInit.BASALT_STAIRS.get();
+    public static final Item BASALT_WALL = ItemInit.BASALT_WALL.get();
+    public static final Item SMOOTH_BASALT_SLAB = ItemInit.SMOOTH_BASALT_SLAB.get();
+    public static final Item SMOOTH_BASALT_STAIRS = ItemInit.SMOOTH_BASALT_STAIRS.get();
+    public static final Item SMOOTH_BASALT_WALL = ItemInit.SMOOTH_BASALT_WALL.get();
+    public static final Item POLISHED_BASALT_SLAB = ItemInit.POLISHED_BASALT_SLAB.get();
+    public static final Item POLISHED_BASALT_STAIRS = ItemInit.POLISHED_BASALT_STAIRS.get();
+    public static final Item POLISHED_BASALT_WALL = ItemInit.POLISHED_BASALT_WALL.get();
+
     public static final Item NETHERITE_SHIELD = ItemInit.NETHERITE_SHIELD.get();
     public static final Item INFERNO_PLATE = ItemInit.INFERNAL_PLATE.get();
 

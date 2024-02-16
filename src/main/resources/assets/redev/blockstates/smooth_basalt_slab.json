@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "redev:block/smooth_basalt_slab"
+    },
+    "type=double": {
+      "model": "redev:block/smooth_basalt_slab_double"
+    },
+    "type=top": {
+      "model": "redev:block/smooth_basalt_slab_top"
+    }
+  }
+}

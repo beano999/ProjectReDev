@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stone_slab",
+  "pattern":
+  [
+    "W"
+  ],
+  "key":
+  {
+    "W":
+    {
+      "item": "redev:smooth_basalt_stairs"
+    }
+  },
+  "result":
+  {
+    "item": "redev:basalt_stairs",
+    "count":  1
+  }
+}

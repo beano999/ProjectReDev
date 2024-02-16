@@ -314,6 +314,18 @@ public class ItemInit
     public static final RegistryObject<Item> CLASSIC_GOLD_BLOCK = ITEMS.register("classic_gold_block", () -> new BlockItem(BlockInit.CLASSIC_GOLD_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> CLASSIC_NETHER_GOLD_BLOCK = ITEMS.register("classic_nether_gold_block", () -> new BlockItem(BlockInit.CLASSIC_NETHER_GOLD_BLOCK.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> BASALT_SLAB = ITEMS.register("basalt_slab", () -> new BlockItem(BlockInit.BASALT_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SMOOTH_BASALT_SLAB = ITEMS.register("smooth_basalt_slab", () -> new BlockItem(BlockInit.SMOOTH_BASALT_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> POLISHED_BASALT_SLAB = ITEMS.register("polished_basalt_slab", () -> new BlockItem(BlockInit.POLISHED_BASALT_SLAB.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> BASALT_STAIRS = ITEMS.register("basalt_stairs", () -> new BlockItem(BlockInit.BASALT_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SMOOTH_BASALT_STAIRS = ITEMS.register("smooth_basalt_stairs", () -> new BlockItem(BlockInit.SMOOTH_BASALT_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> POLISHED_BASALT_STAIRS = ITEMS.register("polished_basalt_stairs", () -> new BlockItem(BlockInit.POLISHED_BASALT_STAIRS.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> BASALT_WALL = ITEMS.register("basalt_wall", () -> new BlockItem(BlockInit.BASALT_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SMOOTH_BASALT_WALL = ITEMS.register("smooth_basalt_wall", () -> new BlockItem(BlockInit.SMOOTH_BASALT_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> POLISHED_BASALT_WALL = ITEMS.register("polished_basalt_wall", () -> new BlockItem(BlockInit.POLISHED_BASALT_WALL.get(), new Item.Properties()));
+
     public static final RegistryObject<Item> NETHERITE_SHIELD = ITEMS.register("netherite_shield", () -> new ShieldItem(new Item.Properties().durability(1200)));
     public static final RegistryObject<Item> INFERNAL_PLATE = ITEMS.register("infernal_plate", () -> new ShieldItem(new Item.Properties().durability(600)));
 }

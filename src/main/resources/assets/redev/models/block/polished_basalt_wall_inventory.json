@@ -1,0 +1,9 @@
+{
+  "parent": "redev:block/template_wall_inventory",
+  "textures": {
+    "wall": "redev:block/polished_basalt_wall_side",
+    "post_side": "redev:block/polished_basalt_wall_post",
+    "post_top": "minecraft:block/polished_basalt_top",
+    "wall_top": "redev:block/polished_basalt_wall_side"
+  }
+}

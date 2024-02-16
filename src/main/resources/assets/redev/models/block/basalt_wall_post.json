@@ -1,0 +1,7 @@
+{
+  "parent": "redev:block/template_wall_post",
+  "textures": {
+    "wall": "minecraft:block/basalt_side",
+    "post_top": "minecraft:block/basalt_top"
+  }
+}

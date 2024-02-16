@@ -5,6 +5,9 @@
     "redev:scrapwood_stairs",
     "redev:whispur_stairs",
     "redev:petrified_stairs",
-    "redev:shade_stairs"
+    "redev:shade_stairs",
+    "redev:basalt_stairs",
+    "redev:smooth_basalt_stairs",
+    "redev:polished_basalt_stairs"
   ]
 }

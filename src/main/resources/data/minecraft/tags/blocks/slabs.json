@@ -5,6 +5,9 @@
     "redev:scrapwood_slab",
     "redev:whispur_slab",
     "redev:petrified_slab",
-    "redev:shade_slab"
+    "redev:shade_slab",
+    "redev:blackstone_slab",
+    "redev:smooth_blackstone_slab",
+    "redev:polished_blackstone_slab"
   ]
 }

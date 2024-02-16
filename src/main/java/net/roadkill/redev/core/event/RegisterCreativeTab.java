@@ -409,6 +409,20 @@ public class RegisterCreativeTab
                     ModItems.SHADE_PRESSURE_PLATE,
                     ModItems.SHADE_BUTTON
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            injectItemsAfter(Items.REINFORCED_DEEPSLATE.getDefaultInstance(), event.getEntries(), List.of(
+                    ModItems.BASALT_SLAB,
+                    ModItems.BASALT_STAIRS,
+                    ModItems.BASALT_WALL,
+
+                    ModItems.SMOOTH_BASALT_SLAB,
+                    ModItems.SMOOTH_BASALT_STAIRS,
+                    ModItems.SMOOTH_BASALT_WALL,
+
+                    ModItems.POLISHED_BASALT_SLAB,
+                    ModItems.POLISHED_BASALT_STAIRS,
+                    ModItems.POLISHED_BASALT_WALL
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
         /*
