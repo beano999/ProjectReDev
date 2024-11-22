@@ -2,15 +2,13 @@ package net.roadkill.redev.common.world.tree;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Vec3i;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -22,22 +20,14 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class ShadeTree extends AbstractTreeGrower
+public class ShadeTree
 {
     private final Color color;
 
     public ShadeTree(Color color)
-    {   super();
-        this.color = color;
+    {   this.color = color;
     }
 
-    @Nullable
-    @Override
-    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource rand, boolean hasFlowers)
-    {   return null;
-    }
-
-    @Override
     public boolean growTree(ServerLevel level, ChunkGenerator generator, BlockPos pos, BlockState state, RandomSource rand)
     {   return place(level, pos, this.color);
     }
@@ -55,7 +45,7 @@ public class ShadeTree extends AbstractTreeGrower
             case PURPLE -> "purple_";
         };
         Rotation rotation = Rotation.getRandom(level.getRandom());
-        Optional<StructureTemplate> treeOpt = structuretemplatemanager.get(new ResourceLocation(ReDev.MOD_ID, "shade_tree/" + color + "shade_tree_" + treeVariant));
+        Optional<StructureTemplate> treeOpt = structuretemplatemanager.get(ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "shade_tree/" + color + "shade_tree_" + treeVariant));
 
         treeOpt.ifPresent(tree ->
         {   Pair<Integer, Integer> offset = getRotatedOffset(treeVariant, rotation);

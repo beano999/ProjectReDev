@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.roadkill.redev.ReDev;
+import net.roadkill.redev.core.init.BlockInit;
 import net.roadkill.redev.util.registries.ModBlocks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,16 +23,16 @@ public class MixinBlockPlace
     private void onBlockPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston, CallbackInfo ci)
     {
         if (state.is(Blocks.CAMPFIRE))
-        {   level.setBlock(pos, copyValues(state, ModBlocks.OAK_CAMPFIRE.defaultBlockState()), 2);
+        {   level.setBlock(pos, copyValues(state, BlockInit.OAK_CAMPFIRE.value().defaultBlockState()), 2);
         }
         else if (state.is(Blocks.SOUL_CAMPFIRE))
-        {   level.setBlock(pos, copyValues(state, ModBlocks.OAK_SOUL_CAMPFIRE.defaultBlockState()), 2);
+        {   level.setBlock(pos, copyValues(state, BlockInit.OAK_SOUL_CAMPFIRE.value().defaultBlockState()), 2);
         }
         else if (state.is(Blocks.TWISTING_VINES_PLANT))
-        {   level.setBlock(pos, copyValues(state, ModBlocks.TWISTING_VINES_PLANT.defaultBlockState()), 2);
+        {   level.setBlock(pos, copyValues(state, BlockInit.TWISTING_VINES_PLANT.value().defaultBlockState()), 2);
         }
         else if (state.is(Blocks.WARPED_ROOTS))
-        {   level.setBlock(pos, copyValues(state, ModBlocks.WARPED_ROOTS.defaultBlockState()), 2);
+        {   level.setBlock(pos, copyValues(state, BlockInit.WARPED_ROOTS.value().defaultBlockState()), 2);
         }
     }
 

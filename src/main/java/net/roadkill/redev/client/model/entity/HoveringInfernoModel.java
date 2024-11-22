@@ -8,9 +8,10 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 import net.roadkill.redev.ReDev;
+import net.roadkill.redev.client.renderer.render_sate.HoveringInfernoRenderState;
 import net.roadkill.redev.common.entity.HoveringInfernoEntity;
 import net.roadkill.redev.util.RDMath;
 
@@ -18,10 +19,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-public class HoveringInfernoModel<T extends HoveringInfernoEntity> extends EntityModel<T>
+public class HoveringInfernoModel<S extends HoveringInfernoRenderState> extends EntityModel<S>
 {
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(ReDev.MOD_ID, "hovering_inferno"), "main");
-	private static final Map<HoveringInfernoEntity, List<ModelPart>> SHIELD_ANIMATIONS = new WeakHashMap<>();
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "hovering_inferno"), "main");
+	private static final Map<Integer, List<ModelPart>> SHIELD_ANIMATIONS = new WeakHashMap<>();
 
 	private final ModelPart head;
 	private final ModelPart body;
@@ -35,7 +36,9 @@ public class HoveringInfernoModel<T extends HoveringInfernoEntity> extends Entit
 	private final ModelPart smallShieldSpin4;
 
 	public HoveringInfernoModel(ModelPart root)
-	{	this.head = root.getChild("head");
+	{
+        super(root);
+        this.head = root.getChild("head");
 		this.body = root.getChild("body");
 		this.shieldSpin1 = root.getChild("shieldSpin1");
 		this.smallShieldSpin1 = root.getChild("smallShieldSpin1");
@@ -97,24 +100,27 @@ public class HoveringInfernoModel<T extends HoveringInfernoEntity> extends Entit
 	}
 
 	@Override
-	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch)
+	public void setupAnim(S renderState)
 	{
-		SHIELD_ANIMATIONS.putIfAbsent(entity, List.of(
+        float frameDelta = Minecraft.getInstance().getDeltaTracker().getRealtimeDeltaTicks();
+        HoveringInfernoEntity entity = renderState.entity;
+
+        SHIELD_ANIMATIONS.computeIfAbsent(entity.getId(), id -> List.of(
 				new ModelPart(List.of(), Map.of()),
 				new ModelPart(List.of(), Map.of()),
 				new ModelPart(List.of(), Map.of()),
 				new ModelPart(List.of(), Map.of())));
 
 		// Lerp entity shield rotation speed
-		entity.shieldRotationSpeed += (entity.getShieldRotationSpeed() - entity.shieldRotationSpeed) * Minecraft.getInstance().getDeltaFrameTime() / (entity.hurtAnimation ? 2 : 5);
+        entity.shieldRotationSpeed += (entity.getShieldRotationSpeed() - entity.shieldRotationSpeed) * frameDelta / (entity.hurtAnimation ? 2 : 5);
 		// Stop lerping if close enough
-		if (Math.abs(entity.shieldRotationSpeed - entity.getShieldRotationSpeed()) < 0.01f)
-		{	entity.shieldRotationSpeed = entity.getShieldRotationSpeed();
-			entity.hurtAnimation = false;
-		}
+        if (Math.abs(entity.shieldRotationSpeed - entity.getShieldRotationSpeed()) < 0.01f)
+        {	entity.shieldRotationSpeed = entity.getShieldRotationSpeed();
+            entity.hurtAnimation = false;
+        }
 		// Set shield rotation, accounting for framerate
 		if (!Minecraft.getInstance().isPaused())
-		{	entity.shieldYRot += entity.shieldRotationSpeed * Minecraft.getInstance().getDeltaFrameTime();
+		{	entity.shieldYRot += entity.shieldRotationSpeed * frameDelta;
 		}
 		float tick = entity.shieldYRot;
 
@@ -130,15 +136,18 @@ public class HoveringInfernoModel<T extends HoveringInfernoEntity> extends Entit
 		this.transformShield(entity, shieldSpin4, "shield4", 270, tick);
 		this.transformSmallShield(entity, smallShieldSpin4, "smallShield4", 270, tick);
 
-		this.head.yRot = RDMath.toRadians(netHeadYaw) + RDMath.toRadians(Mth.rotLerp(Minecraft.getInstance().getPartialTick(), entity.yBodyRotO, entity.yBodyRot));
-		this.head.xRot = RDMath.toRadians(headPitch);
+		this.head.yRot = RDMath.toRadians(renderState.yRot) + RDMath.toRadians(renderState.bodyRot);
+		this.head.xRot = RDMath.toRadians(renderState.xRot);
 	}
 
-	private void transformShield(T entity, ModelPart shield, String child, float offset, float ageInTicks)
+	private void transformShield(HoveringInfernoEntity entity, ModelPart shield, String child, float offset, float ageInTicks)
 	{
+        float partialTick = Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(true);
+        float deltaTime = Minecraft.getInstance().getDeltaTracker().getRealtimeDeltaTicks();
+
 		ModelPart shieldTransforms = getShieldTransforms(entity);
 		ModelPart desiredShieldTransforms = getDesiredShieldTransforms(entity);
-		
+
 		ModelPart shield1 = shield.getChild(child);
 		shield.yRot = ageInTicks * 0.1f + RDMath.toRadians(offset);
 
@@ -163,9 +172,9 @@ public class HoveringInfernoModel<T extends HoveringInfernoEntity> extends Entit
 				desiredShieldTransforms.x = 12;
             }
         }
-		shield.y = (float) Math.sin((entity.tickCount + Minecraft.getInstance().getPartialTick()) * 0.2f + offset / 9) * 3 - 4;
+		shield.y = (float) Math.sin((entity.tickCount + partialTick) * 0.2f + offset / 9) * 3 - 4;
 
-		float frametime = Minecraft.getInstance().getDeltaFrameTime() / 8;
+		float frametime = deltaTime / 8;
 		shieldTransforms.x += (desiredShieldTransforms.x - shieldTransforms.x) * frametime;
 		shieldTransforms.y += (desiredShieldTransforms.y - shieldTransforms.y) * frametime;
 		shieldTransforms.z += (desiredShieldTransforms.z - shieldTransforms.z) * frametime;
@@ -175,8 +184,11 @@ public class HoveringInfernoModel<T extends HoveringInfernoEntity> extends Entit
 		shield1.copyFrom(shieldTransforms);
 	}
 
-	private void transformSmallShield(T entity, ModelPart shield, String child, float offset, float ageInTicks)
+	private void transformSmallShield(HoveringInfernoEntity entity, ModelPart shield, String child, float offset, float ageInTicks)
 	{
+        float partialTick = Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(true);
+        float deltaTime = Minecraft.getInstance().getDeltaTracker().getRealtimeDeltaTicks();
+
 		ModelPart smallShieldTransforms = getSmallShieldTransforms(entity);
 		ModelPart desiredSmallShieldTransforms = getDesiredSmallShieldTransforms(entity);
 
@@ -203,9 +215,9 @@ public class HoveringInfernoModel<T extends HoveringInfernoEntity> extends Entit
 				desiredSmallShieldTransforms.x = 9;
             }
         }
-		shield.y = (float) Math.sin((entity.tickCount + Minecraft.getInstance().getPartialTick()) * 0.1f + offset / 9 + 10) * 3;
+		shield.y = (float) Math.sin((entity.tickCount + partialTick) * 0.1f + offset / 9 + 10) * 3;
 
-		float frametime = Minecraft.getInstance().getDeltaFrameTime() / 8;
+		float frametime = deltaTime / 8;
 		smallShieldTransforms.x += (desiredSmallShieldTransforms.x - smallShieldTransforms.x) * frametime;
 		smallShieldTransforms.y += (desiredSmallShieldTransforms.y - smallShieldTransforms.y) * frametime;
 		smallShieldTransforms.z += (desiredSmallShieldTransforms.z - smallShieldTransforms.z) * frametime;
@@ -218,32 +230,32 @@ public class HoveringInfernoModel<T extends HoveringInfernoEntity> extends Entit
 	}
 	
 	private ModelPart getShieldTransforms(HoveringInfernoEntity entity)
-	{	return SHIELD_ANIMATIONS.get(entity).get(0);
+	{	return SHIELD_ANIMATIONS.get(entity.getId()).get(0);
 	}
 	
 	private ModelPart getDesiredShieldTransforms(HoveringInfernoEntity entity)
-	{	return SHIELD_ANIMATIONS.get(entity).get(1);
+    {	return SHIELD_ANIMATIONS.get(entity.getId()).get(1);
 	}
 	
 	private ModelPart getSmallShieldTransforms(HoveringInfernoEntity entity)
-	{	return SHIELD_ANIMATIONS.get(entity).get(2);
+    {	return SHIELD_ANIMATIONS.get(entity.getId()).get(2);
 	}
 	
 	private ModelPart getDesiredSmallShieldTransforms(HoveringInfernoEntity entity)
-	{	return SHIELD_ANIMATIONS.get(entity).get(3);
+    {	return SHIELD_ANIMATIONS.get(entity.getId()).get(3);
 	}
 
 	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha)
-	{	head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		shieldSpin1.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		smallShieldSpin1.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		shieldSpin2.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		smallShieldSpin2.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		shieldSpin3.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		smallShieldSpin3.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		shieldSpin4.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		smallShieldSpin4.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int packedColor)
+	{	head.render(poseStack, vertexConsumer, packedLight, packedOverlay, packedColor);
+		body.render(poseStack, vertexConsumer, packedLight, packedOverlay, packedColor);
+		shieldSpin1.render(poseStack, vertexConsumer, packedLight, packedOverlay, packedColor);
+		smallShieldSpin1.render(poseStack, vertexConsumer, packedLight, packedOverlay, packedColor);
+		shieldSpin2.render(poseStack, vertexConsumer, packedLight, packedOverlay, packedColor);
+		smallShieldSpin2.render(poseStack, vertexConsumer, packedLight, packedOverlay, packedColor);
+		shieldSpin3.render(poseStack, vertexConsumer, packedLight, packedOverlay, packedColor);
+		smallShieldSpin3.render(poseStack, vertexConsumer, packedLight, packedOverlay, packedColor);
+		shieldSpin4.render(poseStack, vertexConsumer, packedLight, packedOverlay, packedColor);
+		smallShieldSpin4.render(poseStack, vertexConsumer, packedLight, packedOverlay, packedColor);
 	}
 }

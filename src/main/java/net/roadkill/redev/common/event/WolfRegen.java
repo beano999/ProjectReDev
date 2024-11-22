@@ -2,22 +2,23 @@ package net.roadkill.redev.common.event;
 
 import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.level.GameRules;
-import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import net.roadkill.redev.core.network.message.SyncGameRulesMessage;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class WolfRegen
 {
     @SubscribeEvent
-    public static void onWolfUpdateTick(LivingEvent.LivingTickEvent event)
+    public static void onWolfUpdateTick(EntityTickEvent.Pre event)
     {
         if (event.getEntity() instanceof Wolf wolf)
         {
-            if (wolf.getHealth() < wolf.getMaxHealth()
-            && wolf.level.getGameRules().getRule(GameRules.RULE_NATURAL_REGENERATION).get()
-            && wolf.tickCount % 20 == 0)
-            {   wolf.heal(1.0f);
+            if (wolf.getHealth() < wolf.getMaxHealth() && wolf.tickCount % 20 == 0
+            && SyncGameRulesMessage.getBoolean(GameRules.RULE_NATURAL_REGENERATION))
+            {
+                wolf.heal(1.0f);
             }
         }
     }

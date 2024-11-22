@@ -2,8 +2,7 @@ package net.roadkill.redev.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.level.GameRules;
-import net.minecraftforge.network.PacketDistributor;
-import net.roadkill.redev.core.network.ReDevPacketHandler;
+import net.neoforged.neoforge.network.PacketDistributor;
 import net.roadkill.redev.core.network.message.SyncGameRulesMessage;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -17,7 +16,7 @@ public class MixinGameRuleChange
     public void onChanged(MinecraftServer server, CallbackInfo ci)
     {
         if (server != null)
-        {   ReDevPacketHandler.INSTANCE.send(PacketDistributor.ALL.noArg(), new SyncGameRulesMessage());
+        {   PacketDistributor.sendToAllPlayers(new SyncGameRulesMessage());
         }
     }
 }

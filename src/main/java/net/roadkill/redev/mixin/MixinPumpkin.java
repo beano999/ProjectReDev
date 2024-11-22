@@ -2,6 +2,7 @@ package net.roadkill.redev.mixin;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -32,30 +33,30 @@ import java.util.function.Predicate;
 @Mixin(PumpkinBlock.class)
 public class MixinPumpkin
 {
-    @Inject(method = "use", at = @At(value = "HEAD"), cancellable = true)
-    private void use(BlockState pState, Level level, BlockPos pos, Player player, InteractionHand pHand, BlockHitResult pHit, CallbackInfoReturnable<InteractionResult> returnable)
+    @Inject(method = "useItemOn", at = @At(value = "HEAD"), cancellable = true)
+    private void customCarving(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
+                               InteractionHand hand, BlockHitResult hitResult, CallbackInfoReturnable<InteractionResult> cir)
     {
-        if(player instanceof ServerPlayer)
+        if (player instanceof ServerPlayer && stack.getItem() instanceof ShearsItem)
         {
-            ItemStack itemStack = player.getItemInHand(pHand);
-            if(itemStack.getItem() instanceof ShearsItem)
-            {
-                Direction faceDir = pHit.getDirection();
-                itemStack.hurt(0, level.random, (ServerPlayer) player);
-                player.swing(pHand, true);
-                level.playSound(null, pos, SoundEvents.PUMPKIN_CARVE, SoundSource.BLOCKS);
-                ItemEntity itementity = new ItemEntity(level,
-                                                   pos.getX() + 0.5D + faceDir.getStepX() * 0.65D,
+            Direction facing = hitResult.getDirection();
+
+            stack.hurtAndBreak(0, (ServerLevel) level, player, (item) -> {});
+            player.swing(hand, true);
+            level.playSound(null, pos, SoundEvents.PUMPKIN_CARVE, SoundSource.BLOCKS);
+
+            ItemEntity itementity = new ItemEntity(level,
+                                                   pos.getX() + 0.5D + facing.getStepX() * 0.65D,
                                                    pos.getY() + 0.1D,
-                                                   pos.getZ() + 0.5D + faceDir.getStepZ() * 0.65D,
+                                                   pos.getZ() + 0.5D + facing.getStepZ() * 0.65D,
                                                    new ItemStack(Items.PUMPKIN_SEEDS, 4));
-                itementity.setDeltaMovement(0.05D * (double)faceDir.getStepX() + level.random.nextDouble() * 0.02D, 0.05D, 0.05D * (double)faceDir.getStepZ() + level.random.nextDouble() * 0.02D);
-                level.addFreshEntity(itementity);
-                level.setBlock(pos, BlockInit.CARVED_PUMPKIN.get().defaultBlockState().setValue(ModCarvedPumpkinBlock.FACING, faceDir), 3);
-                returnable.setReturnValue(InteractionResult.SUCCESS);
-            }
+            itementity.setDeltaMovement(0.05D * (double)facing.getStepX() + level.random.nextDouble() * 0.02D, 0.05D, 0.05D * (double)facing.getStepZ() + level.random.nextDouble() * 0.02D);
+            level.addFreshEntity(itementity);
+
+            level.setBlock(pos, BlockInit.CARVED_PUMPKIN.get().defaultBlockState().setValue(ModCarvedPumpkinBlock.FACING, facing), 3);
+
+            cir.setReturnValue(InteractionResult.SUCCESS);
         }
-        returnable.setReturnValue(InteractionResult.FAIL);
     }
 
     @Mixin(CarvedPumpkinBlock.class)

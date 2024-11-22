@@ -5,6 +5,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.levelgen.feature.TwistingVinesFeature;
 import net.roadkill.redev.common.block.ModTwistingVinesPlantBlock;
+import net.roadkill.redev.core.init.BlockInit;
 import net.roadkill.redev.util.registries.ModBlocks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,7 +20,7 @@ public class MixinTwistingVineGen
     private static BlockState onPlace(BlockState state)
     {
         if (state.is(Blocks.TWISTING_VINES_PLANT))
-        {   return copyValues(state, ModBlocks.TWISTING_VINES_PLANT.defaultBlockState().setValue(ModTwistingVinesPlantBlock.HAS_GROWN_TODAY, false));
+        {   return copyValues(state, BlockInit.TWISTING_VINES_PLANT.value().defaultBlockState().setValue(ModTwistingVinesPlantBlock.HAS_GROWN_TODAY, false));
         }
         else return state;
     }

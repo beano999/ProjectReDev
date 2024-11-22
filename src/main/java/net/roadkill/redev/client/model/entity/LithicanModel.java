@@ -3,24 +3,19 @@ package net.roadkill.redev.client.model.entity;
 import net.minecraft.client.model.ZombieModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
-import net.roadkill.redev.common.entity.LithicanEntity;
+import net.roadkill.redev.client.renderer.render_sate.LithicanRenderState;
 
-public class LithicanModel<T extends LithicanEntity> extends ZombieModel<T>
+public class LithicanModel<S extends LithicanRenderState> extends ZombieModel<S>
 {
     public LithicanModel(ModelPart pRoot)
     {   super(pRoot);
     }
 
     @Override
-    public boolean isAggressive(T pEntity)
-    {   return false;
-    }
-
-    @Override
-    public void setupAnim(T pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch)
+    public void setupAnim(S renderState)
     {
-        if (pEntity.isActive())
-        {   super.setupAnim(pEntity, pLimbSwing, pLimbSwingAmount, pAgeInTicks, pNetHeadYaw, pHeadPitch);
+        if (renderState.isActive)
+        {   super.setupAnim(renderState);
             head.z = -1f;
             body.z = 0f;
             leftArm.z = 0f;
@@ -64,11 +59,12 @@ public class LithicanModel<T extends LithicanEntity> extends ZombieModel<T>
     }
 
     @Override
-    protected void setupAttackAnimation(T pLivingEntity, float pAgeInTicks)
+    protected void setupAttackAnimation(S renderState, float pAgeInTicks)
     {
-        if (!(this.attackTime <= 0.0F))
+        float attackTime = renderState.attackTime;
+        if (!(attackTime <= 0.0F))
         {
-            float f = this.attackTime;
+            float f = attackTime;
             this.body.yRot = Mth.sin(Mth.sqrt(f) * ((float)Math.PI * 2F)) * 0.2F;
 
             this.rightArm.z = Mth.sin(this.body.yRot) * 5.0F;
@@ -78,18 +74,18 @@ public class LithicanModel<T extends LithicanEntity> extends ZombieModel<T>
             this.rightArm.yRot += this.body.yRot;
             this.leftArm.yRot += this.body.yRot;
             this.leftArm.xRot += this.body.yRot;
-            f = 1.0F - this.attackTime;
+            f = 1.0F - attackTime;
             f *= f;
             f *= f;
             f = 1.0F - f;
             float f1 = Mth.sin(f * (float)Math.PI);
-            float f2 = Mth.sin(this.attackTime * (float)Math.PI) * -(this.head.xRot - 0.7F) * 0.75F;
+            float f2 = Mth.sin(attackTime * (float)Math.PI) * -(this.head.xRot - 0.7F) * 0.75F;
             rightArm.xRot -= f1 * 1.5F + f2;
             rightArm.yRot += this.body.yRot * 2.0F;
-            rightArm.zRot += Mth.sin(this.attackTime * (float)Math.PI) * -0.6F;
+            rightArm.zRot += Mth.sin(attackTime * (float)Math.PI) * -0.6F;
             leftArm.xRot  -= f1 * 1.5F + f2;
             leftArm.yRot  -= this.body.yRot * 2.0F;
-            leftArm.zRot  -= Mth.sin(this.attackTime * (float)Math.PI) * -0.6F;
+            leftArm.zRot  -= Mth.sin(attackTime * (float)Math.PI) * -0.6F;
         }
     }
 }

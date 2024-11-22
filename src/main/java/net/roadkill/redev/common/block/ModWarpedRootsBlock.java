@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.roadkill.redev.core.init.ItemInit;
 import net.roadkill.redev.util.RDMath;
 import net.roadkill.redev.util.registries.ModItems;
 
@@ -37,40 +38,49 @@ public class ModWarpedRootsBlock extends RootsBlock
 
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
-    {   if (RDMath.withinRange(level.getDayTime(), 12000L, 24000L))
+    {
+        if (RDMath.withinRange(level.getDayTime(), 12000L, 24000L))
         {
             if (state.getValue(HAS_GROWN_TODAY))
-                level.setBlock(pos, state.setValue(HAS_GROWN_TODAY, false), 2);
+            {   level.setBlock(pos, state.setValue(HAS_GROWN_TODAY, false), 2);
+            }
         }
         else if (!state.getValue(HAS_GROWN_TODAY))
-        {   boolean passChance = random.nextInt(40) == 0;
+        {
+            boolean passChance = random.nextInt(40) == 0;
             level.setBlock(pos, state.setValue(HAS_GROWN_TODAY, true).setValue(DRUPEL, passChance), 3);
             if (passChance)
-            {   level.sendParticles(ParticleTypes.REVERSE_PORTAL, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, 20, 0.1D, 0.1D, 0.1D, 1D);
+            {
+                level.sendParticles(ParticleTypes.REVERSE_PORTAL, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, 20, 0.1D, 0.1D, 0.1D, 1D);
                 level.playSound(null, pos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.BLOCKS, 0.5f, 2f);
             }
         }
 
         if (Math.random() < 1/50d && state.getValue(DRUPEL))
-        {   level.setBlock(pos, state.setValue(DRUPEL, false), 3);
+        {
+            level.setBlock(pos, state.setValue(DRUPEL, false), 3);
             level.sendParticles(ParticleTypes.REVERSE_PORTAL, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, 20, 0.1D, 0.1D, 0.1D, 1D);
             level.playSound(null, pos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.BLOCKS, 0.5f, 2f);
         }
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit)
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult)
     {
         if (state.getValue(DRUPEL))
-        {   level.setBlock(pos, state.setValue(DRUPEL, false), 3);
-            ItemEntity itemEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, ModItems.WARPED_DRUPEL.getDefaultInstance());
+        {
+            level.setBlock(pos, state.setValue(DRUPEL, false), 3);
+
+            ItemEntity itemEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, ItemInit.WARPED_DRUPEL.value().getDefaultInstance());
             itemEntity.setDeltaMovement((Math.random() - 0.5) * 0.2, 0.2, (Math.random() - 0.5) * 0.2);
             itemEntity.setPickUpDelay(10);
             level.addFreshEntity(itemEntity);
+
             level.playSound(null, pos, SoundEvents.HANGING_ROOTS_PLACE, SoundSource.BLOCKS, 0.5f, 2f);
+
             return InteractionResult.SUCCESS;
         }
-        return super.use(state, level, pos, player, hand, hit);
+        return super.useWithoutItem(state, level, pos, player, hitResult);
     }
 
     @Override

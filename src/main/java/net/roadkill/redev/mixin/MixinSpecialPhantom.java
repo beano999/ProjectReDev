@@ -46,11 +46,12 @@ public abstract class MixinSpecialPhantom implements SpecialPhantom
     }
 
     @Redirect(method = "aiStep()V",
-              at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/monster/Phantom;setSecondsOnFire(I)V"))
-    public void onPhantomBurn(Phantom phantom, int seconds)
-    {   if (((SpecialPhantom) phantom).getPhantomType() == PhantomType.RED)
+              at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/monster/Phantom;igniteForSeconds(F)V"))
+    public void onPhantomBurn(Phantom phantom, float seconds)
+    {
+        if (((SpecialPhantom) phantom).getPhantomType() == PhantomType.RED)
         {   phantom.clearFire();
         }
-        else phantom.setSecondsOnFire(seconds);
+        else phantom.igniteForSeconds(seconds);
     }
 }

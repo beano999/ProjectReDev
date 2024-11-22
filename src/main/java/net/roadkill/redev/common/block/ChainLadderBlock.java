@@ -2,9 +2,11 @@ package net.roadkill.redev.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LadderBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -25,15 +27,16 @@ public class ChainLadderBlock extends LadderBlock
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction facing, BlockState neighbor, LevelAccessor level, BlockPos pos, BlockPos neighborPos)
+    public BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess tickAccess, BlockPos pos,
+                                  Direction neighborDir, BlockPos neighborPos, BlockState neighborState, RandomSource random)
     {
-        if (facing == Direction.UP && !neighbor.is(this))
+        if (neighborDir == Direction.UP && !neighborState.is(this))
         {   return Blocks.AIR.defaultBlockState();
         }
         else if (state.getValue(WATERLOGGED))
-        {   level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+        {   tickAccess.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
-        return super.updateShape(state, facing, neighbor, level, pos, neighborPos);
+        return super.updateShape(state, level, tickAccess, pos, neighborDir, neighborPos, neighborState, random);
     }
 
     @Nullable

@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "features": "minecraft:ore_emerald",
+  "biomes": "minecraft:windswept_savanna",
+  "step": "underground_ores"
+}

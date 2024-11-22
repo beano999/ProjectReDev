@@ -1,18 +1,14 @@
 package net.roadkill.redev.common.event;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.components.ChatComponent;
-import net.minecraft.network.chat.Component;
-import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
 
 import java.util.List;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class CycleColorTab
 {
     public static ItemStack COLORED_BLOCKS_ICON = new ItemStack(Items.RED_WOOL);
@@ -29,9 +25,7 @@ public class CycleColorTab
     );
 
     @SubscribeEvent
-    public static void tickBlockColor(TickEvent.ClientTickEvent event)
-    {   if (event.phase == TickEvent.Phase.END)
-        {   COLORED_BLOCKS_ICON = COLORED_BLOCKS.get((int) (System.currentTimeMillis() / 1000) % COLORED_BLOCKS.size());
-        }
+    public static void tickBlockColor(ClientTickEvent.Post event)
+    {   COLORED_BLOCKS_ICON = COLORED_BLOCKS.get((int) (System.currentTimeMillis() / 1000) % COLORED_BLOCKS.size());
     }
 }

@@ -2,15 +2,20 @@ package net.roadkill.redev.core.network.message;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraftforge.network.NetworkEvent;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
+import net.roadkill.redev.ReDev;
 import net.roadkill.redev.core.entity.PhantomType;
 import net.roadkill.redev.core.entity.SpecialPhantom;
 
-import java.util.function.Supplier;
-
-public class PhantomTypeSyncMessage
+public class PhantomTypeSyncMessage implements CustomPacketPayload
 {
+    public static final Type<PhantomTypeSyncMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "phantom_type"));
+    public static final StreamCodec<FriendlyByteBuf, PhantomTypeSyncMessage> CODEC = CustomPacketPayload.codec(PhantomTypeSyncMessage::encode, PhantomTypeSyncMessage::decode);
+
     int entityId;
     PhantomType phantomType;
 
@@ -33,11 +38,9 @@ public class PhantomTypeSyncMessage
     {   return new PhantomTypeSyncMessage(buffer.readInt(), PhantomType.values()[buffer.readInt()]);
     }
 
-    public static void handle(PhantomTypeSyncMessage message, Supplier<NetworkEvent.Context> contextSupplier)
+    public static void handle(PhantomTypeSyncMessage message, IPayloadContext context)
     {
-        NetworkEvent.Context context = contextSupplier.get();
-
-        if (context.getDirection().getReceptionSide().isClient())
+        if (context.flow().getReceptionSide().isClient())
         {
             context.enqueueWork(() ->
             {
@@ -48,7 +51,10 @@ public class PhantomTypeSyncMessage
                 }
             });
         }
+    }
 
-        context.setPacketHandled(true);
+    @Override
+    public Type<? extends CustomPacketPayload> type()
+    {   return TYPE;
     }
 }

@@ -4,20 +4,25 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.SkeletonModel;
 import net.minecraft.client.model.geom.ModelPart;
-import net.roadkill.redev.common.entity.RevenantEntity;
+import net.minecraft.client.renderer.entity.state.SkeletonRenderState;
+import net.minecraft.util.ARGB;
 
-public class RevenantModel<T extends RevenantEntity> extends SkeletonModel<T>
+public class RevenantModel<S extends SkeletonRenderState> extends SkeletonModel<S>
 {
     public RevenantModel(ModelPart root)
     {   super(root);
     }
 
     @Override
-    public void renderToBuffer(PoseStack pPoseStack, VertexConsumer pBuffer, int pPackedLight, int pPackedOverlay, float pRed, float pGreen, float pBlue, float pAlpha)
-    {   super.renderToBuffer(pPoseStack, pBuffer, pPackedLight, pPackedOverlay, pRed, pGreen, pBlue, 0.7f);
+    public void renderToBuffer(PoseStack pPoseStack, VertexConsumer pBuffer, int pPackedLight, int pPackedOverlay, int packedColor)
+    {
+        int transparentColor = ARGB.color(178, packedColor);
+        super.renderToBuffer(pPoseStack, pBuffer, pPackedLight, pPackedOverlay, transparentColor);
     }
 
-    public void renderWithVeins(PoseStack pPoseStack, VertexConsumer pBuffer, int pPackedLight, int pPackedOverlay, float pRed, float pGreen, float pBlue, float pAlpha)
-    {   super.renderToBuffer(pPoseStack, pBuffer, pPackedLight, pPackedOverlay, pRed, pGreen, pBlue, pAlpha);
+    public void renderWithVeins(PoseStack pPoseStack, VertexConsumer pBuffer, int pPackedLight, int pPackedOverlay, int packedColor)
+    {
+        int transparentColor = ARGB.color(230, packedColor);
+        super.renderToBuffer(pPoseStack, pBuffer, pPackedLight, pPackedOverlay, transparentColor);
     }
 }

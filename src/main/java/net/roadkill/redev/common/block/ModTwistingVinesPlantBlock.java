@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.roadkill.redev.core.init.ItemInit;
 import net.roadkill.redev.util.RDMath;
 import net.roadkill.redev.util.registries.ModItems;
 
@@ -67,18 +68,18 @@ public class ModTwistingVinesPlantBlock extends TwistingVinesPlantBlock
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit)
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult)
     {
         if (state.getValue(DRUPEL))
         {   level.setBlock(pos, state.setValue(DRUPEL, false), 3);
-            ItemEntity itemEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, ModItems.WARPED_DRUPEL.getDefaultInstance());
+            ItemEntity itemEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, ItemInit.WARPED_DRUPEL.value().getDefaultInstance());
             itemEntity.setDeltaMovement((Math.random() - 0.5) * 0.2, 0.2, (Math.random() - 0.5) * 0.2);
             itemEntity.setPickUpDelay(10);
             level.addFreshEntity(itemEntity);
             level.playSound(null, pos, SoundEvents.HANGING_ROOTS_PLACE, SoundSource.BLOCKS, 0.5f, 2f);
             return InteractionResult.SUCCESS;
         }
-        return super.use(state, level, pos, player, hand, hit);
+        return super.useWithoutItem(state, level, pos, player, hitResult);
     }
 
     @Override

@@ -4,10 +4,9 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraftforge.network.PacketDistributor;
+import net.neoforged.neoforge.network.PacketDistributor;
 import net.roadkill.redev.common.entity.HoveringInfernoEntity;
-import net.roadkill.redev.core.network.ReDevPacketHandler;
-import net.roadkill.redev.core.network.message.ParticlesMessage;
+import net.roadkill.redev.core.network.message.ParticleBatchMessage;
 
 public class RamTargetGoal extends Goal
 {
@@ -55,27 +54,30 @@ public class RamTargetGoal extends Goal
             LivingEntity target = entity.getTarget();
             entity.setDeltaMovement(target.position().subtract(entity.getEyePosition()).normalize().scale(1.2f));
 
-            for (int i = 0; i < 3; i++)
+            double xSpeed = entity.getRandom().nextGaussian() * 0.1;
+            double ySpeed = entity.getRandom().nextGaussian() * 0.1;
+            double zSpeed = entity.getRandom().nextGaussian() * 0.1;
+
+            ParticleBatchMessage particles = new ParticleBatchMessage();
+            for (int i = 0; i < 5; i++)
             {
-                ReDevPacketHandler.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(() -> entity), new ParticlesMessage(
-                        ParticleTypes.FLAME,
-                        entity.level,
-                        entity.getX(), entity.getY() + entity.getBbHeight() / 2, entity.getZ(),
-                        2, 2, 2,
-                        0, 0, 0, 1));
+                particles.addParticle(ParticleTypes.FLAME, ParticleBatchMessage.ParticlePlacement.of(entity.getX(), entity.getY() + entity.getEyeHeight() / 2, entity.getZ())
+                        .spread(entity.getBbWidth() / 2, entity.getBbHeight() / 2, entity.getBbWidth() / 2)
+                        .velocity(xSpeed, ySpeed, zSpeed));
             }
+            particles.sendEntity(entity);
 
             if (entity.getBoundingBox().intersects(target.getBoundingBox()))
             {
                 target.hurt(entity.damageSources().explosion(entity, entity), 8);
-                target.knockback(target.isOnGround() ? 4 : 1.5, entity.getX() - target.getX(), entity.getZ() - target.getZ());
+                target.knockback(target.onGround() ? 4 : 1.5, entity.getX() - target.getX(), entity.getZ() - target.getZ());
 
-                ReDevPacketHandler.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(() -> entity), new ParticlesMessage(
+                PacketDistributor.sendToPlayersTrackingEntity(entity, new ParticleBatchMessage().addParticle(
                         ParticleTypes.EXPLOSION_EMITTER,
-                        entity.level,
-                        entity.getX(), entity.getY(), entity.getZ(),
-                        0, 0, 0, 0, 0, 0, 1));
-                entity.playSound(SoundEvents.GENERIC_EXPLODE, 1, 1);
+                        entity.getX(), entity.getY() + entity.getBbHeight() / 2, entity.getZ(),
+                        0, 0, 0));
+
+                entity.playSound(SoundEvents.GENERIC_EXPLODE.value(), 1, 1);
 
                 this.stop();
             }

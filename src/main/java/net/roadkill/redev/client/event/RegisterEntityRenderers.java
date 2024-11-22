@@ -1,13 +1,13 @@
 package net.roadkill.redev.client.event;
 
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.roadkill.redev.client.model.entity.HoveringInfernoModel;
 import net.roadkill.redev.client.renderer.entity.*;
 import net.roadkill.redev.core.init.EntityInit;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class RegisterEntityRenderers
 {
     @SubscribeEvent

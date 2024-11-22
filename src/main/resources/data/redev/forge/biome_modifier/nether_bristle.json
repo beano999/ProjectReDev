@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "features": "redev:nether_bristle",
-  "biomes": "#redev:has_nether_bristle",
-  "step": "vegetal_decoration"
-}

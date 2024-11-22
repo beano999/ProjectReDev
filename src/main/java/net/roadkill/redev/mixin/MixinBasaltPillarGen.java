@@ -5,6 +5,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.BasaltPillarFeature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import net.roadkill.redev.core.init.BlockInit;
 import net.roadkill.redev.util.registries.ModBlocks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -27,7 +28,7 @@ public class MixinBasaltPillarGen
                     for (int z = -1; z <= 1; z++)
                     {   pos.setWithOffset(pContext.origin(), x, y, z);
                         if (pContext.level().getRandom().nextInt(40) < 5 && pContext.level().getBlockState(pos).is(Blocks.BASALT))
-                        {   pContext.level().setBlock(pos, ModBlocks.BASALT_DIAMOND_ORE.defaultBlockState(), 2);
+                        {   pContext.level().setBlock(pos, BlockInit.BASALT_DIAMOND_ORE.value().defaultBlockState(), 2);
                         }
                     }
                 }

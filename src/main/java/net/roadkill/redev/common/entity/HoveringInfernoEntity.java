@@ -3,13 +3,12 @@ package net.roadkill.redev.common.entity;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Blaze;
@@ -53,10 +52,11 @@ public class HoveringInfernoEntity extends Blaze
     }
 
     @Override
-    protected void defineSynchedData()
-    {   super.defineSynchedData();
-        this.entityData.define(SHIELD_ROTATION_SPEED, 0f);
-        this.entityData.define(ATTACK_PHASE, 0);
+    protected void defineSynchedData(SynchedEntityData.Builder builder)
+    {
+        super.defineSynchedData(builder);
+        builder.define(SHIELD_ROTATION_SPEED, 0f);
+        builder.define(ATTACK_PHASE, 0);
     }
 
     @Override
@@ -65,7 +65,7 @@ public class HoveringInfernoEntity extends Blaze
         super.tick();
         this.attackCooldown = Math.max(0, this.attackCooldown - 1);
         // move to a random location when hovering
-        if (!this.isOnGround() && this.getRandom().nextInt(20) == 0 && this.getTarget() != null)
+        if (!this.onGround() && this.getRandom().nextInt(20) == 0 && this.getTarget() != null)
         {
             Vec3 movement = new Vec3(RDMath.randomDouble(this.getRandom(), -1, 1),
                                      0,
@@ -89,7 +89,7 @@ public class HoveringInfernoEntity extends Blaze
     }
 
     @Override
-    protected void customServerAiStep()
+    protected void customServerAiStep(ServerLevel level)
     {
         --this.nextHeightOffsetChangeTick;
         if (this.nextHeightOffsetChangeTick <= 0)
@@ -108,20 +108,20 @@ public class HoveringInfernoEntity extends Blaze
     }
 
     @Override
-    public boolean hurt(DamageSource source, float amount)
+    public boolean hurtServer(ServerLevel level, DamageSource source, float amount)
     {
         if (this.isDamageBlocked(source))
         {   this.playSound(SoundEvents.ZOMBIE_ATTACK_IRON_DOOR, 1.0F, RDMath.randomFloat(this.getRandom(), 0.7f, 1f));
             return false;
         }
-        return super.hurt(source, amount);
+        return super.hurtServer(level, source, amount);
     }
 
     @Override
-    public void handleDamageEvent(DamageSource pDamageSource)
+    public void handleDamageEvent(DamageSource source)
     {   this.shieldRotationSpeed = 10f;
         this.hurtAnimation = true;
-        super.handleDamageEvent(pDamageSource);
+        super.handleDamageEvent(source);
     }
 
     public boolean isDamageBlocked(DamageSource source)
@@ -129,13 +129,13 @@ public class HoveringInfernoEntity extends Blaze
     }
 
     @Override
-    public boolean isInvulnerableTo(DamageSource source)
-    {   return this.isDamageBlocked(source) || source.is(DamageTypeTags.IS_FIRE) || super.isInvulnerableTo(source);
+    public boolean isInvulnerableTo(ServerLevel level, DamageSource source)
+    {   return this.isDamageBlocked(source) || source.is(DamageTypeTags.IS_FIRE) || super.isInvulnerableTo(level, source);
     }
 
     @Override
-    protected float getStandingEyeHeight(Pose pPose, EntityDimensions pDimensions)
-    {   return 2.49f;
+    public double getEyeY()
+    {   return this.getY() + 2.49f;
     }
 
     @Override
@@ -177,7 +177,8 @@ public class HoveringInfernoEntity extends Blaze
     }
 
     public void setAttackPhase(AttackPhase phase)
-    {   this.entityData.set(ATTACK_PHASE, phase.ordinal());
+    {
+        this.entityData.set(ATTACK_PHASE, phase.ordinal());
         switch (phase)
         {
             case BLOCKING -> this.setShieldRotationSpeed(0.5f);

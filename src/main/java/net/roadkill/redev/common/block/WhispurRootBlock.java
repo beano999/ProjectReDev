@@ -1,5 +1,6 @@
 package net.roadkill.redev.common.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -8,6 +9,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.PipeBlock;
@@ -26,6 +28,8 @@ public class WhispurRootBlock extends PipeBlock
 {
     public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 1, 17);
     public static final BooleanProperty GROWING = BooleanProperty.create("growing");
+
+    public static final MapCodec<WhispurRootBlock> CODEC = simpleCodec(WhispurRootBlock::new);
 
     public WhispurRootBlock(BlockBehaviour.Properties properties)
     {   super(0.3125F, properties);
@@ -132,14 +136,16 @@ public class WhispurRootBlock extends PipeBlock
     {   return isDirectSupport(state) || state.is(BlockInit.WHISPUR_ROOT.get());
     }
 
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos)
+    @Override
+    protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess tickAccess, BlockPos pos,
+                                     Direction neighborDir, BlockPos neighborPos, BlockState neighborState, RandomSource random)
     {
         if (!state.canSurvive(level, pos))
-        {   level.scheduleTick(pos, this, 1);
-            return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+        {   tickAccess.scheduleTick(pos, this, 1);
+            return super.updateShape(state, level, tickAccess, pos, neighborDir, neighborPos, neighborState, random);
         }
         else
-        {   return state.setValue(PROPERTY_BY_DIRECTION.get(direction), isSupportingBlock(neighborState));
+        {   return state.setValue(PROPERTY_BY_DIRECTION.get(neighborDir), isSupportingBlock(neighborState));
         }
     }
 
@@ -161,5 +167,10 @@ public class WhispurRootBlock extends PipeBlock
 
     public boolean isPathfindable(BlockState state, BlockGetter level, BlockPos pos, PathComputationType pathType)
     {   return false;
+    }
+
+    @Override
+    protected MapCodec<? extends PipeBlock> codec()
+    {   return CODEC;
     }
 }

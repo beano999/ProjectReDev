@@ -1,5 +1,6 @@
 package net.roadkill.redev.mixin;
 
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -12,17 +13,18 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.List;
+import java.util.stream.StreamSupport;
 
 @Mixin(ThrownPotion.class)
 public class MixinSplashPotion
 {
-    @Inject(method = "applySplash(Ljava/util/List;Lnet/minecraft/world/entity/Entity;)V",
+    @Inject(method = "applySplash",
             at = @At(value = "HEAD"), cancellable = true)
-    private void applySplash(List<MobEffectInstance> effects, Entity entity, CallbackInfo info)
+    private void applySplash(ServerLevel level, Iterable<MobEffectInstance> effects, Entity entity, CallbackInfo ci)
     {
-        if (entity instanceof ItemFrame itemFrame && effects.stream().anyMatch(effect -> effect.getEffect().equals(MobEffects.INVISIBILITY)))
+        if (entity instanceof ItemFrame itemFrame && StreamSupport.stream(effects.spliterator(), true).anyMatch(effect -> effect.getEffect().equals(MobEffects.INVISIBILITY)))
         {   itemFrame.setInvisible(true);
-            info.cancel();
+            ci.cancel();
         }
     }
 }

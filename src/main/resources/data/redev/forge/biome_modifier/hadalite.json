@@ -1,7 +1,0 @@
- {
-  "type": "forge:add_features",
-  "features": "redev:hadalite",
-  "biomes": "#minecraft:is_nether",
-  "step": "underground_decoration"
-
-}

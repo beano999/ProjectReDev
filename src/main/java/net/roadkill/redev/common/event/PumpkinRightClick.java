@@ -13,13 +13,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CarvedPumpkinBlock;
 import net.minecraft.world.level.block.PumpkinBlock;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.roadkill.redev.common.block.ModCarvedPumpkinBlock;
 import net.roadkill.redev.core.init.BlockInit;
 
-@Mod.EventBusSubscriber
+//@EventBusSubscriber
 public class PumpkinRightClick
 {
 //    @SubscribeEvent

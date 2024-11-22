@@ -1,40 +1,75 @@
 package net.roadkill.redev.common.event;
 
 import net.minecraft.commands.arguments.EntityAnchorArgument;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.entity.living.ShieldBlockEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.ProjectileImpactEvent;
+import net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent;
+import net.roadkill.redev.core.init.ItemInit;
 import net.roadkill.redev.util.registries.ModItems;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class ShieldBlock
 {
     @SubscribeEvent
-    public static void blockDamage(ShieldBlockEvent event)
+    public static void cancelProjectileHit(ProjectileImpactEvent event)
     {
+        if (!(event.getRayTraceResult() instanceof EntityHitResult entityHit)) return;
+        if (!(entityHit.getEntity() instanceof LivingEntity entity)) return;
+        if (entity.isUsingItem() && entity.getUseItem().is(ItemInit.INFERNAL_PLATE)
+        && entity.isDamageSourceBlocked(entity.damageSources().mobProjectile(event.getProjectile(), null)))
+        {   //event.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent
+    public static void blockDamage(LivingShieldBlockEvent event)
+    {
+        if (!event.getOriginalBlock()) return;
+
         LivingEntity entity = event.getEntity();
-        if(entity.getUseItem().is(Items.SHIELD))
-        {
-            event.setBlockedDamage(event.getBlockedDamage() / 2);
+
+        // Halve damage blocked by Vanilla shield
+        if (entity.getUseItem().is(Items.SHIELD))
+        {   event.setBlockedDamage(event.getBlockedDamage() / 2);
         }
-        if(!entity.getUseItem().is(ModItems.INFERNO_PLATE))
-        {
-            return;
+        // The rest of the logic is for the Inferno Plate
+        if (!entity.getUseItem().is(ItemInit.INFERNAL_PLATE))
+        {   return;
         }
-        if(entity.getUseItem().is(ModItems.INFERNO_PLATE) && (event.getDamageSource().is(DamageTypes.MOB_ATTACK) || event.getDamageSource().is(DamageTypes.PLAYER_ATTACK)))
-        {
-            event.setBlockedDamage(event.getBlockedDamage() / 2);
+        // Protection from direct attacks is halved again
+        if (event.getDamageSource().is(DamageTypes.MOB_ATTACK) || event.getDamageSource().is(DamageTypes.PLAYER_ATTACK))
+        {   event.setBlockedDamage(event.getBlockedDamage() / 2);
+        }
+        // The rest of the logic is for reflecting projectiles
+        if (!(event.getDamageSource().getDirectEntity() instanceof Projectile projectile) || event.getDamageSource().getEntity() == null)
+        {   return;
         }
 
-        if (!(event.getDamageSource().getDirectEntity() instanceof Projectile projectile) || event.getDamageSource().getEntity() == null) {return;}
+        // spawn flame particles in front of the player
+        if (entity.level() instanceof ServerLevel level)
+        for (int i = 0; i < 10; i++)
+        {
+            Vec3 pos = entity.getEyePosition(1.0f);
+            Vec3 dir = new Vec3(entity.getViewVector(1.0f).x, 0, entity.getViewVector(1.0f).z);
+            Vec3 offset = dir.scale(0.5).add(0, -0.5, 0);
+            Vec3 target = pos.add(dir.scale(2.0)).add(offset);
+            level.sendParticles(ParticleTypes.FLAME, target.x, target.y, target.z, 1, 0.2, 0.2, 0.2, 0.05);
+        }
 
         Entity shooter = event.getDamageSource().getEntity();
 
@@ -54,16 +89,17 @@ public class ShieldBlock
                                .scale(projectile.getDeltaMovement().length());
 
         // Copy the entity to circumvent weird delta movement behavior
-        Entity copy = projectile.getType().create(projectile.level);
-        copy.deserializeNBT(projectile.serializeNBT());
+        CompoundTag projectileData = new CompoundTag();
+        projectile.save(projectileData);
+        Entity copy = EntityType.create(projectileData, projectile.level(), EntitySpawnReason.EVENT).orElse(null);
+        if (copy == null) return;
+        // Remove old projectile
         projectile.remove(Entity.RemovalReason.DISCARDED);
 
         // Reflect slow, non-gravity projectiles like wither skulls and fireballs
         if (copy instanceof AbstractHurtingProjectile noGravityProjectile)
         {   Vec3 motion = reflectedMotion.normalize().scale(0.95);
-            noGravityProjectile.xPower = motion.x;
-            noGravityProjectile.yPower = motion.y;
-            noGravityProjectile.zPower = motion.z;
+            noGravityProjectile.setDeltaMovement(motion);
         }
         // Reflect arrows, accounting for gravity
         else if (copy instanceof AbstractArrow && !copy.isNoGravity())
@@ -74,6 +110,6 @@ public class ShieldBlock
         projectile.setOwner(event.getEntity());
         copy.lookAt(EntityAnchorArgument.Anchor.FEET, predictedShooterPosition);
         copy.setDeltaMovement(reflectedMotion);
-        shooter.level.addFreshEntity(copy);
+        shooter.level().addFreshEntity(copy);
     }
 }

@@ -5,13 +5,17 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.SaplingBlock;
-import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
+import net.roadkill.redev.common.world.tree.ShadeTree;
+import net.roadkill.redev.core.init.BlockInit;
 
 public class ShadeSaplingBlock extends SaplingBlock
 {
-    public ShadeSaplingBlock(AbstractTreeGrower tree, Properties properties)
-    {   super(tree, properties);
+    private final ShadeTree.Color color;
+
+    public ShadeSaplingBlock(ShadeTree.Color color, Properties properties)
+    {   super(BlockInit.SHADE_TREE_GROWER, properties);
+        this.color = color;
     }
 
     @Override
@@ -22,5 +26,9 @@ public class ShadeSaplingBlock extends SaplingBlock
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos)
     {   return mayPlaceOn(level.getBlockState(pos.below()), level, pos);
+    }
+
+    public ShadeTree.Color getColor()
+    {   return this.color;
     }
 }

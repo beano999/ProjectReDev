@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "features": "redev:ore_nether_diamond",
+  "biomes": "#minecraft:is_nether",
+  "step": "underground_ores"
+}

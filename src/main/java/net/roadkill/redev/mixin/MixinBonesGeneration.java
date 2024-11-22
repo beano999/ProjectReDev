@@ -13,6 +13,7 @@ import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.structures.NetherFossilPieces;
 import net.roadkill.redev.ReDev;
 import net.roadkill.redev.common.block.WhispurRootBlock;
+import net.roadkill.redev.core.init.BlockInit;
 import net.roadkill.redev.util.registries.ModBlocks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -49,9 +50,10 @@ public class MixinBonesGeneration
                                 Direction finalDir = direction = rand.nextInt(2) == 0 ? possibleDirs.get(rand.nextInt(0, possibleDirs.size())) : Direction.UP;
                                 BlockPos newPos = blockPos.relative(direction);
 
-                                if (level.getBlockState(newPos).isAir() && Direction.stream().noneMatch(dir -> dir != finalDir.getOpposite() && level.getBlockState(newPos.relative(dir)).is(ModBlocks.WHISPUR_ROOT)))
+                                if (level.getBlockState(newPos).isAir()
+                                && Direction.stream().noneMatch(dir -> dir != finalDir.getOpposite() && level.getBlockState(newPos.relative(dir)).is(BlockInit.WHISPUR_ROOT)))
                                 {
-                                    BlockState state = ModBlocks.WHISPUR_ROOT.defaultBlockState()
+                                    BlockState state = BlockInit.WHISPUR_ROOT.value().defaultBlockState()
                                             .setValue(WhispurRootBlock.DISTANCE, i+1).setValue(WhispurRootBlock.GROWING, false)
                                             .setValue(WhispurRootBlock.NORTH, WhispurRootBlock.isSupportingBlock(level.getBlockState(blockPos.north())))
                                             .setValue(WhispurRootBlock.EAST, WhispurRootBlock.isSupportingBlock(level.getBlockState(blockPos.east())))
@@ -59,6 +61,7 @@ public class MixinBonesGeneration
                                             .setValue(WhispurRootBlock.WEST, WhispurRootBlock.isSupportingBlock(level.getBlockState(blockPos.west())))
                                             .setValue(WhispurRootBlock.UP, WhispurRootBlock.isSupportingBlock(level.getBlockState(blockPos.above())))
                                             .setValue(WhispurRootBlock.DOWN, WhispurRootBlock.isSupportingBlock(level.getBlockState(blockPos.below())));
+
                                     level.setBlock(blockPos, state, 3);
                                     state.updateNeighbourShapes(level, blockPos, 3);
                                     break;

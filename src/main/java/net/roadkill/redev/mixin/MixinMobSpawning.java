@@ -5,9 +5,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.random.WeightedRandomList;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.NaturalSpawner;
 import net.minecraft.world.level.StructureManager;
@@ -67,7 +67,7 @@ public class MixinMobSpawning
         if (distance > (double)(mob.getType().getCategory().getDespawnDistance() * mob.getType().getCategory().getDespawnDistance()) && mob.removeWhenFarAway(distance))
         {   cir.setReturnValue(false);
         }
-        if (!(mob.checkSpawnRules(level, MobSpawnType.NATURAL) && mob.checkSpawnObstruction(level))) cir.setReturnValue(false);
+        if (!(mob.checkSpawnRules(level, EntitySpawnReason.NATURAL) && mob.checkSpawnObstruction(level))) cir.setReturnValue(false);
 
         MutableBoolean canSpawnInStructure = new MutableBoolean(false);
         for (Map.Entry<Structure, LongSet> entry : level.structureManager().getAllStructuresAt(mob.blockPosition()).entrySet())

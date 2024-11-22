@@ -8,22 +8,22 @@ import net.minecraft.client.renderer.ItemInHandRenderer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.item.SwordItem;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RenderHandEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
-import net.roadkill.redev.mixin_interfaces.OldCombatPlayer;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.util.ObfuscationReflectionHelper;
+import net.neoforged.neoforge.client.event.RenderHandEvent;
+import net.roadkill.redev.mixin_interfaces.IOldCombat;
 
 import java.lang.reflect.Field;
 
-@Mod.EventBusSubscriber(Dist.CLIENT)
+@EventBusSubscriber(Dist.CLIENT)
 public class SwordBlockAnimation
 {
-    static final Field MAIN_HAND_HEIGHT = ObfuscationReflectionHelper.findField(ItemInHandRenderer.class, "f_109302_");
-    static final Field O_MAIN_HAND_HEIGHT = ObfuscationReflectionHelper.findField(ItemInHandRenderer.class, "f_109303_");
-    static final Field OFF_HAND_HEIGHT = ObfuscationReflectionHelper.findField(ItemInHandRenderer.class, "f_109304_");
-    static final Field O_OFF_HAND_HEIGHT = ObfuscationReflectionHelper.findField(ItemInHandRenderer.class, "f_109305_");
+    static final Field MAIN_HAND_HEIGHT = ObfuscationReflectionHelper.findField(ItemInHandRenderer.class, "mainHandHeight");
+    static final Field O_MAIN_HAND_HEIGHT = ObfuscationReflectionHelper.findField(ItemInHandRenderer.class, "oMainHandHeight");
+    static final Field OFF_HAND_HEIGHT = ObfuscationReflectionHelper.findField(ItemInHandRenderer.class, "offHandHeight");
+    static final Field O_OFF_HAND_HEIGHT = ObfuscationReflectionHelper.findField(ItemInHandRenderer.class, "oOffHandHeight");
 
     public static boolean IS_MAIN_BLOCKING = false;
     public static boolean IS_OFF_BLOCKING = false;
@@ -34,7 +34,7 @@ public class SwordBlockAnimation
         AbstractClientPlayer player = Minecraft.getInstance().player;
         if (player != null
         && event.getItemStack().getItem() instanceof SwordItem
-        && ((OldCombatPlayer) player).isSwordBlocking())
+        && ((IOldCombat) player).isSwordBlocking())
         {
             PoseStack ps = event.getPoseStack();
             boolean isMainHand = (event.getHand() == InteractionHand.MAIN_HAND);

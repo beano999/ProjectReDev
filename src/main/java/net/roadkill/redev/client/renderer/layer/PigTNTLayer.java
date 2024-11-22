@@ -9,51 +9,58 @@ import net.minecraft.client.renderer.block.BlockRenderDispatcher;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.TntMinecartRenderer;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.level.block.Blocks;
 import net.roadkill.redev.mixin_interfaces.IPig;
 
-public class PigTNTLayer<T extends Entity, M extends EntityModel<T>> extends RenderLayer<T, M>
+public class PigTNTLayer<T extends Entity, S extends LivingEntityRenderState, M extends EntityModel<S>> extends RenderLayer<S, M>
 {
-    public PigTNTLayer(RenderLayerParent<T, M> pRenderer)
-    {
-        super(pRenderer);
+    public PigTNTLayer(RenderLayerParent<S, M> renderer)
+    {   super(renderer);
     }
 
-    public void render(PoseStack pMatrixStack, MultiBufferSource pBuffer, int pPackedLight, T pLivingEntity, float pLimbSwing, float pLimbSwingAmount, float pPartialTicks, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
-        if (pLivingEntity instanceof Pig)
+    @Override
+    public void render(PoseStack ps, MultiBufferSource buffer, int packedLight, S renderState, float p_117353_, float p_117354_)
+    {
+        float partialTick = renderState.partialTick;
+        if (renderState instanceof IPig pigData)
         {
-            IPig pigTNT = ((IPig) pLivingEntity);
-            int fuse = pigTNT.getFuse();
+            int fuse = pigData.getFuse();
             if (fuse == -1)
             {   fuse = 85;
             }
-            if (pigTNT.hasTNT())
+            if (pigData.hasTNT())
             {
-                if ((float) fuse - pPartialTicks + 1.0F < 10.0F)
-                {   float f = 1.0F - ((float)fuse - pPartialTicks + 1.0F) / 10.0F;
+                // Exploding animation
+                if ((float) fuse - partialTick + 1.0F < 10.0F)
+                {
+                    float f = 1.0F - ((float)fuse - partialTick + 1.0F) / 10.0F;
                     f = Mth.clamp(f, 0.0F, 1.0F);
                     f *= f;
                     f *= f;
                     float f1 = 1.0F + f * 0.3F;
-                    pMatrixStack.scale(f1, f1, f1);
+                    ps.scale(f1, f1, f1);
+                    ps.translate(0, -f/4, 0);
                 }
                 BlockRenderDispatcher blockRenderer = Minecraft.getInstance().getBlockRenderer();
-                pMatrixStack.pushPose();
-                pMatrixStack.mulPose(Axis.ZP.rotationDegrees(180));
-                pMatrixStack.translate(-.405F, -1.075F, .05F);
-                pMatrixStack.scale(.4F, .4F, .4F);
-                TntMinecartRenderer.renderWhiteSolidBlock(blockRenderer, Blocks.TNT.defaultBlockState(), pMatrixStack, pBuffer, pPackedLight, fuse / 5 % 2 == 0);
-                pMatrixStack.popPose();
+                // Render left TNT
+                ps.pushPose();
+                ps.mulPose(Axis.ZP.rotationDegrees(180));
+                ps.translate(-0.405F, -1.075F, 0.05F);
+                ps.scale(0.4F, 0.4F, 0.4F);
+                TntMinecartRenderer.renderWhiteSolidBlock(blockRenderer, Blocks.TNT.defaultBlockState(), ps, buffer, packedLight, fuse / 5 % 2 == 0);
+                ps.popPose();
 
-                pMatrixStack.pushPose();
-                pMatrixStack.mulPose(Axis.ZP.rotationDegrees(180));
-                pMatrixStack.translate(0F, -1.075F, .05F);
-                pMatrixStack.scale(.4F, .4F, .4F);
-                TntMinecartRenderer.renderWhiteSolidBlock(blockRenderer, Blocks.TNT.defaultBlockState(), pMatrixStack, pBuffer, pPackedLight, fuse / 5 % 2 == 0);
-                pMatrixStack.popPose();
+                // Render right TNT
+                ps.pushPose();
+                ps.mulPose(Axis.ZP.rotationDegrees(180));
+                ps.translate(0F, -1.075F, 0.05F);
+                ps.scale(0.4F, 0.4F, 0.4F);
+                TntMinecartRenderer.renderWhiteSolidBlock(blockRenderer, Blocks.TNT.defaultBlockState(), ps, buffer, packedLight, fuse / 5 % 2 == 0);
+                ps.popPose();
             }
         }
     }

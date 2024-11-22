@@ -1,11 +1,14 @@
 package net.roadkill.redev.mixin;
 
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
@@ -16,10 +19,10 @@ import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.WrappedGoal;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Equipable;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.Tags;
 import net.roadkill.redev.mixin_interfaces.IPig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -31,21 +34,21 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Set;
 
 @Mixin(Pig.class)
-@Unique
 public abstract class MixinPig extends Mob implements IPig
 {
     private static final EntityDataAccessor<Boolean> HAS_TNT = SynchedEntityData.defineId(Pig.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> FUSE = SynchedEntityData.defineId(Pig.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<ItemStack> HELMET = SynchedEntityData.defineId(Pig.class, EntityDataSerializers.ITEM_STACK);
 
-    protected MixinPig(EntityType<? extends Mob> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
+    protected MixinPig(EntityType<? extends Mob> entityType, Level level)
+    {   super(entityType, level);
     }
 
     @Inject(method = "mobInteract", at = @At("HEAD"), cancellable = true)
     public void mobInteract(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir)
     {
-        if (this.isBaby() || this.getLevel().isClientSide()) return;
+        if (this.isBaby() || this.level().isClientSide()) return;
+
         ItemStack heldItem = player.getItemInHand(hand);
         ItemStack heldItemCopy = heldItem.copy();
 
@@ -58,16 +61,16 @@ public abstract class MixinPig extends Mob implements IPig
             {   heldItem.shrink(1);
             }
             this.playSound(SoundEvents.GRASS_PLACE);
-            cir.setReturnValue(InteractionResult.sidedSuccess(this.getLevel().isClientSide()));
+            cir.setReturnValue(InteractionResult.SUCCESS_SERVER);
         }
         // Light TNT on pig
-        else if (this.hasTNT() && heldItem.getItem() == Items.FLINT_AND_STEEL && player instanceof ServerPlayer)
+        else if (this.hasTNT() && heldItem.is(Tags.Items.TOOLS_IGNITER) && player instanceof ServerPlayer)
         {
             player.swing(hand, true);
             this.setFuse(80);
             this.playSound(SoundEvents.FLINTANDSTEEL_USE);
             this.playSound(SoundEvents.TNT_PRIMED);
-            heldItem.hurtAndBreak(1, player, (user) -> user.broadcastBreakEvent(hand));
+            heldItem.hurtAndBreak(1, (ServerLevel) this.level(), player, (user) -> {});
             Set<WrappedGoal> set = this.goalSelector.getAvailableGoals();
             set.forEach(p ->
             {
@@ -76,19 +79,19 @@ public abstract class MixinPig extends Mob implements IPig
                     p.start();
                 }
             });
-            cir.setReturnValue(InteractionResult.sidedSuccess(this.getLevel().isClientSide()));
+            cir.setReturnValue(InteractionResult.SUCCESS_SERVER);
         }
         // Add/swap helmet on pig
-        else if (LivingEntity.getEquipmentSlotForItem(heldItem) == EquipmentSlot.HEAD && heldItem.getItem() instanceof Equipable helmet)
+        else if (player.getEquipmentSlotForItem(heldItem) == EquipmentSlot.HEAD && heldItem.has(DataComponents.EQUIPPABLE))
         {
             player.getItemInHand(hand).shrink(1);
             if (!this.getHelmet().isEmpty())
             {   player.setItemInHand(hand, this.getHelmet());
             }
             this.setHelmet(heldItemCopy);
-            this.playSound(helmet.getEquipSound());
+            this.playSound(heldItem.get(DataComponents.EQUIPPABLE).equipSound().value());
             player.swing(hand, true);
-            cir.setReturnValue(InteractionResult.sidedSuccess(this.getLevel().isClientSide()));
+            cir.setReturnValue(InteractionResult.SUCCESS_SERVER);
         }
     }
 
@@ -97,7 +100,9 @@ public abstract class MixinPig extends Mob implements IPig
     {
         pCompound.putBoolean("HasTnt", this.hasTNT());
         pCompound.putInt("TntFuse", this.getFuse());
-        pCompound.put("HelmetItem", this.getHelmet().serializeNBT());
+        if (!this.getHelmet().isEmpty())
+        {   pCompound.put("HelmetItem", this.getHelmet().save(this.registryAccess()));
+        }
     }
 
     @Inject(method = "readAdditionalSaveData", at = @At("TAIL"))
@@ -107,17 +112,18 @@ public abstract class MixinPig extends Mob implements IPig
         {   this.setFuse(pCompound.getInt("TntFuse"));
         }
         this.setHasTNT(pCompound.getBoolean("HasTnt"));
-        ItemStack itemStack = ItemStack.of(pCompound.getCompound("HelmetItem"));
-        if (LivingEntity.getEquipmentSlotForItem(itemStack) == EquipmentSlot.HEAD)
+        ItemStack itemStack = ItemStack.parseOptional(this.registryAccess(), pCompound.getCompound("HelmetItem"));
+        if (this.getEquipmentSlotForItem(itemStack) == EquipmentSlot.HEAD)
         {   this.setHelmet(itemStack);
         }
     }
 
     @Inject(method = "defineSynchedData", at = @At("TAIL"))
-    public void addData(CallbackInfo info)
-    {   this.getEntityData().define(HAS_TNT, false);
-        this.getEntityData().define(FUSE, -1);
-        this.getEntityData().define(HELMET, ItemStack.EMPTY);
+    public void addData(SynchedEntityData.Builder builder, CallbackInfo info)
+    {
+        builder.define(HAS_TNT, false);
+        builder.define(FUSE, -1);
+        builder.define(HELMET, ItemStack.EMPTY);
     }
 
     public boolean hasTNT()

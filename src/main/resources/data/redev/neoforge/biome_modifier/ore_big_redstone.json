@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "features": "redev:ore_big_redstone",
+  "biomes": "#minecraft:is_savanna",
+  "step": "underground_ores"
+}

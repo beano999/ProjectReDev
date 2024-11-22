@@ -1,7 +1,7 @@
 {
   "type": "minecraft:jigsaw",
   "biomes": "#minecraft:has_structure/stronghold",
-  "step": "underground_decoration",
+  "step": "surface_structures",
   "terrain_adaptation": "bury",
   "spawn_overrides":
   {

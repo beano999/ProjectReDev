@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "redev:charred_bone",
+    "redev:withered_ingot",
+    "redev:withered_block",
+    "redev:withered_sword",
+    "redev:withered_axe",
+    "redev:withered_pickaxe",
+    "redev:withered_shovel",
+    "redev:withered_hoe",
+    "redev:withered_helmet",
+    "redev:withered_chestplate",
+    "redev:withered_leggings",
+    "redev:withered_boots"
+  ]
+}

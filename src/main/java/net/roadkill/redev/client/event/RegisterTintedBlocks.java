@@ -2,16 +2,16 @@ package net.roadkill.redev.client.event;
 
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.level.FoliageColor;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.RegisterColorHandlersEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.roadkill.redev.util.registries.ModBlocks;
-import net.roadkill.redev.util.registries.ModItems;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.roadkill.redev.core.init.BlockInit;
+import net.roadkill.redev.core.init.ItemInit;
 
 @OnlyIn(Dist.CLIENT)
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class RegisterTintedBlocks
 {
     @SubscribeEvent
@@ -19,20 +19,23 @@ public class RegisterTintedBlocks
     {
         event.register((state, tintGetter, blockPos, tintIndex) -> {
             return tintGetter != null && blockPos != null ? BiomeColors.getAverageFoliageColor(tintGetter, blockPos) : FoliageColor.getDefaultColor();
-        }, ModBlocks.OAK_HEDGE, ModBlocks.JUNGLE_HEDGE, ModBlocks.ACACIA_HEDGE, ModBlocks.DARK_OAK_HEDGE, ModBlocks.JUNGLE_HEDGE,
-           ModBlocks.OAK_HEDGE_WALL, ModBlocks.JUNGLE_HEDGE_WALL, ModBlocks.ACACIA_HEDGE_WALL, ModBlocks.DARK_OAK_HEDGE_WALL, ModBlocks.JUNGLE_HEDGE_WALL);
+        },
+        BlockInit.OAK_HEDGE.value(),      BlockInit.OAK_HEDGE_WALL.value(),
+        BlockInit.JUNGLE_HEDGE.value(),   BlockInit.JUNGLE_HEDGE_WALL.value(),
+        BlockInit.ACACIA_HEDGE.value(),   BlockInit.ACACIA_HEDGE_WALL.value(),
+        BlockInit.DARK_OAK_HEDGE.value(), BlockInit.DARK_OAK_HEDGE_WALL.value());
 
         event.register((state, tintGetter, blockPos, tintIndex) -> {
             return FoliageColor.getMangroveColor();
-        }, ModBlocks.MANGROVE_HEDGE, ModBlocks.MANGROVE_HEDGE_WALL);
+        }, BlockInit.MANGROVE_HEDGE.value(), BlockInit.MANGROVE_HEDGE_WALL.value());
 
         event.register((state, tintGetter, blockPos, tintIndex) -> {
             return FoliageColor.getEvergreenColor();
-        }, ModBlocks.SPRUCE_HEDGE, ModBlocks.SPRUCE_HEDGE_WALL);
+        }, BlockInit.SPRUCE_HEDGE.value(), BlockInit.SPRUCE_HEDGE_WALL.value());
 
         event.register((state, tintGetter, blockPos, tintIndex) -> {
             return FoliageColor.getBirchColor();
-        }, ModBlocks.BIRCH_HEDGE, ModBlocks.BIRCH_HEDGE_WALL);
+        }, BlockInit.BIRCH_HEDGE.value(), BlockInit.BIRCH_HEDGE_WALL.value());
     }
 
     @SubscribeEvent
@@ -40,19 +43,23 @@ public class RegisterTintedBlocks
     {
         event.register((stack, tintIndex) -> {
             return FoliageColor.getDefaultColor();
-        }, ModItems.OAK_HEDGE, ModItems.JUNGLE_HEDGE, ModItems.ACACIA_HEDGE, ModItems.DARK_OAK_HEDGE, ModItems.JUNGLE_HEDGE,
-           ModItems.OAK_HEDGE_WALL, ModItems.JUNGLE_HEDGE_WALL, ModItems.ACACIA_HEDGE_WALL, ModItems.DARK_OAK_HEDGE_WALL, ModItems.JUNGLE_HEDGE_WALL);
+        },
+        ItemInit.OAK_HEDGE.value(),      ItemInit.OAK_HEDGE_WALL.value(),
+        ItemInit.JUNGLE_HEDGE.value(),   ItemInit.JUNGLE_HEDGE_WALL.value(),
+        ItemInit.ACACIA_HEDGE.value(),   ItemInit.ACACIA_HEDGE_WALL.value(),
+        ItemInit.DARK_OAK_HEDGE.value(), ItemInit.DARK_OAK_HEDGE_WALL.value(),
+        ItemInit.JUNGLE_HEDGE.value(),   ItemInit.JUNGLE_HEDGE_WALL.value());
 
         event.register((stack, tintIndex) -> {
             return FoliageColor.getMangroveColor();
-        }, ModItems.MANGROVE_HEDGE, ModItems.MANGROVE_HEDGE_WALL);
+        }, ItemInit.MANGROVE_HEDGE.value(), ItemInit.MANGROVE_HEDGE_WALL.value());
 
         event.register((stack, tintIndex) -> {
             return FoliageColor.getEvergreenColor();
-        }, ModItems.SPRUCE_HEDGE, ModItems.SPRUCE_HEDGE_WALL);
+        }, ItemInit.SPRUCE_HEDGE.value(), ItemInit.SPRUCE_HEDGE_WALL.value());
 
         event.register((stack, tintIndex) -> {
             return FoliageColor.getBirchColor();
-        }, ModItems.BIRCH_HEDGE, ModItems.BIRCH_HEDGE_WALL);
+        }, ItemInit.BIRCH_HEDGE.value(), ItemInit.BIRCH_HEDGE_WALL.value());
     }
 }

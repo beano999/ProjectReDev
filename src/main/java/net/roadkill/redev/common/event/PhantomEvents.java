@@ -10,34 +10,32 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.*;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.decoration.Painting;
 import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.entity.EntityJoinLevelEvent;
-import net.minecraftforge.event.entity.EntityLeaveLevelEvent;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
-import net.minecraftforge.network.PacketDistributor;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.util.ObfuscationReflectionHelper;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.entity.EntityLeaveLevelEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 import net.roadkill.redev.core.entity.PhantomType;
 import net.roadkill.redev.core.entity.SpecialPhantom;
-import net.roadkill.redev.core.network.ReDevPacketHandler;
 import net.roadkill.redev.core.network.message.PhantomTypeSyncMessage;
 
 import java.lang.reflect.Field;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class PhantomEvents
 {
     @SubscribeEvent
-    public static void onPhantomSnowball(LivingHurtEvent event)
+    public static void onPhantomSnowball(LivingIncomingDamageEvent event)
     {
         if (event.getEntity() instanceof Phantom phantom && event.getSource().getDirectEntity() instanceof Snowball)
         {
@@ -49,7 +47,7 @@ public class PhantomEvents
     }
 
     @SubscribeEvent
-    public static void beforePhantomHurt(LivingAttackEvent event)
+    public static void beforePhantomHurt(LivingIncomingDamageEvent event)
     {
         if (event.getEntity() instanceof Phantom phantom && phantom instanceof SpecialPhantom special)
         {
@@ -83,7 +81,7 @@ public class PhantomEvents
     static void poofHollowPhantom(Phantom phantom)
     {
         Vec3 pos = phantom.position();
-        if (phantom.level instanceof ServerLevel serverLevel)
+        if (phantom.level() instanceof ServerLevel serverLevel)
         {   serverLevel.sendParticles(ParticleTypes.SMOKE, pos.x, pos.y, pos.z, 50,
                                       0.35, 0.35, 0.35, 0.05);
             phantom.remove(Entity.RemovalReason.KILLED);
@@ -108,8 +106,7 @@ public class PhantomEvents
     {
         if (event.getTarget() instanceof Phantom phantom && phantom instanceof SpecialPhantom special
         && event.getEntity() instanceof ServerPlayer player)
-        {   ReDevPacketHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> player),
-                                             new PhantomTypeSyncMessage(phantom, special.getPhantomType()));
+        {   PacketDistributor.sendToPlayer(player, new PhantomTypeSyncMessage(phantom, special.getPhantomType()));
         }
     }
 
@@ -122,20 +119,20 @@ public class PhantomEvents
         }
     }
 
-    private static final Field ANCHOR_POINT = ObfuscationReflectionHelper.findField(Phantom.class, "f_33098_");
-    private static final Field MOVE_POINT = ObfuscationReflectionHelper.findField(Phantom.class, "f_33097_");
+    private static final Field ANCHOR_POINT = ObfuscationReflectionHelper.findField(Phantom.class, "anchorPoint");
+    private static final Field MOVE_POINT = ObfuscationReflectionHelper.findField(Phantom.class, "moveTargetPoint");
     static
     {   ANCHOR_POINT.setAccessible(true);
         MOVE_POINT.setAccessible(true);
     }
 
     @SubscribeEvent
-    public static void phantomTick(LivingEvent.LivingTickEvent event)
+    public static void phantomTick(EntityTickEvent.Pre event)
     {
         if (event.getEntity() instanceof Phantom phantom)
         {
             // Spawn ender particles
-            if (phantom.level.isClientSide)
+            if (phantom.level().isClientSide)
             {
                 if (((SpecialPhantom) phantom).getPhantomType() != PhantomType.HOLLOW)
                 {   RandomSource random = phantom.getRandom();
@@ -145,7 +142,7 @@ public class PhantomEvents
                         Vec3 pos = phantom.position().add(random.nextDouble() - 0.5,
                                                           random.nextDouble() - 0.5,
                                                           random.nextDouble() - 0.5);
-                        phantom.level.addParticle(ParticleTypes.REVERSE_PORTAL, true, pos.x, pos.y, pos.z,
+                        phantom.level().addParticle(ParticleTypes.REVERSE_PORTAL, true, pos.x, pos.y, pos.z,
                                                   random.nextDouble() * 0.04 - 0.02, 0.06, random.nextDouble() * 0.04 - 0.02);
                     }
                 }
@@ -153,7 +150,7 @@ public class PhantomEvents
             else
             {
                 if (phantom.isInWater() && ((SpecialPhantom) phantom).getPhantomType() != PhantomType.BLUE)
-                {   phantom.hurt(phantom.level.damageSources().drown(), 2);
+                {   phantom.hurt(phantom.level().damageSources().drown(), 2);
                 }
 
                 if (phantom.horizontalCollision && !phantom.noPhysics)
@@ -164,7 +161,7 @@ public class PhantomEvents
                     {
                         BlockPos anchorPoint = (BlockPos) ANCHOR_POINT.get(phantom);
                         BlockPos pos = phantom.blockPosition();
-                        int levelHeight = phantom.level.getHeight(Heightmap.Types.MOTION_BLOCKING, pos.getX(), pos.getZ()) + 10;
+                        int levelHeight = phantom.level().getHeight(Heightmap.Types.MOTION_BLOCKING, pos.getX(), pos.getZ()) + 10;
 
                         ANCHOR_POINT.set(phantom, new BlockPos(anchorPoint.getX(), levelHeight, anchorPoint.getZ()));
                     }

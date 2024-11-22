@@ -21,6 +21,11 @@ public class DurianThornEntity extends AbstractArrow
     }
 
     @Override
+    protected ItemStack getDefaultPickupItem()
+    {   return ItemStack.EMPTY;
+    }
+
+    @Override
     protected boolean tryPickup(Player player)
     {   return false;
     }
@@ -28,11 +33,10 @@ public class DurianThornEntity extends AbstractArrow
     @Override
     public void onHitBlock(BlockHitResult pResult)
     {   super.onHitBlock(pResult);
-        //this.remove(RemovalReason.DISCARDED);
     }
 
     @Override
     protected SoundEvent getDefaultHitGroundSoundEvent()
-    {   return SoundEvent.createFixedRangeEvent(new ResourceLocation(""), 1);
+    {   return SoundEvent.createFixedRangeEvent(ResourceLocation.parse(""), 1);
     }
 }

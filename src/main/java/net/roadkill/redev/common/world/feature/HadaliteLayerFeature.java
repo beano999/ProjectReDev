@@ -6,6 +6,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import net.roadkill.redev.core.init.BlockInit;
 import net.roadkill.redev.util.registries.ModBlocks;
 
 public class HadaliteLayerFeature extends Feature<NoneFeatureConfiguration>
@@ -27,7 +28,7 @@ public class HadaliteLayerFeature extends Feature<NoneFeatureConfiguration>
                     BlockPos currentPos = new BlockPos(origin.getX() + x, y, origin.getZ() + z);
                     if(y == 0 || pContext.level().getBlockState(currentPos).is(Blocks.BEDROCK))
                     {
-                        pContext.level().setBlock(currentPos, ModBlocks.HADALITE.defaultBlockState(), 2);
+                        pContext.level().setBlock(currentPos, BlockInit.HADALITE.value().defaultBlockState(), 2);
                     }
                 }
             }

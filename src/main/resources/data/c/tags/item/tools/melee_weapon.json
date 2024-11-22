@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values":
+  [
+    "redev:nether_gold_axe",
+    "redev:nether_gold_sword",
+    "redev:withered_axe",
+    "redev:withered_sword"
+  ]
+}

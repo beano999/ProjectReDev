@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.roadkill.redev.ReDev;
+import net.roadkill.redev.core.init.EffectInit;
 import net.roadkill.redev.util.registries.ModEffects;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -22,7 +23,7 @@ public abstract class MixinEntityInvisible
     public void onInvisible(CallbackInfoReturnable<Boolean> cir)
     {
         Player player = Minecraft.getInstance().player;
-        if (player != null && player.hasEffect(ModEffects.SIGHT))
+        if (player != null && player.hasEffect(EffectInit.SIGHT))
         {   cir.setReturnValue(false);
             entity.getPersistentData().putBoolean("PartialInvisible", this.getSharedFlag(5));
         }

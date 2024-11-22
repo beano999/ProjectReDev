@@ -2,18 +2,18 @@ package net.roadkill.redev.common.event;
 
 import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.projectile.SpectralArrow;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.roadkill.redev.data.ModTags;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class SpectralArrowDamage
 {
     @SubscribeEvent
-    public static void onArrowHit(LivingHurtEvent event)
+    public static void onArrowHit(LivingIncomingDamageEvent event)
     {
-        if (event.getSource().isIndirect() && event.getSource().getDirectEntity() instanceof SpectralArrow)
+        if (!event.getSource().isDirect() && event.getSource().getDirectEntity() instanceof SpectralArrow)
         {
             if (event.getEntity().getType().is(ModTags.EntityTypes.GHOSTLY))
             {   event.setAmount(event.getAmount() * 2);

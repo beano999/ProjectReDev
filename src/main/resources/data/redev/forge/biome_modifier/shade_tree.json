@@ -1,6 +1,0 @@
- {
-  "type": "forge:add_features",
-  "features": "redev:shade_tree",
-  "biomes": "minecraft:desert",
-  "step": "surface_structures"
-}

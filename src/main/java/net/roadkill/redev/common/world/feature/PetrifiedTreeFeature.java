@@ -29,8 +29,8 @@ public class PetrifiedTreeFeature extends Feature<NoneFeatureConfiguration>
         if (level.getServer() == null) return false;
         BlockPos.MutableBlockPos pos = placement.origin().mutable();
         int startY = pos.getY();
-        int minHeight = level.getMinBuildHeight();
-        int maxHeight = level.getMaxBuildHeight();
+        int minHeight = level.getMinY();
+        int maxHeight = level.getMaxY();
         for (int i = -10; i < 10; i++)
         {
             pos.setY(startY + i);
@@ -43,7 +43,7 @@ public class PetrifiedTreeFeature extends Feature<NoneFeatureConfiguration>
         if (level.getBlockState(pos.below()).is(Blocks.BASALT) && level.getBlockState(pos.above()).isAir())
         {
             StructureTemplateManager structuretemplatemanager = level.getServer().getStructureManager();
-            Optional<StructureTemplate> treeOpt = structuretemplatemanager.get(new ResourceLocation(ReDev.MOD_ID, "petrified_tree/petrified_tree_" + level.getRandom().nextIntBetweenInclusive(0, 12)));
+            Optional<StructureTemplate> treeOpt = structuretemplatemanager.get(ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "petrified_tree/petrified_tree_" + level.getRandom().nextIntBetweenInclusive(0, 12)));
             treeOpt.ifPresent(tree ->
             {   Vec3i size = tree.getSize();
                 pos.move(0, -level.getRandom().nextInt(1, size.getY() / 2), 0);

@@ -3,6 +3,7 @@ package net.roadkill.redev.mixin;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.decoration.BlockAttachedEntity;
 import net.minecraft.world.entity.decoration.HangingEntity;
 import net.minecraft.world.entity.decoration.Painting;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,12 +12,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(HangingEntity.class)
+@Mixin(BlockAttachedEntity.class)
 public abstract class MixinHangingEntityLoad
 {
-    @Shadow
-    protected Direction direction;
-
     @Shadow
     protected BlockPos pos;
 
@@ -38,9 +36,11 @@ public abstract class MixinHangingEntityLoad
     @Inject(method = "tick", at = @At("HEAD"))
     public void tick(CallbackInfo ci)
     {
-        if (!self.level.isClientSide && self.getPersistentData().getBoolean("LoadError") && self instanceof Painting painting)
-        {   int width = painting.getWidth() / 16;
-            int height = painting.getHeight() / 16;
+        if (!self.level().isClientSide && self.getPersistentData().getBoolean("LoadError") && self instanceof Painting painting)
+        {
+            Direction direction = painting.getDirection();
+            int width = painting.getVariant().value().width() / 16;
+            int height = painting.getVariant().value().height() / 16;
             int x = 0;
             int y = 0;
             int z = 0;

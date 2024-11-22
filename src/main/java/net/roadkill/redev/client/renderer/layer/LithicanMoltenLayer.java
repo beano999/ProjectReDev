@@ -6,24 +6,27 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.util.ARGB;
 import net.roadkill.redev.client.model.entity.LithicanModel;
 import net.roadkill.redev.client.renderer.entity.LithicanRenderer;
-import net.roadkill.redev.common.entity.LithicanEntity;
+import net.roadkill.redev.client.renderer.render_sate.LithicanRenderState;
 import net.roadkill.redev.util.RDMath;
 
-public class LithicanMoltenLayer<T extends LithicanEntity, M extends LithicanModel<T>> extends RenderLayer<T, M>
+public class LithicanMoltenLayer<S extends LithicanRenderState, M extends LithicanModel<S>> extends RenderLayer<S, M>
 {
     private static final RenderType MOLTEN_OVERLAY = RenderType.entityTranslucentEmissive(LithicanRenderer.TEXTURE_HEAT);
 
-    public LithicanMoltenLayer(RenderLayerParent<T, M> parentLayer)
+    public LithicanMoltenLayer(RenderLayerParent<S, M> parentLayer)
     {   super(parentLayer);
     }
 
     @Override
-    public void render(PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, T pLivingEntity,
-                       float pLimbSwing, float pLimbSwingAmount, float pPartialTick, float pAgeInTicks,
-                       float pNetHeadYaw, float pHeadPitch)
+    public void render(PoseStack poseStack, MultiBufferSource buffer, int packedLight, S renderState, float p_117353_, float p_117354_)
     {
-        this.getParentModel().renderToBuffer(pPoseStack, pBuffer.getBuffer(MOLTEN_OVERLAY), pPackedLight, LivingEntityRenderer.getOverlayCoords(pLivingEntity, 0.0F), 1.0F, 1.0F, 1.0F, RDMath.clamp(pLivingEntity.getHeat() / 100f, 0f, 1f));
+        float alpha = (float) RDMath.blend(0f, 1f, renderState.heat, 0, 100);
+
+        this.getParentModel().renderToBuffer(poseStack, buffer.getBuffer(MOLTEN_OVERLAY), packedLight,
+                                             LivingEntityRenderer.getOverlayCoords(renderState, 0.0F),
+                                             ARGB.colorFromFloat(alpha, 1.0F, 1.0F, 1.0F));
     }
 }

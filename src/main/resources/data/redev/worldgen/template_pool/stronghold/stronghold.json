@@ -13,10 +13,40 @@
       }
     },
     {
-      "weight": 50,
+      "weight": 60,
+      "element":
+      {
+        "location": "redev:stronghold/stronghold_corridor_turn_left",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 60,
+      "element":
+      {
+        "location": "redev:stronghold/stronghold_corridor_turn_right",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 20,
       "element":
       {
         "location": "redev:stronghold/stronghold_corridor_chest",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 30,
+      "element":
+      {
+        "location": "redev:stronghold/stronghold_corridor_small_chest",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -133,10 +163,20 @@
       }
     },
     {
-      "weight": 12,
+      "weight": 10,
       "element":
       {
         "location": "redev:stronghold/stronghold_corridor_trap",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element":
+      {
+        "location": "redev:stronghold/stronghold_corridor_no_trap",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

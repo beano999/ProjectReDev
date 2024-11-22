@@ -1,12 +1,17 @@
 package net.roadkill.redev.common.event;
 
+import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.CombatRules;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
@@ -14,122 +19,101 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraft.world.level.ServerExplosion;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.roadkill.redev.mixin_interfaces.IPig;
+import net.roadkill.redev.util.ItemHelper;
 
 import java.util.List;
+import java.util.Optional;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class PigEvents
 {
     @SubscribeEvent
-    public static void tickCounter (LivingEvent.LivingTickEvent event)
+    public static void tickCounter(EntityTickEvent.Pre event)
     {
-        LivingEntity entity = event.getEntity();
-        if(entity instanceof Pig pig && ((IPig) pig).hasTNT())
+        Entity entity = event.getEntity();
+        if (entity instanceof Pig pig && pig instanceof IPig pigData && pigData.hasTNT())
         {
-            IPig pigTNT = ((IPig) pig);
-            if(pigTNT.getFuse() > 0)
+            if (pigData.getFuse() > 0)
             {
-                pigTNT.setFuse(pigTNT.getFuse() - 1);
-                if (entity.getLevel().isClientSide())
+                pigData.setFuse(pigData.getFuse() - 1);
+
+                if (pig.level().isClientSide())
                 {
-                    entity.getLevel().addParticle(ParticleTypes.SMOKE, entity.getX(), entity.getY() + 1, entity.getZ() + -.375, 0.0D, 0.0D, 0.0D);
-                    entity.getLevel().addParticle(ParticleTypes.SMOKE, entity.getX(), entity.getY() + 1, entity.getZ() + .25, 0.0D, 0.0D, 0.0D);
+                    pig.level().addParticle(ParticleTypes.SMOKE, pig.getX(), pig.getY() + 1, pig.getZ() + -.375, 0.0D, 0.0D, 0.0D);
+                    pig.level().addParticle(ParticleTypes.SMOKE, pig.getX(), pig.getY() + 1, pig.getZ() + .25, 0.0D, 0.0D, 0.0D);
                 }
-                boolean hasSpeed = false;
-                for (MobEffectInstance activeEffect : entity.getActiveEffects())
-                {
-                    if(activeEffect.getEffect() == MobEffects.MOVEMENT_SPEED)
-                    {
-                        hasSpeed = true;
-                    }
-                }
-                if(!hasSpeed)
-                {
-                    entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 2, true, false));
-                }
+                pig.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 2, false, false));
             }
-            else if(pigTNT.getFuse() == 0 && !entity.getLevel().isClientSide())
+            else if (pigData.getFuse() == 0 && !pig.level().isClientSide())
             {
-                pig.getLevel().explode(null, pig.getX(), pig.getY(), pig.getZ(), 4F, Level.ExplosionInteraction.TNT);
-                pigTNT.setHasTNT(false);
-                pigTNT.setFuse(-1);
+                pig.level().explode(null, pig.getX(), pig.getY(), pig.getZ(), 4F, Level.ExplosionInteraction.MOB);
+                pigData.setHasTNT(false);
+                pigData.setFuse(-1);
             }
         }
     }
 
     @SubscribeEvent
-    public static void pigChainReaction (LivingDamageEvent event)
+    public static void pigChainReaction(LivingIncomingDamageEvent event)
     {
         LivingEntity entity = event.getEntity();
-        if(!entity.getLevel().isClientSide() && entity instanceof Pig pig)
+        if(!entity.level().isClientSide() && entity instanceof Pig pig && pig instanceof IPig pigData)
         {
-            IPig tnt = ((IPig) pig);
-            if(tnt.hasTNT() && (event.getSource().is(DamageTypes.EXPLOSION) || event.getSource().is(DamageTypes.PLAYER_EXPLOSION)))
+            if (pigData.hasTNT() && (event.getSource().is(DamageTypes.EXPLOSION) || event.getSource().is(DamageTypes.PLAYER_EXPLOSION)))
             {
-                if(entity.getHealth() - event.getAmount() < -4)
-                {
-                    tnt.setFuse(5);
+                if (entity.getHealth() - event.getAmount() < -4)
+                {   pigData.setFuse(5);
                 }
                 else
-                {
-                    event.setAmount(0);
-                    tnt.setFuse(40);
+                {   event.setAmount(0);
+                    pigData.setFuse(40);
                 }
             }
         }
     }
 
     @SubscribeEvent
-    public static void pigArmorDrop (LivingDeathEvent event)
+    public static void pigArmorDrop(LivingDeathEvent event)
     {
-        if(!event.getEntity().getLevel().isClientSide() && event.getEntity() instanceof Pig pig)
+        if (event.getEntity().level() instanceof ServerLevel level && event.getEntity() instanceof Pig pig && pig instanceof IPig pigData)
         {
-            IPig iPig = ((IPig) pig);
-            if(!iPig.getHelmet().isEmpty())
-            {
-                pig.spawnAtLocation(iPig.getHelmet());
+            if (!pigData.getHelmet().isEmpty())
+            {   pig.spawnAtLocation(level, pigData.getHelmet());
             }
         }
     }
     
     @SubscribeEvent
-    public static void pigArmor (LivingHurtEvent event)
+    public static void pigArmor(LivingIncomingDamageEvent event)
     {
-        if (event.getEntity() instanceof Pig pig && !event.getEntity().getLevel().isClientSide())
+        if (event.getEntity() instanceof Pig pig && pig instanceof IPig pigData && !event.getEntity().level().isClientSide())
         {
-            IPig pig1 = ((IPig) pig);
-            ItemStack potentialHelmet = pig1.getHelmet();
-            if(!potentialHelmet.isEmpty() && potentialHelmet.getItem() instanceof ArmorItem armorItem)
+            ItemStack helmet = pigData.getHelmet();
+            if (!helmet.isEmpty() && helmet.getItem() instanceof ArmorItem)
             {
-                float actualDamage = CombatRules.getDamageAfterAbsorb(event.getAmount(), armorItem.getDefense(), armorItem.getToughness());
-                actualDamage = CombatRules.getDamageAfterMagicAbsorb(actualDamage, EnchantmentHelper.getDamageProtection(List.of(potentialHelmet), event.getSource()));
+                double armorDefense = ItemHelper.getAttribute(helmet, Attributes.ARMOR).map(entry -> entry.modifier().amount()).orElse(0d);
+                double armorToughness = ItemHelper.getAttribute(helmet, Attributes.ARMOR_TOUGHNESS).map(entry -> entry.modifier().amount()).orElse(0d);
 
-                if(EnchantmentHelper.getEnchantments(potentialHelmet).entrySet().stream().anyMatch(enchantmentIntegerEntry ->
-                {
-                    Enchantment enchantment = enchantmentIntegerEntry.getKey();
-                    int level = enchantmentIntegerEntry.getValue();
-                    if(enchantment == Enchantments.BLAST_PROTECTION && level >= 4)
-                    {
+                float actualDamage = CombatRules.getDamageAfterAbsorb(pig, event.getAmount(), event.getSource(), (float) armorDefense, (float) armorToughness);
+                actualDamage = CombatRules.getDamageAfterMagicAbsorb(actualDamage, EnchantmentHelper.getDamageProtection((ServerLevel) pig.level(), pig, event.getSource()));
 
-                        return true;
-                    }
-                    return false;
-                }))
+                if (helmet.has(DataComponents.ENCHANTMENTS)
+                && helmet.get(DataComponents.ENCHANTMENTS).entrySet().stream().anyMatch(ench -> ench.getKey() == Enchantments.BLAST_PROTECTION && ench.getIntValue() >= 4))
                 {
                     event.setAmount(Math.min(pig.getMaxHealth() - 1, actualDamage));
                 }
                 else
-                {
-                    event.setAmount(actualDamage);
+                {   event.setAmount(actualDamage);
                 }
-                potentialHelmet.hurtAndBreak(((int) actualDamage), pig, (a) -> a.broadcastBreakEvent(EquipmentSlot.HEAD));
+                helmet.hurtAndBreak(((int) actualDamage), (ServerLevel) pig.level(), pig, (a) -> {});
             }
         }
     }

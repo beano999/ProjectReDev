@@ -6,50 +6,74 @@ import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.AbstractZombieRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.state.ZombieRenderState;
 import net.minecraft.resources.ResourceLocation;
 import net.roadkill.redev.ReDev;
 import net.roadkill.redev.client.model.entity.LithicanModel;
 import net.roadkill.redev.client.renderer.layer.LithicanMoltenLayer;
 import net.roadkill.redev.client.renderer.layer.StuckArrowLayer;
+import net.roadkill.redev.client.renderer.render_sate.LithicanRenderState;
 import net.roadkill.redev.common.entity.LithicanEntity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class LithicanRenderer<T extends LithicanEntity, M extends LithicanModel<T>> extends AbstractZombieRenderer<T, M>
+public class LithicanRenderer<T extends LithicanEntity, S extends LithicanRenderState, M extends LithicanModel<S>> extends AbstractZombieRenderer<T, S, M>
 {
-    public static final ResourceLocation TEXTURE_STONE = new ResourceLocation(ReDev.MOD_ID, "textures/entity/lithican/stone_lithican.png");
-    public static final ResourceLocation TEXTURE_SANDSTONE = new ResourceLocation(ReDev.MOD_ID, "textures/entity/lithican/sandstone_lithican.png");
-    public static final ResourceLocation TEXTURE_DEEPSLATE = new ResourceLocation(ReDev.MOD_ID, "textures/entity/lithican/deepslate_lithican.png");
-    public static final ResourceLocation TEXTURE_BASALT = new ResourceLocation(ReDev.MOD_ID, "textures/entity/lithican/basalt_lithican.png");
-    public static final ResourceLocation TEXTURE_HEAT = new ResourceLocation(ReDev.MOD_ID, "textures/entity/lithican/molten_lithican.png");
+    public static final ResourceLocation TEXTURE_STONE = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/stone_lithican.png");
+    public static final ResourceLocation TEXTURE_SANDSTONE = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/sandstone_lithican.png");
+    public static final ResourceLocation TEXTURE_DEEPSLATE = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/deepslate_lithican.png");
+    public static final ResourceLocation TEXTURE_BASALT = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/basalt_lithican.png");
+    public static final ResourceLocation TEXTURE_HEAT = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/molten_lithican.png");
 
     public LithicanRenderer(EntityRendererProvider.Context pContext)
-    {   this(pContext, ModelLayers.ZOMBIE, ModelLayers.ZOMBIE_INNER_ARMOR, ModelLayers.ZOMBIE_OUTER_ARMOR);
+    {
+        this(pContext, ModelLayers.ZOMBIE, ModelLayers.ZOMBIE_BABY,
+             ModelLayers.ZOMBIE_INNER_ARMOR, ModelLayers.ZOMBIE_OUTER_ARMOR,
+             ModelLayers.ZOMBIE_BABY_INNER_ARMOR, ModelLayers.ZOMBIE_BABY_OUTER_ARMOR);
+
         this.addLayer(new StuckArrowLayer<>(pContext, this));
         this.addLayer(new LithicanMoltenLayer<>(this));
     }
 
-    private LithicanRenderer(EntityRendererProvider.Context pContext, ModelLayerLocation zombieModel, ModelLayerLocation innerArmorModel, ModelLayerLocation pOuterArmor)
-    {   super(pContext, (M) new LithicanModel(pContext.bakeLayer(zombieModel)),
-                        (M) new LithicanModel(pContext.bakeLayer(innerArmorModel)),
-                        (M) new LithicanModel(pContext.bakeLayer(pOuterArmor)));
+    @Override
+    public S createRenderState()
+    {   return (S) new LithicanRenderState();
     }
 
     @Override
-    public ResourceLocation getTextureLocation(LithicanEntity pEntity)
+    public void extractRenderState(T lithican, S renderState, float partialTick)
     {
-        return switch (pEntity.getVariant())
+        super.extractRenderState(lithican, renderState, partialTick);
+        renderState.isActive = lithican.isActive();
+        renderState.heat = lithican.getHeat();
+        renderState.variant = lithican.getVariant();
+        renderState.entityId = lithican.getId();
+    }
+
+    private LithicanRenderer(EntityRendererProvider.Context pContext,
+                             ModelLayerLocation adultModel, ModelLayerLocation babyModel,
+                             ModelLayerLocation innerArmorModel, ModelLayerLocation outerArmorModel,
+                             ModelLayerLocation innerArmorBabyModel, ModelLayerLocation outerArmorBabyModel)
+    {
+        super(pContext, (M) new LithicanModel(pContext.bakeLayer(adultModel)),
+                        (M) new LithicanModel(pContext.bakeLayer(babyModel)),
+                        (M) new LithicanModel(pContext.bakeLayer(innerArmorModel)),
+                        (M) new LithicanModel(pContext.bakeLayer(outerArmorModel)),
+                        (M) new LithicanModel(pContext.bakeLayer(innerArmorBabyModel)),
+                        (M) new LithicanModel(pContext.bakeLayer(outerArmorBabyModel)));
+    }
+
+    @Override
+    public ResourceLocation getTextureLocation(S renderState)
+    {
+        return switch (renderState.variant)
         {
             default -> TEXTURE_STONE;
-            case 1 -> TEXTURE_SANDSTONE;
-            case 2 -> TEXTURE_DEEPSLATE;
-            case 3 -> TEXTURE_BASALT;
+            case SANDSTONE -> TEXTURE_SANDSTONE;
+            case DEEPSLATE -> TEXTURE_DEEPSLATE;
+            case BASALT    -> TEXTURE_BASALT;
         };
-    }
-
-    @Override
-    public void render(T pEntity, float pEntityYaw, float pPartialTicks, PoseStack pMatrixStack, MultiBufferSource pBuffer, int pPackedLight)
-    {   super.render(pEntity, pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight);
     }
 }

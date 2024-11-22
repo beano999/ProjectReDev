@@ -1,29 +1,68 @@
 package net.roadkill.redev.core.event;
 
+import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.brewing.IBrewingRecipe;
+import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.roadkill.redev.core.init.PotionInit;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber
 public class PotionRecipes
 {
     @SubscribeEvent
-    public static void register(FMLCommonSetupEvent event)
+    public static void register(RegisterBrewingRecipesEvent event)
     {
-        event.enqueueWork(() ->
+        // Sight Potion
+        event.getBuilder().addRecipe(new IBrewingRecipe()
         {
-            ItemStack sightPotion = PotionUtils.setPotion(Items.POTION.getDefaultInstance(), PotionInit.SIGHT.get());
-            ItemStack invisPotion = PotionUtils.setPotion(Items.POTION.getDefaultInstance(), Potions.INVISIBILITY);
-            BrewingRecipeRegistry.addRecipe(Ingredient.of(invisPotion), Ingredient.of(Items.FERMENTED_SPIDER_EYE), sightPotion);
-            BrewingRecipeRegistry.addRecipe(Ingredient.of(sightPotion), Ingredient.of(Items.REDSTONE),
-                                            PotionUtils.setPotion(Items.POTION.getDefaultInstance(), PotionInit.LONG_SIGHT.get()));
+            @Override
+            public boolean isInput(ItemStack input)
+            {   return ItemStack.isSameItemSameComponents(input, createPotion(Potions.INVISIBILITY));
+            }
+
+            @Override
+            public boolean isIngredient(ItemStack ingredient)
+            {   return ingredient.is(Items.SPIDER_EYE);
+            }
+
+            @Override
+            public ItemStack getOutput(ItemStack input, ItemStack ingredient)
+            {   return createPotion(PotionInit.SIGHT);
+            }
         });
+
+        // Extended Sight Potion
+        event.getBuilder().addRecipe(new IBrewingRecipe()
+        {
+            @Override
+            public boolean isInput(ItemStack input)
+            {   return ItemStack.isSameItemSameComponents(input, createPotion(PotionInit.SIGHT));
+            }
+
+            @Override
+            public boolean isIngredient(ItemStack ingredient)
+            {   return ingredient.is(Items.REDSTONE);
+            }
+
+            @Override
+            public ItemStack getOutput(ItemStack input, ItemStack ingredient)
+            {   return createPotion(PotionInit.LONG_SIGHT);
+            }
+        });
+    }
+
+    private static ItemStack createPotion(Holder<Potion> potion)
+    {
+        ItemStack potionItem = Items.POTION.getDefaultInstance();
+        potionItem.set(DataComponents.POTION_CONTENTS, potionItem.get(DataComponents.POTION_CONTENTS).withPotion(potion));
+
+        return potionItem;
     }
 }

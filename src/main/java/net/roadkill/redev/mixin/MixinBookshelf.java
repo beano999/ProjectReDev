@@ -3,13 +3,13 @@ package net.roadkill.redev.mixin;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.extensions.IForgeBlock;
-import net.roadkill.redev.mixin_interfaces.ForgeBlockMixin;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.extensions.IBlockExtension;
+import net.roadkill.redev.mixin_interfaces.IEnchantPowerProvider;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(IForgeBlock.class)
-public interface MixinBookshelf extends ForgeBlockMixin
+@Mixin(IBlockExtension.class)
+public interface MixinBookshelf extends IEnchantPowerProvider
 {
     @Override
     default float getEnchantPowerBonus(BlockState state, LevelReader level, BlockPos pos)

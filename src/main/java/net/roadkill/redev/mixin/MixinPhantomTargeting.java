@@ -2,6 +2,7 @@ package net.roadkill.redev.mixin;
 
 
 import net.minecraft.nbt.StringTag;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.entity.LivingEntity;
@@ -19,14 +20,19 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class MixinPhantomTargeting
 {
     @Redirect(method = "canUse()Z",
-              at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/monster/Phantom;canAttack(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/ai/targeting/TargetingConditions;)Z"))
-    public boolean canAttack(Phantom phantom, LivingEntity target, TargetingConditions conditions)
-    {   SpecialPhantom special = ((SpecialPhantom) phantom);
+              at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/monster/Phantom;canAttack(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/ai/targeting/TargetingConditions;)Z"))
+    public boolean canAttack(Phantom phantom, ServerLevel level, LivingEntity target, TargetingConditions conditions)
+    {
+        SpecialPhantom special = ((SpecialPhantom) phantom);
         PhantomType type = special.getPhantomType();
-        return target instanceof ServerPlayer player
-        && (type == PhantomType.GREEN ? (phantom.getPersistentData().getList("Attackers", 8).contains(StringTag.valueOf(player.getUUID().toString())))
-                                      : (player.getStats().getValue(Stats.CUSTOM.get(Stats.TIME_SINCE_REST)) >= 72000 || type == PhantomType.RED))
-        && phantom.canAttack(target, conditions);
+
+        boolean hasPlayerAttacked = phantom.getPersistentData().getList("Attackers", 8).contains(StringTag.valueOf(target.getUUID().toString()));
+        boolean shouldTarget = target instanceof ServerPlayer player && player.getStats().getValue(Stats.CUSTOM.get(Stats.TIME_SINCE_REST)) >= 72000
+                               || type == PhantomType.RED;
+
+        return type == PhantomType.GREEN ? hasPlayerAttacked
+                                         : shouldTarget
+        && phantom.canAttack(level, target, conditions);
     }
 }
 

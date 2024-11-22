@@ -18,8 +18,9 @@ import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ForgeHooks;
-import net.minecraftforge.common.IPlantable;
+import net.neoforged.neoforge.common.CommonHooks;
+import net.neoforged.neoforge.common.util.TriState;
+import net.roadkill.redev.core.init.ItemInit;
 import net.roadkill.redev.util.registries.ModItems;
 
 import java.util.Arrays;
@@ -83,17 +84,17 @@ public class CaramineRyeBlock extends CropBlock
             return;
         }
         if (isMaxAge(state)) return;
-        float growthSpeed = getGrowthSpeed(this, level, pos);
+        float growthSpeed = getGrowthSpeed(state, level, pos);
 
-        if (ForgeHooks.onCropsGrowPre(level, pos, state, rand.nextInt((int) (25f / growthSpeed + 1)) == 0))
+        if (CommonHooks.canCropGrow(level, pos, state, rand.nextInt((int) (25f / growthSpeed + 1)) == 0))
         {   this.grow(level, pos, state, 1);
-            ForgeHooks.onCropsGrowPost(level, pos, state);
+            CommonHooks.fireCropGrowPost(level, pos, state);
         }
     }
 
     @Override
-    public boolean canSustainPlant(BlockState state, BlockGetter world, BlockPos pos, Direction facing, IPlantable plantable)
-    {   return super.mayPlaceOn(state, world, pos);
+    public TriState canSustainPlant(BlockState state, BlockGetter level, BlockPos soilPosition, Direction facing, BlockState plant)
+    {   return this.mayPlaceOn(state, level, soilPosition) ? TriState.TRUE : TriState.FALSE;
     }
 
     @Override
@@ -144,7 +145,7 @@ public class CaramineRyeBlock extends CropBlock
 
     @Override
     protected ItemLike getBaseSeedId()
-    {   return ModItems.CARAMINE_RYE_SEEDS;
+    {   return ItemInit.CARAMINE_RYE_SEEDS.value();
     }
 
     @Override

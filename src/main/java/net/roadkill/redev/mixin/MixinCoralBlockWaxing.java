@@ -11,6 +11,7 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
@@ -48,15 +49,17 @@ public class MixinCoralBlockWaxing
     @Mixin(BlockBehaviour.class)
     public static class MixinBaseBlock
     {
-        @Inject(method = "use", at = @At("HEAD"))
-        private void waxApply(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, CallbackInfoReturnable<InteractionResult> cir)
+        @Inject(method = "useItemOn", at = @At("HEAD"))
+        private void waxApply(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
+                              InteractionHand hand, BlockHitResult hitResult, CallbackInfoReturnable<InteractionResult> cir)
         {
-            if (state.getBlock() instanceof CoralBlock && player.getItemInHand(hand).getItem() == Items.HONEYCOMB)
-            {   level.setBlock(pos, state.setValue(CoralBlockData.WAXED, true), 3);
+            if (state.getBlock() instanceof CoralBlock && stack.getItem() == Items.HONEYCOMB)
+            {
+                level.setBlock(pos, state.setValue(CoralBlockData.WAXED, true), 3);
                 player.swing(hand, true);
                 level.playSound(null, pos, SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!player.isCreative())
-                {   player.getItemInHand(hand).shrink(1);
+                {   stack.shrink(1);
                 }
 
                 ParticleUtils.spawnParticlesOnBlockFaces(level, pos, ParticleTypes.WAX_ON, UniformInt.of(3, 5));

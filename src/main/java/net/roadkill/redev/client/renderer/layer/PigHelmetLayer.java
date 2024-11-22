@@ -1,132 +1,70 @@
 package net.roadkill.redev.client.renderer.layer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ArmorStandArmorModel;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
+import net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
-import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.animal.Pig;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.DyeableLeatherItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.client.ForgeHooksClient;
-import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
-import net.roadkill.redev.mixin_interfaces.IPig;
+import net.minecraft.world.item.equipment.EquipmentModel;
+import net.minecraft.world.item.equipment.Equippable;
 import net.roadkill.redev.util.RDMath;
 
-import javax.annotation.Nullable;
-import java.lang.reflect.Field;
-import java.util.Map;
-
-public class PigHelmetLayer<T extends Entity, M extends EntityModel<T>> extends RenderLayer<T, M>
+public class PigHelmetLayer<S extends LivingEntityRenderState, M extends EntityModel<S>> extends RenderLayer<S, M>
 {
+    private final EquipmentLayerRenderer equipmentRenderer;
 
-    public PigHelmetLayer (RenderLayerParent<T, M> pRenderer)
+    public PigHelmetLayer(RenderLayerParent<S, M> pRenderer, EntityRendererProvider.Context context)
     {
         super(pRenderer);
+        this.equipmentRenderer = context.getEquipmentRenderer();
     }
 
     @Override
-    public void render (PoseStack ps, MultiBufferSource pBuffer, int pPackedLight, T pLivingEntity, float pLimbSwing,
-                       float pLimbSwingAmount, float pPartialTick, float pAgeInTicks, float headYaw, float headPitch)
+    public void render(PoseStack ps, MultiBufferSource buffer, int packedLight, S renderState, float p_117353_, float p_117354_)
     {
-        if (pLivingEntity instanceof Pig pig)
+        ItemStack helmet = renderState.headItem;
+        if (!helmet.isEmpty())
         {
-            IPig iPig = ((IPig) pig);
-            ItemStack potentialHelmet = iPig.getHelmet();
-            if (!potentialHelmet.isEmpty())
-            {
-                ps.pushPose();
-                float yRot = RDMath.toRadians(headYaw);
-                float xRot = RDMath.toRadians(headPitch);
-                ps.translate(0, 0.75F, -0.375F);
-                ps.mulPose(RDMath.getQuaternion(xRot, yRot, 0));
-                ps.translate(0, -0.775F, -0.25F);
-                ps.scale(1.25F, 1.25F, 1.25F);
+            ps.pushPose();
+            float yRot = RDMath.toRadians(renderState.yRot);
+            float xRot = RDMath.toRadians(renderState.xRot);
+            ps.translate(0, 0.75F, -0.375F);
+            ps.mulPose(RDMath.getQuaternion(xRot, yRot, 0));
+            ps.translate(0, 0.175f, -0.25F);
+            ps.scale(1F, 1F, 1F);
 
-                this.renderArmorPiece(ps, pBuffer, pLivingEntity, EquipmentSlot.HEAD, pPackedLight,
-                        new ArmorStandArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(ModelLayers.ARMOR_STAND_OUTER_ARMOR)), potentialHelmet);
-                ps.popPose();
-            }
+            HumanoidModel<?> armorModel = new ArmorStandArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(ModelLayers.ARMOR_STAND_OUTER_ARMOR));
+            armorModel.setAllVisible(false);
+            armorModel.head.visible = true;
+
+            this.renderArmorPiece(ps, buffer, helmet, EquipmentSlot.HEAD, packedLight, armorModel);
+            ps.popPose();
         }
     }
 
-    private void renderArmorPiece(PoseStack pPoseStack, MultiBufferSource pBuffer, T pLivingEntity, EquipmentSlot pSlot, int pPackedLight, HumanoidModel<?> pModel, ItemStack armor)
+    private void renderArmorPiece(PoseStack ps, MultiBufferSource buffer, ItemStack armor, EquipmentSlot slot, int packedLight, HumanoidModel<?> armorModel)
     {
-        Item $$9 = armor.getItem();
-        if ($$9 instanceof ArmorItem armoritem)
+        Equippable equippable = armor.get(DataComponents.EQUIPPABLE);
+        if (equippable != null && shouldRender(equippable, slot))
         {
-            if (armoritem.getEquipmentSlot() == EquipmentSlot.HEAD)
-            {
-                this.getParentModel().copyPropertiesTo((EntityModel<T>) pModel);
-                HumanoidModel<?> model = (HumanoidModel<?>) ForgeHooksClient.getArmorModel((LivingEntity) pLivingEntity, armor, EquipmentSlot.HEAD,
-                                                                                     new ArmorStandArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(ModelLayers.ARMOR_STAND_OUTER_ARMOR)));
-                model.setAllVisible(false);
-                model.head.visible = true;
-                boolean flag = armor.hasFoil();
-                if (armoritem instanceof DyeableLeatherItem leather)
-                {
-                    int i = leather.getColor(armor);
-                    float f = (float)(i >> 16 & 255) / 255.0F;
-                    float f1 = (float)(i >> 8 & 255) / 255.0F;
-                    float f2 = (float)(i & 255) / 255.0F;
-                    this.renderModel(pPoseStack, pBuffer, pPackedLight, flag, model, f, f1, f2, this.getArmorResource(pLivingEntity, armor, pSlot, null));;
-                    this.renderModel(pPoseStack, pBuffer, pPackedLight, flag, model, 1.0F, 1.0F, 1.0F, this.getArmorResource(pLivingEntity, armor, pSlot, "overlay"));
-                }
-                else
-                {   this.renderModel(pPoseStack, pBuffer, pPackedLight, flag, model, 1.0F, 1.0F, 1.0F, this.getArmorResource(pLivingEntity, armor, pSlot, null));
-                }
-            }
+            ResourceLocation resourcelocation = equippable.model().orElseThrow();
+            EquipmentModel.LayerType equipmentmodel$layertype = EquipmentModel.LayerType.HUMANOID;
+            this.equipmentRenderer.renderLayers(equipmentmodel$layertype, resourcelocation, armorModel, armor, ps, buffer, packedLight);
         }
     }
 
-    private void renderModel(PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, boolean pWithGlint, net.minecraft.client.model.Model pModel, float pRed, float pGreen, float pBlue, ResourceLocation armorResource) {
-        VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(pBuffer, RenderType.armorCutoutNoCull(armorResource), false, pWithGlint);
-        pModel.renderToBuffer(pPoseStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY, pRed, pGreen, pBlue, 1.0F);
+    private static boolean shouldRender(Equippable equipment, EquipmentSlot slot) {
+        return equipment.model().isPresent() && equipment.slot() == slot;
     }
-
-    public ResourceLocation getArmorResource(net.minecraft.world.entity.Entity entity, ItemStack stack, EquipmentSlot slot, @Nullable String type) {
-        ArmorItem item = (ArmorItem)stack.getItem();
-        String texture = item.getMaterial().getName();
-        String domain = "minecraft";
-        int idx = texture.indexOf(':');
-        if (idx != -1) {
-            domain = texture.substring(0, idx);
-            texture = texture.substring(idx + 1);
-        }
-        String s1 = String.format(java.util.Locale.ROOT, "%s:textures/models/armor/%s_layer_%d%s.png", domain, texture, 1, type == null ? "" : String.format(java.util.Locale.ROOT, "_%s", type));
-
-        s1 = net.minecraftforge.client.ForgeHooksClient.getArmorTexture(entity, stack, s1, slot, type);
-
-        ResourceLocation resourcelocation = null;
-        try
-        {
-            resourcelocation = ((Map<String, ResourceLocation>) ARMOR_LOCATION_CACHE.get(null)).get(s1);
-
-            if (resourcelocation == null) {
-                resourcelocation = new ResourceLocation(s1);
-                ((Map<String, ResourceLocation>) ARMOR_LOCATION_CACHE.get(null)).put(s1, resourcelocation);
-
-            }
-        }
-        catch (Exception e) {}
-
-        return resourcelocation;
-    }
-
-    private static Field ARMOR_LOCATION_CACHE = ObfuscationReflectionHelper.findField(HumanoidArmorLayer.class, "f_117070_");
 }

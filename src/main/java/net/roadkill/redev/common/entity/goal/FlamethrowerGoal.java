@@ -4,16 +4,15 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.network.PacketDistributor;
+import net.neoforged.neoforge.network.PacketDistributor;
 import net.roadkill.redev.common.entity.HoveringInfernoEntity;
-import net.roadkill.redev.core.network.ReDevPacketHandler;
-import net.roadkill.redev.core.network.message.ParticlesMessage;
+import net.roadkill.redev.core.network.message.ParticleBatchMessage;
 import net.roadkill.redev.util.RDMath;
 
 import java.util.ArrayList;
@@ -65,17 +64,17 @@ public class FlamethrowerGoal extends Goal
         {
             Vec3 direction = entity.getTarget().position().subtract(entity.position()).normalize();
 
-            if (entity.level instanceof ServerLevel level)
-            ReDevPacketHandler.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(() -> entity), new ParticlesMessage(
-                    ParticleTypes.FLAME,
-                    level,
-                    entity.getX(),
-                    entity.getY() + entity.getEyeHeight() / 2,
-                    entity.getZ(),
-                    1.5, 1.5, 1.5,
-                    direction.x * 1, direction.y * 1, direction.z * 1,
-                    3
-            ));
+            if (entity.level() instanceof ServerLevel level)
+            {
+                ParticleBatchMessage particles = new ParticleBatchMessage();
+                for (int i = 0; i < 3; i++)
+                {
+                    particles.addParticle(ParticleTypes.FLAME, ParticleBatchMessage.ParticlePlacement.of(entity.getX(), entity.getY() + entity.getEyeHeight() / 2, entity.getZ())
+                             .spread(entity.getBbWidth() / 2, entity.getBbHeight() / 2, entity.getBbWidth() / 2)
+                             .velocity(direction.x * 1, direction.y * 1, direction.z * 1));
+                }
+                particles.sendEntity(entity);
+            }
             if (entity.getRandom().nextInt(2) == 0 || entity.tickCount % 2 == 0)
             {   entity.playSound(SoundEvents.FIRECHARGE_USE, 0.5f, RDMath.randomFloat(entity.getRandom(), 0.7f, 1f));
             }
@@ -90,19 +89,24 @@ public class FlamethrowerGoal extends Goal
                     hurtBox.move(direction.x * 10, direction.y * 10, direction.z * 10)
             );
             List<Entity> attackedEntities = new ArrayList<>();
+
+            Vec3 blazePos = entity.getEyePosition();
+
             for (AABB box : hurtBoxes)
             {
-                entity.level.getEntities(entity, box).forEach(e ->
+                entity.level().getEntities(entity, box).forEach(target ->
                 {
-                    if (attackedEntities.contains(e)) return;
+                    if (attackedEntities.contains(target)) return;
 
-                    HitResult result = entity.level.clip(new ClipContext(entity.position(), e.position(), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity));
-                    Vec3 location = entity.position().add(0, entity.getEyeHeight(), 0);
+                    HitResult result = entity.level().clip(new ClipContext(entity.position(), target.position(), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity));
 
-                    if (result.getType() != HitResult.Type.BLOCK || result.getLocation().distanceTo(location) > e.distanceTo(entity))
-                    {   e.hurt(entity.damageSources().inFire(), 3);
-                        e.setSecondsOnFire(2);
-                        attackedEntities.add(e);
+                    if ((result.getType() != HitResult.Type.BLOCK || result.getLocation().distanceToSqr(blazePos) > target.distanceToSqr(blazePos)))
+                    {
+                        if (target instanceof LivingEntity living && living.isDamageSourceBlocked(entity.damageSources().mobAttack(entity))) return;
+
+                        target.hurt(entity.damageSources().inFire(), 3);
+                        target.setRemainingFireTicks(Math.max(target.getRemainingFireTicks(), 40));
+                        attackedEntities.add(target);
                     }
                 });
             }

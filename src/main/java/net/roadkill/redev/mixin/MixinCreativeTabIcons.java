@@ -1,11 +1,14 @@
 package net.roadkill.redev.mixin;
 
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.roadkill.redev.common.event.CycleColorTab;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -51,13 +54,15 @@ public class MixinCreativeTabIcons
     @Mixin(CreativeModeTab.class)
     static final class ColorTabReset
     {
+        @Final
         @Shadow
         private Supplier<ItemStack> iconGenerator;
 
         @Inject(method = "getIconItem()Lnet/minecraft/world/item/ItemStack;", at = @At("HEAD"), cancellable = true)
         private void onGetDisplayItem(CallbackInfoReturnable<ItemStack> cir)
         {
-            if (((CreativeModeTab) (Object) this) == CreativeModeTabs.COLORED_BLOCKS)
+            Holder<CreativeModeTab> coloredBlocks = BuiltInRegistries.CREATIVE_MODE_TAB.get(CreativeModeTabs.COLORED_BLOCKS).orElse(null);
+            if (coloredBlocks != null && (Object) this == coloredBlocks.value())
             {   cir.setReturnValue(iconGenerator.get());
             }
         }

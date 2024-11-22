@@ -67,8 +67,8 @@ public class MixinReplaceStructures
         {
             for (Holder<Structure> structureHolder : structureHolders)
             {
-                if (structureHolder.is(new ResourceLocation("stronghold"))
-                ||  structureHolder.is(new ResourceLocation("desert_pyramid")))
+                if (structureHolder.is(ResourceLocation.withDefaultNamespace("stronghold"))
+                ||  structureHolder.is(ResourceLocation.withDefaultNamespace("desert_pyramid")))
                 {   cir.setReturnValue(Pair.of(new BlockPos(29000000, 0, 29000000), structureHolder));
                 }
             }
@@ -84,8 +84,8 @@ public class MixinReplaceStructures
         {
             Optional<ResourceKey<Structure>> optional = result.unwrap().left();
             if (optional.isPresent()
-            && (optional.get().location().equals(new ResourceLocation("stronghold")))
-            ||  optional.get().location().equals(new ResourceLocation("desert_pyramid")))
+            && (optional.get().location().equals(ResourceLocation.withDefaultNamespace("stronghold")))
+            ||  optional.get().location().equals(ResourceLocation.withDefaultNamespace("desert_pyramid")))
             {   throw new SimpleCommandExceptionType(Component.literal(String.format("Use /locate structure redev:%s instead!", optional.get().location().getPath()))).create();
             }
         }

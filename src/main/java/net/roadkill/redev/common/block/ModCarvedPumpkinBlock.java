@@ -11,16 +11,17 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.roadkill.redev.common.item.CarvedPumpkinItem;
 import net.roadkill.redev.core.init.ItemInit;
 
@@ -28,7 +29,7 @@ public class ModCarvedPumpkinBlock extends net.minecraft.world.level.block.Carve
 {
     public static final IntegerProperty PUMPKIN_TYPE = IntegerProperty.create(
             "pumpkin_type", 0, 7);
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
     public static final BooleanProperty LIT = BooleanProperty.create("lit");
     public ModCarvedPumpkinBlock(Properties pProperties)
     {
@@ -46,103 +47,63 @@ public class ModCarvedPumpkinBlock extends net.minecraft.world.level.block.Carve
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit)
+    protected InteractionResult useItemOn(ItemStack stack, BlockState blockState, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult)
     {
-        if(!pLevel.isClientSide())
+        if(!level.isClientSide())
         {
-            if(pPlayer.getItemInHand(pHand).getItem() instanceof ShearsItem)
+            if(player.getItemInHand(hand).getItem() instanceof ShearsItem)
             {
-                BlockState state = pState.setValue(PUMPKIN_TYPE,(pState.getValue(PUMPKIN_TYPE) + 1) % 8).setValue(FACING, pPlayer.getDirection().getOpposite());
-                pLevel.setBlock(pPos, state, 3);
-                pLevel.playSound(null, pPos, SoundEvents.PUMPKIN_CARVE, SoundSource.BLOCKS);
+                BlockState state = blockState.setValue(PUMPKIN_TYPE,(blockState.getValue(PUMPKIN_TYPE) + 1) % 8).setValue(FACING, player.getDirection().getOpposite());
+                level.setBlock(pos, state, 3);
+                level.playSound(null, pos, SoundEvents.PUMPKIN_CARVE, SoundSource.BLOCKS);
                 return InteractionResult.SUCCESS;
             }
-            else if (pPlayer.getItemInHand(pHand).getItem() == Items.TORCH && !pState.getValue(ModCarvedPumpkinBlock.LIT))
+            else if (player.getItemInHand(hand).getItem() == Items.TORCH && !blockState.getValue(ModCarvedPumpkinBlock.LIT))
             {
-               BlockState state = pState.setValue(LIT, true);
-               pLevel.setBlock(pPos, state, 3);
-               pPlayer.getItemInHand(pHand).shrink(1);
-               pLevel.playSound(null, pPos, SoundEvents.WOOD_PLACE, SoundSource.BLOCKS);
-               return InteractionResult.SUCCESS;
+                BlockState state = blockState.setValue(LIT, true);
+                level.setBlock(pos, state, 3);
+                player.getItemInHand(hand).shrink(1);
+                level.playSound(null, pos, SoundEvents.WOOD_PLACE, SoundSource.BLOCKS);
+                return InteractionResult.SUCCESS;
             }
         }
-        return InteractionResult.PASS;
+        return super.useItemOn(stack, blockState, level, pos, player, hand, hitResult);
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter pLevel, BlockPos pPos, BlockState pState)
+    public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos, Player player)
     {
-        int pumpkinType = pState.getValue(PUMPKIN_TYPE);
-        Boolean lit = pState.getValue(LIT);
-        return switch(pumpkinType)
-        {
-            case 0 ->
-            {
-                if(lit)
-                {
-                    yield ItemInit.CARVED_PUMPKIN_LIT.get().getDefaultInstance();
-                }
-                yield ItemInit.CARVED_PUMPKIN.get().getDefaultInstance();
+        int pumpkinType = state.getValue(PUMPKIN_TYPE);
+        Boolean lit = state.getValue(LIT);
 
-            }
-            case 1 ->
-            {
-                if(lit)
-                {
-                    yield ItemInit.CARVED_PUMPKIN_CREEPY_LIT.get().getDefaultInstance();
-                }
-                yield ItemInit.CARVED_PUMPKIN_CREEPY.get().getDefaultInstance();
-            }
-            case 2 ->
-            {
-                if(lit)
-                {
-                    yield ItemInit.CARVED_PUMPKIN_HORRIFIED_LIT.get().getDefaultInstance();
-                }
-                yield ItemInit.CARVED_PUMPKIN_HORRIFIED.get().getDefaultInstance();
-            }
-            case 3 ->
-            {
-                if(lit)
-                {
-                    yield ItemInit.CARVED_PUMPKIN_CREEPER_LIT.get().getDefaultInstance();
-                }
-                yield ItemInit.CARVED_PUMPKIN_CREEPER.get().getDefaultInstance();
-            }
-            case 4 ->
-            {
-                if(lit)
-                {
-                    yield ItemInit.CARVED_PUMPKIN_SCOWLING_LIT.get().getDefaultInstance();
-                }
-                yield ItemInit.CARVED_PUMPKIN_SCOWLING.get().getDefaultInstance();
-            }
-            case 5 ->
-            {
-                if(lit)
-                {
-                    yield ItemInit.CARVED_PUMPKIN_TWISTED_LIT.get().getDefaultInstance();
-                }
-                yield ItemInit.CARVED_PUMPKIN_TWISTED.get().getDefaultInstance();
-            }
-            case 6 ->
-            {
-                if(lit)
-                {
-                    yield ItemInit.CARVED_PUMPKIN_FURIOUS_LIT.get().getDefaultInstance();
-                }
-                yield ItemInit.CARVED_PUMPKIN_FURIOUS.get().getDefaultInstance();
-            }
-            case 7 ->
-            {
-                if(lit)
-                {
-                    yield ItemInit.CARVED_PUMPKIN_ZOMBIE_LIT.get().getDefaultInstance();
-                }
-                yield ItemInit.CARVED_PUMPKIN_ZOMBIE.get().getDefaultInstance();
-            }
-            default -> {throw new RuntimeException("CUMON SUN!!");}
-        };
+        return (switch (pumpkinType)
+        {
+            case 0 -> lit ? ItemInit.CARVED_PUMPKIN_LIT
+                          : ItemInit.CARVED_PUMPKIN;
+
+            case 1 -> lit ? ItemInit.CARVED_PUMPKIN_CREEPY_LIT
+                          : ItemInit.CARVED_PUMPKIN_CREEPY;
+
+            case 2 -> lit ? ItemInit.CARVED_PUMPKIN_HORRIFIED_LIT
+                          : ItemInit.CARVED_PUMPKIN_HORRIFIED;
+
+            case 3 -> lit ? ItemInit.CARVED_PUMPKIN_CREEPER_LIT
+                          : ItemInit.CARVED_PUMPKIN_CREEPER;
+
+            case 4 -> lit ? ItemInit.CARVED_PUMPKIN_SCOWLING_LIT
+                          : ItemInit.CARVED_PUMPKIN_SCOWLING;
+
+            case 5 -> lit ? ItemInit.CARVED_PUMPKIN_TWISTED_LIT
+                          : ItemInit.CARVED_PUMPKIN_TWISTED;
+
+            case 6 -> lit ? ItemInit.CARVED_PUMPKIN_FURIOUS_LIT
+                          : ItemInit.CARVED_PUMPKIN_FURIOUS;
+
+            case 7 -> lit ? ItemInit.CARVED_PUMPKIN_ZOMBIE_LIT
+                          : ItemInit.CARVED_PUMPKIN_ZOMBIE;
+
+            default -> throw new RuntimeException("CUMON SUN!!");
+        }).get().getDefaultInstance();
     }
 
     @Override

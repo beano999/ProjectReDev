@@ -1,8 +1,10 @@
 package net.roadkill.redev.common.event;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -14,17 +16,21 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.roadkill.redev.common.block.HedgeBlock;
 import net.roadkill.redev.common.block.LeafyWallBlock;
+import net.roadkill.redev.core.init.BlockInit;
 import net.roadkill.redev.util.registries.ModBlocks;
 
-@Mod.EventBusSubscriber
+import javax.annotation.Nullable;
+
+@EventBusSubscriber
 public class LeavesShear
 {
     @SubscribeEvent
@@ -36,57 +42,22 @@ public class LeavesShear
         ItemStack stack = event.getItemStack();
         Player player = event.getEntity();
         RandomSource random = level.getRandom();
+
         if (state.is(BlockTags.LEAVES) && stack.getItem() instanceof ShearsItem)
         {
-            boolean shouldShear = false;
-            BlockState hedgeState = null;
-            if (state.is(Blocks.OAK_LEAVES))
-            {   shouldShear = true;
-                hedgeState = ModBlocks.OAK_HEDGE.defaultBlockState();
-            }
-            else if (state.is(Blocks.SPRUCE_LEAVES))
-            {   shouldShear = true;
-                hedgeState = ModBlocks.SPRUCE_HEDGE.defaultBlockState();
-            }
-            else if (state.is(Blocks.BIRCH_LEAVES))
-            {   shouldShear = true;
-                hedgeState = ModBlocks.BIRCH_HEDGE.defaultBlockState();
-            }
-            else if (state.is(Blocks.JUNGLE_LEAVES))
-            {   shouldShear = true;
-                hedgeState = ModBlocks.JUNGLE_HEDGE.defaultBlockState();
-            }
-            else if (state.is(Blocks.ACACIA_LEAVES))
-            {   shouldShear = true;
-                hedgeState = ModBlocks.ACACIA_HEDGE.defaultBlockState();
-            }
-            else if (state.is(Blocks.DARK_OAK_LEAVES))
-            {   shouldShear = true;
-                hedgeState = ModBlocks.DARK_OAK_HEDGE.defaultBlockState();
-            }
-            else if (state.is(Blocks.MANGROVE_LEAVES))
-            {   shouldShear = true;
-                hedgeState = ModBlocks.MANGROVE_HEDGE.defaultBlockState();
-            }
-            else if (state.is(Blocks.AZALEA_LEAVES))
-            {   shouldShear = true;
-                hedgeState = ModBlocks.AZALEA_HEDGE.defaultBlockState();
-            }
-            else if (state.is(Blocks.FLOWERING_AZALEA_LEAVES))
-            {   shouldShear = true;
-                hedgeState = ModBlocks.FLOWERING_AZALEA_HEDGE.defaultBlockState();
-            }
-            if (shouldShear)
+            Holder<Block> hedge = getHedgeForBlock(state);
+
+            if (hedge != null)
             {
+                BlockState hedgeState = hedge.value().defaultBlockState();
                 if (!player.isCreative())
-                {   stack.hurtAndBreak(1, player, (p) ->
-                    {   p.broadcastBreakEvent(event.getHand());
-                    });
+                {   stack.hurtAndBreak(1, (ServerLevel) level, player, (p) -> {});
                 }
                 if (level.isClientSide)
                 {
                     for (int i = 0; i < 20; i++)
-                    {   level.addParticle(
+                    {
+                        level.addParticle(
                                 new BlockParticleOption(ParticleTypes.BLOCK, state),
                                 pos.getX() + random.nextDouble(),
                                 pos.getY() + random.nextDouble(),
@@ -95,11 +66,13 @@ public class LeavesShear
                         );
                     }
                 }
+                level.setBlock(pos, hedgeState, 11);
+
                 level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 0.5f, (random.nextFloat() - random.nextFloat()) * 0.2F + 1.6F);
                 level.playSound(null, pos, SoundEvents.CROP_BREAK, SoundSource.BLOCKS, 1.3f, (random.nextFloat() - random.nextFloat()) * 0.2F + 1.0F);
-                level.setBlock(pos, hedgeState, 11);
                 player.swing(event.getHand());
                 player.awardStat(Stats.ITEM_USED.get(Items.SHEARS));
+
                 event.setCanceled(true);
             }
         }
@@ -112,5 +85,20 @@ public class LeavesShear
         && event.getEntity().getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof ShearsItem)
         {   event.setNewSpeed(event.getOriginalSpeed() * 6f);
         }
+    }
+
+    @Nullable
+    public static Holder<Block> getHedgeForBlock(BlockState state)
+    {
+        return state.is(Blocks.OAK_LEAVES)      ? BlockInit.OAK_HEDGE
+             : state.is(Blocks.SPRUCE_LEAVES)   ? BlockInit.SPRUCE_HEDGE
+             : state.is(Blocks.BIRCH_LEAVES)    ? BlockInit.BIRCH_HEDGE
+             : state.is(Blocks.JUNGLE_LEAVES)   ? BlockInit.JUNGLE_HEDGE
+             : state.is(Blocks.ACACIA_LEAVES)   ? BlockInit.ACACIA_HEDGE
+             : state.is(Blocks.DARK_OAK_LEAVES) ? BlockInit.DARK_OAK_HEDGE
+             : state.is(Blocks.MANGROVE_LEAVES) ? BlockInit.MANGROVE_HEDGE
+             : state.is(Blocks.AZALEA_LEAVES)   ? BlockInit.AZALEA_HEDGE
+             : state.is(Blocks.FLOWERING_AZALEA_LEAVES) ? BlockInit.FLOWERING_AZALEA_HEDGE
+             : null;
     }
 }
