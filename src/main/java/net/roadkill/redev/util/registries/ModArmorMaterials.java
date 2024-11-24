@@ -33,8 +33,8 @@ public class ModArmorMaterials
             300,
             Util.make(new EnumMap<>(ArmorType.class), map -> {
                 map.put(ArmorType.HELMET, 1);
-                map.put(ArmorType.CHESTPLATE, 1);
-                map.put(ArmorType.LEGGINGS, 2);
+                map.put(ArmorType.CHESTPLATE, 2);
+                map.put(ArmorType.LEGGINGS, 1);
                 map.put(ArmorType.BOOTS, 1);
             }), 25, SoundEvents.ARMOR_EQUIP_GOLD,
             0.0F, 0.0F,
@@ -45,8 +45,8 @@ public class ModArmorMaterials
             800,
             Util.make(new EnumMap<>(ArmorType.class), map -> {
                 map.put(ArmorType.HELMET, 2);
-                map.put(ArmorType.CHESTPLATE, 5);
-                map.put(ArmorType.LEGGINGS, 7);
+                map.put(ArmorType.CHESTPLATE, 7);
+                map.put(ArmorType.LEGGINGS, 5);
                 map.put(ArmorType.BOOTS, 2);
             }), 30, SoundEvents.ARMOR_EQUIP_NETHERITE,
             2.0F, 0.1F,

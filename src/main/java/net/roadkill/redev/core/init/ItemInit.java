@@ -36,11 +36,11 @@ public class ItemInit
 
     public static final DeferredHolder<Item, Item> NETHER_GOLD_NUGGET = ITEMS.registerSimpleItem("nether_gold_nugget", new Item.Properties());
     public static final DeferredHolder<Item, Item> NETHER_GOLD_INGOT = ITEMS.registerSimpleItem("nether_gold_ingot", new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_SWORD = ITEMS.registerItem("nether_gold_sword", props -> new SwordItem(ModItems.ToolMaterials.NETHER_GOLD, 5f, 1.6f, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_PICKAXE = ITEMS.registerItem("nether_gold_pickaxe", props -> new PickaxeItem(ModItems.ToolMaterials.NETHER_GOLD, 2f, 1.2f, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_AXE = ITEMS.registerItem("nether_gold_axe", props -> new AxeItem(ModItems.ToolMaterials.NETHER_GOLD, 7f, 0.8f, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_SHOVEL = ITEMS.registerItem("nether_gold_shovel", props -> new ShovelItem(ModItems.ToolMaterials.NETHER_GOLD, 3.5f, 1f, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_HOE = ITEMS.registerItem("nether_gold_hoe", props -> new HoeItem(ModItems.ToolMaterials.NETHER_GOLD, 1f, 2f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> NETHER_GOLD_SWORD = ITEMS.registerItem("nether_gold_sword", props -> new SwordItem(ModItems.ToolMaterials.NETHER_GOLD, 3f, 1.6f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> NETHER_GOLD_PICKAXE = ITEMS.registerItem("nether_gold_pickaxe", props -> new PickaxeItem(ModItems.ToolMaterials.NETHER_GOLD, 1f, 1.2f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> NETHER_GOLD_AXE = ITEMS.registerItem("nether_gold_axe", props -> new AxeItem(ModItems.ToolMaterials.NETHER_GOLD, 7f, 0.8f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> NETHER_GOLD_SHOVEL = ITEMS.registerItem("nether_gold_shovel", props -> new ShovelItem(ModItems.ToolMaterials.NETHER_GOLD, 1.5f, 1f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> NETHER_GOLD_HOE = ITEMS.registerItem("nether_gold_hoe", props -> new HoeItem(ModItems.ToolMaterials.NETHER_GOLD, -1f, 2f-4f, props), new Item.Properties());
     public static final DeferredHolder<Item, Item> NETHER_GOLD_HELMET = ITEMS.registerItem("nether_gold_helmet", props -> new ArmorItem(ModArmorMaterials.NETHER_GOLD, ArmorType.HELMET, props), new Item.Properties());
     public static final DeferredHolder<Item, Item> NETHER_GOLD_CHESTPLATE = ITEMS.registerItem("nether_gold_chestplate", props -> new ArmorItem(ModArmorMaterials.NETHER_GOLD, ArmorType.CHESTPLATE, props), new Item.Properties());
     public static final DeferredHolder<Item, Item> NETHER_GOLD_LEGGINGS = ITEMS.registerItem("nether_gold_leggings", props -> new ArmorItem(ModArmorMaterials.NETHER_GOLD, ArmorType.LEGGINGS, props), new Item.Properties());
@@ -49,11 +49,11 @@ public class ItemInit
     public static final DeferredHolder<Item, Item> CHARRED_BONE = ITEMS.registerSimpleItem("charred_bone", new Item.Properties());
 
     public static final DeferredHolder<Item, Item> WITHERED_INGOT = ITEMS.registerSimpleItem("withered_ingot", new Item.Properties());
-    public static final DeferredHolder<Item, Item> WITHERED_SWORD = ITEMS.registerItem("withered_sword", props -> new SwordItem(ModItems.ToolMaterials.WITHERED, 6f, 1.6f, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> WITHERED_PICKAXE = ITEMS.registerItem("withered_pickaxe", props -> new PickaxeItem(ModItems.ToolMaterials.WITHERED, 3f, 1.2f, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> WITHERED_AXE = ITEMS.registerItem("withered_axe", props -> new AxeItem(ModItems.ToolMaterials.WITHERED, 9f, 0.9f, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> WITHERED_SHOVEL = ITEMS.registerItem("withered_shovel", props -> new ShovelItem(ModItems.ToolMaterials.WITHERED, 4.5f, 1f, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> WITHERED_HOE = ITEMS.registerItem("withered_hoe", props -> new HoeItem(ModItems.ToolMaterials.WITHERED, 1f, 3f, props),  new Item.Properties());
+    public static final DeferredHolder<Item, Item> WITHERED_SWORD = ITEMS.registerItem("withered_sword", props -> new SwordItem(ModItems.ToolMaterials.WITHERED, 3f, 1.6f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> WITHERED_PICKAXE = ITEMS.registerItem("withered_pickaxe", props -> new PickaxeItem(ModItems.ToolMaterials.WITHERED, 1f, 1.2f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> WITHERED_AXE = ITEMS.registerItem("withered_axe", props -> new AxeItem(ModItems.ToolMaterials.WITHERED, 6f, 0.9f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> WITHERED_SHOVEL = ITEMS.registerItem("withered_shovel", props -> new ShovelItem(ModItems.ToolMaterials.WITHERED, 1.5f, 1f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> WITHERED_HOE = ITEMS.registerItem("withered_hoe", props -> new HoeItem(ModItems.ToolMaterials.WITHERED, 0f, 3f-4f, props),  new Item.Properties());
     public static final DeferredHolder<Item, Item> WITHERED_HELMET = ITEMS.registerItem("withered_helmet", props -> new ArmorItem(ModArmorMaterials.WITHERED, ArmorType.HELMET, props), new Item.Properties());
     public static final DeferredHolder<Item, Item> WITHERED_CHESTPLATE = ITEMS.registerItem("withered_chestplate", props -> new ArmorItem(ModArmorMaterials.WITHERED, ArmorType.CHESTPLATE, props), new Item.Properties());
     public static final DeferredHolder<Item, Item> WITHERED_LEGGINGS = ITEMS.registerItem("withered_leggings", props -> new ArmorItem(ModArmorMaterials.WITHERED, ArmorType.LEGGINGS, props), new Item.Properties());
