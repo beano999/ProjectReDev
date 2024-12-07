@@ -1,12 +1,15 @@
 package net.roadkill.redev.mixin;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.PigModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.PigRenderer;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.state.PigRenderState;
+import net.minecraft.client.renderer.item.ItemStackRenderState;
 import net.minecraft.world.entity.animal.Pig;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.roadkill.redev.client.renderer.layer.PigHelmetLayer;
 import net.roadkill.redev.client.renderer.layer.PigTNTLayer;
@@ -34,7 +37,8 @@ public abstract class MixinPigTNTRenderer extends MobRenderer<Pig, LivingEntityR
     {
         IPig iPig = (IPig) pig;
         IPig iRenderPig = (IPig) renderState;
-        renderState.headItem = iPig.getHelmet();
+        Minecraft.getInstance().getItemModelResolver().updateForLiving(renderState.headItem, iPig.getHelmet(), ItemDisplayContext.HEAD, true, pig);
+        iRenderPig.setHelmet(iPig.getHelmet());
         iRenderPig.setFuse(iPig.getFuse());
         iRenderPig.setHasTNT(iPig.hasTNT());
     }
@@ -44,10 +48,16 @@ public abstract class MixinPigTNTRenderer extends MobRenderer<Pig, LivingEntityR
     {
         public int fuse = 0;
         public boolean hasTNT = false;
+        public ItemStack headItem = ItemStack.EMPTY;
 
         @Override
         public ItemStack getHelmet()
         {   return this.headItem;
+        }
+
+        @Override
+        public void setHelmet(ItemStack armorItem)
+        {   this.headItem = armorItem;
         }
 
         @Override

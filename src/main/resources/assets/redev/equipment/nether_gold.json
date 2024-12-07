@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "horse_body": [
+      {
+        "texture": "redev:nether_gold"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "redev:nether_gold"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "redev:nether_gold"
+      }
+    ]
+  }
+}

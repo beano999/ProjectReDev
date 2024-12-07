@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "horse_body": [
+      {
+        "texture": "redev:withered"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "redev:withered"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "redev:withered"
+      }
+    ]
+  }
+}

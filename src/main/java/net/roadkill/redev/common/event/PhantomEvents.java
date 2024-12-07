@@ -142,7 +142,7 @@ public class PhantomEvents
                         Vec3 pos = phantom.position().add(random.nextDouble() - 0.5,
                                                           random.nextDouble() - 0.5,
                                                           random.nextDouble() - 0.5);
-                        phantom.level().addParticle(ParticleTypes.REVERSE_PORTAL, true, pos.x, pos.y, pos.z,
+                        phantom.level().addAlwaysVisibleParticle(ParticleTypes.REVERSE_PORTAL, true, pos.x, pos.y, pos.z,
                                                   random.nextDouble() * 0.04 - 0.02, 0.06, random.nextDouble() * 0.04 - 0.02);
                     }
                 }

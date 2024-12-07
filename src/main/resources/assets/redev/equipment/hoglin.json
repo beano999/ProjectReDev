@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "horse_body": [
+      {
+        "texture": "redev:hoglin"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "redev:hoglin"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "redev:hoglin"
+      }
+    ]
+  }
+}

@@ -12,12 +12,15 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
+import net.minecraft.client.renderer.item.ItemStackRenderState;
+import net.minecraft.client.resources.model.EquipmentClientInfo;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.equipment.EquipmentModel;
+import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.minecraft.world.item.equipment.Equippable;
+import net.roadkill.redev.mixin_interfaces.IPig;
 import net.roadkill.redev.util.RDMath;
 
 public class PigHelmetLayer<S extends LivingEntityRenderState, M extends EntityModel<S>> extends RenderLayer<S, M>
@@ -33,7 +36,7 @@ public class PigHelmetLayer<S extends LivingEntityRenderState, M extends EntityM
     @Override
     public void render(PoseStack ps, MultiBufferSource buffer, int packedLight, S renderState, float p_117353_, float p_117354_)
     {
-        ItemStack helmet = renderState.headItem;
+        ItemStackRenderState helmet = renderState.headItem;
         if (!helmet.isEmpty())
         {
             ps.pushPose();
@@ -48,7 +51,7 @@ public class PigHelmetLayer<S extends LivingEntityRenderState, M extends EntityM
             armorModel.setAllVisible(false);
             armorModel.head.visible = true;
 
-            this.renderArmorPiece(ps, buffer, helmet, EquipmentSlot.HEAD, packedLight, armorModel);
+            this.renderArmorPiece(ps, buffer, ((IPig) renderState).getHelmet(), EquipmentSlot.HEAD, packedLight, armorModel);
             ps.popPose();
         }
     }
@@ -58,13 +61,13 @@ public class PigHelmetLayer<S extends LivingEntityRenderState, M extends EntityM
         Equippable equippable = armor.get(DataComponents.EQUIPPABLE);
         if (equippable != null && shouldRender(equippable, slot))
         {
-            ResourceLocation resourcelocation = equippable.model().orElseThrow();
-            EquipmentModel.LayerType equipmentmodel$layertype = EquipmentModel.LayerType.HUMANOID;
+            ResourceKey<EquipmentAsset> resourcelocation = equippable.assetId().orElseThrow();
+            EquipmentClientInfo.LayerType equipmentmodel$layertype = EquipmentClientInfo.LayerType.HUMANOID;
             this.equipmentRenderer.renderLayers(equipmentmodel$layertype, resourcelocation, armorModel, armor, ps, buffer, packedLight);
         }
     }
 
-    private static boolean shouldRender(Equippable equipment, EquipmentSlot slot) {
-        return equipment.model().isPresent() && equipment.slot() == slot;
+    private static boolean shouldRender(Equippable equipment, EquipmentSlot slot)
+    {   return equipment.assetId().isPresent() && equipment.slot() == slot;
     }
 }

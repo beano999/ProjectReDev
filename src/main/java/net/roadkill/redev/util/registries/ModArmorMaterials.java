@@ -2,11 +2,13 @@ package net.roadkill.redev.util.registries;
 
 import net.minecraft.Util;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.roadkill.redev.ReDev;
@@ -27,7 +29,7 @@ public class ModArmorMaterials
             }), 15, SoundEvents.ARMOR_EQUIP_LEATHER,
             0.0F, 0.0F,
             ModTags.Items.HOGLIN_HIDE_REPAIR_MATERIALS,
-            ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "hoglin"));
+            ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "hoglin")));
 
     public static final ArmorMaterial NETHER_GOLD = new ArmorMaterial(
             300,
@@ -39,7 +41,7 @@ public class ModArmorMaterials
             }), 25, SoundEvents.ARMOR_EQUIP_GOLD,
             0.0F, 0.0F,
             ModTags.Items.NETHER_GOLD_REPAIR_MATERIALS,
-            ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "nether_gold"));
+            ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "nether_gold")));
 
     public static final ArmorMaterial WITHERED = new ArmorMaterial(
             800,
@@ -51,5 +53,5 @@ public class ModArmorMaterials
             }), 30, SoundEvents.ARMOR_EQUIP_NETHERITE,
             2.0F, 0.1F,
             ModTags.Items.WITHERED_REPAIR_MATERIALS,
-            ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "withered"));
+            ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "withered")));
 }

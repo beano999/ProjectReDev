@@ -71,7 +71,7 @@ public class ModCarvedPumpkinBlock extends net.minecraft.world.level.block.Carve
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos, Player player)
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData, Player player)
     {
         int pumpkinType = state.getValue(PUMPKIN_TYPE);
         Boolean lit = state.getValue(LIT);

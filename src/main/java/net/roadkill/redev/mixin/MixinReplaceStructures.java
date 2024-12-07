@@ -15,6 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.commands.LocateCommand;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.chunk.ChunkGenerator;
@@ -42,12 +43,13 @@ public class MixinReplaceStructures
          * Prevents vanilla strongholds from generating.
          */
         @Inject(method = "tryGenerateStructure", at = @At(value = "HEAD"), cancellable = true)
-        void disableVanillaStrongholds(StructureSet.StructureSelectionEntry structureSetEntry, StructureManager structureManager, RegistryAccess registryAccess,
-                                       RandomState randomState, StructureTemplateManager structureTemplateManager, long seed, ChunkAccess chunkAccess,
-                                       ChunkPos chunkPos, SectionPos sectionPos, CallbackInfoReturnable<Boolean> cir)
+        void disableVanillaStrongholds(StructureSet.StructureSelectionEntry structureSelectionEntry, StructureManager structureManager,
+                                       RegistryAccess registryAccess, RandomState random, StructureTemplateManager structureTemplateManager,
+                                       long seed, ChunkAccess chunk, ChunkPos chunkPos, SectionPos sectionPos, ResourceKey<Level> levelKey,
+                                       CallbackInfoReturnable<Boolean> cir)
         {
-            if (structureSetEntry.structure().value().type() == StructureType.STRONGHOLD
-            ||  structureSetEntry.structure().value().type() == StructureType.DESERT_PYRAMID)
+            if (structureSelectionEntry.structure().value().type() == StructureType.STRONGHOLD
+            ||  structureSelectionEntry.structure().value().type() == StructureType.DESERT_PYRAMID)
             {   cir.setReturnValue(false);
             }
         }

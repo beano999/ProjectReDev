@@ -66,9 +66,9 @@ public class ItemInit
 
     public static final DeferredHolder<Item, Item> NETHERITE_HORSE_ARMOR = ITEMS.registerItem("netherite_horse_armor", props -> new AnimalArmorItem(ArmorMaterials.NETHERITE, AnimalArmorItem.BodyType.EQUESTRIAN, props), new Item.Properties().stacksTo(1).fireResistant());
 
-    public static final DeferredHolder<Item, Item> LITHICAN_SPAWN_EGG = ITEMS.registerItem("lithican_spawn_egg", props -> new SpawnEggItem(EntityInit.LITHICAN.value(), 5263440, 10782599, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> REVENANT_SPAWN_EGG = ITEMS.registerItem("revenant_spawn_egg", props -> new SpawnEggItem(EntityInit.REVENANT.value(), 5395605, 5874129, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> HOVERING_INFERNO_SPAWN_EGG = ITEMS.registerItem("hovering_inferno_spawn_egg", props -> new SpawnEggItem(EntityInit.HOVERING_INFERNO.value(), 13932032, 16750138, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> LITHICAN_SPAWN_EGG = ITEMS.registerItem("lithican_spawn_egg", props -> new SpawnEggItem(EntityInit.LITHICAN.value(), props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> REVENANT_SPAWN_EGG = ITEMS.registerItem("revenant_spawn_egg", props -> new SpawnEggItem(EntityInit.REVENANT.value(), props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> HOVERING_INFERNO_SPAWN_EGG = ITEMS.registerItem("hovering_inferno_spawn_egg", props -> new SpawnEggItem(EntityInit.HOVERING_INFERNO.value(), props), new Item.Properties());
 
     public static final DeferredHolder<Item, Item> DURIAN_SLICE = ITEMS.registerSimpleItem("durian_slice", new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.3F).build()));
 
