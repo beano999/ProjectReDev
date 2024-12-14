@@ -18,7 +18,7 @@ public class VoidFog
     public static void onFogDensity(ViewportEvent.RenderFog event)
     {   double y = Minecraft.getInstance().player.getY();
         Level level = Minecraft.getInstance().level;
-        if (y < 0 && level.dimensionTypeRegistration() == BuiltinDimensionTypes.OVERWORLD)
+        if (y < 0 && level.dimensionTypeRegistration().is(BuiltinDimensionTypes.OVERWORLD))
         {   event.setFarPlaneDistance((float) RDMath.blendExp(16, event.getFarPlaneDistance(), y, -32, 0));
             event.setNearPlaneDistance((float) RDMath.blendExp(8, event.getNearPlaneDistance(), y, -32, 0));
             event.setCanceled(true);
@@ -30,7 +30,7 @@ public class VoidFog
     {
         Level level = Minecraft.getInstance().level;
         double y = Minecraft.getInstance().player.getY();
-        if (y < 0 && level.dimensionTypeRegistration() == BuiltinDimensionTypes.OVERWORLD)
+        if (y < 0 && level.dimensionTypeRegistration().is(BuiltinDimensionTypes.OVERWORLD))
         {   event.setRed((float) RDMath.blendExp(0, event.getRed(), y, -32, 0));
             event.setGreen((float) RDMath.blendExp(0, event.getGreen(), y, -32, 0));
             event.setBlue((float) RDMath.blendExp(0, event.getBlue(), y, -32, 0));
@@ -45,7 +45,7 @@ public class VoidFog
 
         int minHeight = level.getMinY();
         double y = Minecraft.getInstance().player.getY();
-        if (y < 0 && level.dimensionTypeRegistration() == BuiltinDimensionTypes.OVERWORLD && !Minecraft.getInstance().isPaused())
+        if (y < 0 && level.dimensionTypeRegistration().is(BuiltinDimensionTypes.OVERWORLD) && !Minecraft.getInstance().isPaused())
         {
             for (int i = 0; i < RDMath.blend(5, 0, y, minHeight + 10, 0); i++)
             {

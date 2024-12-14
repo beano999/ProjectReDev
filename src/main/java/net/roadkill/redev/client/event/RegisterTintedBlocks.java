@@ -41,30 +41,4 @@ public class RegisterTintedBlocks
             return tintGetter != null && blockPos != null ? BiomeColors.getAverageFoliageColor(tintGetter, blockPos) : BIRCH_COLOR;
         }, BlockInit.BIRCH_HEDGE.value(), BlockInit.BIRCH_HEDGE_WALL.value());
     }
-
-    // TODO: Implement this via Client Items
-    /*@SubscribeEvent
-    public static void registerItemColors(RegisterColorHandlersEvent.Item event)
-    {
-        event.register((stack, tintIndex) -> {
-            return FoliageColor.getDefaultColor();
-        },
-        ItemInit.OAK_HEDGE.value(),      ItemInit.OAK_HEDGE_WALL.value(),
-        ItemInit.JUNGLE_HEDGE.value(),   ItemInit.JUNGLE_HEDGE_WALL.value(),
-        ItemInit.ACACIA_HEDGE.value(),   ItemInit.ACACIA_HEDGE_WALL.value(),
-        ItemInit.DARK_OAK_HEDGE.value(), ItemInit.DARK_OAK_HEDGE_WALL.value(),
-        ItemInit.JUNGLE_HEDGE.value(),   ItemInit.JUNGLE_HEDGE_WALL.value());
-
-        event.register((stack, tintIndex) -> {
-            return FoliageColor.getMangroveColor();
-        }, ItemInit.MANGROVE_HEDGE.value(), ItemInit.MANGROVE_HEDGE_WALL.value());
-
-        event.register((stack, tintIndex) -> {
-            return FoliageColor.getEvergreenColor();
-        }, ItemInit.SPRUCE_HEDGE.value(), ItemInit.SPRUCE_HEDGE_WALL.value());
-
-        event.register((stack, tintIndex) -> {
-            return FoliageColor.getBirchColor();
-        }, ItemInit.BIRCH_HEDGE.value(), ItemInit.BIRCH_HEDGE_WALL.value());
-    }*/
 }

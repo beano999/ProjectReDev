@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "redev:block/spruce_hedge_wall_inventory",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 6396257
+      }
+    ]
+  }
+}
