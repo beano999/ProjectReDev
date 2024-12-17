@@ -9,27 +9,21 @@
           "name": "minecraft:golden_chestplate",
           "functions": [
             {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:max_damage": 500
-              }
-            },
-            {
               "function": "minecraft:set_attributes",
               "modifiers": [
                 {
-                  "id": "redev:jens_resilience",
-                  "attribute": "minecraft:generic.armor",
+                  "id": "5b8f52a4-3efe-4dcc-a6b3-120e7cf1b11e",
+                  "attribute": "minecraft:armor",
                   "amount": 8,
                   "operation": "add_value",
-                  "slot": "chest"
+                  "slot": "mainhand"
                 },
                 {
-                  "id": "redev:jens_reach",
-                  "attribute": "minecraft:player.block_interaction_range",
+                  "id": "d94a4689-b07f-4001-a10f-ed349087263b",
+                  "attribute": "minecraft:block_interaction_range",
                   "amount": 2,
                   "operation": "add_value",
-                  "slot": "chest"
+                  "slot": "mainhand"
                 }
               ]
             },
@@ -98,6 +92,5 @@
         }
       ]
     }
-  ],
-  "random_sequence": "redev:pyramid_tomb_special"
+  ]
 }
