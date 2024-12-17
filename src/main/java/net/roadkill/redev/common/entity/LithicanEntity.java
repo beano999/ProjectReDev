@@ -14,6 +14,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.random.WeightedRandomList;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageEffects;
 import net.minecraft.world.damagesource.DamageSource;
@@ -31,6 +33,7 @@ import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.level.Level;
@@ -311,6 +314,32 @@ public class LithicanEntity extends Zombie
     public void die(DamageSource damageSource)
     {   this.playBreakAnimation();
         super.die(damageSource);
+    }
+
+    private static final SimpleWeightedRandomList<ItemStack> STONE_VARIANT_DROPS = SimpleWeightedRandomList.<ItemStack>builder()
+            .add(new ItemStack(Items.STONE),       100)
+            .add(new ItemStack(Items.COAL_ORE),    10)
+            .add(new ItemStack(Items.IRON_ORE),    5)
+            .add(new ItemStack(Items.COPPER_ORE),  5)
+            .add(new ItemStack(Items.GOLD_ORE),    3)
+            .add(new ItemStack(Items.DIAMOND_ORE), 1)
+            .add(new ItemStack(Items.EMERALD_ORE), 1)
+            .build();
+
+    @Override
+    protected void dropCustomDeathLoot(ServerLevel level, DamageSource damageSource, boolean recentlyHit)
+    {
+        ItemStack drop = switch (this.getVariant())
+        {
+            case SANDSTONE -> new ItemStack(Items.SANDSTONE);
+            case DEEPSLATE -> new ItemStack(Items.DEEPSLATE);
+            case BASALT    -> new ItemStack(Items.BASALT);
+            default -> STONE_VARIANT_DROPS.getRandomValue(this.random).orElse(ItemStack.EMPTY);
+        };
+        if (!drop.isEmpty() && this.level() instanceof ServerLevel serverLevel)
+        {   this.spawnAtLocation(serverLevel, drop);
+        }
+        super.dropCustomDeathLoot(level, damageSource, recentlyHit);
     }
 
     private void playBreakAnimation()
