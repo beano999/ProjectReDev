@@ -10,7 +10,7 @@
   {
     "L":
     {
-      "tag": "redev:ladders"
+      "tag": "#redev:ladders"
     },
     "W":
     {
@@ -19,7 +19,7 @@
   },
   "result":
   {
-    "item": "redev:whispur_ladder",
+    "id": "redev:whispur_ladder",
     "count": 7
   }
 }

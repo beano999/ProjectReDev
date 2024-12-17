@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "I":
-    {
-      "item": "minecraft:iron_ingot"
-    },
-    "P":
-    {
-      "item": "minecraft:acacia_slab"
-    }
+    "I": "c:ingots/iron",
+    "P": "minecraft:acacia_slab"
   },
   "result":
   {
-    "item": "redev:acacia_rail",
+    "id": "redev:acacia_rail",
     "count": 16
   }
 }

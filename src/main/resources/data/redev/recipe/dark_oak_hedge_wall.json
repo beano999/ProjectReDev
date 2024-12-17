@@ -8,14 +8,11 @@
   ],
   "key":
   {
-    "H":
-    {
-      "item": "redev:dark_oak_hedge"
-    }
+    "H": "redev:dark_oak_hedge"
   },
   "result":
   {
-    "item": "redev:dark_oak_hedge_wall",
+    "id": "redev:dark_oak_hedge_wall",
     "count": 12
   }
 }

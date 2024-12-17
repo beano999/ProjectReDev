@@ -1,24 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "key": {
-    "C": {
-      "tag": "minecraft:coals"
-    },
-    "L": {
-      "item": "minecraft:dark_oak_log"
-    },
-    "S": {
-      "tag": "forge:rods/wooden"
-    }
-  },
-  "pattern": [
+  "pattern":
+  [
     " S ",
     "SCS",
     "LLL"
   ],
-  "result": {
-    "item": "redev:dark_oak_campfire"
+  "key":
+  {
+    "C": "#minecraft:coals",
+    "L": "minecraft:dark_oak_log",
+    "S": "#c:rods/wooden"
+  },
+  "result":
+  {
+    "id": "redev:dark_oak_campfire"
   },
   "show_notification": true
 }

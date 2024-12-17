@@ -8,22 +8,13 @@
   ],
   "key":
   {
-    "D":
-    {
-      "item": "minecraft:deepslate"
-    },
-    "B":
-    {
-      "item": "minecraft:bow"
-    },
-    "R":
-    {
-      "item": "minecraft:redstone"
-    }
+    "D": "minecraft:deepslate",
+    "B": "#c:tools/bow",
+    "R": "#c:dusts/redstone"
   },
   "result":
   {
-    "item": "redev:deepslate_dispenser",
+    "id": "redev:deepslate_dispenser",
     "count": 1
   }
 }

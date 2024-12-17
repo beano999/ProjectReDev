@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "L":
-    {
-      "tag": "redev:ladders"
-    },
-    "W":
-    {
-      "item": "minecraft:acacia_planks"
-    }
+    "L": "#redev:ladders",
+    "W": "minecraft:acacia_planks"
   },
   "result":
   {
-    "item": "redev:acacia_ladder",
+    "id": "redev:acacia_ladder",
     "count": 7
   }
 }

@@ -8,22 +8,13 @@
   ],
   "key":
   {
-    "G":
-    {
-      "item": "minecraft:gold_ingot"
-    },
-    "R":
-    {
-      "item": "minecraft:redstone"
-    },
-    "W":
-    {
-      "item": "minecraft:birch_slab"
-    }
+    "G": "#c:ingots/gold",
+    "R": "#c:dusts/redstone",
+    "W": "minecraft:birch_slab"
   },
   "result":
   {
-    "item": "redev:birch_activator_rail",
+    "id": "redev:birch_activator_rail",
     "count":  6
   }
 }

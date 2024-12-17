@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "A":
-    {
-      "item": "minecraft:andesite"
-    },
-    "R":
-    {
-      "item": "minecraft:redstone"
-    }
+    "A": "minecraft:andesite",
+    "R":  "c:dusts/redstone"
   },
   "result":
   {
-    "item": "redev:andesite_dropper",
+    "id": "redev:andesite_dropper",
     "count": 1
   }
 }

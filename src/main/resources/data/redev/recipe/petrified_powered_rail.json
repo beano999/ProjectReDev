@@ -10,11 +10,11 @@
   {
     "G":
     {
-      "item": "minecraft:gold_ingot"
+      "item": "#c:ingots/gold"
     },
     "R":
     {
-      "item": "minecraft:redstone"
+      "item": "#c:dusts/redstone"
     },
     "W":
     {
@@ -23,7 +23,7 @@
   },
   "result":
   {
-    "item": "redev:petrified_powered_rail",
+    "id": "redev:petrified_powered_rail",
     "count":  6
   }
 }

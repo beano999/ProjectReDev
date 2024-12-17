@@ -10,14 +10,11 @@
   ],
   "key":
   {
-    "W":
-    {
-      "item": "minecraft:basalt"
-    }
+    "W": "minecraft:basalt"
   },
   "result":
   {
-    "item": "redev:basalt_stairs",
+    "id": "redev:basalt_stairs",
     "count":  8
   }
 }

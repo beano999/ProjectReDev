@@ -8,14 +8,11 @@
   ],
   "key":
   {
-    "D":
-    {
-      "item": "minecraft:cobbled_deepslate"
-    }
+    "D": "minecraft:cobbled_deepslate"
   },
   "result":
   {
-    "item": "redev:deepslate_furnace",
+    "id": "redev:deepslate_furnace",
     "count": 1
   }
 }

@@ -1,24 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "key": {
-    "C": {
-      "tag": "minecraft:coals"
-    },
-    "L": {
-      "item": "minecraft:acacia_log"
-    },
-    "S": {
-      "tag": "forge:rods/wooden"
-    }
-  },
-  "pattern": [
+  "pattern":
+  [
     " S ",
     "SCS",
     "LLL"
   ],
+  "key":
+  {
+    "C": "#minecraft:coals",
+    "L": "minecraft:acacia_log",
+    "S": "#c:rods/wooden"
+  },
   "result": {
-    "item": "redev:acacia_campfire"
+    "id": "redev:acacia_campfire"
   },
   "show_notification": true
 }

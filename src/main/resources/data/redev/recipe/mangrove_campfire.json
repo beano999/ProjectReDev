@@ -3,13 +3,13 @@
   "category": "misc",
   "key": {
     "C": {
-      "tag": "minecraft:coals"
+      "tag": "#minecraft:coals"
     },
     "L": {
       "item": "minecraft:mangrove_log"
     },
     "S": {
-      "tag": "forge:rods/wooden"
+      "tag": "#c:rods/wooden"
     }
   },
   "pattern": [
@@ -18,7 +18,7 @@
     "LLL"
   ],
   "result": {
-    "item": "redev:mangrove_campfire"
+    "id": "redev:mangrove_campfire"
   },
   "show_notification": true
 }

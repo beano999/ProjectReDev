@@ -3,13 +3,13 @@
   "category": "misc",
   "key": {
     "C": {
-      "tag": "minecraft:soul_fire_base_blocks"
+      "tag": "#minecraft:soul_fire_base_blocks"
     },
     "L": {
       "item": "minecraft:mangrove_log"
     },
     "S": {
-      "tag": "forge:rods/wooden"
+      "tag": "#c:rods/wooden"
     }
   },
   "pattern": [
@@ -18,7 +18,7 @@
     "LLL"
   ],
   "result": {
-    "item": "redev:mangrove_soul_campfire"
+    "id": "redev:mangrove_soul_campfire"
   },
   "show_notification": true
 }

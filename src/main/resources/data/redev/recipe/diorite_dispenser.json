@@ -8,22 +8,13 @@
   ],
   "key":
   {
-    "D":
-    {
-      "item": "minecraft:diorite"
-    },
-    "b":
-    {
-      "item": "minecraft:bow"
-    },
-    "R":
-    {
-      "item": "minecraft:redstone"
-    }
+    "D": "minecraft:diorite",
+    "b": "#c:tools/bow",
+    "R": "#c:dusts/redstone"
   },
   "result":
   {
-    "item": "redev:diorite_dispenser",
+    "id": "redev:diorite_dispenser",
     "count": 1
   }
 }

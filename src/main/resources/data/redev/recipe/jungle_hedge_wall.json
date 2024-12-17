@@ -8,14 +8,11 @@
   ],
   "key":
   {
-    "H":
-    {
-      "item": "redev:jungle_hedge"
-    }
+    "H": "redev:jungle_hedge"
   },
   "result":
   {
-    "item": "redev:jungle_hedge_wall",
+    "id": "redev:jungle_hedge_wall",
     "count": 12
   }
 }

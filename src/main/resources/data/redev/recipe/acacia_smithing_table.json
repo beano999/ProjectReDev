@@ -9,18 +9,12 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "minecraft:acacia_planks"
-    },
-    "I":
-    {
-      "item": "minecraft:iron_ingot"
-    }
+    "P": "minecraft:acacia_planks",
+    "I": "c:ingots/iron"
   },
   "result":
   {
-    "item": "redev:acacia_smithing_table"
+    "id": "redev:acacia_smithing_table"
   },
   "show_notification": true
 }

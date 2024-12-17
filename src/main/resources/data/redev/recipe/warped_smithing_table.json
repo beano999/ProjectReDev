@@ -15,12 +15,12 @@
     },
     "I":
     {
-      "item": "minecraft:iron_ingot"
+      "item": "#c:ingots/iron"
     }
   },
   "result":
   {
-    "item": "redev:warped_smithing_table"
+    "id": "redev:warped_smithing_table"
   },
   "show_notification": true
 }

@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "S":
-    {
-      "tag": "forge:rods/wooden"
-    },
-    "B":
-    {
-      "item": "minecraft:acacia_slab"
-    }
+    "S": "c:rods/wooden",
+    "B": "minecraft:acacia_slab"
   },
   "result":
   {
-    "item": "redev:acacia_ladder",
+    "id": "redev:acacia_ladder",
     "count": 3
   }
 }

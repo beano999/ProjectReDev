@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "minecraft:jungle_planks"
-    },
-    "B":
-    {
-      "item": "minecraft:book"
-    }
+    "P": "minecraft:jungle_planks",
+    "B": "minecraft:book"
   },
   "result":
   {
-    "item": "redev:jungle_bookshelf",
+    "id": "redev:jungle_bookshelf",
     "count": 1
   }
 }

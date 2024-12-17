@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "D":
-    {
-      "item": "minecraft:diorite"
-    },
-    "R":
-    {
-      "item": "minecraft:redstone"
-    }
+    "D": "minecraft:diorite",
+    "R": "#c:dusts/redstone"
   },
   "result":
   {
-    "item": "redev:diorite_dropper",
+    "id": "redev:diorite_dropper",
     "count": 1
   }
 }

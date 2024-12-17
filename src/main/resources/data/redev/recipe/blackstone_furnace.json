@@ -8,14 +8,11 @@
   ],
   "key":
   {
-    "B":
-    {
-      "item": "minecraft:blackstone"
-    }
+    "B": "minecraft:blackstone"
   },
   "result":
   {
-    "item": "redev:blackstone_furnace",
+    "id": "redev:blackstone_furnace",
     "count": 1
   }
 }

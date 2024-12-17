@@ -17,8 +17,8 @@
   ],
   "result":
   {
-    "count": 3,
-    "item": "redev:whispur_door"
+    "id": "redev:whispur_door",
+    "count": 3
   },
   "show_notification": true
 }

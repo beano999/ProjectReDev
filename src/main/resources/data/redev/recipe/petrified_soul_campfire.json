@@ -3,13 +3,13 @@
   "category": "misc",
   "key": {
     "C": {
-      "tag": "minecraft:soul_fire_base_blocks"
+      "tag": "#minecraft:soul_fire_base_blocks"
     },
     "L": {
       "item": "redev:petrified_log"
     },
     "S": {
-      "tag": "forge:rods/wooden"
+      "tag": "#c:rods/wooden"
     }
   },
   "pattern": [
@@ -18,7 +18,7 @@
     "LLL"
   ],
   "result": {
-    "item": "redev:petrified_campfire"
+    "id": "redev:petrified_campfire"
   },
   "show_notification": true
 }

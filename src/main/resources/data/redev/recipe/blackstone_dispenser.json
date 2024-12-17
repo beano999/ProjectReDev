@@ -8,22 +8,13 @@
   ],
   "key":
   {
-    "B":
-    {
-      "item": "minecraft:blackstone"
-    },
-    "b":
-    {
-      "item": "minecraft:bow"
-    },
-    "R":
-    {
-      "item": "minecraft:redstone"
-    }
+    "B": "minecraft:blackstone",
+    "b": "#c:tools/bow",
+    "R": "#c:dusts/redstone"
   },
   "result":
   {
-    "item": "redev:blackstone_dispenser",
+    "id": "redev:blackstone_dispenser",
     "count": 1
   }
 }

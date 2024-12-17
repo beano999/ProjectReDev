@@ -15,12 +15,12 @@
     },
     "I":
     {
-      "item": "minecraft:iron_ingot"
+      "item": "#c:ingots/iron"
     }
   },
   "result":
   {
-    "item": "redev:spruce_smithing_table"
+    "id": "redev:spruce_smithing_table"
   },
   "show_notification": true
 }

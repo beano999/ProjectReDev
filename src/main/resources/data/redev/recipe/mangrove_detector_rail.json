@@ -10,7 +10,7 @@
   {
     "I":
     {
-      "item": "minecraft:iron_ingot"
+      "item": "#c:ingots/iron"
     },
     "P":
     {
@@ -18,7 +18,7 @@
     },
     "R":
     {
-      "item": "minecraft:redstone"
+      "item": "#c:dusts/redstone"
     },
     "W":
     {
@@ -27,7 +27,7 @@
   },
   "result":
   {
-    "item": "redev:mangrove_detector_rail",
+    "id": "redev:mangrove_detector_rail",
     "count":  6
   }
 }

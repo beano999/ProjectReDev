@@ -8,14 +8,11 @@
   ],
   "key":
   {
-    "G":
-    {
-      "item": "minecraft:granite"
-    }
+    "G": "minecraft:granite"
   },
   "result":
   {
-    "item": "redev:granite_furnace",
+    "id": "redev:granite_furnace",
     "count": 1
   }
 }

@@ -7,14 +7,11 @@
   ],
   "key":
   {
-    "H":
-    {
-      "item": "redev:hoglin_hide"
-    }
+    "H": "redev:hoglin_hide"
   },
   "result":
   {
-    "item": "redev:hoglin_hide_boots",
+    "id": "redev:hoglin_hide_boots",
     "count": 1
   }
 }

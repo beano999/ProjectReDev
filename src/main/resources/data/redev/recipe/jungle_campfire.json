@@ -1,24 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "key": {
-    "C": {
-      "tag": "minecraft:coals"
-    },
-    "L": {
-      "item": "minecraft:jungle_log"
-    },
-    "S": {
-      "tag": "forge:rods/wooden"
-    }
-  },
-  "pattern": [
+  "pattern":
+  [
     " S ",
     "SCS",
     "LLL"
   ],
-  "result": {
-    "item": "redev:jungle_campfire"
+  "key":
+  {
+    "C": "#minecraft:coals",
+    "L": "minecraft:jungle_log",
+    "S": "#c:rods/wooden"
+  },
+  "result":
+  {
+    "id": "redev:jungle_campfire"
   },
   "show_notification": true
 }

@@ -8,14 +8,11 @@
   ],
   "key":
   {
-    "W":
-    {
-      "item": "redev:smooth_basalt_wall"
-    }
+    "W": "redev:smooth_basalt_wall"
   },
   "result":
   {
-    "item": "redev:basalt_wall",
+    "id": "redev:basalt_wall",
     "count":  1
   }
 }

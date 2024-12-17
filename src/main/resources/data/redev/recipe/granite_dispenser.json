@@ -8,22 +8,13 @@
   ],
   "key":
   {
-    "G":
-    {
-      "item": "minecraft:granite"
-    },
-    "b":
-    {
-      "item": "minecraft:bow"
-    },
-    "R":
-    {
-      "item": "minecraft:redstone"
-    }
+    "G": "minecraft:granite",
+    "b": "#c:tools/bow",
+    "R": "#c:dusts/redstone"
   },
   "result":
   {
-    "item": "redev:granite_dispenser",
+    "id": "redev:granite_dispenser",
     "count": 1
   }
 }

@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "#":
-    {
-      "tag": "forge:nuggets/iron"
-    },
-    "I":
-    {
-      "tag": "forge:ingots/iron"
-    }
+    "#": "#c:nuggets/iron",
+    "I": "#c:ingots/iron"
   },
   "result":
   {
-    "item": "redev:chain_ladder",
+    "id": "redev:chain_ladder",
     "count": 4
   }
 }

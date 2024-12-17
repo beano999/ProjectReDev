@@ -1,24 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "key": {
-    "C": {
-      "tag": "minecraft:soul_fire_base_blocks"
-    },
-    "L": {
-      "item": "minecraft:jungle_log"
-    },
-    "S": {
-      "tag": "forge:rods/wooden"
-    }
-  },
-  "pattern": [
+  "pattern":
+  [
     " S ",
     "SCS",
     "LLL"
   ],
-  "result": {
-    "item": "redev:jungle_soul_campfire"
+  "key":
+  {
+    "C": "#minecraft:soul_fire_base_blocks",
+    "L": "minecraft:jungle_log",
+    "S": "#c:rods/wooden"
+  },
+  "result":
+  {
+    "id": "redev:jungle_soul_campfire"
   },
   "show_notification": true
 }

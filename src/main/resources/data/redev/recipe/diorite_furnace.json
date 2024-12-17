@@ -8,14 +8,11 @@
   ],
   "key":
   {
-    "D":
-    {
-      "item": "minecraft:diorite"
-    }
+    "D": "minecraft:diorite"
   },
   "result":
   {
-    "item": "redev:diorite_furnace",
+    "id": "redev:diorite_furnace",
     "count": 1
   }
 }

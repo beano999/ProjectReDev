@@ -14,12 +14,12 @@
     },
     "S":
     {
-      "tag": "forge:rods/wooden"
+      "tag": "#c:rods/wooden"
     }
   },
   "result":
   {
-    "item": "redev:nether_gold_hoe",
+    "id": "redev:nether_gold_hoe",
     "count": 1
   }
 }

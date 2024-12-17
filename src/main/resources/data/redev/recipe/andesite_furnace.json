@@ -8,14 +8,11 @@
   ],
   "key":
   {
-    "A":
-    {
-      "item": "minecraft:andesite"
-    }
+    "A": "minecraft:andesite"
   },
   "result":
   {
-    "item": "redev:andesite_furnace",
+    "id": "redev:andesite_furnace",
     "count": 1
   }
 }

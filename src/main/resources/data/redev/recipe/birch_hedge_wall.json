@@ -8,14 +8,11 @@
   ],
   "key":
   {
-    "H":
-    {
-      "item": "redev:birch_hedge"
-    }
+    "H": "redev:birch_hedge"
   },
   "result":
   {
-    "item": "redev:birch_hedge_wall",
+    "id": "redev:birch_hedge_wall",
     "count": 12
   }
 }

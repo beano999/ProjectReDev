@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "I":
-    {
-      "item": "minecraft:iron_ingot"
-    },
-    "P":
-    {
-      "item": "minecraft:dark_oak_slab"
-    }
+    "I": "#c:ingots/iron",
+    "P": "minecraft:dark_oak_slab"
   },
   "result":
   {
-    "item": "redev:dark_oak_rail",
+    "id": "redev:dark_oak_rail",
     "count": 16
   }
 }

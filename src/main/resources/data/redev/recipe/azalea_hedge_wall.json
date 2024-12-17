@@ -8,14 +8,11 @@
   ],
   "key":
   {
-    "H":
-    {
-      "item": "redev:azalea_hedge"
-    }
+    "H": "redev:azalea_hedge"
   },
   "result":
   {
-    "item": "redev:azalea_hedge_wall",
+    "id": "redev:azalea_hedge_wall",
     "count": 12
   }
 }

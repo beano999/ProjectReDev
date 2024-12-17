@@ -9,18 +9,12 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "minecraft:birch_planks"
-    },
-    "I":
-    {
-      "item": "minecraft:iron_ingot"
-    }
+    "P": "minecraft:birch_planks",
+    "I": "#c:ingots/iron"
   },
   "result":
   {
-    "item": "redev:birch_smithing_table"
+    "id": "redev:birch_smithing_table"
   },
   "show_notification": true
 }

@@ -15,12 +15,12 @@
     },
     "I":
     {
-      "item": "minecraft:iron_ingot"
+      "item": "#c:ingots/iron"
     }
   },
   "result":
   {
-    "item": "redev:scrapwood_smithing_table"
+    "id": "redev:scrapwood_smithing_table"
   },
   "show_notification": true
 }

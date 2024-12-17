@@ -16,8 +16,8 @@
   ],
   "result":
   {
-    "count": 2,
-    "item": "redev:scrapwood_trapdoor"
+    "id": "redev:scrapwood_trapdoor",
+    "count": 2
   },
   "show_notification": true
 }

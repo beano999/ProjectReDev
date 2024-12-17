@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "minecraft:dark_oak_planks"
-    },
-    "B":
-    {
-      "item": "minecraft:book"
-    }
+    "P": "minecraft:dark_oak_planks",
+    "B": "minecraft:book"
   },
   "result":
   {
-    "item": "redev:dark_oak_bookshelf",
+    "id": "redev:dark_oak_bookshelf",
     "count": 1
   }
 }

@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "B":
-    {
-      "item": "minecraft:blackstone"
-    },
-    "R":
-    {
-      "item": "minecraft:redstone"
-    }
+    "B": "minecraft:blackstone",
+    "R": "#c:dusts/redstone"
   },
   "result":
   {
-    "item": "redev:blackstone_dropper",
+    "id": "redev:blackstone_dropper",
     "count": 1
   }
 }

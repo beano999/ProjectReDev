@@ -8,14 +8,11 @@
   ],
   "key":
   {
-    "H":
-    {
-      "item": "redev:hoglin_hide"
-    }
+    "H": "redev:hoglin_hide"
   },
   "result":
   {
-    "item": "redev:hoglin_hide_leggings",
+    "id": "redev:hoglin_hide_leggings",
     "count": 1
   }
 }

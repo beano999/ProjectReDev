@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "S":
-    {
-      "tag": "forge:rods/wooden"
-    },
-    "B":
-    {
-      "item": "minecraft:jungle_slab"
-    }
+    "S": "#c:rods/wooden",
+    "B":  "minecraft:jungle_slab"
   },
   "result":
   {
-    "item": "redev:jungle_ladder",
+    "id": "redev:jungle_ladder",
     "count": 3
   }
 }

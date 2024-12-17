@@ -16,8 +16,8 @@
   ],
   "result":
   {
-    "count": 2,
-    "item": "redev:whispur_trapdoor"
+    "id": "redev:whispur_trapdoor",
+    "count": 2
   },
   "show_notification": true
 }

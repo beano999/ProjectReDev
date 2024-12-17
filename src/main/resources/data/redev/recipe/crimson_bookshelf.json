@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "minecraft:crimson_planks"
-    },
-    "B":
-    {
-      "item": "minecraft:book"
-    }
+    "P": "minecraft:crimson_planks",
+    "B": "minecraft:book"
   },
   "result":
   {
-    "item": "redev:crimson_bookshelf",
+    "id": "redev:crimson_bookshelf",
     "count": 1
   }
 }

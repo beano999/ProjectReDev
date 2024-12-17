@@ -10,7 +10,7 @@
   {
     "S":
     {
-      "tag": "forge:rods/wooden"
+      "tag": "#c:rods/wooden"
     },
     "B":
     {
@@ -19,7 +19,7 @@
   },
   "result":
   {
-    "item": "redev:petrified_ladder",
+    "id": "redev:petrified_ladder",
     "count": 3
   }
 }

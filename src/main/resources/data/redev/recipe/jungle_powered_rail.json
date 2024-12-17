@@ -8,22 +8,13 @@
   ],
   "key":
   {
-    "G":
-    {
-      "item": "minecraft:gold_ingot"
-    },
-    "R":
-    {
-      "item": "minecraft:redstone"
-    },
-    "W":
-    {
-      "item": "minecraft:jungle_slab"
-    }
+    "G": "#c:ingots/gold",
+    "R": "#c:dusts/redstone",
+    "W": "minecraft:jungle_slab"
   },
   "result":
   {
-    "item": "redev:jungle_powered_rail",
+    "id": "redev:jungle_powered_rail",
     "count":  6
   }
 }

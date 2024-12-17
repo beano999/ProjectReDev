@@ -6,7 +6,7 @@
   {
     "#":
     {
-      "tag": "forge:rods/wooden"
+      "tag": "#c:rods/wooden"
     },
     "W":
     {
@@ -20,7 +20,7 @@
   ],
   "result":
   {
-    "item": "redev:shade_fence_gate"
+    "id": "redev:shade_fence_gate"
   },
   "show_notification": true
 }

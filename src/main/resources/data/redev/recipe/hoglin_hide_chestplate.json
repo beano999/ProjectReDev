@@ -8,14 +8,11 @@
   ],
   "key":
   {
-    "H":
-    {
-      "item": "redev:hoglin_hide"
-    }
+    "H": "redev:hoglin_hide"
   },
   "result":
   {
-    "item": "redev:hoglin_hide_chestplate",
+    "id": "redev:hoglin_hide_chestplate",
     "count": 1
   }
 }

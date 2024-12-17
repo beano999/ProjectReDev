@@ -7,14 +7,11 @@
   ],
   "key":
   {
-    "R":
-    {
-      "item": "redev:caramine_rye"
-    }
+    "R": "redev:caramine_rye"
   },
   "result":
   {
-    "item": "redev:churk",
+    "id": "redev:churk",
     "count":  1
   }
 }

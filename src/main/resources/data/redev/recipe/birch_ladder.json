@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "S":
-    {
-      "tag": "forge:rods/wooden"
-    },
-    "B":
-    {
-      "item": "minecraft:birch_slab"
-    }
+    "S": "#c:rods/wooden",
+    "B": "minecraft:birch_slab"
   },
   "result":
   {
-    "item": "redev:birch_ladder",
+    "id": "redev:birch_ladder",
     "count": 3
   }
 }

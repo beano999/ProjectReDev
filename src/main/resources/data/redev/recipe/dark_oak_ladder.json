@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "S":
-    {
-      "tag": "forge:rods/wooden"
-    },
-    "B":
-    {
-      "item": "minecraft:dark_oak_slab"
-    }
+    "S": "#c:rods/wooden",
+    "B": "minecraft:dark_oak_slab"
   },
   "result":
   {
-    "item": "redev:dark_oak_ladder",
+    "id": "redev:dark_oak_ladder",
     "count": 3
   }
 }

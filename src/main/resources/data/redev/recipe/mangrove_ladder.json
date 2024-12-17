@@ -10,7 +10,7 @@
   {
     "S":
     {
-      "tag": "forge:rods/wooden"
+      "tag": "#c:rods/wooden"
     },
     "B":
     {
@@ -19,7 +19,7 @@
   },
   "result":
   {
-    "item": "redev:mangrove_ladder",
+    "id": "redev:mangrove_ladder",
     "count": 3
   }
 }

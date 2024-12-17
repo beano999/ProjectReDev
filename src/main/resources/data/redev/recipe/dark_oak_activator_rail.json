@@ -8,22 +8,13 @@
   ],
   "key":
   {
-    "G":
-    {
-      "item": "minecraft:gold_ingot"
-    },
-    "R":
-    {
-      "item": "minecraft:redstone"
-    },
-    "W":
-    {
-      "item": "minecraft:dark_oak_slab"
-    }
+    "G": "#c:ingots/gold",
+    "R": "#c:dusts/redstone",
+    "W": "minecraft:dark_oak_slab"
   },
   "result":
   {
-    "item": "redev:dark_oak_activator_rail",
+    "id": "redev:dark_oak_activator_rail",
     "count":  6
   }
 }

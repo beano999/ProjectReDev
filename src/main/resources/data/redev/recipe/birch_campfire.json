@@ -1,24 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "key": {
-    "C": {
-      "tag": "minecraft:coals"
-    },
-    "L": {
-      "item": "minecraft:birch_log"
-    },
-    "S": {
-      "tag": "forge:rods/wooden"
-    }
-  },
-  "pattern": [
+  "pattern":
+  [
     " S ",
     "SCS",
     "LLL"
   ],
-  "result": {
-    "item": "redev:birch_campfire"
+  "key":
+  {
+    "C": "#minecraft:coals",
+    "L": "minecraft:birch_log",
+    "S": "#c:rods/wooden"
+  },
+  "result":
+  {
+    "id": "redev:birch_campfire"
   },
   "show_notification": true
 }

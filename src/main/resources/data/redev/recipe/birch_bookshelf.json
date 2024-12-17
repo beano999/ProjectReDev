@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "minecraft:birch_planks"
-    },
-    "B":
-    {
-      "item": "minecraft:book"
-    }
+    "P": "minecraft:birch_planks",
+    "B": "minecraft:book"
   },
   "result":
   {
-    "item": "redev:birch_bookshelf",
+    "id": "redev:birch_bookshelf",
     "count": 1
   }
 }

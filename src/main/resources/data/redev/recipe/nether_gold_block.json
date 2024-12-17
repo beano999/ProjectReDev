@@ -15,7 +15,7 @@
   },
   "result":
   {
-    "item": "redev:nether_gold_block",
+    "id": "redev:nether_gold_block",
     "count":  1
   }
 }

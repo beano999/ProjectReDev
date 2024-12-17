@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "G":
-    {
-      "item": "minecraft:granite"
-    },
-    "R":
-    {
-      "item": "minecraft:redstone"
-    }
+    "G": "minecraft:granite",
+    "R": "#c:dusts/redstone"
   },
   "result":
   {
-    "item": "redev:granite_dropper",
+    "id": "redev:granite_dropper",
     "count": 1
   }
 }

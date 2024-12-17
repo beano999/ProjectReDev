@@ -10,7 +10,7 @@
     },
     "X":
     {
-      "tag": "forge:rods/wooden"
+      "tag": "#c:rods/wooden"
     }
   },
   "pattern":
@@ -21,8 +21,8 @@
   ],
   "result":
   {
-    "count": 3,
-    "item": "redev:petrified_sign"
+    "id": "redev:petrified_sign",
+    "count": 3
   },
   "show_notification": true
 }

@@ -9,18 +9,12 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "minecraft:dark_oak_planks"
-    },
-    "I":
-    {
-      "item": "minecraft:iron_ingot"
-    }
+    "P": "minecraft:dark_oak_planks",
+    "I": "#c:ingots/iron"
   },
   "result":
   {
-    "item": "redev:dark_oak_smithing_table"
+    "id": "redev:dark_oak_smithing_table"
   },
   "show_notification": true
 }

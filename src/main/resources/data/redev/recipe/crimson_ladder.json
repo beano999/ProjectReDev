@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "S":
-    {
-      "tag": "forge:rods/wooden"
-    },
-    "B":
-    {
-      "item": "minecraft:crimson_slab"
-    }
+    "S": "#c:rods/wooden",
+    "B": "minecraft:crimson_slab"
   },
   "result":
   {
-    "item": "redev:crimson_ladder",
+    "id": "redev:crimson_ladder",
     "count": 3
   }
 }

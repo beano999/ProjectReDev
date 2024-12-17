@@ -7,6 +7,6 @@
     "item": "minecraft:netherite_ingot"
   },
   "result": {
-    "item": "redev:netherite_shield"
+    "id": "redev:netherite_shield"
   }
 }

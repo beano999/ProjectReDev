@@ -7,14 +7,11 @@
   ],
   "key":
   {
-    "H":
-    {
-      "item": "redev:acacia_hedge_wall"
-    }
+    "H": "redev:acacia_hedge_wall"
   },
   "result":
   {
-    "item": "redev:acacia_hedge",
+    "id": "redev:acacia_hedge",
     "count": 2
   }
 }

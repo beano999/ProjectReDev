@@ -9,18 +9,12 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "minecraft:jungle_planks"
-    },
-    "I":
-    {
-      "item": "minecraft:iron_ingot"
-    }
+    "P": "minecraft:jungle_planks",
+    "I": "#c:ingots/iron"
   },
   "result":
   {
-    "item": "redev:jungle_smithing_table"
+    "id": "redev:jungle_smithing_table"
   },
   "show_notification": true
 }

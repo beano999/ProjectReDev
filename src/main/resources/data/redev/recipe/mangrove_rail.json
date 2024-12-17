@@ -10,7 +10,7 @@
   {
     "I":
     {
-      "item": "minecraft:iron_ingot"
+      "item": "#c:ingots/iron"
     },
     "P":
     {
@@ -19,7 +19,7 @@
   },
   "result":
   {
-    "item": "redev:mangrove_rail",
+    "id": "redev:mangrove_rail",
     "count": 16
   }
 }

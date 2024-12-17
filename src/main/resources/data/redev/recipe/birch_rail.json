@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "I":
-    {
-      "item": "minecraft:iron_ingot"
-    },
-    "P":
-    {
-      "item": "minecraft:birch_slab"
-    }
+    "I": "#c:ingots/iron",
+    "P": "minecraft:birch_slab"
   },
   "result":
   {
-    "item": "redev:birch_rail",
+    "id": "redev:birch_rail",
     "count": 16
   }
 }

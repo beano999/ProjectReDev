@@ -10,7 +10,7 @@
   {
     "I":
     {
-      "item": "minecraft:iron_ingot"
+      "item": "#c:ingots/iron"
     },
     "P":
     {
@@ -19,7 +19,7 @@
   },
   "result":
   {
-    "item": "redev:scrapwood_rail",
+    "id": "redev:scrapwood_rail",
     "count": 16
   }
 }

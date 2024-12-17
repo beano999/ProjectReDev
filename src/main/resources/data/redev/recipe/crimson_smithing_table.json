@@ -9,18 +9,12 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "minecraft:crimson_planks"
-    },
-    "I":
-    {
-      "item": "minecraft:iron_ingot"
-    }
+    "P": "minecraft:crimson_planks",
+    "I": "#c:ingots/iron"
   },
   "result":
   {
-    "item": "redev:crimson_smithing_table"
+    "id": "redev:crimson_smithing_table"
   },
   "show_notification": true
 }

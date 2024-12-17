@@ -8,18 +8,12 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "minecraft:acacia_planks"
-    },
-    "B":
-    {
-      "item": "minecraft:book"
-    }
+    "P": "minecraft:acacia_planks",
+    "B": "minecraft:book"
   },
   "result":
   {
-    "item": "redev:acacia_bookshelf",
+    "id": "redev:acacia_bookshelf",
     "count": 1
   }
 }

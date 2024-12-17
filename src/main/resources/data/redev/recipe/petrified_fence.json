@@ -6,7 +6,7 @@
   {
     "#":
     {
-      "tag": "forge:rods/wooden"
+      "tag": "#c:rods/wooden"
     },
     "W":
     {
@@ -20,8 +20,8 @@
   ],
   "result":
   {
-    "count": 3,
-    "item": "redev:petrified_fence"
+    "id": "redev:petrified_fence",
+    "count": 3
   },
   "show_notification": true
 }

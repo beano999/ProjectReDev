@@ -8,22 +8,13 @@
   ],
   "key":
   {
-    "G":
-    {
-      "item": "minecraft:gold_ingot"
-    },
-    "R":
-    {
-      "item": "minecraft:redstone"
-    },
-    "W":
-    {
-      "item": "minecraft:crimson_slab"
-    }
+    "G": "#c:ingots/gold",
+    "R": "#c:dusts/redstone",
+    "W": "minecraft:crimson_slab"
   },
   "result":
   {
-    "item": "redev:crimson_activator_rail",
+    "id": "redev:crimson_activator_rail",
     "count":  6
   }
 }
