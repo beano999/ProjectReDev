@@ -64,7 +64,7 @@ public class ItemInit
     public static final DeferredHolder<Item, Item> CARAMINE_RYE = ITEMS.registerSimpleItem("caramine_rye", new Item.Properties());
     public static final DeferredHolder<Item, Item> WARPED_DRUPEL = ITEMS.registerSimpleItem("warped_drupel", new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.3f).build(), Consumable.builder().consumeSeconds(0.8f).build()));
 
-    public static final DeferredHolder<Item, Item> NETHERITE_HORSE_ARMOR = ITEMS.registerItem("netherite_horse_armor", props -> new AnimalArmorItem(ArmorMaterials.NETHERITE, AnimalArmorItem.BodyType.EQUESTRIAN, props), new Item.Properties().stacksTo(1).fireResistant());
+    public static final DeferredHolder<Item, Item> NETHERITE_HORSE_ARMOR = ITEMS.registerItem("netherite_horse_armor", props -> new AnimalArmorItem(ModArmorMaterials.HORSE_ARMOR_NETHERITE, AnimalArmorItem.BodyType.EQUESTRIAN, props), new Item.Properties().stacksTo(1).fireResistant());
 
     public static final DeferredHolder<Item, Item> LITHICAN_SPAWN_EGG = ITEMS.registerItem("lithican_spawn_egg", props -> new SpawnEggItem(EntityInit.LITHICAN.value(), props), new Item.Properties());
     public static final DeferredHolder<Item, Item> REVENANT_SPAWN_EGG = ITEMS.registerItem("revenant_spawn_egg", props -> new SpawnEggItem(EntityInit.REVENANT.value(), props), new Item.Properties());
