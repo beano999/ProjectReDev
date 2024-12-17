@@ -44,6 +44,8 @@ import net.roadkill.redev.util.RDMath;
 import net.roadkill.redev.util.registries.ModSounds;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Optional;
+
 public class LithicanEntity extends Zombie
 {
     private static final EntityDataAccessor<Boolean> ACTIVE = SynchedEntityData.defineId(LithicanEntity.class, EntityDataSerializers.BOOLEAN);
@@ -246,9 +248,9 @@ public class LithicanEntity extends Zombie
             arrow.remove(RemovalReason.KILLED);
             return false;
         }
-        if ((damageSource.is(DamageTypes.MOB_ATTACK) || damageSource.is(DamageTypes.PLAYER_ATTACK)) && damageSource.getWeaponItem().is(ItemTags.PICKAXES))
-        {
-            amount *= 2;
+        else if ((damageSource.is(DamageTypes.MOB_ATTACK) || damageSource.is(DamageTypes.PLAYER_ATTACK))
+        && Optional.ofNullable(damageSource.getWeaponItem()).map(weapon -> weapon.is(ItemTags.PICKAXES)).orElse(false))
+        {   amount *= 2;
         }
         else if (damageSource.is(DamageTypes.FALL) && amount > 5)
         {   amount = 999;
