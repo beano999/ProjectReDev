@@ -9,14 +9,8 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "redev:scrapwood_planks"
-    },
-    "I":
-    {
-      "item": "#c:ingots/iron"
-    }
+    "P": "redev:scrapwood_planks",
+    "I": "#c:ingots/iron"
   },
   "result":
   {

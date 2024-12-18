@@ -9,14 +9,8 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "minecraft:warped_planks"
-    },
-    "I":
-    {
-      "item": "#c:ingots/iron"
-    }
+    "P": "minecraft:warped_planks",
+    "I": "#c:ingots/iron"
   },
   "result":
   {

@@ -2,23 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "group": "wooden_sign",
-  "key":
-  {
-    "#":
-    {
-      "item": "redev:shade_planks"
-    },
-    "X":
-    {
-      "tag": "#c:rods/wooden"
-    }
-  },
   "pattern":
   [
     "###",
     "###",
     " X "
   ],
+  "key":
+  {
+    "#": "redev:shade_planks",
+    "X": "#c:rods/wooden"
+  },
   "result":
   {
     "id": "redev:shade_sign",

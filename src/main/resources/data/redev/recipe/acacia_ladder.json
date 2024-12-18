@@ -8,7 +8,7 @@
   ],
   "key":
   {
-    "S": "c:rods/wooden",
+    "S": "#c:rods/wooden",
     "B": "minecraft:acacia_slab"
   },
   "result":

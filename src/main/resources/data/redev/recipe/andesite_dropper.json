@@ -9,7 +9,7 @@
   "key":
   {
     "A": "minecraft:andesite",
-    "R":  "c:dusts/redstone"
+    "R": "#c:dusts/redstone"
   },
   "result":
   {

@@ -1,22 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "key": {
-    "C": {
-      "tag": "#minecraft:coals"
-    },
-    "L": {
-      "item": "redev:shade_log"
-    },
-    "S": {
-      "tag": "#c:rods/wooden"
-    }
-  },
-  "pattern": [
+  "pattern":
+  [
     " S ",
     "SCS",
     "LLL"
   ],
+  "key":
+  {
+    "C": "#minecraft:coals",
+    "L": "redev:shade_log",
+    "S": "#c:rods/wooden"
+  },
   "result": {
     "id": "redev:shade_campfire"
   },

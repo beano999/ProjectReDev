@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "I":
-    {
-      "item": "#c:ingots/iron"
-    },
-    "P":
-    {
-      "item": "minecraft:spruce_slab"
-    }
+    "I": "#c:ingots/iron",
+    "P": "minecraft:spruce_slab"
   },
   "result":
   {

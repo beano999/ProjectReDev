@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "I":
-    {
-      "item": "redev:nether_gold_ingot"
-    },
-    "S":
-    {
-      "tag": "#c:rods/wooden"
-    }
+    "I": "redev:nether_gold_ingot",
+    "S": "#c:rods/wooden"
   },
   "result":
   {

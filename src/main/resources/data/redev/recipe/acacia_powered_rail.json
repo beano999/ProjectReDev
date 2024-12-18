@@ -8,8 +8,8 @@
   ],
   "key":
   {
-    "G": "c:ingots/gold",
-    "R": "c:dusts/redstone",
+    "G": "#c:ingots/gold",
+    "R": "#c:dusts/redstone",
     "W": "minecraft:acacia_slab"
   },
   "result":

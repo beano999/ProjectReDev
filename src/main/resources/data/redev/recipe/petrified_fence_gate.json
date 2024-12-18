@@ -2,22 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "group": "wooden_fence_gate",
-  "key":
-  {
-    "#":
-    {
-      "tag": "#c:rods/wooden"
-    },
-    "W":
-    {
-      "item": "redev:petrified_planks"
-    }
-  },
   "pattern":
   [
     "#W#",
     "#W#"
   ],
+  "key":
+  {
+    "#": "#c:rods/wooden",
+    "W": "redev:petrified_planks"
+  },
   "result":
   {
     "id": "redev:petrified_fence_gate"

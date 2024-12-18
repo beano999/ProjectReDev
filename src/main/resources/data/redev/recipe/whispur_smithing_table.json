@@ -9,14 +9,8 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "redev:whispur_planks"
-    },
-    "I":
-    {
-      "item": "#c:ingots/iron"
-    }
+    "P": "redev:whispur_planks",
+    "I": "#c:ingots/iron"
   },
   "result":
   {

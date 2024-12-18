@@ -8,10 +8,7 @@
   ],
   "key":
   {
-    "G":
-    {
-      "item": "redev:nether_gold_ingot"
-    }
+    "G": "redev:nether_gold_ingot"
   },
   "result":
   {

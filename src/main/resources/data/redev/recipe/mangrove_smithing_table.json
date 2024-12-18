@@ -9,14 +9,8 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "minecraft:mangrove_planks"
-    },
-    "I":
-    {
-      "item": "#c:ingots/iron"
-    }
+    "P": "minecraft:mangrove_planks",
+    "I": "#c:ingots/iron"
   },
   "result":
   {

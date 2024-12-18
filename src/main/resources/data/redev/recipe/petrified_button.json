@@ -4,9 +4,7 @@
   "group": "wooden_button",
   "ingredients": 
   [
-    {
-      "item": "redev:petrified_planks"
-    }
+    "redev:petrified_planks"
   ],
   "result": 
   {

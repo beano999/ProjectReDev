@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "I":
-    {
-      "item": "#c:ingots/iron"
-    },
-    "P":
-    {
-      "item": "redev:scrapwood_slab"
-    }
+    "I": "#c:ingots/iron",
+    "P": "redev:scrapwood_slab"
   },
   "result":
   {

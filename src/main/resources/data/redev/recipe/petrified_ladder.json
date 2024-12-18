@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "S":
-    {
-      "tag": "#c:rods/wooden"
-    },
-    "B":
-    {
-      "item": "redev:petrified_slab"
-    }
+    "S": "#c:rods/wooden",
+    "B": "redev:petrified_slab"
   },
   "result":
   {

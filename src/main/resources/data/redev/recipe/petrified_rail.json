@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "I":
-    {
-      "item": "#c:ingots/iron"
-    },
-    "P":
-    {
-      "item": "redev:petrified_slab"
-    }
+    "I": "#c:ingots/iron",
+    "P": "redev:petrified_slab"
   },
   "result":
   {

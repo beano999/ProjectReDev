@@ -10,7 +10,7 @@
   "key":
   {
     "P": "minecraft:acacia_planks",
-    "I": "c:ingots/iron"
+    "I": "#c:ingots/iron"
   },
   "result":
   {

@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "B":
-    {
-      "item": "redev:charred_bone"
-    },
-    "I":
-    {
-      "item": "redev:nether_gold_ingot"
-    }
+    "B": "redev:charred_bone",
+    "I": "redev:nether_gold_ingot"
   },
   "result":
   {

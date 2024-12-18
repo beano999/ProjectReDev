@@ -4,14 +4,8 @@
   "group": "wooden_fence_gate",
   "key":
   {
-    "#":
-    {
-      "tag": "#c:rods/wooden"
-    },
-    "W":
-    {
-      "item": "redev:whispur_planks"
-    }
+    "#": "#c:rods/wooden",
+    "W": "redev:whispur_planks"
   },
   "pattern":
   [

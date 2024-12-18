@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "I":
-    {
-      "item": "redev:withered_ingot"
-    },
-    "S":
-    {
-      "item": "redev:charred_bone"
-    }
+    "I": "redev:withered_ingot",
+    "S": "redev:charred_bone"
   },
   "result":
   {

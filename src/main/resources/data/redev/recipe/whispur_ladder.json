@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "S":
-    {
-      "tag": "#c:rods/wooden"
-    },
-    "B":
-    {
-      "item": "redev:whispur_slab"
-    }
+    "S": "#c:rods/wooden",
+    "B": "redev:whispur_slab"
   },
   "result":
   {

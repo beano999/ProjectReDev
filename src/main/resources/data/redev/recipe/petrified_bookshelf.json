@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "redev:petrified_planks"
-    },
-    "B":
-    {
-      "item": "minecraft:book"
-    }
+    "P": "redev:petrified_planks",
+    "B": "minecraft:book"
   },
   "result":
   {

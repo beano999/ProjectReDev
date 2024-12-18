@@ -1,12 +1,9 @@
 {
-  "type": "minecraft:smithing",
-  "base": {
-    "item": "minecraft:shield"
-  },
-  "addition": {
-    "item": "minecraft:netherite_ingot"
-  },
-  "result": {
+  "type": "minecraft:smithing_trim",
+  "base": "minecraft:shield",
+  "addition": "minecraft:netherite_ingot",
+  "result":
+  {
     "id": "redev:netherite_shield"
   }
 }

@@ -2,18 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "group": "wooden_trapdoor",
-  "key":
-  {
-    "#":
-    {
-      "item": "redev:scrapwood_planks"
-    }
-  },
   "pattern":
   [
     "###",
     "###"
   ],
+  "key":
+  {
+    "#": "redev:scrapwood_planks"
+  },
   "result":
   {
     "id": "redev:scrapwood_trapdoor",

@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "L":
-    {
-      "tag": "#redev:ladders"
-    },
-    "W":
-    {
-      "item": "minecraft:crimson_planks"
-    }
+    "L": "#redev:ladders",
+    "W": "minecraft:crimson_planks"
   },
   "result":
   {

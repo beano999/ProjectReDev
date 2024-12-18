@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients":
   [
-    {
-      "item": "redev:nether_gold_block"
-    }
+     "redev:nether_gold_block"
   ],
   "result":
   {

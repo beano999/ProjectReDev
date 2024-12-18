@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients":
   [
-    {
-      "item": "redev:petrified_log"
-    }
+     "redev:petrified_log"
   ],
   "result": 
   {

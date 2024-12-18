@@ -9,14 +9,8 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "redev:petrified_planks"
-    },
-    "I":
-    {
-      "item": "#c:ingots/iron"
-    }
+    "P": "redev:petrified_planks",
+    "I": "#c:ingots/iron"
   },
   "result":
   {

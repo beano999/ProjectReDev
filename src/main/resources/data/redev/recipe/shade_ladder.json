@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "S":
-    {
-      "tag": "#c:rods/wooden"
-    },
-    "B":
-    {
-      "item": "redev:shade_slab"
-    }
+    "S": "#c:rods/wooden",
+    "B": "redev:shade_slab"
   },
   "result":
   {

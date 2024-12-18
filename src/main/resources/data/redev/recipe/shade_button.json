@@ -4,9 +4,7 @@
   "group": "wooden_button",
   "ingredients": 
   [
-    {
-      "item": "redev:shade_planks"
-    }
+    "redev:shade_planks"
   ],
   "result": 
   {

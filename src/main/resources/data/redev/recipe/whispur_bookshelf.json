@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "redev:whispur_planks"
-    },
-    "B":
-    {
-      "item": "minecraft:book"
-    }
+    "P": "redev:whispur_planks",
+    "B": "minecraft:book"
   },
   "result":
   {

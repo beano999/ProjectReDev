@@ -4,10 +4,7 @@
   "group": "wooden_pressure_plate",
   "key":
   {
-    "#":
-    {
-      "item": "redev:scrapwood_planks"
-    }
+    "#": "redev:scrapwood_planks"
   },
   "pattern":
   [

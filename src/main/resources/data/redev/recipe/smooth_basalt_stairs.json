@@ -8,10 +8,7 @@
   ],
   "key":
   {
-    "W":
-    {
-      "item": "redev:basalt_stairs"
-    }
+    "W": "redev:basalt_stairs"
   },
   "result":
   {

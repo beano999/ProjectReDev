@@ -4,10 +4,7 @@
   "group": "wooden_door",
   "key":
   {
-    "#":
-    {
-      "item": "redev:shade_planks"
-    }
+    "#": "redev:shade_planks"
   },
   "pattern":
   [

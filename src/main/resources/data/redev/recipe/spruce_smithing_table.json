@@ -9,14 +9,8 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "minecraft:spruce_planks"
-    },
-    "I":
-    {
-      "item": "#c:ingots/iron"
-    }
+    "P": "minecraft:spruce_planks",
+    "I": "#c:ingots/iron"
   },
   "result":
   {

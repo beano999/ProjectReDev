@@ -7,10 +7,7 @@
   ],
   "key":
   {
-    "W":
-    {
-      "item": "redev:wood_scrap"
-    }
+    "W": "redev:wood_scrap"
   },
   "result":
   {

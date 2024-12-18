@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "I":
-    {
-      "item": "#c:ingots/iron"
-    },
-    "P":
-    {
-      "item": "minecraft:warped_slab"
-    }
+    "I": "#c:ingots/iron",
+    "P": "minecraft:warped_slab"
   },
   "result":
   {

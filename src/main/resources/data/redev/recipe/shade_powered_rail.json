@@ -8,18 +8,9 @@
   ],
   "key":
   {
-    "G":
-    {
-      "item": "#c:ingots/gold"
-    },
-    "R":
-    {
-      "item": "#c:dusts/redstone"
-    },
-    "W":
-    {
-      "item": "redev:shade_slab"
-    }
+    "G": "#c:ingots/gold",
+    "R": "#c:dusts/redstone",
+    "W": "redev:shade_slab"
   },
   "result":
   {

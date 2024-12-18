@@ -4,9 +4,7 @@
   "group": "wooden_button",
   "ingredients": 
   [
-    {
-      "item": "redev:whispur_planks"
-    }
+    "redev:whispur_planks"
   ],
   "result": 
   {

@@ -8,10 +8,7 @@
   ],
   "key":
   {
-    "W":
-    {
-      "item": "redev:basalt_wall"
-    }
+    "W": "redev:basalt_wall"
   },
   "result":
   {

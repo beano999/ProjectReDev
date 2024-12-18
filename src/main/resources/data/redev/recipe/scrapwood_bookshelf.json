@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "redev:scrapwood_planks"
-    },
-    "B":
-    {
-      "item": "minecraft:book"
-    }
+    "P": "redev:scrapwood_planks",
+    "B": "minecraft:book"
   },
   "result":
   {

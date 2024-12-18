@@ -4,14 +4,8 @@
   "group": "wooden_sign",
   "key":
   {
-    "#":
-    {
-      "item": "redev:scrapwood_planks"
-    },
-    "X":
-    {
-      "tag": "#c:rods/wooden"
-    }
+    "#": "redev:scrapwood_planks",
+    "X": "#c:rods/wooden"
   },
   "pattern":
   [

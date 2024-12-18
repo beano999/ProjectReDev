@@ -4,14 +4,8 @@
   "group": "wooden_sign",
   "key":
   {
-    "#":
-    {
-      "item": "redev:whispur_planks"
-    },
-    "X":
-    {
-      "tag": "#c:rods/wooden"
-    }
+    "#": "redev:whispur_planks",
+    "X": "#c:rods/wooden"
   },
   "pattern":
   [

@@ -8,22 +8,10 @@
   ],
   "key":
   {
-    "I":
-    {
-      "item": "#c:ingots/iron"
-    },
-    "P":
-    {
-      "item": "minecraft:stone_pressure_plate"
-    },
-    "R":
-    {
-      "item": "#c:dusts/redstone"
-    },
-    "W":
-    {
-      "item": "minecraft:mangrove_slab"
-    }
+    "I": "#c:ingots/iron",
+    "P": "minecraft:stone_pressure_plate",
+    "R": "#c:dusts/redstone",
+    "W": "minecraft:mangrove_slab"
   },
   "result":
   {

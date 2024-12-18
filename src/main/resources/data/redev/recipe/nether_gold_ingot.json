@@ -7,10 +7,7 @@
   ],
   "key":
   {
-    "N":
-    {
-      "item": "redev:nether_gold_nugget"
-    }
+    "N": "redev:nether_gold_nugget"
   },
   "result":
   {

@@ -8,10 +8,7 @@
   ],
   "key":
   {
-    "I":
-    {
-      "item": "redev:withered_ingot"
-    }
+    "I": "redev:withered_ingot"
   },
   "result":
   {

@@ -4,14 +4,8 @@
   "group": "wooden_fence",
   "key":
   {
-    "#":
-    {
-      "tag": "#c:rods/wooden"
-    },
-    "W":
-    {
-      "item": "redev:petrified_planks"
-    }
+    "#": "#c:rods/wooden",
+    "W": "redev:petrified_planks"
   },
   "pattern":
   [

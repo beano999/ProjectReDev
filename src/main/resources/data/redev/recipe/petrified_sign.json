@@ -4,14 +4,8 @@
   "group": "wooden_sign",
   "key":
   {
-    "#":
-    {
-      "item": "redev:petrified_planks"
-    },
-    "X":
-    {
-      "tag": "#c:rods/wooden"
-    }
+    "#": "redev:petrified_planks",
+    "X": "#c:rods/wooden"
   },
   "pattern":
   [

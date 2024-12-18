@@ -10,10 +10,7 @@
   ],
   "key":
   {
-    "W":
-    {
-      "item": "minecraft:polished_basalt"
-    }
+    "W": "minecraft:polished_basalt"
   },
   "result":
   {

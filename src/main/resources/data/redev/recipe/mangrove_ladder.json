@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "S":
-    {
-      "tag": "#c:rods/wooden"
-    },
-    "B":
-    {
-      "item": "minecraft:mangrove_slab"
-    }
+    "S": "#c:rods/wooden",
+    "B": "minecraft:mangrove_slab"
   },
   "result":
   {

@@ -8,14 +8,8 @@
   ],
   "key":
   {
-    "S":
-    {
-      "tag": "#c:rods/wooden"
-    },
-    "B":
-    {
-      "item": "minecraft:spruce_slab"
-    }
+    "S": "#c:rods/wooden",
+    "B": "minecraft:spruce_slab"
   },
   "result":
   {

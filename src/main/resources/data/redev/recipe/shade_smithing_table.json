@@ -9,14 +9,8 @@
   ],
   "key":
   {
-    "P":
-    {
-      "item": "redev:shade_planks"
-    },
-    "I":
-    {
-      "item": "#c:ingots/iron"
-    }
+    "P": "redev:shade_planks",
+    "I": "#c:ingots/iron"
   },
   "result":
   {

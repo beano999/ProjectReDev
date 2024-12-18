@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients":
   [
-    {
-      "item": "redev:stripped_shade_log"
-    }
+    "redev:stripped_shade_log"
   ],
   "result": 
   {
