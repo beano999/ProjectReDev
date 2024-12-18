@@ -4,6 +4,7 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -15,20 +16,21 @@ import net.roadkill.redev.util.registries.ModBlocks;
 import net.roadkill.redev.util.registries.ModSoundType;
 
 import java.util.Optional;
+import java.util.function.Supplier;
 
 public class BlockInit
 {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ReDev.MOD_ID);
 
-    private static final BlockBehaviour.Properties SCRAPWOOD_PROPERTIES = BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.NETHER_WOOD).mapColor(MapColor.CRIMSON_HYPHAE);
-    private static final BlockBehaviour.Properties WHISPUR_PROPERTIES = BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.NETHER_WOOD).mapColor(MapColor.SAND);
-    private static final BlockBehaviour.Properties PETRIFIED_PROPERTIES = BlockBehaviour.Properties.of().strength(3.0F, 8.0F).sound(ModSoundType.PETRIFIED_PLANKS).mapColor(MapColor.TERRACOTTA_PURPLE);
-    private static final BlockBehaviour.Properties SHADE_PROPERTIES = BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F).mapColor(MapColor.TERRACOTTA_ORANGE);
+    private static final Supplier<BlockBehaviour.Properties> SCRAPWOOD_PROPERTIES = () -> BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.NETHER_WOOD).instrument(NoteBlockInstrument.BASS).mapColor(MapColor.CRIMSON_HYPHAE);
+    private static final Supplier<BlockBehaviour.Properties> WHISPUR_PROPERTIES = () -> BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.NETHER_WOOD).instrument(NoteBlockInstrument.BASS).mapColor(MapColor.SAND);
+    private static final Supplier<BlockBehaviour.Properties> PETRIFIED_PROPERTIES = () -> BlockBehaviour.Properties.of().strength(3.0F, 8.0F).sound(ModSoundType.PETRIFIED_PLANKS).instrument(NoteBlockInstrument.BASS).mapColor(MapColor.TERRACOTTA_PURPLE);
+    private static final Supplier<BlockBehaviour.Properties> SHADE_PROPERTIES = () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).mapColor(MapColor.TERRACOTTA_ORANGE);
 
-    public static final DeferredHolder<Block, Block> SCRAPWOOD_PLANKS = BLOCKS.registerBlock("scrapwood_planks", Block::new, SCRAPWOOD_PROPERTIES);
-    public static final DeferredHolder<Block, Block> WHISPUR_PLANKS = BLOCKS.registerBlock("whispur_planks", Block::new, WHISPUR_PROPERTIES);
-    public static final DeferredHolder<Block, Block> PETRIFIED_PLANKS = BLOCKS.registerBlock("petrified_planks", Block::new, PETRIFIED_PROPERTIES);
-    public static final DeferredHolder<Block, Block> SHADE_PLANKS = BLOCKS.registerBlock("shade_planks", Block::new, SHADE_PROPERTIES);
+    public static final DeferredHolder<Block, Block> SCRAPWOOD_PLANKS = BLOCKS.registerBlock("scrapwood_planks", Block::new, SCRAPWOOD_PROPERTIES.get());
+    public static final DeferredHolder<Block, Block> WHISPUR_PLANKS = BLOCKS.registerBlock("whispur_planks", Block::new, WHISPUR_PROPERTIES.get());
+    public static final DeferredHolder<Block, Block> PETRIFIED_PLANKS = BLOCKS.registerBlock("petrified_planks", Block::new, PETRIFIED_PROPERTIES.get());
+    public static final DeferredHolder<Block, Block> SHADE_PLANKS = BLOCKS.registerBlock("shade_planks", Block::new, SHADE_PROPERTIES.get());
 
     public static final DeferredHolder<Block, RotatedPillarBlock> STRIPPED_PETRIFIED_LOG = BLOCKS.registerBlock("stripped_petrified_log", RotatedPillarBlock::new, Block.Properties.of().strength(2.0F).sound(ModSoundType.PETRIFIED_LOG).mapColor(MapColor.TERRACOTTA_ORANGE));
     public static final DeferredHolder<Block, RotatedPillarBlock> STRIPPED_SHADE_LOG = BLOCKS.registerBlock("stripped_shade_log", RotatedPillarBlock::new, Block.Properties.of().strength(2.0F).sound(SoundType.WOOD).mapColor(MapColor.TERRACOTTA_ORANGE));
@@ -44,53 +46,53 @@ public class BlockInit
     public static final DeferredHolder<Block, RotatedPillarBlock> PETRIFIED_WOOD = BLOCKS.registerBlock("petrified_wood", props -> new StrippableLogBlock(props, STRIPPED_PETRIFIED_WOOD.value()), Block.Properties.ofFullCopy(Blocks.OAK_WOOD).strength(3.0F, 8.0F).sound(ModSoundType.PETRIFIED_LOG).mapColor(MapColor.TERRACOTTA_PURPLE));
     public static final DeferredHolder<Block, RotatedPillarBlock> SHADE_WOOD = BLOCKS.registerBlock("shade_wood", props -> new StrippableLogBlock(props, STRIPPED_SHADE_WOOD.value()), Block.Properties.of().strength(2.0F).sound(SoundType.WOOD).mapColor(MapColor.TERRACOTTA_ORANGE));
 
-    public static final DeferredHolder<Block, SlabBlock> SCRAPWOOD_SLAB = BLOCKS.registerBlock("scrapwood_slab", SlabBlock::new, SCRAPWOOD_PROPERTIES);
-    public static final DeferredHolder<Block, SlabBlock> WHISPUR_SLAB = BLOCKS.registerBlock("whispur_slab", SlabBlock::new, WHISPUR_PROPERTIES);
-    public static final DeferredHolder<Block, SlabBlock> PETRIFIED_SLAB = BLOCKS.registerBlock("petrified_slab", SlabBlock::new, PETRIFIED_PROPERTIES);
-    public static final DeferredHolder<Block, SlabBlock> SHADE_SLAB = BLOCKS.registerBlock("shade_slab", SlabBlock::new, SHADE_PROPERTIES);
+    public static final DeferredHolder<Block, SlabBlock> SCRAPWOOD_SLAB = BLOCKS.registerBlock("scrapwood_slab", SlabBlock::new, SCRAPWOOD_PROPERTIES.get());
+    public static final DeferredHolder<Block, SlabBlock> WHISPUR_SLAB = BLOCKS.registerBlock("whispur_slab", SlabBlock::new, WHISPUR_PROPERTIES.get());
+    public static final DeferredHolder<Block, SlabBlock> PETRIFIED_SLAB = BLOCKS.registerBlock("petrified_slab", SlabBlock::new, PETRIFIED_PROPERTIES.get());
+    public static final DeferredHolder<Block, SlabBlock> SHADE_SLAB = BLOCKS.registerBlock("shade_slab", SlabBlock::new, SHADE_PROPERTIES.get());
 
-    public static final DeferredHolder<Block, StairBlock> SCRAPWOOD_STAIRS = BLOCKS.registerBlock("scrapwood_stairs", props -> new StairBlock(SCRAPWOOD_PLANKS.value().defaultBlockState(), props), SCRAPWOOD_PROPERTIES);
-    public static final DeferredHolder<Block, StairBlock> WHISPUR_STAIRS = BLOCKS.registerBlock("whispur_stairs", props -> new StairBlock(WHISPUR_PLANKS.value().defaultBlockState(), props), WHISPUR_PROPERTIES);
-    public static final DeferredHolder<Block, StairBlock> PETRIFIED_STAIRS = BLOCKS.registerBlock("petrified_stairs", props -> new StairBlock(PETRIFIED_PLANKS.value().defaultBlockState(), props), PETRIFIED_PROPERTIES);
-    public static final DeferredHolder<Block, StairBlock> SHADE_STAIRS = BLOCKS.registerBlock("shade_stairs", props -> new StairBlock(SHADE_PLANKS.value().defaultBlockState(), props), SHADE_PROPERTIES);
+    public static final DeferredHolder<Block, StairBlock> SCRAPWOOD_STAIRS = BLOCKS.registerBlock("scrapwood_stairs", props -> new StairBlock(SCRAPWOOD_PLANKS.value().defaultBlockState(), props), SCRAPWOOD_PROPERTIES.get());
+    public static final DeferredHolder<Block, StairBlock> WHISPUR_STAIRS = BLOCKS.registerBlock("whispur_stairs", props -> new StairBlock(WHISPUR_PLANKS.value().defaultBlockState(), props), WHISPUR_PROPERTIES.get());
+    public static final DeferredHolder<Block, StairBlock> PETRIFIED_STAIRS = BLOCKS.registerBlock("petrified_stairs", props -> new StairBlock(PETRIFIED_PLANKS.value().defaultBlockState(), props), PETRIFIED_PROPERTIES.get());
+    public static final DeferredHolder<Block, StairBlock> SHADE_STAIRS = BLOCKS.registerBlock("shade_stairs", props -> new StairBlock(SHADE_PLANKS.value().defaultBlockState(), props), SHADE_PROPERTIES.get());
 
-    public static final DeferredHolder<Block, FenceBlock> SCRAPWOOD_FENCE = BLOCKS.registerBlock("scrapwood_fence", FenceBlock::new, SCRAPWOOD_PROPERTIES.forceSolidOn());
-    public static final DeferredHolder<Block, FenceBlock> WHISPUR_FENCE = BLOCKS.registerBlock("whispur_fence", FenceBlock::new, WHISPUR_PROPERTIES.forceSolidOn());
-    public static final DeferredHolder<Block, FenceBlock> PETRIFIED_FENCE = BLOCKS.registerBlock("petrified_fence", FenceBlock::new, PETRIFIED_PROPERTIES.forceSolidOn());
-    public static final DeferredHolder<Block, FenceBlock> SHADE_FENCE = BLOCKS.registerBlock("shade_fence", FenceBlock::new, SHADE_PROPERTIES.forceSolidOn());
+    public static final DeferredHolder<Block, FenceBlock> SCRAPWOOD_FENCE = BLOCKS.registerBlock("scrapwood_fence", FenceBlock::new, SCRAPWOOD_PROPERTIES.get().forceSolidOn());
+    public static final DeferredHolder<Block, FenceBlock> WHISPUR_FENCE = BLOCKS.registerBlock("whispur_fence", FenceBlock::new, WHISPUR_PROPERTIES.get().forceSolidOn());
+    public static final DeferredHolder<Block, FenceBlock> PETRIFIED_FENCE = BLOCKS.registerBlock("petrified_fence", FenceBlock::new, PETRIFIED_PROPERTIES.get().forceSolidOn());
+    public static final DeferredHolder<Block, FenceBlock> SHADE_FENCE = BLOCKS.registerBlock("shade_fence", FenceBlock::new, SHADE_PROPERTIES.get().forceSolidOn());
 
-    public static final DeferredHolder<Block, FenceGateBlock> SCRAPWOOD_FENCE_GATE = BLOCKS.registerBlock("scrapwood_fence_gate", props -> new FenceGateBlock(WoodType.CRIMSON, props), SCRAPWOOD_PROPERTIES.forceSolidOn());
-    public static final DeferredHolder<Block, FenceGateBlock> WHISPUR_FENCE_GATE = BLOCKS.registerBlock("whispur_fence_gate", props -> new FenceGateBlock(WoodType.WARPED, props), WHISPUR_PROPERTIES.forceSolidOn());
-    public static final DeferredHolder<Block, FenceGateBlock> PETRIFIED_FENCE_GATE = BLOCKS.registerBlock("petrified_fence_gate", props -> new FenceGateBlock(WoodType.OAK, props), PETRIFIED_PROPERTIES.forceSolidOn());
-    public static final DeferredHolder<Block, FenceGateBlock> SHADE_FENCE_GATE = BLOCKS.registerBlock("shade_fence_gate", props -> new FenceGateBlock(WoodType.OAK, props), SHADE_PROPERTIES.forceSolidOn());
+    public static final DeferredHolder<Block, FenceGateBlock> SCRAPWOOD_FENCE_GATE = BLOCKS.registerBlock("scrapwood_fence_gate", props -> new FenceGateBlock(WoodType.CRIMSON, props), SCRAPWOOD_PROPERTIES.get().forceSolidOn());
+    public static final DeferredHolder<Block, FenceGateBlock> WHISPUR_FENCE_GATE = BLOCKS.registerBlock("whispur_fence_gate", props -> new FenceGateBlock(WoodType.WARPED, props), WHISPUR_PROPERTIES.get().forceSolidOn());
+    public static final DeferredHolder<Block, FenceGateBlock> PETRIFIED_FENCE_GATE = BLOCKS.registerBlock("petrified_fence_gate", props -> new FenceGateBlock(WoodType.OAK, props), PETRIFIED_PROPERTIES.get().forceSolidOn());
+    public static final DeferredHolder<Block, FenceGateBlock> SHADE_FENCE_GATE = BLOCKS.registerBlock("shade_fence_gate", props -> new FenceGateBlock(WoodType.OAK, props), SHADE_PROPERTIES.get().forceSolidOn());
 
-    public static final DeferredHolder<Block, DoorBlock> SCRAPWOOD_DOOR = BLOCKS.registerBlock("scrapwood_door", props -> new DoorBlock(ModBlocks.BlockSets.SCRAPWOOD, props), SCRAPWOOD_PROPERTIES);
-    public static final DeferredHolder<Block, DoorBlock> WHISPUR_DOOR = BLOCKS.registerBlock("whispur_door", props -> new DoorBlock(ModBlocks.BlockSets.WHISPUR, props), WHISPUR_PROPERTIES);
-    public static final DeferredHolder<Block, DoorBlock> PETRIFIED_DOOR = BLOCKS.registerBlock("petrified_door", props -> new DoorBlock(ModBlocks.BlockSets.PETRIFIED, props), PETRIFIED_PROPERTIES);
-    public static final DeferredHolder<Block, DoorBlock> SHADE_DOOR = BLOCKS.registerBlock("shade_door", props -> new DoorBlock(ModBlocks.BlockSets.SHADE, props), SHADE_PROPERTIES);
+    public static final DeferredHolder<Block, DoorBlock> SCRAPWOOD_DOOR = BLOCKS.registerBlock("scrapwood_door", props -> new DoorBlock(ModBlocks.BlockSets.SCRAPWOOD, props), SCRAPWOOD_PROPERTIES.get());
+    public static final DeferredHolder<Block, DoorBlock> WHISPUR_DOOR = BLOCKS.registerBlock("whispur_door", props -> new DoorBlock(ModBlocks.BlockSets.WHISPUR, props), WHISPUR_PROPERTIES.get());
+    public static final DeferredHolder<Block, DoorBlock> PETRIFIED_DOOR = BLOCKS.registerBlock("petrified_door", props -> new DoorBlock(ModBlocks.BlockSets.PETRIFIED, props), PETRIFIED_PROPERTIES.get());
+    public static final DeferredHolder<Block, DoorBlock> SHADE_DOOR = BLOCKS.registerBlock("shade_door", props -> new DoorBlock(ModBlocks.BlockSets.SHADE, props), SHADE_PROPERTIES.get());
 
-    public static final DeferredHolder<Block, TrapDoorBlock> SCRAPWOOD_TRAPDOOR = BLOCKS.registerBlock("scrapwood_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.SCRAPWOOD, props), SCRAPWOOD_PROPERTIES);
-    public static final DeferredHolder<Block, TrapDoorBlock> WHISPUR_TRAPDOOR = BLOCKS.registerBlock("whispur_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.WHISPUR, props), WHISPUR_PROPERTIES);
-    public static final DeferredHolder<Block, TrapDoorBlock> PETRIFIED_TRAPDOOR = BLOCKS.registerBlock("petrified_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.PETRIFIED, props), PETRIFIED_PROPERTIES);
-    public static final DeferredHolder<Block, TrapDoorBlock> SHADE_TRAPDOOR = BLOCKS.registerBlock("shade_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.SHADE, props), SHADE_PROPERTIES);
+    public static final DeferredHolder<Block, TrapDoorBlock> SCRAPWOOD_TRAPDOOR = BLOCKS.registerBlock("scrapwood_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.SCRAPWOOD, props), SCRAPWOOD_PROPERTIES.get());
+    public static final DeferredHolder<Block, TrapDoorBlock> WHISPUR_TRAPDOOR = BLOCKS.registerBlock("whispur_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.WHISPUR, props), WHISPUR_PROPERTIES.get());
+    public static final DeferredHolder<Block, TrapDoorBlock> PETRIFIED_TRAPDOOR = BLOCKS.registerBlock("petrified_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.PETRIFIED, props), PETRIFIED_PROPERTIES.get());
+    public static final DeferredHolder<Block, TrapDoorBlock> SHADE_TRAPDOOR = BLOCKS.registerBlock("shade_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.SHADE, props), SHADE_PROPERTIES.get());
 
-    public static final DeferredHolder<Block, ButtonBlock> SCRAPWOOD_BUTTON = BLOCKS.registerBlock("scrapwood_button", props -> new ButtonBlock(ModBlocks.BlockSets.SCRAPWOOD, 30, props), SCRAPWOOD_PROPERTIES.strength(0.5f).noCollission());
-    public static final DeferredHolder<Block, ButtonBlock> WHISPUR_BUTTON = BLOCKS.registerBlock("whispur_button", props -> new ButtonBlock(ModBlocks.BlockSets.WHISPUR, 30, props), WHISPUR_PROPERTIES.strength(0.5f).noCollission());
-    public static final DeferredHolder<Block, ButtonBlock> PETRIFIED_BUTTON = BLOCKS.registerBlock("petrified_button", props -> new ButtonBlock(ModBlocks.BlockSets.PETRIFIED, 30, props), PETRIFIED_PROPERTIES.strength(0.5f).noCollission());
-    public static final DeferredHolder<Block, ButtonBlock> SHADE_BUTTON = BLOCKS.registerBlock("shade_button", props -> new ButtonBlock(ModBlocks.BlockSets.SHADE, 30, props), SHADE_PROPERTIES.strength(0.5f).noCollission());
+    public static final DeferredHolder<Block, ButtonBlock> SCRAPWOOD_BUTTON = BLOCKS.registerBlock("scrapwood_button", props -> new ButtonBlock(ModBlocks.BlockSets.SCRAPWOOD, 30, props), SCRAPWOOD_PROPERTIES.get().strength(0.5f).noCollission());
+    public static final DeferredHolder<Block, ButtonBlock> WHISPUR_BUTTON = BLOCKS.registerBlock("whispur_button", props -> new ButtonBlock(ModBlocks.BlockSets.WHISPUR, 30, props), WHISPUR_PROPERTIES.get().strength(0.5f).noCollission());
+    public static final DeferredHolder<Block, ButtonBlock> PETRIFIED_BUTTON = BLOCKS.registerBlock("petrified_button", props -> new ButtonBlock(ModBlocks.BlockSets.PETRIFIED, 30, props), PETRIFIED_PROPERTIES.get().strength(0.5f).noCollission());
+    public static final DeferredHolder<Block, ButtonBlock> SHADE_BUTTON = BLOCKS.registerBlock("shade_button", props -> new ButtonBlock(ModBlocks.BlockSets.SHADE, 30, props), SHADE_PROPERTIES.get().strength(0.5f).noCollission());
 
-    public static final DeferredHolder<Block, PressurePlateBlock> SCRAPWOOD_PRESSURE_PLATE = BLOCKS.registerBlock("scrapwood_pressure_plate", props -> new PressurePlateBlock(ModBlocks.BlockSets.SCRAPWOOD, props), SCRAPWOOD_PROPERTIES.destroyTime(1.2f).noCollission());
-    public static final DeferredHolder<Block, PressurePlateBlock> WHISPUR_PRESSURE_PLATE = BLOCKS.registerBlock("whispur_pressure_plate", props -> new PressurePlateBlock(ModBlocks.BlockSets.WHISPUR, props), WHISPUR_PROPERTIES.destroyTime(1.2f).noCollission());
-    public static final DeferredHolder<Block, PressurePlateBlock> PETRIFIED_PRESSURE_PLATE = BLOCKS.registerBlock("petrified_pressure_plate", props -> new PressurePlateBlock(ModBlocks.BlockSets.PETRIFIED, props), PETRIFIED_PROPERTIES.destroyTime(1.2f).noCollission());
-    public static final DeferredHolder<Block, PressurePlateBlock> SHADE_PRESSURE_PLATE = BLOCKS.registerBlock("shade_pressure_plate", props -> new PressurePlateBlock(ModBlocks.BlockSets.SHADE, props), SHADE_PROPERTIES.destroyTime(1.2f).noCollission());
+    public static final DeferredHolder<Block, PressurePlateBlock> SCRAPWOOD_PRESSURE_PLATE = BLOCKS.registerBlock("scrapwood_pressure_plate", props -> new PressurePlateBlock(ModBlocks.BlockSets.SCRAPWOOD, props), SCRAPWOOD_PROPERTIES.get().destroyTime(1.2f).noCollission());
+    public static final DeferredHolder<Block, PressurePlateBlock> WHISPUR_PRESSURE_PLATE = BLOCKS.registerBlock("whispur_pressure_plate", props -> new PressurePlateBlock(ModBlocks.BlockSets.WHISPUR, props), WHISPUR_PROPERTIES.get().destroyTime(1.2f).noCollission());
+    public static final DeferredHolder<Block, PressurePlateBlock> PETRIFIED_PRESSURE_PLATE = BLOCKS.registerBlock("petrified_pressure_plate", props -> new PressurePlateBlock(ModBlocks.BlockSets.PETRIFIED, props), PETRIFIED_PROPERTIES.get().destroyTime(1.2f).noCollission());
+    public static final DeferredHolder<Block, PressurePlateBlock> SHADE_PRESSURE_PLATE = BLOCKS.registerBlock("shade_pressure_plate", props -> new PressurePlateBlock(ModBlocks.BlockSets.SHADE, props), SHADE_PROPERTIES.get().destroyTime(1.2f).noCollission());
 
-    public static final DeferredHolder<Block, StandingSignBlock> SCRAPWOOD_SIGN = BLOCKS.registerBlock("scrapwood_sign", props -> new StandingSignBlock(ModBlocks.WoodTypes.SCRAPWOOD, props), SCRAPWOOD_PROPERTIES);
-    public static final DeferredHolder<Block, StandingSignBlock> WHISPUR_SIGN = BLOCKS.registerBlock("whispur_sign", props -> new StandingSignBlock(ModBlocks.WoodTypes.WHISPUR, props), WHISPUR_PROPERTIES);
+    public static final DeferredHolder<Block, StandingSignBlock> SCRAPWOOD_SIGN = BLOCKS.registerBlock("scrapwood_sign", props -> new StandingSignBlock(ModBlocks.WoodTypes.SCRAPWOOD, props), SCRAPWOOD_PROPERTIES.get());
+    public static final DeferredHolder<Block, StandingSignBlock> WHISPUR_SIGN = BLOCKS.registerBlock("whispur_sign", props -> new StandingSignBlock(ModBlocks.WoodTypes.WHISPUR, props), WHISPUR_PROPERTIES.get());
     public static final DeferredHolder<Block, StandingSignBlock> PETRIFIED_SIGN = BLOCKS.registerBlock("petrified_sign", props -> new StandingSignBlock(ModBlocks.WoodTypes.PETRIFIED, props), Block.Properties.ofFullCopy(Blocks.OAK_SIGN).strength(3.0F, 8.0F).sound(ModSoundType.PETRIFIED_PLANKS).mapColor(MapColor.TERRACOTTA_PURPLE));
     public static final DeferredHolder<Block, StandingSignBlock> SHADE_SIGN = BLOCKS.registerBlock("shade_sign", props -> new StandingSignBlock(ModBlocks.WoodTypes.SHADE, props), Block.Properties.of().strength(2.0F).sound(SoundType.WOOD));
 
-    public static final DeferredHolder<Block, WallSignBlock> SCRAPWOOD_WALL_SIGN = BLOCKS.registerBlock("scrapwood_wall_sign", props -> new WallSignBlock(ModBlocks.WoodTypes.SCRAPWOOD, props), SCRAPWOOD_PROPERTIES);
-    public static final DeferredHolder<Block, WallSignBlock> WHISPUR_WALL_SIGN = BLOCKS.registerBlock("whispur_wall_sign", props -> new WallSignBlock(ModBlocks.WoodTypes.WHISPUR, props), WHISPUR_PROPERTIES);
+    public static final DeferredHolder<Block, WallSignBlock> SCRAPWOOD_WALL_SIGN = BLOCKS.registerBlock("scrapwood_wall_sign", props -> new WallSignBlock(ModBlocks.WoodTypes.SCRAPWOOD, props), SCRAPWOOD_PROPERTIES.get());
+    public static final DeferredHolder<Block, WallSignBlock> WHISPUR_WALL_SIGN = BLOCKS.registerBlock("whispur_wall_sign", props -> new WallSignBlock(ModBlocks.WoodTypes.WHISPUR, props), WHISPUR_PROPERTIES.get());
     public static final DeferredHolder<Block, WallSignBlock> PETRIFIED_WALL_SIGN = BLOCKS.registerBlock("petrified_wall_sign", props -> new WallSignBlock(ModBlocks.WoodTypes.PETRIFIED, props), Block.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN).strength(3.0F, 8.0F).sound(ModSoundType.PETRIFIED_PLANKS).mapColor(MapColor.TERRACOTTA_PURPLE));
     public static final DeferredHolder<Block, WallSignBlock> SHADE_WALL_SIGN = BLOCKS.registerBlock("shade_wall_sign", props -> new WallSignBlock(ModBlocks.WoodTypes.SHADE, props), Block.Properties.of().strength(2.0F).sound(SoundType.WOOD).mapColor(MapColor.TERRACOTTA_ORANGE));
 
