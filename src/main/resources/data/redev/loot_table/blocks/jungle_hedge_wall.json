@@ -6,10 +6,10 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "redev:jungle_hedge_wall",
+          "name": "redev:flowering_azalea_hedge",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
+              "condition": "minecraft:any_of",
               "terms": [
                 {
                   "condition": "minecraft:match_tool",
@@ -22,14 +22,14 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "enchantments": [
-                      {
-                        "enchantment": "minecraft:silk_touch",
+                    "items": "#minecraft:hoes",
+                    "components": {
+                      "minecraft:enchantments": {
                         "levels": {
-                          "min": 1
+                          "minecraft:silk_touch": 1
                         }
                       }
-                    ]
+                    }
                   }
                 }
               ]
