@@ -449,6 +449,10 @@ public class CreativeTabInit
                     ItemInit.DURIAN_SLICE.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
+            injectItemsAfter(Items.APPLE.getDefaultInstance(), event, List.of(
+                    ItemInit.WARPED_DRUPEL.value()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             injectItemsAfter(Items.BREAD.getDefaultInstance(), event, List.of(
                     ItemInit.CHURK.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
