@@ -84,6 +84,11 @@ public class ModWarpedRootsBlock extends RootsBlock
     }
 
     @Override
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData, Player player)
+    {   return new ItemStack(Items.WARPED_ROOTS);
+    }
+
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {   pBuilder.add(DRUPEL, HAS_GROWN_TODAY);
     }
