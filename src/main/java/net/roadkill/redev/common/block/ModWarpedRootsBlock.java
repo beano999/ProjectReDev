@@ -6,11 +6,13 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RootsBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -18,17 +20,14 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.roadkill.redev.core.init.ItemInit;
-import net.roadkill.redev.util.RDMath;
-import net.roadkill.redev.util.registries.ModItems;
 
 public class ModWarpedRootsBlock extends RootsBlock
 {
     public static final BooleanProperty DRUPEL = BooleanProperty.create("drupel");
-    public static final BooleanProperty HAS_GROWN_TODAY = BooleanProperty.create("has_grown_today");
 
     public ModWarpedRootsBlock(Properties properties)
     {   super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(DRUPEL, false).setValue(HAS_GROWN_TODAY, false));
+        this.registerDefaultState(this.stateDefinition.any().setValue(DRUPEL, false));
     }
 
     @Override
@@ -39,28 +38,20 @@ public class ModWarpedRootsBlock extends RootsBlock
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
     {
-        if (RDMath.withinRange(level.getDayTime(), 12000L, 24000L))
+        if (state.getValue(DRUPEL))
         {
-            if (state.getValue(HAS_GROWN_TODAY))
-            {   level.setBlock(pos, state.setValue(HAS_GROWN_TODAY, false), 2);
-            }
-        }
-        else if (!state.getValue(HAS_GROWN_TODAY))
-        {
-            boolean passChance = random.nextInt(40) == 0;
-            level.setBlock(pos, state.setValue(HAS_GROWN_TODAY, true).setValue(DRUPEL, passChance), 3);
-            if (passChance)
+            if (random.nextInt(10) == 0)
             {
+                level.setBlock(pos, state.setValue(DRUPEL, false), 3);
                 level.sendParticles(ParticleTypes.REVERSE_PORTAL, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, 20, 0.1D, 0.1D, 0.1D, 1D);
-                level.playSound(null, pos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.BLOCKS, 0.5f, 2f);
+                level.playSound(null, pos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.BLOCKS, 0.25f, 2f);
             }
         }
-
-        if (Math.random() < 1/50d && state.getValue(DRUPEL))
+        else if (random.nextInt(120) == 0)
         {
-            level.setBlock(pos, state.setValue(DRUPEL, false), 3);
+            level.setBlock(pos, state.setValue(DRUPEL, true), 3);
             level.sendParticles(ParticleTypes.REVERSE_PORTAL, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, 20, 0.1D, 0.1D, 0.1D, 1D);
-            level.playSound(null, pos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.BLOCKS, 0.5f, 2f);
+            level.playSound(null, pos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.BLOCKS, 0.25f, 2f);
         }
     }
 
@@ -90,6 +81,6 @@ public class ModWarpedRootsBlock extends RootsBlock
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
-    {   pBuilder.add(DRUPEL, HAS_GROWN_TODAY);
+    {   pBuilder.add(DRUPEL);
     }
 }
