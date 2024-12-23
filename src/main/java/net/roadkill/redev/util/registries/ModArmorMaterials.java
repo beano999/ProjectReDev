@@ -60,11 +60,12 @@ public class ModArmorMaterials
     public static final ArmorMaterial HORSE_ARMOR_NETHERITE = new ArmorMaterial(
             37,
             Util.make(new EnumMap<>(ArmorType.class), (p_371743_) -> {
-            p_371743_.put(ArmorType.BOOTS, 3);
-            p_371743_.put(ArmorType.LEGGINGS, 6);
-            p_371743_.put(ArmorType.CHESTPLATE, 8);
-            p_371743_.put(ArmorType.HELMET, 3);
-            p_371743_.put(ArmorType.BODY, 11);
-        }), 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
-        3.0F, 0.5F, ItemTags.REPAIRS_NETHERITE_ARMOR, EquipmentAssets.NETHERITE);
+                p_371743_.put(ArmorType.BOOTS, 3);
+                p_371743_.put(ArmorType.LEGGINGS, 6);
+                p_371743_.put(ArmorType.CHESTPLATE, 8);
+                p_371743_.put(ArmorType.HELMET, 3);
+                p_371743_.put(ArmorType.BODY, 11);
+            }), 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.0F, 0.5F, ItemTags.REPAIRS_NETHERITE_ARMOR,
+            ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "netherite")));
 }

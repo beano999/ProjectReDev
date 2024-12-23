@@ -2,17 +2,17 @@
   "layers": {
     "horse_body": [
       {
-        "texture": "redev:hoglin"
+        "texture": "redev:hoglin_hide"
       }
     ],
     "humanoid": [
       {
-        "texture": "redev:hoglin"
+        "texture": "redev:hoglin_hide"
       }
     ],
     "humanoid_leggings": [
       {
-        "texture": "redev:hoglin"
+        "texture": "redev:hoglin_hide"
       }
     ]
   }
