@@ -50,7 +50,7 @@ public class LeavesShear
             if (hedge != null)
             {
                 BlockState hedgeState = hedge.value().defaultBlockState();
-                if (!player.isCreative())
+                if (!level.isClientSide && !player.isCreative())
                 {   stack.hurtAndBreak(1, (ServerLevel) level, player, (p) -> {});
                 }
                 if (level.isClientSide)
