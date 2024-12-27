@@ -19,7 +19,7 @@ group = mod_group_id
 version = mod_version
 
 java {
-    archivesBaseName = mod_name
+    archivesBaseName = "ReDev"
     toolchain.languageVersion = JavaLanguageVersion.of(21)
 }
 
