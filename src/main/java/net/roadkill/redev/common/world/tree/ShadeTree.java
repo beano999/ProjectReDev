@@ -2,36 +2,18 @@ package net.roadkill.redev.common.world.tree;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.block.grower.TreeGrower;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.chunk.ChunkGenerator;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 import net.roadkill.redev.ReDev;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
 public class ShadeTree
 {
-    private final Color color;
-
-    public ShadeTree(Color color)
-    {   this.color = color;
-    }
-
-    public boolean growTree(ServerLevel level, ChunkGenerator generator, BlockPos pos, BlockState state, RandomSource rand)
-    {   return place(level, pos, this.color);
-    }
-
     public static boolean place(WorldGenLevel level, BlockPos origin, Color variant)
     {
         BlockPos.MutableBlockPos pos = origin.mutable();
@@ -57,11 +39,12 @@ public class ShadeTree
     public static Pair<Integer, Integer> getRotatedOffset(int variant, Rotation rotation)
     {
         Pair<Integer, Integer> offset = switch (variant)
-        {   default -> Pair.of(-5, -6);
+        {
             case 1 -> Pair.of(-6, -7);
             case 2 -> Pair.of(-8, -5);
             case 3 -> Pair.of(-8, -6);
             case 4 -> Pair.of(-7, -6);
+            default -> Pair.of(-5, -6);
         };
         return switch (rotation)
         {

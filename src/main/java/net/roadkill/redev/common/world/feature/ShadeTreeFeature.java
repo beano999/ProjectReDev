@@ -19,19 +19,17 @@ public class ShadeTreeFeature extends Feature<NoneFeatureConfiguration>
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> placement)
     {
         BlockState blockAt = placement.level().getBlockState(placement.origin());
+        boolean isSaplingAt;
         ShadeTree.Color color;
         if (blockAt.getBlock() instanceof ShadeSaplingBlock sapling)
         {   color = sapling.getColor();
+            isSaplingAt = true;
         }
         else
-        {
-            color = placement.random().nextInt(100) > 10
-                    // 90% chance for normal tree
-                    ? ShadeTree.Color.NORMAL
-                    // 10% chance for colored tree
-                    : ShadeTree.Color.values()[placement.random().nextIntBetweenInclusive(1, 3)];
+        {   color = ShadeTree.Color.NORMAL;
+            isSaplingAt = false;
         }
-        return placement.level().getBlockState(placement.origin().below()).is(Tags.Blocks.SANDS)
+        return (placement.level().getBlockState(placement.origin().below()).is(Tags.Blocks.SANDS) || isSaplingAt)
         && ShadeTree.place(placement.level(), placement.origin(), color);
     }
 }
