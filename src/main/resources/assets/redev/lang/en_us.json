@@ -11,7 +11,7 @@
   "item.minecraft.potion.effect.resistance":           "Potion of Resistance",
   "item.minecraft.splash_potion.effect.resistance":    "Splash Potion of Resistance",
   "item.minecraft.lingering_potion.effect.resistance": "Lingering Potion of Resistance",
-  "item.minecraft.tipped_arrow.effect.resistazgfnce":     "Tipped Arrow of Resistance",
+  "item.minecraft.tipped_arrow.effect.resistance":     "Tipped Arrow of Resistance",
 
   "item.minecraft.potion.effect.haste":           "Potion of Haste",
   "item.minecraft.splash_potion.effect.haste":    "Splash Potion of Haste",
@@ -349,7 +349,23 @@
 
   "block.redev.durian": "Durian",
 
-  "block.redev.carved_pumpkin": "Carved Pumpkin",
+  "block.redev.carved_pumpkin":           "Carved Pumpkin",
+  "block.redev.carved_pumpkin_creepy":    "Creepy Pumpkin",
+  "block.redev.carved_pumpkin_scowling":  "Scowling Pumpkin",
+  "block.redev.carved_pumpkin_creeper":   "Creeper Pumpkin",
+  "block.redev.carved_pumpkin_twisted":   "Twisted Pumpkin",
+  "block.redev.carved_pumpkin_horrified": "Horrified Pumpkin",
+  "block.redev.carved_pumpkin_furious":   "Furious Pumpkin",
+  "block.redev.carved_pumpkin_zombie":    "Zombie Pumpkin",
+
+  "block.redev.carved_pumpkin_lit":           "Carved Jack o'Lantern",
+  "block.redev.carved_pumpkin_creepy_lit":    "Creepy Jack o'Lantern",
+  "block.redev.carved_pumpkin_scowling_lit":  "Scowling Jack o'Lantern",
+  "block.redev.carved_pumpkin_creeper_lit":   "Creeper Jack o'Lantern",
+  "block.redev.carved_pumpkin_twisted_lit":   "Twisted Jack o'Lantern",
+  "block.redev.carved_pumpkin_horrified_lit": "Horrified Jack o'Lantern",
+  "block.redev.carved_pumpkin_furious_lit":   "Furious Jack o'Lantern",
+  "block.redev.carved_pumpkin_zombie_lit":    "Zombie Jack o'Lantern",
 
   "block.redev.hadalite": "Hadalite",
 

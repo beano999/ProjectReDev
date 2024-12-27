@@ -1,20 +1,17 @@
 package net.roadkill.redev.core.init;
 
-import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.Consumable;
-import net.minecraft.world.item.equipment.ArmorMaterials;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.roadkill.redev.ReDev;
 import net.roadkill.redev.common.item.CarvedPumpkinItem;
-import net.roadkill.redev.common.item.ChainLadderItem;
 import net.roadkill.redev.common.item.ItemNameBlockItem;
 import net.roadkill.redev.util.registries.ModArmorMaterials;
 import net.roadkill.redev.util.registries.ModItems;
@@ -136,7 +133,7 @@ public class ItemInit
     public static final DeferredHolder<Item, BlockItem> WARPED_SOUL_CAMPFIRE = ITEMS.registerSimpleBlockItem("warped_soul_campfire", BlockInit.WARPED_SOUL_CAMPFIRE);
     public static final DeferredHolder<Item, BlockItem> SCRAPWOOD_CAMPFIRE = ITEMS.registerSimpleBlockItem("scrapwood_campfire", BlockInit.SCRAPWOOD_CAMPFIRE);
     public static final DeferredHolder<Item, BlockItem> SCRAPWOOD_SOUL_CAMPFIRE = ITEMS.registerSimpleBlockItem("scrapwood_soul_campfire", BlockInit.SCRAPWOOD_SOUL_CAMPFIRE);
-    public static final DeferredHolder<Item, BlockItem> BONE_CAMPFIRE = ITEMS.registerItem("bone_campfire", props -> new BlockItem(BlockInit.BONE_CAMPFIRE.get(), props), new Item.Properties());
+    public static final DeferredHolder<Item, BlockItem> BONE_CAMPFIRE = ITEMS.registerSimpleBlockItem("bone_campfire", BlockInit.BONE_CAMPFIRE);
     public static final DeferredHolder<Item, BlockItem> BONE_SOUL_CAMPFIRE = ITEMS.registerSimpleBlockItem("bone_soul_campfire", BlockInit.BONE_SOUL_CAMPFIRE);
     public static final DeferredHolder<Item, BlockItem> PETRIFIED_CAMPFIRE = ITEMS.registerSimpleBlockItem("petrified_campfire", BlockInit.PETRIFIED_CAMPFIRE);
     public static final DeferredHolder<Item, BlockItem> PETRIFIED_SOUL_CAMPFIRE = ITEMS.registerSimpleBlockItem("petrified_soul_campfire", BlockInit.PETRIFIED_SOUL_CAMPFIRE);
@@ -304,14 +301,14 @@ public class ItemInit
     public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_TWISTED = registerBlockItem("carved_pumpkin_twisted", BlockInit.CARVED_PUMPKIN, (block, props) -> new CarvedPumpkinItem(block, props, 5, false));
     public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_FURIOUS = registerBlockItem("carved_pumpkin_furious", BlockInit.CARVED_PUMPKIN, (block, props) -> new CarvedPumpkinItem(block, props, 6, false));
     public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_ZOMBIE = registerBlockItem("carved_pumpkin_zombie", BlockInit.CARVED_PUMPKIN, (block, props) -> new CarvedPumpkinItem(block, props, 7, false));
-    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_LIT = ITEMS.registerItem("carved_pumpkin_lit", props -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), props, 0, true), new Item.Properties());
-    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_CREEPY_LIT = ITEMS.registerItem("carved_pumpkin_creepy_lit", props -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), props, 1, true), new Item.Properties());
-    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_HORRIFIED_LIT = ITEMS.registerItem("carved_pumpkin_horrified_lit", props -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), props, 2, true), new Item.Properties());
-    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_CREEPER_LIT = ITEMS.registerItem("carved_pumpkin_creeper_lit", props -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), props, 3, true), new Item.Properties());
-    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_SCOWLING_LIT = ITEMS.registerItem("carved_pumpkin_scowling_lit", props -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), props, 4, true), new Item.Properties());
-    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_TWISTED_LIT = ITEMS.registerItem("carved_pumpkin_twisted_lit", props -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), props, 5, true), new Item.Properties());
-    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_FURIOUS_LIT = ITEMS.registerItem("carved_pumpkin_furious_lit", props -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), props, 6, true), new Item.Properties());
-    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_ZOMBIE_LIT = ITEMS.registerItem("carved_pumpkin_zombie_lit", props -> new CarvedPumpkinItem(BlockInit.CARVED_PUMPKIN.get(), props, 7, true), new Item.Properties());
+    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_LIT = registerBlockItem("carved_pumpkin_lit", BlockInit.CARVED_PUMPKIN, (block, props) -> new CarvedPumpkinItem(block, props, 1, true), new Item.Properties());
+    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_CREEPY_LIT = registerBlockItem("carved_pumpkin_creepy_lit", BlockInit.CARVED_PUMPKIN, (block, props) -> new CarvedPumpkinItem(block, props, 1, true), new Item.Properties());
+    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_HORRIFIED_LIT = registerBlockItem("carved_pumpkin_horrified_lit", BlockInit.CARVED_PUMPKIN, (block, props) -> new CarvedPumpkinItem(block, props, 2, true), new Item.Properties());
+    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_CREEPER_LIT = registerBlockItem("carved_pumpkin_creeper_lit", BlockInit.CARVED_PUMPKIN, (block, props) -> new CarvedPumpkinItem(block, props, 3, true), new Item.Properties());
+    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_SCOWLING_LIT = registerBlockItem("carved_pumpkin_scowling_lit", BlockInit.CARVED_PUMPKIN, (block, props) -> new CarvedPumpkinItem(block, props, 4, true), new Item.Properties());
+    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_TWISTED_LIT = registerBlockItem("carved_pumpkin_twisted_lit", BlockInit.CARVED_PUMPKIN, (block, props) -> new CarvedPumpkinItem(block, props, 5, true), new Item.Properties());
+    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_FURIOUS_LIT = registerBlockItem("carved_pumpkin_furious_lit", BlockInit.CARVED_PUMPKIN, (block, props) -> new CarvedPumpkinItem(block, props, 6, true), new Item.Properties());
+    public static final DeferredHolder<Item, BlockItem> CARVED_PUMPKIN_ZOMBIE_LIT = registerBlockItem("carved_pumpkin_zombie_lit", BlockInit.CARVED_PUMPKIN, (block, props) -> new CarvedPumpkinItem(block, props, 7, true), new Item.Properties());
 
     public static final DeferredHolder<Item, BlockItem> SHADE_LEAVES = ITEMS.registerSimpleBlockItem("shade_leaves", BlockInit.SHADE_LEAVES);
     public static final DeferredHolder<Item, BlockItem> TEAL_SHADE_LEAVES = ITEMS.registerSimpleBlockItem("teal_shade_leaves", BlockInit.TEAL_SHADE_LEAVES);
@@ -347,6 +344,6 @@ public class ItemInit
     }
 
     private static <T extends BlockItem> DeferredHolder<Item, T> registerBlockItem(String name, Supplier<? extends Block> block, BiFunction<Block, Item.Properties, T> item)
-    {   return ITEMS.register(name, key -> item.apply(block.get(), new Item.Properties().setId(ResourceKey.create(Registries.ITEM, key)).useBlockDescriptionPrefix()));
+    {   return ITEMS.registerItem(name, properties -> item.apply(block.get(), properties.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, name))).useBlockDescriptionPrefix()));
     }
 }
