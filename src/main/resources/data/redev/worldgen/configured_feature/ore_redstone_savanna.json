@@ -13,7 +13,7 @@
         },
         "target": {
           "predicate_type": "minecraft:tag_match",
-          "tag": "minecraft:stone_ore_replaceables"
+          "tag": "c:ore_bearing_ground/stone"
         }
       },
       {
@@ -25,7 +25,7 @@
         },
         "target": {
           "predicate_type": "minecraft:tag_match",
-          "tag": "minecraft:deepslate_ore_replaceables"
+          "tag": "c:ore_bearing_ground/deepslate"
         }
       }
     ]

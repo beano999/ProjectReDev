@@ -7,7 +7,7 @@
       {
         "target": {
           "predicate_type": "minecraft:tag_match",
-          "tag": "forge:ore_bearing_ground/stone"
+          "tag": "c:ore_bearing_ground/stone"
         },
         "state": {
           "Name": "minecraft:redstone_ore"
@@ -22,7 +22,7 @@
         },
         "target": {
           "predicate_type": "minecraft:tag_match",
-          "tag": "minecraft:deepslate_ore_replaceables"
+          "tag": "c:ore_bearing_ground/deepslate"
         }
       }
     ]
