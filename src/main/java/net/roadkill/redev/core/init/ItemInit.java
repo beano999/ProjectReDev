@@ -269,6 +269,7 @@ public class ItemInit
     public static final DeferredHolder<Item, BlockItem> PETRIFIED_LOG = ITEMS.registerSimpleBlockItem("petrified_log", BlockInit.PETRIFIED_LOG);
     public static final DeferredHolder<Item, BlockItem> STRIPPED_PETRIFIED_LOG = ITEMS.registerSimpleBlockItem("stripped_petrified_log", BlockInit.STRIPPED_PETRIFIED_LOG);
     public static final DeferredHolder<Item, BlockItem> PETRIFIED_WOOD = ITEMS.registerSimpleBlockItem("petrified_wood", BlockInit.PETRIFIED_WOOD);
+    public static final DeferredHolder<Item, BlockItem> STRIPPED_PETRIFIED_WOOD = ITEMS.registerSimpleBlockItem("stripped_petrified_wood", BlockInit.STRIPPED_PETRIFIED_WOOD);
     public static final DeferredHolder<Item, BlockItem> PETRIFIED_PLANKS = ITEMS.registerSimpleBlockItem("petrified_planks", BlockInit.PETRIFIED_PLANKS);
     public static final DeferredHolder<Item, BlockItem> PETRIFIED_SLAB = ITEMS.registerSimpleBlockItem("petrified_slab", BlockInit.PETRIFIED_SLAB);
     public static final DeferredHolder<Item, BlockItem> PETRIFIED_STAIRS = ITEMS.registerSimpleBlockItem("petrified_stairs", BlockInit.PETRIFIED_STAIRS);
@@ -283,6 +284,7 @@ public class ItemInit
     public static final DeferredHolder<Item, BlockItem> SHADE_LOG = ITEMS.registerSimpleBlockItem("shade_log", BlockInit.SHADE_LOG);
     public static final DeferredHolder<Item, BlockItem> STRIPPED_SHADE_LOG = ITEMS.registerSimpleBlockItem("stripped_shade_log", BlockInit.STRIPPED_SHADE_LOG);
     public static final DeferredHolder<Item, BlockItem> SHADE_WOOD = ITEMS.registerSimpleBlockItem("shade_wood", BlockInit.SHADE_WOOD);
+    public static final DeferredHolder<Item, BlockItem> STRIPPED_SHADE_WOOD = ITEMS.registerSimpleBlockItem("stripped_shade_wood", BlockInit.STRIPPED_SHADE_WOOD);
     public static final DeferredHolder<Item, BlockItem> SHADE_PLANKS = ITEMS.registerSimpleBlockItem("shade_planks", BlockInit.SHADE_PLANKS);
     public static final DeferredHolder<Item, BlockItem> SHADE_SLAB = ITEMS.registerSimpleBlockItem("shade_slab", BlockInit.SHADE_SLAB);
     public static final DeferredHolder<Item, BlockItem> SHADE_STAIRS = ITEMS.registerSimpleBlockItem("shade_stairs", BlockInit.SHADE_STAIRS);

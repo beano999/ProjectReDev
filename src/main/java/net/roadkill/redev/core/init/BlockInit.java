@@ -35,7 +35,6 @@ public class BlockInit
     public static final DeferredHolder<Block, RotatedPillarBlock> STRIPPED_PETRIFIED_LOG = BLOCKS.registerBlock("stripped_petrified_log", RotatedPillarBlock::new, Block.Properties.of().strength(2.0F).sound(ModSoundType.PETRIFIED_LOG).mapColor(MapColor.TERRACOTTA_ORANGE));
     public static final DeferredHolder<Block, RotatedPillarBlock> STRIPPED_SHADE_LOG = BLOCKS.registerBlock("stripped_shade_log", RotatedPillarBlock::new, Block.Properties.of().strength(2.0F).sound(SoundType.WOOD).mapColor(MapColor.TERRACOTTA_ORANGE));
 
-    // TODO: implement these
     public static final DeferredHolder<Block, RotatedPillarBlock> STRIPPED_PETRIFIED_WOOD = BLOCKS.registerBlock("stripped_petrified_wood", RotatedPillarBlock::new, Block.Properties.of().strength(2.0F).sound(ModSoundType.PETRIFIED_LOG).mapColor(MapColor.TERRACOTTA_PURPLE));
     public static final DeferredHolder<Block, RotatedPillarBlock> STRIPPED_SHADE_WOOD = BLOCKS.registerBlock("stripped_shade_wood", RotatedPillarBlock::new, Block.Properties.of().strength(2.0F).sound(SoundType.WOOD).mapColor(MapColor.TERRACOTTA_ORANGE));
 
