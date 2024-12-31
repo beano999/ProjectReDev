@@ -1,13 +1,24 @@
 package net.roadkill.redev.util;
 
+import it.unimi.dsi.fastutil.longs.LongSet;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.SectionPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.StructureManager;
+import net.minecraft.world.level.chunk.status.ChunkStatus;
+import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.StructureStart;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Quaternionf;
 
+import javax.annotation.Nullable;
+import java.util.Map;
 import java.util.function.Predicate;
 
 public final class RDMath
@@ -121,5 +132,37 @@ public final class RDMath
 
     public static float randomFloat(RandomSource rand, float min, float max)
     {   return rand.nextFloat() * (max - min) + min;
+    }
+
+    @Nullable
+    public static Structure getStructureAt(Level level, BlockPos pos)
+    {
+        if (!(level instanceof ServerLevel serverLevel)) return null;
+
+        StructureManager structureManager = serverLevel.structureManager();
+
+        // Iterate over all structures at the position (ignores Y level)
+        for (Map.Entry<Structure, LongSet> entry : structureManager.getAllStructuresAt(pos).entrySet())
+        {
+            Structure structure = entry.getKey();
+            LongSet strucCoordinates = entry.getValue();
+
+            // Iterate over all chunk coordinates within the structures
+            for (long coordinate : strucCoordinates)
+            {
+                SectionPos sectionpos = SectionPos.of(new ChunkPos(coordinate), level.getMinSectionY());
+                // Get the structure start
+                StructureStart structurestart = structureManager.getStartForStructure(sectionpos, structure, level.getChunk(sectionpos.x(), sectionpos.z(), ChunkStatus.STRUCTURE_STARTS));
+
+                if (structurestart != null && structurestart.isValid())
+                {
+                    // If the structure has a piece at the position, get the temperature
+                    if (structureManager.structureHasPieceAt(pos, structurestart))
+                    {   return structure;
+                    }
+                }
+            }
+        }
+        return null;
     }
 }
