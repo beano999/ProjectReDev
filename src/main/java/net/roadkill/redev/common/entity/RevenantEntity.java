@@ -7,6 +7,7 @@ import net.minecraft.util.ARGB;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -21,7 +22,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import org.joml.Vector3f;
+import org.jetbrains.annotations.Nullable;
 
 public class RevenantEntity extends AbstractSkeleton
 {
@@ -115,5 +116,20 @@ public class RevenantEntity extends AbstractSkeleton
             }
         }
         this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(this.random.nextInt(10) == 0 ? Items.DIAMOND_SWORD : Items.IRON_SWORD));
+    }
+
+    @Override
+    protected @Nullable SoundEvent getAmbientSound()
+    {   return SoundEvents.STRAY_AMBIENT;
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSource)
+    {   return SoundEvents.STRAY_HURT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound()
+    {   return SoundEvents.STRAY_DEATH;
     }
 }
