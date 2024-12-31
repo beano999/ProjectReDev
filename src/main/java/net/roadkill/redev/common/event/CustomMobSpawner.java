@@ -29,8 +29,6 @@ import java.util.function.Consumer;
 @EventBusSubscriber
 public class CustomMobSpawner
 {
-    private static final ResourceLocation STRONGHOLD_ID = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "stronghold");
-
     private static final Map<ResourceKey<Level>, Boolean> ENABLED_DIMENSIONS = Map.of(
             Level.OVERWORLD, true,
             Level.NETHER, false,
@@ -43,6 +41,10 @@ public class CustomMobSpawner
             WeightedEntry.wrap(Holder.direct(EntityType.ENDERMITE), 20),
             WeightedEntry.wrap(EntityInit.LITHICAN, 20),
             WeightedEntry.wrap(EntityInit.REVENANT, 60));
+
+    private static final Map<ResourceLocation, WeightedRandomList<WeightedEntry.Wrapper<Holder<EntityType<?>>>>> STRUCTURE_SPAWNS = Map.of(
+            ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "stronghold"), STRONGHOLD_SPAWNS
+    );
 
     @SubscribeEvent
     public static void spawnMobsInStructures(ServerTickEvent.Post event)
@@ -78,9 +80,10 @@ public class CustomMobSpawner
 
                     if (structure != null)
                     {
-                        // Stronghold
-                        if (isStructure(STRONGHOLD_ID, structure, structureRegistry))
-                        {   spawnEntityFromPool(level, randomPos, MobCategory.MONSTER, STRONGHOLD_SPAWNS, entity -> {});
+                        // Spawn entity from structure's pool
+                        var spawnList = STRUCTURE_SPAWNS.get(structureRegistry.getKey(structure));
+                        if (spawnList != null)
+                        {   spawnEntityFromPool(level, randomPos, MobCategory.MONSTER, spawnList, entity -> {});
                         }
                     }
                 }
@@ -116,9 +119,5 @@ public class CustomMobSpawner
             // Add entity
             level.addFreshEntity(entity);
         }
-    }
-
-    private static boolean isStructure(ResourceLocation id, Structure structure, Registry<Structure> structureRegistry)
-    {   return id.equals(structureRegistry.getKey(structure));
     }
 }
