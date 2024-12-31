@@ -22,7 +22,7 @@ public class RevenantVeinsLayer<S extends SkeletonRenderState, M extends Revenan
     @Override
     public void render(PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, S renderState, float p_117353_, float p_117354_)
     {
-        float alpha = (float) Math.sin((renderState.ageInTicks + renderState.partialTick) / 32) / 10 + 0.5F;
+        float alpha = (float) Math.sin((renderState.ageInTicks + renderState.partialTick) / 16) / 8 + 0.7F;
         this.getParentModel().renderWithVeins(pPoseStack, pBuffer.getBuffer(VEINS_OVERLAY), pPackedLight,
                                               LivingEntityRenderer.getOverlayCoords(renderState, 0.0F),
                                               ARGB.colorFromFloat(alpha, 1.0F, 1.0F, 1.0F));

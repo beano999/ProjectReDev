@@ -22,7 +22,6 @@ public class RevenantModel<S extends SkeletonRenderState> extends SkeletonModel<
 
     public void renderWithVeins(PoseStack pPoseStack, VertexConsumer pBuffer, int pPackedLight, int pPackedOverlay, int packedColor)
     {
-        int transparentColor = ARGB.color(230, packedColor);
-        super.renderToBuffer(pPoseStack, pBuffer, pPackedLight, pPackedOverlay, transparentColor);
+        super.renderToBuffer(pPoseStack, pBuffer, pPackedLight, pPackedOverlay, packedColor);
     }
 }
