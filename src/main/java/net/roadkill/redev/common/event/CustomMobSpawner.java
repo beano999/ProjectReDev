@@ -118,7 +118,7 @@ public class CustomMobSpawner
             if (entity instanceof Mob mob)
             {   mob.finalizeSpawn(level, level.getCurrentDifficultyAt(pos), EntitySpawnReason.STRUCTURE, null);
             }
-            entity.setPos(pos.getX(), pos.getY(), pos.getZ());
+            entity.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
             // Add entity
             level.addFreshEntity(entity);
         }
