@@ -10,6 +10,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.random.WeightedEntry;
 import net.minecraft.util.random.WeightedRandomList;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
@@ -23,6 +24,7 @@ import net.roadkill.redev.ReDev;
 import net.roadkill.redev.core.init.EntityInit;
 import net.roadkill.redev.util.RDMath;
 
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -101,11 +103,12 @@ public class CustomMobSpawner
         if (entity == null) return;
         entityBuilder.accept(entity);
 
-        // Check for mob crowding (max 10 mobs of the same category in 10-block radius)
         AABB aabb = new AABB(pos).inflate(10);
-        if (level.getEntities(entity, aabb, EntitySelector.LIVING_ENTITY_STILL_ALIVE).stream().filter(e -> e.getType().getCategory() == category).count() > 10)
-        {   return;
-        }
+        List<Entity> nearbyEntities = level.getEntities(entity, aabb, EntitySelector.LIVING_ENTITY_STILL_ALIVE);
+        // Don't spawn if a player is within 10 blocks
+        if (nearbyEntities.stream().anyMatch(e -> e instanceof Player)) return;
+        // Check for mob crowding (max 10 mobs of the same category in 10-block radius)
+        if (nearbyEntities.stream().filter(e -> e.getType().getCategory() == category).count() >= 6) return;
 
         // Check if space is open and floor is solid
         if (level.isEmptyBlock(pos) && level.isEmptyBlock(pos.above())
