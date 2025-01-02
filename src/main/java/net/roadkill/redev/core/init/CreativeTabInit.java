@@ -259,7 +259,8 @@ public class CreativeTabInit
             injectItemsAfter(Items.WARPED_SIGN.getDefaultInstance(), event, List.of(
                     ItemInit.SCRAPWOOD_SIGN.value(),
                     ItemInit.WHISPUR_SIGN.value(),
-                    ItemInit.PETRIFIED_SIGN.value()
+                    ItemInit.PETRIFIED_SIGN.value(),
+                    ItemInit.SHADE_SIGN.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             injectItemsAfter(Items.LADDER.getDefaultInstance(), event, List.of(
