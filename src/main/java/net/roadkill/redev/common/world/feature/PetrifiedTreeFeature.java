@@ -37,7 +37,7 @@ public class PetrifiedTreeFeature extends Feature<NoneFeatureConfiguration>
             pos.setY(startY + i);
             if (pos.getY() < minHeight) continue;
             if (pos.getY() > maxHeight) break;
-            if (level.getBlockState(pos).isAir())
+            if (level.getBlockState(pos).isAir() && !level.getBlockState(pos.below()).isAir())
             {   break;
             }
         }
