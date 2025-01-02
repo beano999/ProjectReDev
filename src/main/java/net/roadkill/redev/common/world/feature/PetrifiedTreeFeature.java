@@ -6,6 +6,7 @@ import net.minecraft.core.Vec3i;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
@@ -47,7 +48,9 @@ public class PetrifiedTreeFeature extends Feature<NoneFeatureConfiguration>
             treeOpt.ifPresent(tree ->
             {   Vec3i size = tree.getSize();
                 pos.move(0, -level.getRandom().nextInt(1, size.getY() / 2), 0);
-                tree.placeInWorld(level, pos.offset(size.getX() / -2, 0, size.getZ() / -2), pos, new StructurePlaceSettings(), placement.random(), 2);
+                tree.placeInWorld(level, pos.offset(size.getX() / -2, 0, size.getZ() / -2), pos,
+                                  new StructurePlaceSettings().setRotation(Rotation.getRandom(placement.random())),
+                                  placement.random(), 2);
             });
             return true;
         }
