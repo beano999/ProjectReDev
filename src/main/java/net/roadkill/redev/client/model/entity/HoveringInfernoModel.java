@@ -22,7 +22,7 @@ import java.util.WeakHashMap;
 public class HoveringInfernoModel<S extends HoveringInfernoRenderState> extends EntityModel<S>
 {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "hovering_inferno"), "main");
-	private static final Map<Integer, List<ModelPart>> SHIELD_ANIMATIONS = new WeakHashMap<>();
+	private static final Map<HoveringInfernoEntity, List<ModelPart>> SHIELD_ANIMATIONS = new WeakHashMap<>();
 
 	private final ModelPart head;
 	private final ModelPart body;
@@ -105,7 +105,7 @@ public class HoveringInfernoModel<S extends HoveringInfernoRenderState> extends 
         float frameDelta = Minecraft.getInstance().getDeltaTracker().getRealtimeDeltaTicks();
         HoveringInfernoEntity entity = renderState.entity;
 
-        SHIELD_ANIMATIONS.computeIfAbsent(entity.getId(), id -> List.of(
+        SHIELD_ANIMATIONS.computeIfAbsent(entity, id -> List.of(
 				new ModelPart(List.of(), Map.of()),
 				new ModelPart(List.of(), Map.of()),
 				new ModelPart(List.of(), Map.of()),
@@ -230,19 +230,19 @@ public class HoveringInfernoModel<S extends HoveringInfernoRenderState> extends 
 	}
 	
 	private ModelPart getShieldTransforms(HoveringInfernoEntity entity)
-	{	return SHIELD_ANIMATIONS.get(entity.getId()).get(0);
+	{	return SHIELD_ANIMATIONS.get(entity).get(0);
 	}
 	
 	private ModelPart getDesiredShieldTransforms(HoveringInfernoEntity entity)
-    {	return SHIELD_ANIMATIONS.get(entity.getId()).get(1);
+    {	return SHIELD_ANIMATIONS.get(entity).get(1);
 	}
 	
 	private ModelPart getSmallShieldTransforms(HoveringInfernoEntity entity)
-    {	return SHIELD_ANIMATIONS.get(entity.getId()).get(2);
+    {	return SHIELD_ANIMATIONS.get(entity).get(2);
 	}
 	
 	private ModelPart getDesiredSmallShieldTransforms(HoveringInfernoEntity entity)
-    {	return SHIELD_ANIMATIONS.get(entity.getId()).get(3);
+    {	return SHIELD_ANIMATIONS.get(entity).get(3);
 	}
 
 	@Override
