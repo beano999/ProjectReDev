@@ -18,9 +18,8 @@ public class AddWanderingTraderItems
         event.getRareTrades().add(new BasicItemListing(12, new ItemStack(ItemInit.TEAL_SHADE_SAPLING), 1, 8, 1));
         event.getRareTrades().add(new BasicItemListing(12, new ItemStack(ItemInit.PURPLE_SHADE_SAPLING), 1, 8, 1));
 
-        event.getGenericTrades().add(new BasicItemListing(8, new ItemStack(Items.CHERRY_SAPLING), 1, 8, 1));
         event.getGenericTrades().add(new BasicItemListing(1, new ItemStack(Items.PINK_PETALS, 16), 8, 8, 1));
 
-        event.getGenericTrades().add(new BasicItemListing(8, new ItemStack(Items.MANGROVE_PROPAGULE), 1, 8, 1));
+        event.getGenericTrades().add(new BasicItemListing(5, new ItemStack(Items.MANGROVE_PROPAGULE), 1, 8, 1));
     }
 }
