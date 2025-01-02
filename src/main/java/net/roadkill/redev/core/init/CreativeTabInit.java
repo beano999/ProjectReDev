@@ -256,7 +256,7 @@ public class CreativeTabInit
                     ItemInit.DIORITE_FURNACE.value(),
                     ItemInit.GRANITE_FURNACE.value()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            injectItemsAfter(Items.WARPED_SIGN.getDefaultInstance(), event, List.of(
+            injectItemsAfter(Items.WARPED_HANGING_SIGN.getDefaultInstance(), event, List.of(
                     ItemInit.SCRAPWOOD_SIGN.value(),
                     ItemInit.WHISPUR_SIGN.value(),
                     ItemInit.PETRIFIED_SIGN.value(),
