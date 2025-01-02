@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.util.RandomSource;
 
 import java.util.Objects;
 
@@ -27,8 +28,16 @@ public record IntegerBounds(int min, int max)
 
     public static IntegerBounds NONE = new IntegerBounds(-Integer.MAX_VALUE, Integer.MAX_VALUE);
 
+    public static IntegerBounds of(int min, int max)
+    {   return new IntegerBounds(min, max);
+    }
+
     public boolean test(int value)
     {   return value >= min && value <= max;
+    }
+
+    public int getRandom(RandomSource rand)
+    {   return rand.nextInt(min, max + 1);
     }
 
     public CompoundTag serialize()
