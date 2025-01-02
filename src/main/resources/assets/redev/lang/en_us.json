@@ -383,5 +383,9 @@
   "block.redev.polished_basalt_wall": "Polished Basalt Wall",
 
   "item.redev.netherite_shield": "Netherite Shield",
-  "item.redev.infernal_plate": "Infernal Plate"
+  "item.redev.infernal_plate": "Infernal Plate",
+
+  "subtitles.entity.lithican.ambient": "Lithican Rasps",
+  "subtitles.entity.lithican.hurt": "Lithican Hurts",
+  "subtitles.entity.lithican.death": "Lithican Dies"
 }

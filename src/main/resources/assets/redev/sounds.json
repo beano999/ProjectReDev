@@ -1,7 +1,7 @@
 {
   "block.petrified_door.open":
   {
-    "subtitle": "block.petrified_door.open",
+    "subtitle": "subtitles.block.door.toggle",
     "sounds":
     [
       {
@@ -12,7 +12,7 @@
   },
   "block.petrified_door.close":
   {
-    "subtitle": "block.petrified_door.close",
+    "subtitle": "subtitles.block.door.toggle",
     "sounds":
     [
       {
@@ -23,7 +23,7 @@
   },
   "entity.lithican.ambient":
   {
-    "subtitle": "entity.lithican.ambient",
+    "subtitle": "subtitles.entity.lithican.ambient",
     "sounds":
     [
       {
@@ -42,7 +42,7 @@
   },
   "entity.lithican.death":
   {
-    "subtitle": "entity.lithican.death",
+    "subtitle": "subtitles.entity.lithican.death",
     "sounds":
     [
       {
@@ -53,7 +53,7 @@
   },
   "entity.lithican.hurt":
   {
-    "subtitle": "entity.lithican.hurt",
+    "subtitle": "subtitles.entity.lithican.hurt",
     "sounds":
     [
       {
