@@ -19,14 +19,12 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.util.ObfuscationReflectionHelper;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
-import net.neoforged.neoforge.event.entity.EntityLeaveLevelEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.roadkill.redev.core.entity.PhantomType;
-import net.roadkill.redev.core.entity.SpecialPhantom;
+import net.roadkill.redev.core.init.ModDataAttachments;
 import net.roadkill.redev.core.network.message.PhantomTypeSyncMessage;
 
 import java.lang.reflect.Field;
@@ -39,7 +37,7 @@ public class PhantomEvents
     {
         if (event.getEntity() instanceof Phantom phantom && event.getSource().getDirectEntity() instanceof Snowball)
         {
-            if (((SpecialPhantom) phantom).getPhantomType() == PhantomType.BLUE)
+            if (PhantomType.get(phantom) == PhantomType.BLUE)
             {   event.setCanceled(true);
             }
             else event.setAmount(Math.max(event.getAmount(), 4));
@@ -49,9 +47,9 @@ public class PhantomEvents
     @SubscribeEvent
     public static void beforePhantomHurt(LivingIncomingDamageEvent event)
     {
-        if (event.getEntity() instanceof Phantom phantom && phantom instanceof SpecialPhantom special)
+        if (event.getEntity() instanceof Phantom phantom)
         {
-            PhantomType type = special.getPhantomType();
+            PhantomType type = PhantomType.get(phantom);
             if (type == PhantomType.RED && event.getSource().type().effects() == DamageEffects.BURNING)
             {   event.setCanceled(true);
             }
@@ -69,9 +67,9 @@ public class PhantomEvents
                 phantom.getPersistentData().put("Attackers", attackers);
             }
         }
-        if (event.getSource().getEntity() instanceof Phantom phantom && phantom instanceof SpecialPhantom special)
+        if (event.getSource().getEntity() instanceof Phantom phantom)
         {
-            if (special.getPhantomType() == PhantomType.HOLLOW)
+            if (PhantomType.get(phantom) == PhantomType.HOLLOW)
             {   event.setCanceled(true);
                 poofHollowPhantom(phantom);
             }
@@ -91,12 +89,23 @@ public class PhantomEvents
     @SubscribeEvent
     public static void onPhantomSpawn(EntityJoinLevelEvent event)
     {
-        if (event.getEntity() instanceof Phantom phantom && phantom instanceof SpecialPhantom special)
+        if (event.getEntity() instanceof Phantom phantom)
         {
             if (!event.getLevel().isClientSide)
-            {   try
-                {   special.setPhantomType(PhantomType.valueOf(phantom.getPersistentData().getString("PhantomType").toUpperCase()));
-                } catch (Exception ignored) {}
+            {
+                if (!phantom.hasData(ModDataAttachments.PHANTOM_TYPE))
+                {
+                    int rand = phantom.getRandom().nextInt(25);
+                    PhantomType type = switch (rand)
+                    {
+                        case 0  -> PhantomType.RED;
+                        case 1  -> PhantomType.BLUE;
+                        case 2  -> PhantomType.GREEN;
+                        case 3  -> PhantomType.HOLLOW;
+                        default -> PhantomType.NORMAL;
+                    };
+                    PhantomType.set(phantom, type);
+                }
             }
         }
     }
@@ -104,18 +113,9 @@ public class PhantomEvents
     @SubscribeEvent
     public static void onPlayerStartTracking(PlayerEvent.StartTracking event)
     {
-        if (event.getTarget() instanceof Phantom phantom && phantom instanceof SpecialPhantom special
+        if (event.getTarget() instanceof Phantom phantom
         && event.getEntity() instanceof ServerPlayer player)
-        {   PacketDistributor.sendToPlayer(player, new PhantomTypeSyncMessage(phantom, special.getPhantomType()));
-        }
-    }
-
-    @SubscribeEvent
-    public static void onPhantomSave(EntityLeaveLevelEvent event)
-    {
-        if (!event.getLevel().isClientSide && event.getEntity() instanceof Phantom phantom
-        && phantom instanceof SpecialPhantom special)
-        {   phantom.getPersistentData().putString("PhantomType", special.getPhantomType().name().toLowerCase());
+        {   PacketDistributor.sendToPlayer(player, new PhantomTypeSyncMessage(phantom, PhantomType.get(phantom)));
         }
     }
 
@@ -134,7 +134,7 @@ public class PhantomEvents
             // Spawn ender particles
             if (phantom.level().isClientSide)
             {
-                if (((SpecialPhantom) phantom).getPhantomType() != PhantomType.HOLLOW)
+                if (PhantomType.get(phantom) != PhantomType.HOLLOW)
                 {   RandomSource random = phantom.getRandom();
                     Vec3 speed = phantom.getDeltaMovement();
                     if (phantom.tickCount % 3 == 0 || random.nextDouble() < (Math.abs(speed.x) * Math.abs(speed.z) + Math.abs(speed.y)) * 10)
@@ -149,8 +149,8 @@ public class PhantomEvents
             }
             else
             {
-                if (phantom.isInWater() && ((SpecialPhantom) phantom).getPhantomType() != PhantomType.BLUE)
-                {   phantom.hurt(phantom.level().damageSources().drown(), 2);
+                if (phantom.isInWater() && PhantomType.get(phantom) != PhantomType.BLUE)
+                {   phantom.hurtServer(((ServerLevel) phantom.level()), phantom.level().damageSources().drown(), 2);
                 }
 
                 if (phantom.horizontalCollision && !phantom.noPhysics)

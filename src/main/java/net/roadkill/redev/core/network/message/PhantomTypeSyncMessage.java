@@ -6,10 +6,10 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Phantom;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 import net.roadkill.redev.ReDev;
 import net.roadkill.redev.core.entity.PhantomType;
-import net.roadkill.redev.core.entity.SpecialPhantom;
 
 public class PhantomTypeSyncMessage implements CustomPacketPayload
 {
@@ -46,8 +46,8 @@ public class PhantomTypeSyncMessage implements CustomPacketPayload
             {
                 LivingEntity entity = (LivingEntity) Minecraft.getInstance().level.getEntity(message.entityId);
 
-                if (entity instanceof SpecialPhantom phantom)
-                {   phantom.setPhantomType(message.phantomType);
+                if (entity instanceof Phantom phantom)
+                {   PhantomType.set(phantom, message.phantomType);
                 }
             });
         }

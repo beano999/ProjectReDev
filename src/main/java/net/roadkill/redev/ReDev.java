@@ -1,9 +1,6 @@
 package net.roadkill.redev;
 
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.blockentity.CampfireRenderer;
-import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -12,7 +9,6 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.roadkill.redev.core.init.*;
 
-import net.roadkill.redev.util.registries.ModArmorMaterials;
 import net.roadkill.redev.util.registries.ModBlocks;
 import net.roadkill.redev.util.registries.ModGameRules;
 import org.apache.logging.log4j.LogManager;
@@ -42,6 +38,7 @@ public class ReDev
         BiomeCodecInit.BIOME_MODIFIER_SERIALIZERS.register(bus);
         FeatureInit.FEATURES.register(bus);
         CreativeTabInit.ITEM_GROUPS.register(bus);
+        ModDataAttachments.ATTACHMENT_TYPES.register(bus);
     }
 
     public void onCommonSetup(final FMLCommonSetupEvent event)

@@ -4,16 +4,20 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.PhantomModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.PhantomRenderer;
 import net.minecraft.client.renderer.entity.layers.EyesLayer;
 import net.minecraft.client.renderer.entity.layers.PhantomEyesLayer;
 import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.client.renderer.entity.state.PhantomRenderState;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.monster.Phantom;
 import net.roadkill.redev.core.entity.PhantomType;
 import net.roadkill.redev.mixin_interfaces.IPhantomColorRenderState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EyesLayer.class)
 public class MixinPhantomEyes
@@ -57,6 +61,19 @@ public class MixinPhantomEyes
         @Override
         public void setPhantomType(PhantomType phantomType)
         {   this.phantomType = phantomType;
+        }
+    }
+
+    @Mixin(PhantomRenderer.class)
+    public static abstract class ExtractPhantomType
+    {
+        @Inject(method = "extractRenderState(Lnet/minecraft/world/entity/monster/Phantom;Lnet/minecraft/client/renderer/entity/state/PhantomRenderState;F)V",
+                at = @At("TAIL"))
+        private void extractRenderState(Phantom phantom, PhantomRenderState renderState, float partialTick, CallbackInfo ci)
+        {
+            if (renderState instanceof IPhantomColorRenderState phantomState)
+            {   phantomState.setPhantomType(PhantomType.get(phantom));
+            }
         }
     }
 }

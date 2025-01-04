@@ -54,6 +54,7 @@
     "MixinHoveringInfernoFire",
     "MixinHumanoidModel",
     "MixinPhantomEyes",
+    "MixinPhantomEyes$ExtractPhantomType",
     "MixinPhantomEyes$MixinPhantomRenderState",
     "MixinPigTNTRenderer",
     "MixinPigTNTRenderer$MixinPigRenderState",

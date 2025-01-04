@@ -8,9 +8,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.monster.Phantom;
-import net.roadkill.redev.ReDev;
 import net.roadkill.redev.core.entity.PhantomType;
-import net.roadkill.redev.core.entity.SpecialPhantom;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,8 +21,7 @@ public abstract class MixinPhantomTargeting
               at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/monster/Phantom;canAttack(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/ai/targeting/TargetingConditions;)Z"))
     public boolean canAttack(Phantom phantom, ServerLevel level, LivingEntity target, TargetingConditions conditions)
     {
-        SpecialPhantom special = ((SpecialPhantom) phantom);
-        PhantomType type = special.getPhantomType();
+        PhantomType type = PhantomType.get(phantom);
 
         boolean hasPlayerAttacked = phantom.getPersistentData().getList("Attackers", 8).contains(StringTag.valueOf(target.getUUID().toString()));
         boolean shouldTarget = target instanceof ServerPlayer player && player.getStats().getValue(Stats.CUSTOM.get(Stats.TIME_SINCE_REST)) >= 72000
