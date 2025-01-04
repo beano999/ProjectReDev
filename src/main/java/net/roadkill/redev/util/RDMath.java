@@ -6,18 +6,22 @@ import net.minecraft.core.SectionPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureStart;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Quaternionf;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
@@ -61,11 +65,14 @@ public final class RDMath
         return (blendTo - blendFrom) / Math.pow(rangeMax - rangeMin, 2) * Math.pow(factor - rangeMin, 2) + blendFrom;
     }
 
-    public static double blendLog(double blendFrom, double blendTo, double factor, double rangeMin, double rangeMax)
+    public static double blendLog(double blendFrom, double blendTo, double factor, double rangeMin, double rangeMax, double intensity)
     {
-        if (factor <= rangeMin) return blendFrom;
-        if (factor >= rangeMax) return blendTo;
-        return (blendTo - blendFrom) / Math.log(rangeMax - rangeMin) * Math.log(factor - rangeMin + 1) + blendFrom;
+        factor = clamp(factor, rangeMin, rangeMax);
+
+        double normalizedFactor = (factor - rangeMin) / (rangeMax - rangeMin);
+        double logFactor = Math.log(intensity * normalizedFactor + 1) / Math.log(intensity + 1);
+
+        return blendFrom + (blendTo - blendFrom) * logFactor;
     }
 
     public static boolean withinRange(int value, int min, int max)
@@ -164,5 +171,30 @@ public final class RDMath
             }
         }
         return null;
+    }
+
+    public static List<BlockPos> getPositionGrid(BlockPos pos, int samples, int interval)
+    {
+        List<BlockPos> posList = new ArrayList<>();
+        int sampleRoot = (int) Math.sqrt(samples);
+        int radius = (sampleRoot * interval) / 2;
+
+        for (int x = -radius; x < radius; x += interval)
+        {
+            for (int z = -radius; z < radius; z += interval)
+            {   posList.add(pos.offset(x + interval / 2, 0, z + interval / 2));
+            }
+        }
+
+        return posList;
+    }
+
+    public static double getAverageDepth(LivingEntity entity)
+    {
+        double depth = 0;
+        for (BlockPos pos : getPositionGrid(entity.blockPosition(), 36, 10))
+        {   depth += entity.level().getHeight(Heightmap.Types.WORLD_SURFACE, pos.getX(), pos.getZ()) - entity.getY();
+        }
+        return depth / 36;
     }
 }
