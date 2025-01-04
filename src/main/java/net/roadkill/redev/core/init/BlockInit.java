@@ -70,10 +70,10 @@ public class BlockInit
     public static final DeferredHolder<Block, DoorBlock> PETRIFIED_DOOR = BLOCKS.registerBlock("petrified_door", props -> new DoorBlock(ModBlocks.BlockSets.PETRIFIED, props), PETRIFIED_PROPERTIES.get());
     public static final DeferredHolder<Block, DoorBlock> SHADE_DOOR = BLOCKS.registerBlock("shade_door", props -> new DoorBlock(ModBlocks.BlockSets.SHADE, props), SHADE_PROPERTIES.get());
 
-    public static final DeferredHolder<Block, TrapDoorBlock> SCRAPWOOD_TRAPDOOR = BLOCKS.registerBlock("scrapwood_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.SCRAPWOOD, props), SCRAPWOOD_PROPERTIES.get());
-    public static final DeferredHolder<Block, TrapDoorBlock> WHISPUR_TRAPDOOR = BLOCKS.registerBlock("whispur_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.WHISPUR, props), WHISPUR_PROPERTIES.get());
-    public static final DeferredHolder<Block, TrapDoorBlock> PETRIFIED_TRAPDOOR = BLOCKS.registerBlock("petrified_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.PETRIFIED, props), PETRIFIED_PROPERTIES.get());
-    public static final DeferredHolder<Block, TrapDoorBlock> SHADE_TRAPDOOR = BLOCKS.registerBlock("shade_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.SHADE, props), SHADE_PROPERTIES.get());
+    public static final DeferredHolder<Block, TrapDoorBlock> SCRAPWOOD_TRAPDOOR = BLOCKS.registerBlock("scrapwood_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.SCRAPWOOD, props), SCRAPWOOD_PROPERTIES.get().noOcclusion());
+    public static final DeferredHolder<Block, TrapDoorBlock> WHISPUR_TRAPDOOR = BLOCKS.registerBlock("whispur_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.WHISPUR, props), WHISPUR_PROPERTIES.get().noOcclusion());
+    public static final DeferredHolder<Block, TrapDoorBlock> PETRIFIED_TRAPDOOR = BLOCKS.registerBlock("petrified_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.PETRIFIED, props), PETRIFIED_PROPERTIES.get().noOcclusion());
+    public static final DeferredHolder<Block, TrapDoorBlock> SHADE_TRAPDOOR = BLOCKS.registerBlock("shade_trapdoor", props -> new TrapDoorBlock(ModBlocks.BlockSets.SHADE, props), SHADE_PROPERTIES.get().noOcclusion());
 
     public static final DeferredHolder<Block, ButtonBlock> SCRAPWOOD_BUTTON = BLOCKS.registerBlock("scrapwood_button", props -> new ButtonBlock(ModBlocks.BlockSets.SCRAPWOOD, 30, props), SCRAPWOOD_PROPERTIES.get().strength(0.5f).noCollission());
     public static final DeferredHolder<Block, ButtonBlock> WHISPUR_BUTTON = BLOCKS.registerBlock("whispur_button", props -> new ButtonBlock(ModBlocks.BlockSets.WHISPUR, 30, props), WHISPUR_PROPERTIES.get().strength(0.5f).noCollission());
