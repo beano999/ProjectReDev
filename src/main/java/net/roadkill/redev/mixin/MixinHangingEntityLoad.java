@@ -25,12 +25,15 @@ public abstract class MixinHangingEntityLoad
 
     @Shadow public abstract void readAdditionalSaveData(CompoundTag pCompound);
 
-    HangingEntity self = (HangingEntity) (Object) this;
+    BlockAttachedEntity self = (BlockAttachedEntity) (Object) this;
 
     @Inject(method = "readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V",
             at = @At(value = "INVOKE", target = "Lorg/slf4j/Logger;error(Ljava/lang/String;Ljava/lang/Object;)V"))
     public void onLoadFault(CompoundTag tag, CallbackInfo ci)
-    {   self.getPersistentData().putBoolean("LoadError", true);
+    {
+        if (self instanceof HangingEntity)
+        {   self.getPersistentData().putBoolean("LoadError", true);
+        }
     }
 
     @Inject(method = "tick", at = @At("HEAD"))
