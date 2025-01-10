@@ -28,7 +28,7 @@ public class ChainLadderItem extends BlockItem
             }
             BlockPos pos = context.getClickedPos().below(i);
 
-            if (level.getBlockState(pos).isAir())
+            if (level.getBlockState(pos).canBeReplaced(new BlockPlaceContext(context)))
             {   BlockPlaceContext ctx = BlockPlaceContext.at(new BlockPlaceContext(context), context.getClickedPos().below(i), state.getValue(LadderBlock.FACING));
                 return this.place(ctx);
             }

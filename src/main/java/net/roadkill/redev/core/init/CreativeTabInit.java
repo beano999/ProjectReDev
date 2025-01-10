@@ -264,7 +264,8 @@ public class CreativeTabInit
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             injectItemsAfter(Items.LADDER.getDefaultInstance(), event, List.of(
-                    ItemInit.CHAIN_LADDER.value()
+                    ItemInit.CHAIN_LADDER.value(),
+                    ItemInit.BAMBOO_LADDER.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 

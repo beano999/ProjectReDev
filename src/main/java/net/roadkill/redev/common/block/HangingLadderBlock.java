@@ -4,7 +4,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Blocks;
@@ -15,9 +14,9 @@ import net.minecraft.world.level.material.Fluids;
 
 import javax.annotation.Nullable;
 
-public class ChainLadderBlock extends LadderBlock
+public class HangingLadderBlock extends LadderBlock
 {
-    public ChainLadderBlock(Properties properties)
+    public HangingLadderBlock(Properties properties)
     {   super(properties);
     }
 

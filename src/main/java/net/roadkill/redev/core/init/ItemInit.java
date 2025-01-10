@@ -12,6 +12,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.roadkill.redev.ReDev;
 import net.roadkill.redev.common.item.CarvedPumpkinItem;
+import net.roadkill.redev.common.item.ChainLadderItem;
 import net.roadkill.redev.common.item.ItemNameBlockItem;
 import net.roadkill.redev.util.registries.ModArmorMaterials;
 import net.roadkill.redev.util.registries.ModItems;
@@ -100,7 +101,8 @@ public class ItemInit
     public static final DeferredHolder<Item, BlockItem> WHISPUR_LADDER = ITEMS.registerSimpleBlockItem("whispur_ladder", BlockInit.WHISPUR_LADDER);
     public static final DeferredHolder<Item, BlockItem> PETRIFIED_LADDER = ITEMS.registerSimpleBlockItem("petrified_ladder", BlockInit.PETRIFIED_LADDER);
     public static final DeferredHolder<Item, BlockItem> SHADE_LADDER = ITEMS.registerSimpleBlockItem("shade_ladder", BlockInit.SHADE_LADDER);
-    public static final DeferredHolder<Item, BlockItem> CHAIN_LADDER = ITEMS.registerSimpleBlockItem("chain_ladder", BlockInit.CHAIN_LADDER);
+    public static final DeferredHolder<Item, BlockItem> CHAIN_LADDER = ITEMS.registerItem("chain_ladder", properties -> new ChainLadderItem(BlockInit.CHAIN_LADDER.get(), properties.useBlockDescriptionPrefix()));
+    public static final DeferredHolder<Item, BlockItem> BAMBOO_LADDER = ITEMS.registerItem("bamboo_ladder", properties -> new ChainLadderItem(BlockInit.BAMBOO_LADDER.get(), properties.useBlockDescriptionPrefix()));
 
     public static final DeferredHolder<Item, BlockItem> ACACIA_SMITHING_TABLE = ITEMS.registerSimpleBlockItem("acacia_smithing_table", BlockInit.ACACIA_SMITHING_TABLE);
     public static final DeferredHolder<Item, BlockItem> BIRCH_SMITHING_TABLE = ITEMS.registerSimpleBlockItem("birch_smithing_table", BlockInit.BIRCH_SMITHING_TABLE);

@@ -120,7 +120,8 @@ public class BlockInit
     public static final DeferredHolder<Block, LadderBlock> WHISPUR_LADDER = BLOCKS.registerBlock("whispur_ladder", LadderBlock::new, Block.Properties.ofFullCopy(Blocks.LADDER));
     public static final DeferredHolder<Block, LadderBlock> PETRIFIED_LADDER = BLOCKS.registerBlock("petrified_ladder", LadderBlock::new, Block.Properties.ofFullCopy(Blocks.LADDER).strength(3.0F, 8.0F).sound(ModSoundType.PETRIFIED_PLANKS));
     public static final DeferredHolder<Block, LadderBlock> SHADE_LADDER = BLOCKS.registerBlock("shade_ladder", LadderBlock::new, Block.Properties.ofFullCopy(Blocks.LADDER));
-    public static final DeferredHolder<Block, ChainLadderBlock> CHAIN_LADDER = BLOCKS.registerBlock("chain_ladder", ChainLadderBlock::new, Block.Properties.ofFullCopy(Blocks.LADDER).strength(3F, 8F).sound(SoundType.CHAIN));
+    public static final DeferredHolder<Block, HangingLadderBlock> CHAIN_LADDER = BLOCKS.registerBlock("chain_ladder", HangingLadderBlock::new, Block.Properties.ofFullCopy(Blocks.LADDER).strength(3F, 8F).sound(SoundType.CHAIN));
+    public static final DeferredHolder<Block, HangingLadderBlock> BAMBOO_LADDER = BLOCKS.registerBlock("bamboo_ladder", HangingLadderBlock::new, Block.Properties.ofFullCopy(Blocks.LADDER).sound(SoundType.BAMBOO_WOOD));
 
     public static final DeferredHolder<Block, SmithingTableBlock> ACACIA_SMITHING_TABLE = BLOCKS.registerBlock("acacia_smithing_table", SmithingTableBlock::new, Block.Properties.ofFullCopy(Blocks.SMITHING_TABLE));
     public static final DeferredHolder<Block, SmithingTableBlock> BIRCH_SMITHING_TABLE = BLOCKS.registerBlock("birch_smithing_table", SmithingTableBlock::new, Block.Properties.ofFullCopy(Blocks.SMITHING_TABLE));
