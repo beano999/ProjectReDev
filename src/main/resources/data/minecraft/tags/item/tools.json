@@ -2,11 +2,11 @@
   "replace": false,
   "values":
   [
-    "redev:nether_gold_sword",
-    "redev:nether_gold_pickaxe",
-    "redev:nether_gold_axe",
-    "redev:nether_gold_shovel",
-    "redev:nether_gold_hoe",
+    "redev:aurum_sword",
+    "redev:aurum_pickaxe",
+    "redev:aurum_axe",
+    "redev:aurum_shovel",
+    "redev:aurum_hoe",
     "redev:withered_sword",
     "redev:withered_pickaxe",
     "redev:withered_axe",

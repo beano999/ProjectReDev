@@ -60,17 +60,17 @@
   "item.redev.hoglin_hide_leggings":   "Hoglin Hide Pants",
   "item.redev.hoglin_hide_boots":      "Hoglin Hide Boots",
 
-  "item.redev.nether_gold_nugget":     "Nether Gold Nugget",
-  "item.redev.nether_gold_ingot":      "Nether Gold Ingot",
-  "item.redev.nether_gold_sword":      "Nether Gold Sword",
-  "item.redev.nether_gold_shovel":     "Nether Gold Shovel",
-  "item.redev.nether_gold_pickaxe":    "Nether Gold Pickaxe",
-  "item.redev.nether_gold_axe":        "Nether Gold Axe",
-  "item.redev.nether_gold_hoe":        "Nether Gold Hoe",
-  "item.redev.nether_gold_helmet":     "Nether Gold Helmet",
-  "item.redev.nether_gold_chestplate": "Nether Gold Chestplate",
-  "item.redev.nether_gold_leggings":   "Nether Gold Leggings",
-  "item.redev.nether_gold_boots":      "Nether Gold Boots",
+  "item.redev.aurum_nugget":     "Aurum Nugget",
+  "item.redev.aurum_ingot":      "Aurum Ingot",
+  "item.redev.aurum_sword":      "Aurum Sword",
+  "item.redev.aurum_shovel":     "Aurum Shovel",
+  "item.redev.aurum_pickaxe":    "Aurum Pickaxe",
+  "item.redev.aurum_axe":        "Aurum Axe",
+  "item.redev.aurum_hoe":        "Aurum Hoe",
+  "item.redev.aurum_helmet":     "Aurum Helmet",
+  "item.redev.aurum_chestplate": "Aurum Chestplate",
+  "item.redev.aurum_leggings":   "Aurum Leggings",
+  "item.redev.aurum_boots":      "Aurum Boots",
   
   "item.redev.wood_scrap":             "Wood Scrap",
   "item.redev.charred_bone":           "Charred Bone",
@@ -276,8 +276,8 @@
   "block.redev.diorite_dropper":     "Diorite Dropper",
   "block.redev.granite_dropper":     "Granite Dropper",
 
-  "block.redev.nether_gold_block":  "Block of Nether Gold",
-  "block.redev.nether_gold_ore":    "Nether Gold Ore",
+  "block.redev.aurum_block":  "Block of Aurum",
+  "block.redev.aurum_ore":    "Aurum Ore",
   "block.redev.nether_diamond_ore": "Nether Diamond Ore",
   "block.redev.basalt_diamond_ore": "Basalt Diamond Ore",
 
@@ -370,8 +370,8 @@
 
   "block.redev.hadalite": "Hadalite",
 
-  "block.redev.classic_gold_block": "Block of Classic Gold",
-  "block.redev.classic_nether_gold_block": "Block of Classic Nether Gold",
+  "block.redev.patina_gold_block": "Block of Patina Gold",
+  "block.redev.patina_aurum_block": "Block of Patina Aurum",
 
   "block.redev.basalt_slab": "Basalt Slab",
   "block.redev.smooth_basalt_slab": "Smooth Basalt Slab",

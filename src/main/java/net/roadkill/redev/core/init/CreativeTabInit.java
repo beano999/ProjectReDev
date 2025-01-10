@@ -210,7 +210,7 @@ public class CreativeTabInit
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             injectItemsAfter(Items.NETHER_GOLD_ORE.getDefaultInstance(), event, List.of(
-                    ItemInit.NETHER_GOLD_ORE.value(),
+                    ItemInit.AURUM_ORE.value(),
                     ItemInit.NETHER_DIAMOND_ORE.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
@@ -304,12 +304,12 @@ public class CreativeTabInit
         else if (event.getTabKey().equals(CreativeModeTabs.INGREDIENTS))
         {
             event.insertAfter(Items.RABBIT_HIDE.getDefaultInstance(), ItemInit.HOGLIN_HIDE.value().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            event.insertAfter(Items.GOLD_NUGGET.getDefaultInstance(), ItemInit.NETHER_GOLD_NUGGET.value().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.GOLD_NUGGET.getDefaultInstance(), ItemInit.AURUM_NUGGET.value().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.insertAfter(Items.STICK.getDefaultInstance(), ItemInit.WOOD_SCRAP.value().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.insertAfter(Items.BONE_MEAL.getDefaultInstance(), ItemInit.CHARRED_BONE.value().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             injectItemsAfter(Items.GOLD_INGOT.getDefaultInstance(), event, List.of(
-                    ItemInit.NETHER_GOLD_INGOT.value(),
+                    ItemInit.AURUM_INGOT.value(),
                     ItemInit.WITHERED_INGOT.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
@@ -324,10 +324,10 @@ public class CreativeTabInit
         else if (event.getTabKey().equals(CreativeModeTabs.COMBAT))
         {
             injectItemsAfter(Items.NETHERITE_BOOTS.getDefaultInstance(), event, List.of(
-                    ItemInit.NETHER_GOLD_HELMET.value(),
-                    ItemInit.NETHER_GOLD_CHESTPLATE.value(),
-                    ItemInit.NETHER_GOLD_LEGGINGS.value(),
-                    ItemInit.NETHER_GOLD_BOOTS.value(),
+                    ItemInit.AURUM_HELMET.value(),
+                    ItemInit.AURUM_CHESTPLATE.value(),
+                    ItemInit.AURUM_LEGGINGS.value(),
+                    ItemInit.AURUM_BOOTS.value(),
                     ItemInit.WITHERED_HELMET.value(),
                     ItemInit.WITHERED_CHESTPLATE.value(),
                     ItemInit.WITHERED_LEGGINGS.value(),
@@ -335,12 +335,12 @@ public class CreativeTabInit
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             injectItemsAfter(Items.NETHERITE_SWORD.getDefaultInstance(), event, List.of(
-                    ItemInit.NETHER_GOLD_SWORD.value(),
+                    ItemInit.AURUM_SWORD.value(),
                     ItemInit.WITHERED_SWORD.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             injectItemsAfter(Items.NETHERITE_AXE.getDefaultInstance(), event, List.of(
-                    ItemInit.NETHER_GOLD_AXE.value(),
+                    ItemInit.AURUM_AXE.value(),
                     ItemInit.WITHERED_AXE.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
@@ -360,7 +360,7 @@ public class CreativeTabInit
         else if (event.getTabKey().equals(CreativeModeTabs.BUILDING_BLOCKS))
         {
             injectItemsAfter(Items.GOLD_BLOCK.getDefaultInstance(), event, List.of(
-                    ItemInit.NETHER_GOLD_BLOCK.value(), ItemInit.CLASSIC_GOLD_BLOCK.value(), ItemInit.CLASSIC_NETHER_GOLD_BLOCK.value()
+                    ItemInit.AURUM_BLOCK.value(), ItemInit.PATINA_GOLD_BLOCK.value(), ItemInit.PATINA_AURUM_BLOCK.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             injectItemsAfter(Items.WARPED_BUTTON.getDefaultInstance(), event, List.of(
@@ -436,10 +436,10 @@ public class CreativeTabInit
         else if (event.getTabKey().equals(CreativeModeTabs.TOOLS_AND_UTILITIES))
         {
             injectItemsAfter(Items.NETHERITE_HOE.getDefaultInstance(), event, List.of(
-                    ItemInit.NETHER_GOLD_SHOVEL.value(),
-                    ItemInit.NETHER_GOLD_PICKAXE.value(),
-                    ItemInit.NETHER_GOLD_AXE.value(),
-                    ItemInit.NETHER_GOLD_HOE.value(),
+                    ItemInit.AURUM_SHOVEL.value(),
+                    ItemInit.AURUM_PICKAXE.value(),
+                    ItemInit.AURUM_AXE.value(),
+                    ItemInit.AURUM_HOE.value(),
                     ItemInit.WITHERED_SHOVEL.value(),
                     ItemInit.WITHERED_PICKAXE.value(),
                     ItemInit.WITHERED_AXE.value(),

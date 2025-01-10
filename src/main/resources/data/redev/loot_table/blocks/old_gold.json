@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "redev:classic_gold_block"
+          "name": "redev:patina_gold_block"
         }
       ],
       "rolls": 1.0

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "II",
+    "SI",
+    "S "
+  ],
+  "key":
+  {
+    "I": "redev:aurum_ingot",
+    "S": "#c:rods/wooden"
+  },
+  "result":
+  {
+    "id": "redev:aurum_axe",
+    "count": 1
+  }
+}

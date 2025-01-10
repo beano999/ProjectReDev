@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "horse_body": [
+      {
+        "texture": "redev:aurum"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "redev:aurum"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "redev:aurum"
+      }
+    ]
+  }
+}

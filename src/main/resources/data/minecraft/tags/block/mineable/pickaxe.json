@@ -61,8 +61,8 @@
     "redev:andesite_dropper",
     "redev:diorite_dropper",
     "redev:granite_dropper",
-    "redev:nether_gold_block",
-    "redev:nether_gold_ore",
+    "redev:aurum_block",
+    "redev:aurum_ore",
     "redev:nether_diamond_ore",
     "redev:basalt_diamond_ore",
     "redev:petrified_log",
@@ -83,7 +83,7 @@
     "redev:petrified_campfire",
     "redev:petrified_soul_campfire",
     "redev:petrified_bookshelf",
-    "redev:classic_gold_block",
-    "redev:classic_nether_gold_block"
+    "redev:patina_gold_block",
+    "redev:patina_aurum_block"
   ]
 }

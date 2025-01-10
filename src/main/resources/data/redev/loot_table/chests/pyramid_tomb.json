@@ -51,7 +51,7 @@
         {
           "type": "minecraft:item",
           "weight": 8,
-          "name": "redev:nether_gold_nugget"
+          "name": "redev:aurum_nugget"
         }
       ]
     }

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": "redev:patina_gold_block",
+  "result":
+  {
+    "id": "redev:patina_aurum_block"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

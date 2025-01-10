@@ -260,8 +260,8 @@ public class BlockInit
     public static final DeferredHolder<Block, DropperBlock> DIORITE_DROPPER = BLOCKS.registerBlock("diorite_dropper", DropperBlock::new, Block.Properties.ofFullCopy(Blocks.DROPPER));
     public static final DeferredHolder<Block, DropperBlock> GRANITE_DROPPER = BLOCKS.registerBlock("granite_dropper", DropperBlock::new, Block.Properties.ofFullCopy(Blocks.DROPPER));
 
-    public static final DeferredHolder<Block, Block> NETHER_GOLD_BLOCK = BLOCKS.registerBlock("nether_gold_block", Block::new, Block.Properties.ofFullCopy(Blocks.GOLD_BLOCK));
-    public static final DeferredHolder<Block, DropExperienceBlock> NETHER_GOLD_ORE = BLOCKS.registerBlock("nether_gold_ore", props -> new DropExperienceBlock(UniformInt.of(0, 1), props), BlockBehaviour.Properties.of().strength(0.5F, 3.0F).sound(SoundType.NETHER_GOLD_ORE).mapColor(MapColor.NETHER));
+    public static final DeferredHolder<Block, Block> AURUM_BLOCK = BLOCKS.registerBlock("aurum_block", Block::new, Block.Properties.ofFullCopy(Blocks.GOLD_BLOCK));
+    public static final DeferredHolder<Block, DropExperienceBlock> AURUM_ORE = BLOCKS.registerBlock("aurum_ore", props -> new DropExperienceBlock(UniformInt.of(0, 1), props), BlockBehaviour.Properties.of().strength(0.5F, 3.0F).sound(SoundType.NETHER_GOLD_ORE).mapColor(MapColor.NETHER));
     public static final DeferredHolder<Block, DropExperienceBlock> NETHER_DIAMOND_ORE = BLOCKS.registerBlock("nether_diamond_ore", props -> new DropExperienceBlock(UniformInt.of(0, 6), props),  BlockBehaviour.Properties.of().strength(2.5F, 6.0F).sound(SoundType.NETHER_GOLD_ORE).mapColor(MapColor.NETHER).requiresCorrectToolForDrops());
     public static final DeferredHolder<Block, DropExperienceBlock> BASALT_DIAMOND_ORE = BLOCKS.registerBlock("basalt_diamond_ore", props -> new DropExperienceBlock(UniformInt.of(0, 6), props),  BlockBehaviour.Properties.of().strength(2.0F, 6.0F).sound(SoundType.BASALT).mapColor(MapColor.NETHER).requiresCorrectToolForDrops());
 
@@ -305,8 +305,8 @@ public class BlockInit
     public static final DeferredHolder<Block, WallBlock> SMOOTH_BASALT_WALL = BLOCKS.registerBlock("smooth_basalt_wall", WallBlock::new, Block.Properties.ofFullCopy(Blocks.SMOOTH_BASALT));
     public static final DeferredHolder<Block, WallBlock> POLISHED_BASALT_WALL = BLOCKS.registerBlock("polished_basalt_wall", WallBlock::new, Block.Properties.ofFullCopy(Blocks.POLISHED_BASALT));
 
-    public static final DeferredHolder<Block, Block> CLASSIC_GOLD_BLOCK = BLOCKS.registerBlock("classic_gold_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_BLOCK));
-    public static final DeferredHolder<Block, Block> CLASSIC_NETHER_GOLD_BLOCK = BLOCKS.registerBlock("classic_nether_gold_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_BLOCK));
+    public static final DeferredHolder<Block, Block> PATINA_GOLD_BLOCK = BLOCKS.registerBlock("patina_gold_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_BLOCK));
+    public static final DeferredHolder<Block, Block> PATINA_AURUM_BLOCK = BLOCKS.registerBlock("patina_aurum_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_BLOCK));
 
     public static final TreeGrower SHADE_TREE_GROWER = new TreeGrower("shade_tree", Optional.empty(), Optional.of(FeatureInit.CONFIGURED_SHADE_TREE), Optional.empty());
 }

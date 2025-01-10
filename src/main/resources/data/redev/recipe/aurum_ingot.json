@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "NN",
+    "NN"
+  ],
+  "key":
+  {
+    "N": "redev:aurum_nugget"
+  },
+  "result":
+  {
+    "id": "redev:aurum_ingot",
+    "count":  1
+  }
+}

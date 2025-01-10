@@ -1,23 +1,17 @@
 package net.roadkill.redev.util.registries;
 
 import net.minecraft.Util;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.item.equipment.EquipmentAssets;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
 import net.roadkill.redev.ReDev;
 import net.roadkill.redev.data.ModTags;
 
 import java.util.EnumMap;
-import java.util.List;
-import java.util.Map;
 
 public class ModArmorMaterials
 {
@@ -33,7 +27,7 @@ public class ModArmorMaterials
             ModTags.Items.HOGLIN_HIDE_REPAIR_MATERIALS,
             ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "hoglin")));
 
-    public static final ArmorMaterial NETHER_GOLD = new ArmorMaterial(
+    public static final ArmorMaterial AURUM = new ArmorMaterial(
             300,
             Util.make(new EnumMap<>(ArmorType.class), map -> {
                 map.put(ArmorType.HELMET, 1);
@@ -42,8 +36,8 @@ public class ModArmorMaterials
                 map.put(ArmorType.BOOTS, 1);
             }), 25, SoundEvents.ARMOR_EQUIP_GOLD,
             0.0F, 0.0F,
-            ModTags.Items.NETHER_GOLD_REPAIR_MATERIALS,
-            ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "nether_gold")));
+            ModTags.Items.AURUM_REPAIR_MATERIALS,
+            ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "aurum")));
 
     public static final ArmorMaterial WITHERED = new ArmorMaterial(
             800,

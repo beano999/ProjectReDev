@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "II",
+    "S ",
+    "S "
+  ],
+  "key":
+  {
+    "I": "redev:aurum_ingot",
+    "S": "#c:rods/wooden"
+  },
+  "result":
+  {
+    "id": "redev:aurum_hoe",
+    "count": 1
+  }
+}

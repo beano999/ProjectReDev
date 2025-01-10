@@ -1,0 +1,13 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures":
+  {
+    "down": "redev:block/patina_gold_block_bottom",
+    "up": "redev:block/patina_gold_block_top",
+    "north": "redev:block/patina_gold_block_side",
+    "south": "redev:block/patina_gold_block_side",
+    "west": "redev:block/patina_gold_block_side",
+    "east": "redev:block/patina_gold_block_side",
+    "particle": "redev:block/patina_gold_block_side"
+  }
+}

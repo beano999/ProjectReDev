@@ -47,7 +47,7 @@ public final class ModTags
 
     public static final class Items
     {
-        public static final TagKey<Item> NETHER_GOLD_REPAIR_MATERIALS = create("nether_gold_repair_materials");
+        public static final TagKey<Item> AURUM_REPAIR_MATERIALS = create("aurum_repair_materials");
         public static final TagKey<Item> WITHERED_REPAIR_MATERIALS = create("withered_repair_materials");
         public static final TagKey<Item> HOGLIN_HIDE_REPAIR_MATERIALS = create("hoglin_hide_repair_materials");
         public static final TagKey<Item> WITHERED = create("withered");

@@ -31,17 +31,17 @@ public class ItemInit
 
     public static final DeferredHolder<Item, Item> WOOD_SCRAP = ITEMS.registerItem("wood_scrap", Item::new, new Item.Properties());
 
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_NUGGET = ITEMS.registerSimpleItem("nether_gold_nugget", new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_INGOT = ITEMS.registerSimpleItem("nether_gold_ingot", new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_SWORD = ITEMS.registerItem("nether_gold_sword", props -> new SwordItem(ModItems.ToolMaterials.NETHER_GOLD, 3f, 1.6f-4f, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_PICKAXE = ITEMS.registerItem("nether_gold_pickaxe", props -> new PickaxeItem(ModItems.ToolMaterials.NETHER_GOLD, 1f, 1.2f-4f, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_AXE = ITEMS.registerItem("nether_gold_axe", props -> new AxeItem(ModItems.ToolMaterials.NETHER_GOLD, 7f, 0.8f-4f, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_SHOVEL = ITEMS.registerItem("nether_gold_shovel", props -> new ShovelItem(ModItems.ToolMaterials.NETHER_GOLD, 1.5f, 1f-4f, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_HOE = ITEMS.registerItem("nether_gold_hoe", props -> new HoeItem(ModItems.ToolMaterials.NETHER_GOLD, -1f, 2f-4f, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_HELMET = ITEMS.registerItem("nether_gold_helmet", props -> new ArmorItem(ModArmorMaterials.NETHER_GOLD, ArmorType.HELMET, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_CHESTPLATE = ITEMS.registerItem("nether_gold_chestplate", props -> new ArmorItem(ModArmorMaterials.NETHER_GOLD, ArmorType.CHESTPLATE, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_LEGGINGS = ITEMS.registerItem("nether_gold_leggings", props -> new ArmorItem(ModArmorMaterials.NETHER_GOLD, ArmorType.LEGGINGS, props), new Item.Properties());
-    public static final DeferredHolder<Item, Item> NETHER_GOLD_BOOTS = ITEMS.registerItem("nether_gold_boots", props -> new ArmorItem(ModArmorMaterials.NETHER_GOLD, ArmorType.BOOTS, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> AURUM_NUGGET = ITEMS.registerSimpleItem("aurum_nugget", new Item.Properties());
+    public static final DeferredHolder<Item, Item> AURUM_INGOT = ITEMS.registerSimpleItem("aurum_ingot", new Item.Properties());
+    public static final DeferredHolder<Item, Item> AURUM_SWORD = ITEMS.registerItem("aurum_sword", props -> new SwordItem(ModItems.ToolMaterials.AURUM, 3f, 1.6f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> AURUM_PICKAXE = ITEMS.registerItem("aurum_pickaxe", props -> new PickaxeItem(ModItems.ToolMaterials.AURUM, 1f, 1.2f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> AURUM_AXE = ITEMS.registerItem("aurum_axe", props -> new AxeItem(ModItems.ToolMaterials.AURUM, 7f, 0.8f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> AURUM_SHOVEL = ITEMS.registerItem("aurum_shovel", props -> new ShovelItem(ModItems.ToolMaterials.AURUM, 1.5f, 1f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> AURUM_HOE = ITEMS.registerItem("aurum_hoe", props -> new HoeItem(ModItems.ToolMaterials.AURUM, -1f, 2f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> AURUM_HELMET = ITEMS.registerItem("aurum_helmet", props -> new ArmorItem(ModArmorMaterials.AURUM, ArmorType.HELMET, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> AURUM_CHESTPLATE = ITEMS.registerItem("aurum_chestplate", props -> new ArmorItem(ModArmorMaterials.AURUM, ArmorType.CHESTPLATE, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> AURUM_LEGGINGS = ITEMS.registerItem("aurum_leggings", props -> new ArmorItem(ModArmorMaterials.AURUM, ArmorType.LEGGINGS, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> AURUM_BOOTS = ITEMS.registerItem("aurum_boots", props -> new ArmorItem(ModArmorMaterials.AURUM, ArmorType.BOOTS, props), new Item.Properties());
 
     public static final DeferredHolder<Item, Item> CHARRED_BONE = ITEMS.registerSimpleItem("charred_bone", new Item.Properties());
 
@@ -230,8 +230,8 @@ public class ItemInit
     public static final DeferredHolder<Item, BlockItem> DIORITE_DROPPER = ITEMS.registerSimpleBlockItem("diorite_dropper", BlockInit.DIORITE_DROPPER);
     public static final DeferredHolder<Item, BlockItem> GRANITE_DROPPER = ITEMS.registerSimpleBlockItem("granite_dropper", BlockInit.GRANITE_DROPPER);
 
-    public static final DeferredHolder<Item, BlockItem> NETHER_GOLD_BLOCK = ITEMS.registerSimpleBlockItem("nether_gold_block", BlockInit.NETHER_GOLD_BLOCK);
-    public static final DeferredHolder<Item, BlockItem> NETHER_GOLD_ORE = ITEMS.registerSimpleBlockItem("nether_gold_ore", BlockInit.NETHER_GOLD_ORE);
+    public static final DeferredHolder<Item, BlockItem> AURUM_BLOCK = ITEMS.registerSimpleBlockItem("aurum_block", BlockInit.AURUM_BLOCK);
+    public static final DeferredHolder<Item, BlockItem> AURUM_ORE = ITEMS.registerSimpleBlockItem("aurum_ore", BlockInit.AURUM_ORE);
     public static final DeferredHolder<Item, BlockItem> NETHER_DIAMOND_ORE = ITEMS.registerSimpleBlockItem("nether_diamond_ore", BlockInit.NETHER_DIAMOND_ORE);
     public static final DeferredHolder<Item, BlockItem> BASALT_DIAMOND_ORE = ITEMS.registerSimpleBlockItem("basalt_diamond_ore", BlockInit.BASALT_DIAMOND_ORE);
 
@@ -324,8 +324,8 @@ public class ItemInit
 
     public static final DeferredHolder<Item, BlockItem> HADALITE = ITEMS.registerSimpleBlockItem("hadalite", BlockInit.HADALITE);
 
-    public static final DeferredHolder<Item, BlockItem> CLASSIC_GOLD_BLOCK = ITEMS.registerSimpleBlockItem("classic_gold_block", BlockInit.CLASSIC_GOLD_BLOCK);
-    public static final DeferredHolder<Item, BlockItem> CLASSIC_NETHER_GOLD_BLOCK = ITEMS.registerSimpleBlockItem("classic_nether_gold_block", BlockInit.CLASSIC_NETHER_GOLD_BLOCK);
+    public static final DeferredHolder<Item, BlockItem> PATINA_GOLD_BLOCK = ITEMS.registerSimpleBlockItem("patina_gold_block", BlockInit.PATINA_GOLD_BLOCK);
+    public static final DeferredHolder<Item, BlockItem> PATINA_AURUM_BLOCK = ITEMS.registerSimpleBlockItem("patina_aurum_block", BlockInit.PATINA_AURUM_BLOCK);
 
     public static final DeferredHolder<Item, BlockItem> BASALT_SLAB = ITEMS.registerSimpleBlockItem("basalt_slab", BlockInit.BASALT_SLAB);
     public static final DeferredHolder<Item, BlockItem> SMOOTH_BASALT_SLAB = ITEMS.registerSimpleBlockItem("smooth_basalt_slab", BlockInit.SMOOTH_BASALT_SLAB);

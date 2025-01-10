@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+     "redev:aurum_block"
+  ],
+  "result":
+  {
+    "id": "redev:aurum_ingot",
+    "count":  9
+  }
+}

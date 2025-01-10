@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "GGG",
+    "G G",
+    "G G"
+  ],
+  "key":
+  {
+    "G": "redev:aurum_ingot"
+  },
+  "result":
+  {
+    "id": "redev:aurum_leggings",
+    "count": 1
+  }
+}
