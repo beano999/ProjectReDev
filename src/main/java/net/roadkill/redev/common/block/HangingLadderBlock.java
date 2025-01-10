@@ -2,15 +2,19 @@ package net.roadkill.redev.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LadderBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.redstone.Orientation;
 
 import javax.annotation.Nullable;
 
@@ -26,16 +30,16 @@ public class HangingLadderBlock extends LadderBlock
     }
 
     @Override
-    public BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess tickAccess, BlockPos pos,
-                                  Direction neighborDir, BlockPos neighborPos, BlockState neighborState, RandomSource random)
+    protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, @Nullable Orientation orientation, boolean something)
+    {   level.scheduleTick(pos, this, 1);
+    }
+
+    @Override
+    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
     {
-        if (neighborDir == Direction.UP && !neighborState.is(this))
-        {   return Blocks.AIR.defaultBlockState();
+        if (!state.canSurvive(level, pos))
+        {   level.destroyBlock(pos, true);
         }
-        else if (state.getValue(WATERLOGGED))
-        {   tickAccess.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-        }
-        return super.updateShape(state, level, tickAccess, pos, neighborDir, neighborPos, neighborState, random);
     }
 
     @Nullable
