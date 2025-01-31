@@ -54,11 +54,10 @@
   "item.minecraft.tipped_arrow.effect.dolphin_grace":     "Tipped Arrow of Dolphin's Grace",
 
 
-  "item.redev.hoglin_hide":            "Hoglin Hide",
-  "item.redev.hoglin_hide_helmet":     "Hoglin Hide Cap",
-  "item.redev.hoglin_hide_chestplate": "Hoglin Hide Tunic",
-  "item.redev.hoglin_hide_leggings":   "Hoglin Hide Pants",
-  "item.redev.hoglin_hide_boots":      "Hoglin Hide Boots",
+  "item.redev.hoglin_hide":        "Hoglin Hide",
+  "item.redev.hoglin_hide_head":   "Hoglin Hide Head",
+  "item.redev.hoglin_hide_cloak":  "Hoglin Hide Cloak",
+  "item.redev.hoglin_hide_hooves": "Hoglin Hide Hooves",
 
   "item.redev.aurum_nugget":     "Aurum Nugget",
   "item.redev.aurum_ingot":      "Aurum Ingot",

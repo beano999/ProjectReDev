@@ -3,7 +3,8 @@
   "pattern":
   [
     "H H",
-    "H H"
+    "HHH",
+    "HHH"
   ],
   "key":
   {
@@ -11,7 +12,7 @@
   },
   "result":
   {
-    "id": "redev:hoglin_hide_boots",
+    "id": "redev:hoglin_hide_cloak",
     "count": 1
   }
 }

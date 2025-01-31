@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "redev:item/hoglin_hide_helmet"
+    "layer0": "redev:item/hoglin_hide_cloak"
   }
 }

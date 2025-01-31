@@ -12,7 +12,8 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.roadkill.redev.ReDev;
 import net.roadkill.redev.common.item.CarvedPumpkinItem;
-import net.roadkill.redev.common.item.ChainLadderItem;
+import net.roadkill.redev.common.item.HangingLadderItem;
+import net.roadkill.redev.common.item.HoglinArmorItem;
 import net.roadkill.redev.common.item.ItemNameBlockItem;
 import net.roadkill.redev.util.registries.ModArmorMaterials;
 import net.roadkill.redev.util.registries.ModItems;
@@ -25,10 +26,9 @@ public class ItemInit
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ReDev.MOD_ID);
 
     public static final DeferredHolder<Item, Item> HOGLIN_HIDE = ITEMS.registerItem("hoglin_hide", Item::new, new Item.Properties());
-    //public static final RegistryObject<ArmorItem> HOGLIN_HIDE_CAP = ITEMS.registerItem("hoglin_hide_helmet", () -> new ArmorItem(ArmorMaterials.HOGLIN_HIDE, ArmorItem.Type.HELMET, new Item.Properties()));
-    //public static final RegistryObject<ArmorItem> HOGLIN_HIDE_TUNIC = ITEMS.registerItem("hoglin_hide_chestplate", () -> new ArmorItem(ArmorMaterials.HOGLIN_HIDE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
-    //public static final RegistryObject<ArmorItem> HOGLIN_HIDE_PANTS = ITEMS.registerItem("hoglin_hide_leggings", () -> new ArmorItem(ArmorMaterials.HOGLIN_HIDE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
-    //public static final RegistryObject<ArmorItem> HOGLIN_HIDE_BOOTS = ITEMS.registerItem("hoglin_hide_boots", () -> new ArmorItem(ArmorMaterials.HOGLIN_HIDE, ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final DeferredHolder<Item, ArmorItem> HOGLIN_HIDE_CAP = ITEMS.registerItem("hoglin_hide_head", props -> new HoglinArmorItem(ModArmorMaterials.HOGLIN_HIDE, ArmorType.HELMET, props));
+    public static final DeferredHolder<Item, ArmorItem> HOGLIN_HIDE_TUNIC = ITEMS.registerItem("hoglin_hide_cloak", props -> new HoglinArmorItem(ModArmorMaterials.HOGLIN_HIDE, ArmorType.CHESTPLATE, props));
+    public static final DeferredHolder<Item, ArmorItem> HOGLIN_HIDE_HOOVES = ITEMS.registerItem("hoglin_hide_hooves", props -> new ArmorItem(ModArmorMaterials.HOGLIN_HIDE, ArmorType.BOOTS, props));
 
     public static final DeferredHolder<Item, Item> WOOD_SCRAP = ITEMS.registerItem("wood_scrap", Item::new, new Item.Properties());
 
