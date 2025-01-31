@@ -388,5 +388,8 @@
 
   "subtitles.entity.lithican.ambient": "Lithican Rasps",
   "subtitles.entity.lithican.hurt": "Lithican Hurts",
-  "subtitles.entity.lithican.death": "Lithican Dies"
+  "subtitles.entity.lithican.death": "Lithican Dies",
+
+  "painting.redev.flower_wall.author": "Mikul",
+  "painting.redev.flower_wall.title": "Flower Wall"
 }
