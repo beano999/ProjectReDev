@@ -10,9 +10,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LadderBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class ChainLadderItem extends BlockItem
+public class HangingLadderItem extends BlockItem
 {
-    public ChainLadderItem(Block pBlock, Properties properties)
+    public HangingLadderItem(Block pBlock, Properties properties)
     {   super(pBlock, properties);
     }
 
