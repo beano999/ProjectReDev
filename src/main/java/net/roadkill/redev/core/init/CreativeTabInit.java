@@ -337,12 +337,14 @@ public class CreativeTabInit
 
             injectItemsAfter(Items.NETHERITE_SWORD.getDefaultInstance(), event, List.of(
                     ItemInit.AURUM_SWORD.value(),
-                    ItemInit.WITHERED_SWORD.value()
+                    ItemInit.WITHERED_SWORD.value(),
+                    ItemInit.COPPER_SWORD.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             injectItemsAfter(Items.NETHERITE_AXE.getDefaultInstance(), event, List.of(
                     ItemInit.AURUM_AXE.value(),
-                    ItemInit.WITHERED_AXE.value()
+                    ItemInit.WITHERED_AXE.value(),
+                    ItemInit.COPPER_AXE.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             injectItemsAfter(Items.DIAMOND_HORSE_ARMOR.getDefaultInstance(), event, List.of(
@@ -445,7 +447,9 @@ public class CreativeTabInit
                     ItemInit.WITHERED_PICKAXE.value(),
                     ItemInit.WITHERED_AXE.value(),
                     ItemInit.WITHERED_HOE.value(),
-                    ItemInit.COPPER_PICKAXE.value()
+                    ItemInit.COPPER_PICKAXE.value(),
+                    ItemInit.COPPER_AXE.value(),
+                    ItemInit.COPPER_SWORD.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
         else if (event.getTabKey().equals(CreativeModeTabs.FOOD_AND_DRINKS))

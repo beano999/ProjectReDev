@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "II ",
+    "IS ",
+    " S "
+  ],
+  "pattern":
+  [
+    " II",
+    " SI",
+    " S "
+  ],
+  "key":
+  {
+    "I": "minecraft:copper_ingot",
+    "S": "#c:rods/wooden"
+  },
+  "result":
+  {
+    "id": "redev:copper_axe",
+    "count": 1
+  }
+}
