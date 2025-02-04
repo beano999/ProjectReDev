@@ -4,5 +4,7 @@
 /runs/
 /.idea/
 libs
-/run/
+/run/*
+!/run/saves/
+/run/saves/*
 !/run/saves/world/
