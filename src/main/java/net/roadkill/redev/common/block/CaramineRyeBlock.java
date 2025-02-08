@@ -53,7 +53,7 @@ public class CaramineRyeBlock extends CropBlock
         int age = state.getValue(this.getAgeProperty());
         return state.getValue(HALF) == Half.BOTTOM
              ? SHAPE_BY_AGE[age]
-             : SHAPE_BY_AGE[age - 3];
+             : SHAPE_BY_AGE[Math.max(0, age - 3)];
     }
 
     @Override
