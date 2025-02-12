@@ -16,7 +16,7 @@ import java.util.EnumMap;
 public class ModArmorMaterials
 {
     public static final ArmorMaterial HOGLIN_HIDE = new ArmorMaterial(
-            100,
+            7,
             Util.make(new EnumMap<>(ArmorType.class), map -> {
                 map.put(ArmorType.HELMET, 1);
                 map.put(ArmorType.CHESTPLATE, 3);
@@ -28,7 +28,7 @@ public class ModArmorMaterials
             ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "hoglin")));
 
     public static final ArmorMaterial AURUM = new ArmorMaterial(
-            300,
+            10,
             Util.make(new EnumMap<>(ArmorType.class), map -> {
                 map.put(ArmorType.HELMET, 1);
                 map.put(ArmorType.CHESTPLATE, 2);
@@ -40,7 +40,7 @@ public class ModArmorMaterials
             ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "aurum")));
 
     public static final ArmorMaterial WITHERED = new ArmorMaterial(
-            800,
+            25,
             Util.make(new EnumMap<>(ArmorType.class), map -> {
                 map.put(ArmorType.HELMET, 2);
                 map.put(ArmorType.CHESTPLATE, 7);
