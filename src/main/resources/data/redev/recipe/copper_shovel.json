@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " I ",
+    " S ",
+    " S "
+  ],
+  "key":
+  {
+    "I": "minecraft:copper_ingot",
+    "S": "#c:rods/wooden"
+  },
+  "result":
+  {
+    "id": "redev:copper_shovel",
+    "count": 1
+  }
+}

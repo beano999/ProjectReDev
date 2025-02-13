@@ -449,7 +449,8 @@ public class CreativeTabInit
                     ItemInit.WITHERED_HOE.value(),
                     ItemInit.COPPER_PICKAXE.value(),
                     ItemInit.COPPER_AXE.value(),
-                    ItemInit.COPPER_SWORD.value()
+                    ItemInit.COPPER_SWORD.value(),
+                    ItemInit.COPPER_SHOVEL.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
         else if (event.getTabKey().equals(CreativeModeTabs.FOOD_AND_DRINKS))

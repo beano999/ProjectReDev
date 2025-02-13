@@ -47,7 +47,7 @@ public class ItemInit
     public static final DeferredHolder<Item, Item> COPPER_SWORD = ITEMS.registerItem("copper_sword", props -> new SwordItem(ModItems.ToolMaterials.COPPER, 3f, 1.6f-4f, props), new Item.Properties());
     public static final DeferredHolder<Item, Item> COPPER_PICKAXE = ITEMS.registerItem("copper_pickaxe", props -> new PickaxeItem(ModItems.ToolMaterials.COPPER, 1f, 1.2f-4f, props), new Item.Properties());
     public static final DeferredHolder<Item, Item> COPPER_AXE = ITEMS.registerItem("copper_axe", props -> new AxeItem(ModItems.ToolMaterials.COPPER, 7f, 0.8f-4f, props), new Item.Properties());
-    //public static final DeferredHolder<Item, Item> COPPER_SHOVEL = ITEMS.registerItem("copper_shovel", props -> new ShovelItem(ModItems.ToolMaterials.COPPER, 1.5f, 1f-4f, props), new Item.Properties());
+    public static final DeferredHolder<Item, Item> COPPER_SHOVEL = ITEMS.registerItem("copper_shovel", props -> new ShovelItem(ModItems.ToolMaterials.COPPER, 1.5f, 1f-4f, props), new Item.Properties());
     //public static final DeferredHolder<Item, Item> COPPER_HOE = ITEMS.registerItem("copper_hoe", props -> new HoeItem(ModItems.ToolMaterials.COPPER, -1f, 2f-4f, props), new Item.Properties());
     //public static final DeferredHolder<Item, Item> COPPER_HELMET = ITEMS.registerItem("copper_helmet", props -> new ArmorItem(ModArmorMaterials.COPPER, ArmorType.HELMET, props), new Item.Properties());
     //public static final DeferredHolder<Item, Item> COPPER_CHESTPLATE = ITEMS.registerItem("copper_chestplate", props -> new ArmorItem(ModArmorMaterials.COPPER, ArmorType.CHESTPLATE, props), new Item.Properties());
