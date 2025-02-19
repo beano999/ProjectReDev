@@ -33,12 +33,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Optional;
 import java.util.Set;
 
+/*
+NOTE:
+    Possibly rename methods and Mixin class to DisableVanillaStructures... etc.
+    Prior to implementing nether fortresses, desert pyramids were already present within these methods.
+*/
+
 @Mixin({ChunkGenerator.class, LocateCommand.class})
-public class MixinReplaceStructures
-{
+public class MixinReplaceStructures {
     @Mixin(ChunkGenerator.class)
-    public static class DisableVanillaStrongholdsMixin
-    {
+    public static class DisableVanillaStrongholdsMixin {
         /**
          * Prevents vanilla strongholds from generating.
          */
@@ -46,11 +50,11 @@ public class MixinReplaceStructures
         void disableVanillaStrongholds(StructureSet.StructureSelectionEntry structureSelectionEntry, StructureManager structureManager,
                                        RegistryAccess registryAccess, RandomState random, StructureTemplateManager structureTemplateManager,
                                        long seed, ChunkAccess chunk, ChunkPos chunkPos, SectionPos sectionPos, ResourceKey<Level> levelKey,
-                                       CallbackInfoReturnable<Boolean> cir)
-        {
+                                       CallbackInfoReturnable<Boolean> cir) {
             if (structureSelectionEntry.structure().value().type() == StructureType.STRONGHOLD
-            ||  structureSelectionEntry.structure().value().type() == StructureType.DESERT_PYRAMID)
-            {   cir.setReturnValue(false);
+                    || structureSelectionEntry.structure().value().type() == StructureType.DESERT_PYRAMID
+                    || structureSelectionEntry.structure().value().type() == StructureType.FORTRESS) {
+                cir.setReturnValue(false);
             }
         }
 
@@ -65,30 +69,34 @@ public class MixinReplaceStructures
                 at = @At(value = "HEAD"),
                 cancellable = true)
         public void disableVanillaStrongholds2(Set<Holder<Structure>> structureHolders, ServerLevel serverLevel, StructureManager structureManager, BlockPos blockPos,
-                                               boolean bl, ConcentricRingsStructurePlacement structurePlacement, CallbackInfoReturnable<Pair<BlockPos, Holder<Structure>>> cir)
-        {
-            for (Holder<Structure> structureHolder : structureHolders)
-            {
+                                               boolean bl, ConcentricRingsStructurePlacement structurePlacement, CallbackInfoReturnable<Pair<BlockPos, Holder<Structure>>> cir) {
+            for (Holder<Structure> structureHolder : structureHolders) {
                 if (structureHolder.is(ResourceLocation.withDefaultNamespace("stronghold"))
-                ||  structureHolder.is(ResourceLocation.withDefaultNamespace("desert_pyramid")))
-                {   cir.setReturnValue(Pair.of(new BlockPos(29000000, 0, 29000000), structureHolder));
+                        || structureHolder.is(ResourceLocation.withDefaultNamespace("desert_pyramid"))
+                        || structureHolder.is(ResourceLocation.withDefaultNamespace("fortress"))) {
+                    cir.setReturnValue(Pair.of(new BlockPos(29000000, 0, 29000000), structureHolder));
                 }
             }
         }
     }
 
     @Mixin(LocateCommand.class)
-    public static class LocateStrongholdCommandMixin
-    {
+    public static class LocateStrongholdCommandMixin {
         @Inject(method = "locateStructure", at = @At(value = "HEAD"))
         private static void overrideLocateVanillaStronghold(CommandSourceStack cmdSource, ResourceOrTagKeyArgument.Result<Structure> result, CallbackInfoReturnable<Integer> ci)
-        throws CommandSyntaxException
-        {
+                throws CommandSyntaxException {
             Optional<ResourceKey<Structure>> optional = result.unwrap().left();
             if (optional.isPresent()
-            && (optional.get().location().equals(ResourceLocation.withDefaultNamespace("stronghold")))
-            ||  optional.get().location().equals(ResourceLocation.withDefaultNamespace("desert_pyramid")))
-            {   throw new SimpleCommandExceptionType(Component.literal(String.format("Use /locate structure redev:%s instead!", optional.get().location().getPath()))).create();
+                    && (optional.get().location().equals(ResourceLocation.withDefaultNamespace("stronghold")))
+                    || optional.get().location().equals(ResourceLocation.withDefaultNamespace("desert_pyramid"))
+                    || optional.get().location().equals(ResourceLocation.withDefaultNamespace("fortress"))) {
+                String identifier = optional.get().location().getPath();
+
+                if(identifier.equals("fortress")){
+                    identifier = "nether_fortress";
+                }
+
+                throw new SimpleCommandExceptionType(Component.literal(String.format("Use /locate structure redev:%s instead!", identifier))).create();
             }
         }
     }
