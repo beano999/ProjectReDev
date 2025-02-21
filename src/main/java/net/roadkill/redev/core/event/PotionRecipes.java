@@ -20,42 +20,18 @@ public class PotionRecipes
     public static void register(RegisterBrewingRecipesEvent event)
     {
         // Sight Potion
-        event.getBuilder().addRecipe(new IBrewingRecipe()
-        {
-            @Override
-            public boolean isInput(ItemStack input)
-            {   return ItemStack.isSameItemSameComponents(input, createPotion(Potions.INVISIBILITY));
-            }
-
-            @Override
-            public boolean isIngredient(ItemStack ingredient)
-            {   return ingredient.is(Items.SPIDER_EYE);
-            }
-
-            @Override
-            public ItemStack getOutput(ItemStack input, ItemStack ingredient)
-            {   return createPotion(PotionInit.SIGHT);
-            }
-        });
+        event.getBuilder().addMix(
+            Potions.INVISIBILITY,
+            Items.SPIDER_EYE,
+            PotionInit.SIGHT
+        );
 
         // Extended Sight Potion
-        event.getBuilder().addRecipe(new IBrewingRecipe()
-        {
-            @Override
-            public boolean isInput(ItemStack input)
-            {   return ItemStack.isSameItemSameComponents(input, createPotion(PotionInit.SIGHT));
-            }
-
-            @Override
-            public boolean isIngredient(ItemStack ingredient)
-            {   return ingredient.is(Items.REDSTONE);
-            }
-
-            @Override
-            public ItemStack getOutput(ItemStack input, ItemStack ingredient)
-            {   return createPotion(PotionInit.LONG_SIGHT);
-            }
-        });
+        event.getBuilder().addMix(
+            PotionInit.SIGHT,
+            Items.REDSTONE,
+            PotionInit.LONG_SIGHT
+        );
     }
 
     private static ItemStack createPotion(Holder<Potion> potion)
