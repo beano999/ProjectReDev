@@ -1,6 +1,8 @@
 package net.roadkill.redev.client.renderer.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.nimbusds.jose.util.Resource;
+
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -26,6 +28,14 @@ public class LithicanRenderer<T extends LithicanEntity, S extends LithicanRender
     public static final ResourceLocation TEXTURE_DEEPSLATE = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/deepslate_lithican.png");
     public static final ResourceLocation TEXTURE_BASALT = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/basalt_lithican.png");
     public static final ResourceLocation TEXTURE_HEAT = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/molten_lithican.png");
+    public static final ResourceLocation TEXTURE_BLACKSTONE = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/blackstone.png");
+    public static final ResourceLocation TEXTURE_COPPER = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/copper.png");
+    public static final ResourceLocation TEXTURE_IRON = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/iron.png");
+    public static final ResourceLocation TEXTURE_GOLD = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/gold.png");
+    public static final ResourceLocation TEXTURE_DIAMOND = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/diamond.png");
+    public static final ResourceLocation TEXTURE_EMERALD = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/emerald.png");
+    public static final ResourceLocation TEXTURE_GLASS = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/glass_lithican.png");
+    public static final ResourceLocation TEXTURE_RED = ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "textures/entity/lithican/petrified_red.png");
 
     public LithicanRenderer(EntityRendererProvider.Context pContext)
     {
@@ -74,6 +84,14 @@ public class LithicanRenderer<T extends LithicanEntity, S extends LithicanRender
             case SANDSTONE -> TEXTURE_SANDSTONE;
             case DEEPSLATE -> TEXTURE_DEEPSLATE;
             case BASALT    -> TEXTURE_BASALT;
+            case BLACKSTONE -> TEXTURE_BLACKSTONE;
+            case COPPER    -> TEXTURE_COPPER;
+            case IRON      -> TEXTURE_IRON;
+            case GOLD      -> TEXTURE_GOLD;
+            case DIAMOND   -> TEXTURE_DIAMOND;
+            case EMERALD   -> TEXTURE_EMERALD;
+            case GLASS     -> TEXTURE_GLASS;
+            case RED       -> TEXTURE_RED;
         };
     }
 }

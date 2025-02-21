@@ -13,6 +13,7 @@ import net.roadkill.redev.common.entity.DurianThornEntity;
 import net.roadkill.redev.common.entity.HoveringInfernoEntity;
 import net.roadkill.redev.common.entity.LithicanEntity;
 import net.roadkill.redev.common.entity.RevenantEntity;
+// import net.roadkill.redev.common.entity.Illusion;
 
 public class EntityInit
 {
@@ -30,7 +31,10 @@ public class EntityInit
             EntityType.Builder.of(DurianThornEntity::new, MobCategory.MISC).sized(0.5f, 0.5f)
                               .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "durian_thorn"))));
 
-    public static final DeferredHolder<EntityType<?>, EntityType<HoveringInfernoEntity>> HOVERING_INFERNO = ENTITY_TYPES.register("hovering_inferno", () ->
+public static final DeferredHolder<EntityType<?>, EntityType<HoveringInfernoEntity>> HOVERING_INFERNO = ENTITY_TYPES.register("hovering_inferno", () ->
             EntityType.Builder.of(HoveringInfernoEntity::new, MobCategory.MONSTER).sized(1.5f, 2.5f)
                               .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "hovering_inferno"))));
+// public static final DeferredHolder<EntityType<Illusion>, EntityType<Illusion>> ILLUSION = ENTITY_TYPES.register("illusion", () ->
+//         EntityType.Builder.of(Illusion::new, MobCategory.CREATURE).sized(0.9f, 0.9f)
+//                           .build(ResourceKey.create(Registries.ENTITY_TYPE, new ResourceLocation(ReDev.MOD_ID, "illusion"))));
 }
