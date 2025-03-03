@@ -298,6 +298,7 @@ public class BlockInit
     public static final DeferredHolder<Block, SlabBlock> SMOOTH_BASALT_SLAB = BLOCKS.registerBlock("smooth_basalt_slab", SlabBlock::new, Block.Properties.ofFullCopy(Blocks.SMOOTH_BASALT));
     public static final DeferredHolder<Block, SlabBlock> POLISHED_BASALT_SLAB = BLOCKS.registerBlock("polished_basalt_slab", SlabBlock::new, Block.Properties.ofFullCopy(Blocks.POLISHED_BASALT));
 
+
     public static final DeferredHolder<Block, StairBlock> BASALT_STAIRS = BLOCKS.registerBlock("basalt_stairs", props -> new StairBlock(Blocks.BASALT.defaultBlockState(), props), Block.Properties.ofFullCopy(Blocks.BASALT));
     public static final DeferredHolder<Block, StairBlock> SMOOTH_BASALT_STAIRS = BLOCKS.registerBlock("smooth_basalt_stairs", props -> new StairBlock(Blocks.SMOOTH_BASALT.defaultBlockState(), props), Block.Properties.ofFullCopy(Blocks.SMOOTH_BASALT));
     public static final DeferredHolder<Block, StairBlock> POLISHED_BASALT_STAIRS = BLOCKS.registerBlock("polished_basalt_stairs", props -> new StairBlock(Blocks.POLISHED_BASALT.defaultBlockState(), props), Block.Properties.ofFullCopy(Blocks.POLISHED_BASALT));
@@ -310,6 +311,11 @@ public class BlockInit
     public static final DeferredHolder<Block, Block> PATINA_AURUM_BLOCK = BLOCKS.registerBlock("patina_aurum_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_BLOCK));
 
     public static final DeferredHolder<Block, Block> BLUE_ICE_BRICKS = BLOCKS.registerBlock("blue_ice_bricks", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_ICE));
+
+    public static final DeferredHolder<Block, Block> WEATHERED_STONE_BRICKS = BLOCKS.registerBlock("weathered_stone_bricks", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
+    public static final DeferredHolder<Block, SlabBlock> WEATHERED_STONE_BRICK_SLAB = BLOCKS.registerBlock("weathered_stone_brick_slab", SlabBlock::new, Block.Properties.ofFullCopy(Blocks.STONE_BRICKS));
+    public static final DeferredHolder<Block, WallBlock> WEATHERED_STONE_BRICK_WALL = BLOCKS.registerBlock("weathered_stone_brick_wall", WallBlock::new, Block.Properties.ofFullCopy(Blocks.STONE_BRICKS));
+    public static final DeferredHolder<Block, StairBlock> WEATHERED_STONE_BRICK_STAIRS = BLOCKS.registerBlock("weathered_stone_brick_stairs", props -> new StairBlock(Blocks.STONE_BRICKS.defaultBlockState(), props), Block.Properties.ofFullCopy(Blocks.STONE_BRICKS));
 
     public static final TreeGrower SHADE_TREE_GROWER = new TreeGrower("shade_tree", Optional.empty(), Optional.of(FeatureInit.CONFIGURED_SHADE_TREE), Optional.empty());
 }

@@ -368,6 +368,13 @@ public class CreativeTabInit
                     ItemInit.BLUE_ICE_BRICKS.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
+            injectItemsAfter(Items.STONE_BRICKS.getDefaultInstance(), event, List.of(
+                    ItemInit.WEATHERED_STONE_BRICKS.value(),
+                    ItemInit.WEATHERED_STONE_BRICK_SLAB.value(),
+                    ItemInit.WEATHERED_STONE_BRICK_STAIRS.value(),
+                    ItemInit.WEATHERED_STONE_BRICK_WALL.value()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             injectItemsAfter(Items.WARPED_BUTTON.getDefaultInstance(), event, List.of(
                     ItemInit.SCRAPWOOD_HEAP.value(),
                     ItemInit.SCRAPWOOD_PLANKS.value(),
