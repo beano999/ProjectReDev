@@ -374,6 +374,11 @@
   "block.redev.patina_aurum_block": "Block of Patina Aurum",
 
   "block.redev.blue_ice_bricks": "Blue Ice Bricks",
+
+  "block.redev.weathered_stone_bricks": "Weathered Stone Bricks",
+  "block.redev.weathered_stone_brick_slab": "Weathered Stone Brick Slab",
+  "block.redev.weathered_stone_brick_stairs": "Weathered Stone Brick Stairs",
+  "block.redev.weathered_stone_brick_wall": "Weathered Stone Brick Wall",
   
   "block.redev.basalt_slab": "Basalt Slab",
   "block.redev.smooth_basalt_slab": "Smooth Basalt Slab",
