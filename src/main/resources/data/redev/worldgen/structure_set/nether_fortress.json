@@ -1,16 +1,16 @@
 {
   "placement": {
     "type": "minecraft:concentric_rings",
-    "count": 256,
+    "count": 128,
     "distance": 32,
     "preferred_biomes": "#minecraft:is_nether",
-    "salt": 300,
+    "salt": 30084232,
     "spread": 1
   },
   "structures": [
     {
       "structure": "redev:nether_fortress",
-      "weight": 150
+      "weight": 1
     }
   ]
 }
