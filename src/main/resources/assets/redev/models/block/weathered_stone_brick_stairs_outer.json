@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "redev:block/weathered_stone_bricks",
+    "side": "redev:block/weathered_stone_bricks",
+    "top": "redev:block/weathered_stone_bricks"
+  }
+}

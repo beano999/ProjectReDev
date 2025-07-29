@@ -13,6 +13,7 @@
     "redev:spruce_hedge_wall",
     "redev:basalt_wall",
     "redev:smooth_basalt_wall",
-    "redev:polished_basalt_wall"
+    "redev:polished_basalt_wall",
+    "redev:weathered_stone_brick_wall"
   ]
 }

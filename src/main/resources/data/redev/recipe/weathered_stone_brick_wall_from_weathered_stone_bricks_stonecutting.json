@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "redev:weathered_stone_bricks",
+  "result": {
+    "count": 1,
+    "id": "redev:weathered_stone_brick_wall"
+  }
+}

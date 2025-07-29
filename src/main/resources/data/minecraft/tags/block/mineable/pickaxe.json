@@ -84,6 +84,10 @@
     "redev:petrified_soul_campfire",
     "redev:petrified_bookshelf",
     "redev:patina_gold_block",
-    "redev:patina_aurum_block"
+    "redev:patina_aurum_block",
+    "redev:weathered_stone_bricks",
+    "redev:weathered_stone_brick_slab",
+    "redev:weathered_stone_brick_stairs",
+    "redev:weathered_stone_brick_wall"
   ]
 }

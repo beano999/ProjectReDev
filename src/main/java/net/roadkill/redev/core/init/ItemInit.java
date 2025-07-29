@@ -329,23 +329,31 @@ public class ItemInit
     public static final DeferredHolder<Item, BlockItem> PATINA_GOLD_BLOCK = ITEMS.registerSimpleBlockItem("patina_gold_block", BlockInit.PATINA_GOLD_BLOCK);
     public static final DeferredHolder<Item, BlockItem> PATINA_AURUM_BLOCK = ITEMS.registerSimpleBlockItem("patina_aurum_block", BlockInit.PATINA_AURUM_BLOCK);
 
+    public static final DeferredHolder<Item, BlockItem> BLUE_ICE_BRICKS = ITEMS.registerSimpleBlockItem("blue_ice_bricks", BlockInit.BLUE_ICE_BRICKS);
+
+    public static final DeferredHolder<Item, BlockItem> WEATHERED_STONE_BRICKS = ITEMS.registerSimpleBlockItem("weathered_stone_bricks", BlockInit.WEATHERED_STONE_BRICKS);
+
     public static final DeferredHolder<Item, BlockItem> BASALT_SLAB = ITEMS.registerSimpleBlockItem("basalt_slab", BlockInit.BASALT_SLAB);
     public static final DeferredHolder<Item, BlockItem> SMOOTH_BASALT_SLAB = ITEMS.registerSimpleBlockItem("smooth_basalt_slab", BlockInit.SMOOTH_BASALT_SLAB);
     public static final DeferredHolder<Item, BlockItem> POLISHED_BASALT_SLAB = ITEMS.registerSimpleBlockItem("polished_basalt_slab", BlockInit.POLISHED_BASALT_SLAB);
+    public static final DeferredHolder<Item, BlockItem> WEATHERED_STONE_BRICK_SLAB = ITEMS.registerSimpleBlockItem("weathered_stone_brick_slab", BlockInit.WEATHERED_STONE_BRICK_SLAB);
 
     public static final DeferredHolder<Item, BlockItem> BASALT_STAIRS = ITEMS.registerSimpleBlockItem("basalt_stairs", BlockInit.BASALT_STAIRS);
     public static final DeferredHolder<Item, BlockItem> SMOOTH_BASALT_STAIRS = ITEMS.registerSimpleBlockItem("smooth_basalt_stairs", BlockInit.SMOOTH_BASALT_STAIRS);
     public static final DeferredHolder<Item, BlockItem> POLISHED_BASALT_STAIRS = ITEMS.registerSimpleBlockItem("polished_basalt_stairs", BlockInit.POLISHED_BASALT_STAIRS);
+    public static final DeferredHolder<Item, BlockItem> WEATHERED_STONE_BRICK_STAIRS = ITEMS.registerSimpleBlockItem("weathered_stone_brick_stairs", BlockInit.WEATHERED_STONE_BRICK_STAIRS);
 
     public static final DeferredHolder<Item, BlockItem> BASALT_WALL = ITEMS.registerSimpleBlockItem("basalt_wall", BlockInit.BASALT_WALL);
     public static final DeferredHolder<Item, BlockItem> SMOOTH_BASALT_WALL = ITEMS.registerSimpleBlockItem("smooth_basalt_wall", BlockInit.SMOOTH_BASALT_WALL);
     public static final DeferredHolder<Item, BlockItem> POLISHED_BASALT_WALL = ITEMS.registerSimpleBlockItem("polished_basalt_wall", BlockInit.POLISHED_BASALT_WALL);
+    public static final DeferredHolder<Item, BlockItem> WEATHERED_STONE_BRICK_WALL = ITEMS.registerSimpleBlockItem("weathered_stone_brick_wall", BlockInit.WEATHERED_STONE_BRICK_WALL);
 
-    private static <T extends BlockItem> DeferredHolder<Item, T> registerBlockItem(String name, Supplier<? extends Block> block, BiFunction<Block, Item.Properties, T> item, Item.Properties properties)
-    {   return ITEMS.register(name, key -> item.apply(block.get(), properties.setId(ResourceKey.create(Registries.ITEM, key)).useBlockDescriptionPrefix()));
+    private static <T extends BlockItem> DeferredHolder<Item, T> registerBlockItem(String name, Supplier<? extends Block> block, BiFunction<Block, Item.Properties, T> item, Item.Properties properties) {
+        return ITEMS.register(name, key -> item.apply(block.get(), properties.setId(ResourceKey.create(Registries.ITEM, key)).useBlockDescriptionPrefix()));
     }
 
-    private static <T extends BlockItem> DeferredHolder<Item, T> registerBlockItem(String name, Supplier<? extends Block> block, BiFunction<Block, Item.Properties, T> item)
-    {   return ITEMS.registerItem(name, properties -> item.apply(block.get(), properties.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, name))).useBlockDescriptionPrefix()));
+    private static <T extends BlockItem> DeferredHolder<Item, T> registerBlockItem(String name, Supplier<? extends Block> block, BiFunction<Block, Item.Properties, T> item) {
+        return ITEMS.registerItem(name, properties -> item.apply(block.get(), properties.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, name))).useBlockDescriptionPrefix()));
     }
 }
+ 

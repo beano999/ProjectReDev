@@ -30,7 +30,7 @@ public class HandleMobSpawns
             RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
             event.register(ModEntityTypes.LITHICAN, SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (type, level, spawnType, pos, random) ->
-            {   return level.getBlockState(pos.below()).is(BlockTags.BASE_STONE_OVERWORLD) && Monster.isDarkEnoughToSpawn(level, pos, random);
+            {   return level.getBlockState(pos.below()).is(BlockTags.BASE_STONE_OVERWORLD) && Monster.isDarkEnoughToSpawn(level, pos, random) && random.nextInt(10) == 0;
             },
             RegisterSpawnPlacementsEvent.Operation.REPLACE);
         }
